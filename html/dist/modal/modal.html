@@ -1,0 +1,93 @@
+<!-- modal -->
+
+<!-- 음성ㆍ문자 지원 -->
+<div id="modal-text-support">
+  <div class="modal left modal-text-support is_animated animate__fade_In_Up">
+    <div class="modal-body">
+      <div class="modal-contents">
+        <p>서울시장 출근 환영행사가 시작되었습니다.</p>
+        <p>서울시장 출근 환영행사가 시작되었습니다.</p>
+        <p>이 행사가 어느 행사보다 값지고 뜻깊은 날이 되어 앞으로도 빛이 날 수 있도록 최선을 다하여보겠습니다.</p>
+        <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 다운로드 신청 -->
+<div id="modal-download">
+  <div class="modal right ivory modal-download is_animated animate__fade_In_Up">
+    <header class="modal-header">
+      <h5>
+        다운로드 사유 입력 후 신청해 주세요.<br />
+        <em>* 관리자 승인 후 다운로드가 가능합니다. 승인 기간 평일기준 1~2일 소요</em>
+      </h5>
+      <button type="button" class="button-close modal-off"><em class="hidden-txt">레이어 팝업 닫기</em></button>
+    </header>
+    <div class="modal-body">
+      <div class="modal-contents">
+        <textarea name="" id="" cols="30" rows="10" placeholder="사유입력 100자 이내"></textarea>
+      </div>
+      <div class="btn-wrap align-c">
+        <button class="btn-default rounded orange modal-change" data-modal-name="download-finish" type="submit">
+          <em>다운로드 신청</em>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 다운로드 완료 -->
+<div id="modal-download-finish">
+  <header class="modal-header">
+    <h5 class="finish align-c">신청이 완료되었습니다.</h5>
+    <button type="button" class="button-close modal-off"><em class="hidden-txt">레이어 팝업 닫기</em></button>
+  </header>
+  <div class="modal-body finish">
+    <div class="modal-contents align-c">
+      <p>
+        마이페이지로 이동하여 영상다운이 가능합니다.<br />
+        이동하시겠습니까?
+      </p>
+    </div>
+    <div class="btn-wrap align-c">
+      <button class="btn-default xs rounded orange" type="button" onclick="location.href='../main.html'"><em>확인</em></button>
+      <button class="btn-default xs rounded darkGray modal-off" type="button">
+        <em>취소</em>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 공유하기 -->
+<div id="modal-share">
+  <div class="modal right ivory modal-share is_animated animate__fade_In_Up">
+    <header class="modal-header">
+      <h5>SNS 공유하기</h5>
+      <button type="button" class="button-close modal-off"><em class="hidden-txt">레이어 팝업 닫기</em></button>
+    </header>
+    <div class="modal-body">
+      <div class="modal-contents">
+        <ul class="sns-list">
+          <li>
+            <a class="share-facebook" href="javascript:void(0);"><em class="hidden-txt">페이스북 공유하기</em></a>
+          </li>
+          <li>
+            <a class="share-twitter" href="javascript:void(0);"><em class="hidden-txt">트위터 공유하기</em></a>
+          </li>
+          <li>
+            <a class="share-kakaotalk" href="javascript:void(0);"><em class="hidden-txt">카카오톡 공유하기</em></a>
+          </li>
+          <li>
+            <a class="share-N_blog" href="javascript:void(0);"><em class="hidden-txt">네이버블로그 공유하기</em></a>
+          </li>
+          <li>
+            <a class="share-URL" href="javascript:void(0);" onclick="commonFunction().copyUrl();"
+              ><em class="hidden-txt">URL 공유하기</em></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
