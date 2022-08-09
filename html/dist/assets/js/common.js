@@ -85,7 +85,7 @@ function commonFunction() {
             trg.addClass('on');
             $('.modal').stop().fadeOut(300).remove();
 
-            $.get('./html/dist/modal/modal.html', function (data) {
+            $.get('./modal/modal.html', function (data) {
               gb.result = $(data)
                 .filter('#modal-' + modalName)
                 .html();
@@ -103,7 +103,7 @@ function commonFunction() {
           var _trg = $(this),
             _modalName = _trg.data('modal-name');
 
-          $.get('../../modal/modal.html', function (data) {
+          $.get('./modal/modal.html', function (data) {
             gb.result = $(data)
               .filter('#modal-' + _modalName)
               .html();
@@ -325,7 +325,7 @@ function commonFunction() {
                 $(trg_tabList).find('li').removeClass('on');
                 trg.closest('li').addClass('on');
 
-                $.get('./html/dist/tabContents/' + trg_tabList.id + '.html', function (data) {
+                $.get('./tabContents/' + trg_tabList.id + '.html', function (data) {
                   $(trg_tabList)
                     .next('.tab-contents')
                     .html($(data).filter('#' + tabId));
