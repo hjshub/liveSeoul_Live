@@ -85,7 +85,7 @@ function commonFunction() {
             trg.addClass('on');
             $('.modal').stop().fadeOut(300).remove();
 
-            $.get('./modal/modal.html', function (data) {
+            $.get('../modal/modal.html', function (data) {
               gb.result = $(data)
                 .filter('#modal-' + modalName)
                 .html();
@@ -103,7 +103,7 @@ function commonFunction() {
           var _trg = $(this),
             _modalName = _trg.data('modal-name');
 
-          $.get('./modal/modal.html', function (data) {
+          $.get('../modal/modal.html', function (data) {
             gb.result = $(data)
               .filter('#modal-' + _modalName)
               .html();
