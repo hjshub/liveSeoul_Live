@@ -335,11 +335,11 @@ function commonFunction() {
                     .html($(data).filter('#' + tabId));
 
                   new Swiper('#' + tabId + ' .vd-swiper', gb.vdSwiperOption);
-                });
 
-                setTimeout(function () {
-                  $('#' + tabId).addClass('active');
-                }, 200);
+                  setTimeout(function () {
+                    $('#' + tabId).addClass('active');
+                  }, 200);
+                });
               }
             });
         });
