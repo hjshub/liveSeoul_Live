@@ -32,11 +32,12 @@ window.addEventListener('load', function () {
     if (!gb.html.hasClass('onAir')) {
       commonFunction().MainSwiper();
     }
-    commonFunction().setGnb();
     commonFunction().showOnLayer();
   }
+
   if (gb.vdSwiper.length) commonFunction().VdSwiper();
   if (gb.tabSwiper.length) commonFunction().TabSwiper();
+  if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
 });
 
 function commonFunction() {
@@ -49,8 +50,10 @@ function commonFunction() {
   gb.CommonFunction = function () {
     var setGnb = function () {
         // 헤더
-        gsap.to('main', { y: 0, duration: 0.5, delay: 0.3 });
-        gsap.to('#gnb', { y: 0, opacity: 1, duration: 0.5, delay: 0.4 });
+        if (gb.main.length) {
+          gsap.to('main', { y: 0, duration: 0.5, delay: 0.3 });
+          gsap.to('#gnb', { y: 0, opacity: 1, duration: 0.5, delay: 0.4 });
+        }
 
         if (document.documentElement.scrollTop >= 50) {
           gb.header.addClass('fixed');
@@ -247,8 +250,6 @@ function commonFunction() {
         gb._tabSwiper = gb._tabSwiper || [];
 
         gb.tabSwiper.forEach(function (elem, i) {
-          console.log(gb._tabSwiper.length);
-
           if (typeof gb._tabSwiper[i] !== 'undefined') {
             gb._tabSwiper[i].destroy();
           }
@@ -271,6 +272,25 @@ function commonFunction() {
           gb._tabSwiper[i] = new Swiper(elem, gb.tabSwiperOption);
           //}
         });
+      },
+      FilterSwiper = function () {
+        // 서울오리지널 필터 스와이퍼
+        gb.filterSwiperOption = {
+          // Optional parameters
+          loop: false,
+          speed: 600,
+          direction: 'horizontal',
+          slidesPerView: 'auto',
+          spaceBetween: 0,
+          centeredSlides: false,
+          debugger: true, // Enable debugger,
+          navigation: {
+            nextEl: '.button-swiper-nxt',
+            prevEl: '.button-swiper-prev',
+          },
+        };
+
+        gb.filterSwiper = new Swiper('.list-filter-swiper', gb.filterSwiperOption);
       },
       showOnLayer = function () {
         $('.button-showLayer').on('click', function () {
@@ -433,6 +453,22 @@ function commonFunction() {
           container.play();
         });
       },
+      allCheck = function () {
+        var checked_ItemAll = $('input[type=checkbox][name^=chkAll]'),
+          check_Item = $('input[type=checkbox][name^=chk_]');
+
+        checked_ItemAll.on('change', function () {
+          if ($(this).prop('checked')) {
+            check_Item.prop('checked', '');
+          }
+        });
+
+        check_Item.on('change', function () {
+          if ($(this).prop('checked')) {
+            checked_ItemAll.prop('checked', '');
+          }
+        });
+      },
       goScrollTop = function () {
         gb.html.stop().animate({ scrollTop: 0 }, 400);
       },
@@ -443,8 +479,10 @@ function commonFunction() {
         });
       },
       init = function () {
+        setGnb();
         tabMenu();
         listTabMenu();
+        allCheck();
         datePick();
         vdOnPlay();
         modal();
@@ -458,6 +496,7 @@ function commonFunction() {
       VdSwiper: VdSwiper,
       LiveOnSwiper: LiveOnSwiper,
       TabSwiper: TabSwiper,
+      FilterSwiper: FilterSwiper,
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
       fileUpload: fileUpload,
