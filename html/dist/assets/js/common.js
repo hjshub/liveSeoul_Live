@@ -144,16 +144,18 @@ function commonFunction() {
               animate = $('.swiper-slide-active .animate').get(),
               animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
 
-            notCurrentvd.forEach(function (elem) {
-              elem.load();
-            });
             animate_.forEach(function (elem) {
               $(elem).removeClass('animation--start');
             });
             animate.forEach(function (elem) {
               $(elem).addClass('animation--start');
             });
+
             if (!gb.isMob) {
+              notCurrentvd.forEach(function (elem) {
+                elem.load();
+              });
+
               currentVd.play();
 
               currentVd.addEventListener('ended', function () {
