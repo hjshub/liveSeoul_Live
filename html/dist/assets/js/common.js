@@ -153,19 +153,21 @@ function commonFunction() {
             animate.forEach(function (elem) {
               $(elem).addClass('animation--start');
             });
+            if (!gb.isMob) {
+              currentVd.play();
 
-            currentVd.play();
-
-            currentVd.addEventListener('ended', function () {
-              gb.mainSwiper.slideNext();
-            });
+              currentVd.addEventListener('ended', function () {
+                gb.mainSwiper.slideNext();
+              });
+            }
           }, 100);
         });
 
         var currentVd = document.querySelector('.swiper-slide-active video'),
           animate = $('.swiper-slide-active .animate').get();
 
-        currentVd.play();
+        if (!gb.isMob) currentVd.play();
+
         setTimeout(function () {
           animate.forEach(function (elem) {
             $(elem).addClass('animation--start');
