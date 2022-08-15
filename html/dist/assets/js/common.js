@@ -441,7 +441,7 @@ function commonFunction() {
         $('.calendar').datepicker({
           showOn: 'both',
           buttonImageOnly: true,
-          buttonImage: '/assets/images/icon-calendar.png',
+          buttonImage: '../assets/images/icon-calendar.png',
           dateFormat: 'yy-mm-dd',
         });
       },
