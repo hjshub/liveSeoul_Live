@@ -13,6 +13,7 @@ var _gb = function () {
     this.body = $('body');
     this.main = $('main');
     this.header = $('#gnb');
+    this.allMenu = $('#allMenu');
     this.footer = $('footer');
     this.tabMenu = $('.tab-menu');
     this.listTabMenu = $('.list-tab-menu');
@@ -62,12 +63,34 @@ function commonFunction() {
         }
 
         $('.button-open-allMenu').on('click', function () {
+          gb.allMenu.stop().animate(
+            {
+              right: 0,
+            },
+            300
+          );
+        });
+
+        $('.button-close-allMenu').on('click', function () {
+          gb.allMenu.stop().animate(
+            {
+              right: '-100%',
+            },
+            300
+          );
+        });
+
+        gb.allMenu.find('.depth1 > li > button').on('click', function () {
           var trg = $(this);
 
           if (trg.hasClass('on')) {
             trg.removeClass('on');
+            trg.next('.box').slideUp(300);
           } else {
+            gb.allMenu.find('.depth1 > li > button').removeClass('on');
+            gb.allMenu.find('.depth1 > li > button').next('.box').slideUp(300);
             trg.addClass('on');
+            trg.next('.box').slideDown(300);
           }
         });
       },
@@ -165,6 +188,8 @@ function commonFunction() {
                 gb.mainSwiper.slideNext();
               });
             }
+
+            $('.button-swiperController').removeClass('play').addClass('pause').find('em').text('일시정지');
           }, 100);
         });
 
@@ -185,6 +210,23 @@ function commonFunction() {
           *********************************************/
         currentVd.addEventListener('ended', function () {
           gb.mainSwiper.slideNext();
+        });
+
+        $('.main-swiper')
+          .find('.swiper-pagination')
+          .append('<span class="button-swiperController pause"><em class="hidden-txt">일시정지</em></span>');
+
+        $(document).on('click', '.button-swiperController', function () {
+          var trg = $(this),
+            currentVd = document.querySelector('.swiper-slide-active video');
+
+          if (trg.hasClass('play')) {
+            trg.removeClass('play').addClass('pause').find('em').text('일시정지');
+            if (!gb.isMob) currentVd.play();
+          } else {
+            trg.removeClass('pause').addClass('play').find('em').text('재생');
+            if (!gb.isMob) currentVd.pause();
+          }
         });
       },
       VdSwiper = function () {
@@ -275,6 +317,10 @@ function commonFunction() {
       },
       FilterSwiper = function () {
         // 서울오리지널 필터 스와이퍼
+        if (typeof gb.filterSwiper !== 'undefined') {
+          gb.filterSwiper.destroy();
+        }
+
         gb.filterSwiperOption = {
           // Optional parameters
           loop: false,
@@ -301,9 +347,11 @@ function commonFunction() {
             gb.liveOnAir.slideUp(300, function () {
               gb._liveOnSwiper.destroy();
             });
+            trg.find('em').html('LIVE ON Air<br/> 편성표 보기');
           } else {
             trg.addClass('on');
             gb.liveOnAir.slideDown(300, LiveOnSwiper);
+            trg.find('em').html('LIVE ON Air<br/> 편성표 닫기');
           }
         });
 
@@ -393,7 +441,7 @@ function commonFunction() {
         $('.calendar').datepicker({
           showOn: 'both',
           buttonImageOnly: true,
-          buttonImage: 'assets/images/icon-calendar.png',
+          buttonImage: '/assets/images/icon-calendar.png',
           dateFormat: 'yy-mm-dd',
         });
       },
@@ -472,6 +520,84 @@ function commonFunction() {
       goScrollTop = function () {
         gb.html.stop().animate({ scrollTop: 0 }, 400);
       },
+      menuAll = function (t, el, status) {
+        if ($(t).hasClass('active')) {
+          $(t).removeClass('active');
+          $(el).stop().fadeOut(300);
+        } else {
+          $(t).addClass('active');
+          $(el).stop().fadeIn(300);
+        }
+      },
+      setLnb = function () {
+        $('.button-open-sideMenu').on('click', function () {
+          var trg = $(this);
+          var pageTop = $('.page-body').offset().top;
+
+          $('.mob-sideMenu').css('top', pageTop + 'px');
+
+          if (trg.hasClass('active')) {
+            $('.mob-sideMenu')
+              .stop()
+              .animate(
+                {
+                  left: '-80%',
+                },
+                {
+                  duration: 300,
+                  complete: function () {
+                    trg.removeClass('active');
+                  },
+                }
+              );
+            gb.body.css({
+              height: 'auto',
+              overflow: 'visible',
+            });
+            $('.dimmed.bk').remove();
+          } else {
+            $('.mob-sideMenu')
+              .stop()
+              .animate(
+                {
+                  left: 0,
+                },
+                {
+                  duration: 300,
+                  complete: function () {
+                    trg.addClass('active');
+                  },
+                }
+              );
+            gb.body.css({
+              height: '100vh',
+              overflow: 'hidden',
+            });
+            $('.page-body').append('<div class="dimmed bk"></div>');
+          }
+
+          $(document).on('click', '.dimmed.bk', function () {
+            $('.mob-sideMenu')
+              .stop()
+              .animate(
+                {
+                  left: '-80%',
+                },
+                {
+                  duration: 300,
+                  complete: function () {
+                    trg.removeClass('active');
+                  },
+                }
+              );
+            gb.body.css({
+              height: 'auto',
+              overflow: 'visible',
+            });
+            $(this).remove();
+          });
+        });
+      },
       blockContextMenu = function () {
         // 우 클릭, 드래그 방지
         $(document).on('contextmenu selectstart dragstart', function () {
@@ -480,6 +606,7 @@ function commonFunction() {
       },
       init = function () {
         setGnb();
+        setLnb();
         tabMenu();
         listTabMenu();
         allCheck();
@@ -491,7 +618,6 @@ function commonFunction() {
 
     return {
       init: init,
-      setGnb: setGnb,
       MainSwiper: MainSwiper,
       VdSwiper: VdSwiper,
       LiveOnSwiper: LiveOnSwiper,
@@ -500,6 +626,7 @@ function commonFunction() {
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
       fileUpload: fileUpload,
+      menuAll: menuAll,
       copyUrl: copyUrl,
     };
   };
@@ -512,6 +639,7 @@ function commonFunction() {
     if (gb.vdSwiper.length) commonFunction().VdSwiper();
     if (gb.liveOnAir.length) commonFunction().LiveOnSwiper();
     if (gb.tabSwiper.length) commonFunction().TabSwiper();
+    if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
   });
 
   window.addEventListener('scroll', function () {
