@@ -93,6 +93,26 @@ function commonFunction() {
             trg.next('.box').slideDown(300);
           }
         });
+
+        $('.gnb > li > a').on({
+          'mouseenter focusin': function () {
+            var trg = $(this);
+
+            $('.gnb > li > a').removeClass('on');
+            $('.gnb > li > a').next('div').stop().slideUp(300);
+            trg.closest('li').addClass('on');
+            trg.next('div').stop().slideDown(300);
+          },
+        });
+
+        $('.gnb > li').on({
+          mouseleave: function () {
+            var trg = $(this);
+
+            trg.removeClass('on');
+            trg.find('> div').stop().slideUp(300);
+          },
+        });
       },
       modal = function () {
         // 공통 모달
@@ -771,4 +791,20 @@ setTimeout(function () {
   animate.forEach(function (elem) {
     $(elem).addClass('animation--start');
   }, 1000);
+});
+
+$('.cr-aboutus-top .img-thumb').on('click', function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  var posTop = $('.date-search-area').next('h3').offset().top;
+
+  $('html')
+    .stop()
+    .animate(
+      {
+        scrollTop: posTop - $('header').height() + 'px',
+      },
+      300
+    );
 });
