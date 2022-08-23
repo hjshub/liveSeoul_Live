@@ -197,17 +197,17 @@ function commonFunction() {
               $(elem).addClass('animation--start');
             });
 
-            if (!gb.isMob) {
-              notCurrentvd.forEach(function (elem) {
-                elem.load();
-              });
+            //if (!gb.isMob) {
+            notCurrentvd.forEach(function (elem) {
+              elem.load();
+            });
 
-              currentVd.play();
+            currentVd.play();
 
-              currentVd.addEventListener('ended', function () {
-                gb.mainSwiper.slideNext();
-              });
-            }
+            currentVd.addEventListener('ended', function () {
+              gb.mainSwiper.slideNext();
+            });
+            //}
 
             $('.button-swiperController').removeClass('play').addClass('pause').find('em').text('일시정지');
           }, 100);
@@ -216,7 +216,8 @@ function commonFunction() {
         var currentVd = document.querySelector('.swiper-slide-active video'),
           animate = $('.swiper-slide-active .animate').get();
 
-        if (!gb.isMob) currentVd.play();
+        //if (!gb.isMob)
+        currentVd.play();
 
         setTimeout(function () {
           animate.forEach(function (elem) {
@@ -242,10 +243,12 @@ function commonFunction() {
 
           if (trg.hasClass('play')) {
             trg.removeClass('play').addClass('pause').find('em').text('일시정지');
-            if (!gb.isMob) currentVd.play();
+            //if (!gb.isMob)
+            currentVd.play();
           } else {
             trg.removeClass('pause').addClass('play').find('em').text('재생');
-            if (!gb.isMob) currentVd.pause();
+            //if (!gb.isMob)
+            currentVd.pause();
           }
         });
       },
@@ -366,12 +369,12 @@ function commonFunction() {
             trg.removeClass('on');
             gb.liveOnAir.slideUp(300, function () {
               gb._liveOnSwiper.destroy();
+              trg.find('em').html(trg.find('em').html().replace('닫기', '보기'));
             });
-            trg.find('em').html('LIVE ON Air<br/> 편성표 보기');
           } else {
             trg.addClass('on');
             gb.liveOnAir.slideDown(300, LiveOnSwiper);
-            trg.find('em').html('LIVE ON Air<br/> 편성표 닫기');
+            trg.find('em').html(trg.find('em').html().replace('보기', '닫기'));
           }
         });
 
@@ -791,20 +794,4 @@ setTimeout(function () {
   animate.forEach(function (elem) {
     $(elem).addClass('animation--start');
   }, 1000);
-});
-
-$('.cr-aboutus-top .img-thumb').on('click', function (e) {
-  e.preventDefault();
-  e.stopPropagation();
-
-  var posTop = $('.date-search-area').next('h3').offset().top;
-
-  $('html')
-    .stop()
-    .animate(
-      {
-        scrollTop: posTop - $('header').height() + 'px',
-      },
-      300
-    );
 });
