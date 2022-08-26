@@ -184,33 +184,33 @@ function commonFunction() {
         });
 
         gb.mainSwiper.on('slideChangeTransitionEnd', function (swiper) {
-          setTimeout(function () {
-            var currentVd = document.querySelector('.swiper-slide-active video'),
-              notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
-              animate = $('.swiper-slide-active .animate').get(),
-              animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
+          //setTimeout(function () {
+          var currentVd = document.querySelector('.swiper-slide-active video'),
+            notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
+            animate = $('.swiper-slide-active .animate').get(),
+            animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
 
-            animate_.forEach(function (elem) {
-              $(elem).removeClass('animation--start');
-            });
-            animate.forEach(function (elem) {
-              $(elem).addClass('animation--start');
-            });
+          animate_.forEach(function (elem) {
+            $(elem).removeClass('animation--start');
+          });
+          animate.forEach(function (elem) {
+            $(elem).addClass('animation--start');
+          });
 
-            //if (!gb.isMob) {
-            notCurrentvd.forEach(function (elem) {
-              elem.load();
-            });
+          //if (!gb.isMob) {
+          notCurrentvd.forEach(function (elem) {
+            elem.load();
+          });
 
-            currentVd.play();
+          currentVd.play();
 
-            currentVd.addEventListener('ended', function () {
-              gb.mainSwiper.slideNext();
-            });
-            //}
+          currentVd.addEventListener('ended', function () {
+            gb.mainSwiper.slideNext();
+          });
+          //}
 
-            $('.button-swiperController').removeClass('play').addClass('pause').find('em').text('일시정지');
-          }, 100);
+          $('.button-swiperController').removeClass('play').addClass('pause').find('em').text('일시정지');
+          //}, 100);
         });
 
         var currentVd = document.querySelector('.swiper-slide-active video'),
