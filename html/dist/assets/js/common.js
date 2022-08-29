@@ -197,17 +197,16 @@ function commonFunction() {
             $(elem).addClass('animation--start');
           });
 
-          //if (!gb.isMob) {
-          notCurrentvd.forEach(function (elem) {
-            elem.load();
-          });
-
           currentVd.play();
+
+          notCurrentvd.forEach(function (elem) {
+            elem.pause();
+            $(elem).prop('currentTime', 0);
+          });
 
           currentVd.addEventListener('ended', function () {
             gb.mainSwiper.slideNext();
           });
-          //}
 
           $('.button-swiperController').removeClass('play').addClass('pause').find('em').text('일시정지');
           //}, 100);
@@ -216,7 +215,6 @@ function commonFunction() {
         var currentVd = document.querySelector('.swiper-slide-active video'),
           animate = $('.swiper-slide-active .animate').get();
 
-        //if (!gb.isMob)
         currentVd.play();
 
         setTimeout(function () {
@@ -243,11 +241,9 @@ function commonFunction() {
 
           if (trg.hasClass('play')) {
             trg.removeClass('play').addClass('pause').find('em').text('일시정지');
-            //if (!gb.isMob)
             currentVd.play();
           } else {
             trg.removeClass('pause').addClass('play').find('em').text('재생');
-            //if (!gb.isMob)
             currentVd.pause();
           }
         });

@@ -1,0 +1,247 @@
+@charset 'utf-8';
+
+/*-----------------------------------------------------------------*/
+/* guide
+/*-----------------------------------------------------------------*/
+
+h1 {
+  background-color: #3d87d4;
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+#wrapper {
+  padding-top: 0 !important;
+  padding-bottom: 8em;
+}
+
+.guide_box {
+  padding: 0 2.5em;
+  margin-top: 8em;
+}
+
+.guide_box h2 {
+  position: relative;
+  font-size: 2.5rem;
+  line-height: 54px;
+  text-transform: uppercase;
+}
+
+.guide_box h2:before {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -1px;
+  width: 40px;
+  height: 2px;
+  background-color: #000;
+  content: '';
+}
+
+.guide_box > div {
+  border: 1px solid #000;
+  padding: 3em;
+}
+
+.guide_box > div .title {
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  line-height: 40px;
+  width: 100%;
+  font-size: 2rem;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.guide_box > div > ul + ul {
+  margin-top: 40px;
+}
+
+.guide_box > div > ul > li {
+  width: 48%;
+  float: left;
+}
+
+.guide_box > div > ul.wide > li {
+  width: 100%;
+}
+.guide_box > div > ul.wide > li + li {
+  margin-top: 50px;
+}
+.guide_box > div > ul.wide > li dt {
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.guide_box > div > ul.wide > li dt,
+.guide_box > div > ul.wide > li dd {
+  font-size: 2.2rem;
+  width: 50%;
+  vertical-align: top;
+  line-height: 1;
+}
+.guide_box > div > ul > li {
+  float: left;
+}
+.guide_box > div > ul > li:nth-of-type(even) {
+  float: right;
+}
+.guide_box > div > ul > li:nth-of-type(2n + 1) {
+  clear: both;
+}
+.guide_box > div > ul > li:nth-of-type(2) ~ li {
+  margin-top: 50px;
+}
+
+.guide_box > div > ul > li dl {
+  font-size: 0;
+}
+
+.guide_box > div > ul > li dl dd,
+.guide_box > div > ul > li dl dt {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.guide_box > div > ul > li dl dt {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 40px;
+}
+
+.guide_box > div > ul > li dl dd .list li {
+  display: inline-block;
+  margin: 6px;
+}
+
+.guide_box > div > ul > li dl.col-02 dd,
+.guide_box > div > ul > li dl.col-03 dd {
+  width: 50%;
+  padding-left: 30px;
+  vertical-align: top;
+  border-left: 1px solid #000;
+}
+.guide_box > div > ul > li dl.col-03 dd {
+  width: 33%;
+}
+
+.guide_box > div > ul > li dl.col-03 dd:first-child {
+  width: 34%;
+}
+
+.guide_box#guide_box01 .r {
+  position: relative;
+  padding: 90px;
+  text-align: center;
+  font-size: 1.286rem;
+}
+
+.guide_box#guide_box01 .r * {
+  vertical-align: top;
+}
+
+.guide_box#guide_box01 .r.lt01 {
+  background-color: #e5e5e5;
+}
+
+.guide_box#guide_box01 .r.lt02 {
+  background-color: #c1c1c1;
+}
+
+.guide_box#guide_box01 .r.lt03 {
+  background-color: #a5a5a5;
+}
+
+.guide_box#guide_box01 .r.lt04 {
+  background-color: #333;
+  color: #fff;
+}
+
+.guide_box#guide_box01 .caption {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: #fff;
+  border-radius: 3px;
+  padding: 3px 7px;
+  background-color: #000;
+  font-size: 1.143rem;
+}
+
+.paging {
+  font-size: 0;
+  margin-top: 0 !important;
+}
+
+.paging + .btn-wrap {
+  margin-top: 0;
+}
+
+button[class*='btn-']:not(.btn-has-icon, .btn-prev, .btn-next) {
+  margin: 10px !important;
+}
+
+.ft-Thin {
+  font-weight: 100;
+}
+
+.ft-Light {
+  font-weight: 300;
+}
+
+.ft-DemiLight {
+  font-weight: 400;
+}
+
+.ft-Regular {
+  font-weight: 500;
+}
+
+.ft-Medium {
+  font-weight: 600;
+}
+
+.ft-Bold {
+  font-weight: 700;
+}
+
+.ft-Black {
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 1280px) {
+  .guide_box {
+    margin-top: 5em;
+  }
+  .guide_box > div > ul > li {
+    width: 100%;
+  }
+  .guide_box > div > ul > li + li {
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .guide_box {
+    padding: 0 2em;
+    margin-top: 3em;
+  }
+  .guide_box > div {
+    padding: 2em;
+  }
+  .guide_box > div > ul > li dl.col-02 dd,
+  .guide_box > div > ul > li dl.col-03 dd {
+    padding-left: 15px;
+  }
+}

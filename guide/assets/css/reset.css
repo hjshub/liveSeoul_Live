@@ -1,0 +1,351 @@
+@charset 'utf-8';
+/*-----------------------------------------------------------------*/
+/* Reset
+/*-----------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+input,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+textarea,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline-width: 0;
+  color: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+input,
+textarea,
+button,
+select {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  outline-width: 0 !important;
+  outline-color: transparent;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: normal;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+li img {
+  vertical-align: top;
+}
+
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+input:disabled {
+  background-color: #ededed !important;
+}
+input[type='text'][readonly] {
+  color: #ccc !important;
+}
+
+input[type='radio'],
+input[type='checkbox'],
+input[type='date'],
+select {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type='date'],
+input[type='password'],
+input[type='number'],
+textarea {
+  border-radius: 0 !important;
+}
+
+input[type='date'] {
+  vertical-align: middle;
+}
+
+input[type='date']::-webkit-datetime-edit-month-field {
+  color: #888;
+}
+
+input[type='date']::-webkit-datetime-edit-day-field {
+  color: #888;
+}
+
+input[type='date']::-webkit-datetime-edit-year-field {
+  color: #888;
+}
+
+input[type='date']::-webkit-clear-button {
+  display: none;
+}
+
+input[type='date']::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  display: inline-block;
+  opacity: 0;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin-right: 3%;
+  background: transeparent;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  vertical-align: top;
+  width: 100%;
+}
+
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+input[type='text'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  padding: 0 10px;
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  overflow: visible;
+  padding: 0;
+  border: none;
+  background: 0;
+}
+
+button:active:enabled {
+  transform: scale(0.97);
+  -webkit-transform: scale(0.97);
+  -moz-transform: scale(0.97);
+  -ms-transform: scale(0.97);
+}
+
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected,
+textarea:-internal-autofill-previewed,
+textarea:-internal-autofill-selected,
+select:-internal-autofill-previewed,
+select:-internal-autofill-selected {
+  background-color: rgba(225, 225, 225, 0) !important;
+}
+
+select::-ms-expand {
+  /*ie-10 select arrow hide*/
+  display: none;
+}
+
+a,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+audio,
+button,
+canvas,
+input,
+label,
+iframe,
+img,
+select,
+svg,
+video {
+  vertical-align: middle;
+}
+
+legend,
+caption {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: none;
+  padding: 0;
+  margin-left: -1px;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px dashed #ccc;
+}
+
+/* Placeholder */
+::-webkit-input-placeholder {
+  color: #888 !important;
+}
+:-ms-input-placeholder {
+  color: #888 !important;
+}
+::-moz-placeholder {
+  color: #888 !important;
+}
+:-moz-placeholder {
+  color: #888 !important;
+}
+::placeholder {
+  color: #888 !important;
+}
+.placeholderTxt {
+  color: #888 !important;
+}
+
+/* Selection */
+::-moz-selection {
+  text-shadow: none;
+  background: #ddd;
+}
+::selection {
+  text-shadow: none;
+  background: #ddd;
+}

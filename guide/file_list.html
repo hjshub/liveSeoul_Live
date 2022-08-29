@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="Author" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>라이브서울 | 파일리스트</title>
+
+    <script defer src="assets/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="assets/css/file_list.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <section class="front">
+          <h2>
+            라이브서울<br />
+            사용자 작업리스트
+          </h2>
+          <div class="table-style">
+            <div class="progress">진척률 : <b></b></div>
+            <table>
+              <caption>
+                위플즈 (NO, 구분, 파일경로, 완료일정)
+              </caption>
+              <colgroup>
+                <col style="width: 5%" />
+                <col style="width: 20%" />
+                <col style="width: auto" />
+                <col style="width: 25%" />
+                <col style="width: 15%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">NO.</th>
+                  <th scope="col">구분</th>
+                  <th scope="col">페이지명</th>
+                  <th scope="col">파일경로</th>
+                  <th scope="col">작업상태</th>
+                </tr>
+              </thead>
+              <tfoot></tfoot>
+              <tbody>
+                <!-- main -->
+                <tr>
+                  <td class="count"></td>
+                  <td rowspan="2">메인</td>
+                  <td>메인</td>
+                  <td><a href="../html/dist/main.html" target="_blank">/html/dist/main.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+
+                <tr>
+                  <td class="count"></td>
+                  <td>메인 라이브</td>
+                  <td><a href="../html/dist/main_live.html" target="_blank">/html/dist/main_live.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+
+                <!-- 공통 -->
+                <tr>
+                  <td class="count"></td>
+                  <td rowspan="2">공통</td>
+                  <td>공통 목록</td>
+                  <td><a href="../html/dist/program/list.html" target="_blank">/html/dist/program/list.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+
+                <tr>
+                  <td class="count"></td>
+                  <td>공통 상세</td>
+                  <td><a href="../html/dist/program/view.html" target="_blank">/html/dist/program/view.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+
+                <!-- 주제별 영상 -->
+                <tr>
+                  <td class="count"></td>
+                  <td>주제별 영상</td>
+                  <td>주제별 영상 목록</td>
+                  <td></td>
+                  <td><em></em></td>
+                </tr>
+
+                <!-- 큐레이션 -->
+                <tr>
+                  <td class="count"></td>
+                  <td rowspan="3">큐레이션</td>
+                  <td>큐레이션 목록</td>
+                  <td></td>
+                  <td><em></em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>큐레이션 상세</td>
+                  <td></td>
+                  <td><em></em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>큐레이션 등록</td>
+                  <td></td>
+                  <td><em></em></td>
+                </tr>
+
+                <!-- 영상크리에이터 -->
+                <tr>
+                  <td class="count"></td>
+                  <td rowspan="17">영상크리에이터</td>
+                  <td>메인</td>
+                  <td><a href="../html/dist/creater/main.html" target="_blank">/html/dist/creater/main.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>aboutus</td>
+                  <td><a href="../html/dist/creater/aboutus.html" target="_blank">/html/dist/creater/aboutus.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>상세</td>
+                  <td><a href="../html/dist/creater/view.html" target="_blank">/html/dist/creater/view.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>공지사항 목록</td>
+                  <td><a href="../html/dist/creater/notice_list.html" target="_blank">/html/dist/creater/notice_list.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>공지사항 상세</td>
+                  <td><a href="../html/dist/creater/notice_view.html" target="_blank">/html/dist/creater/notice_view.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>자료실 목록</td>
+                  <td>
+                    <a href="../html/dist/creater/download_list.html" target="_blank">/html/dist/creater/download_list.html</a>
+                  </td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>자료실 상세</td>
+                  <td>
+                    <a href="../html/dist/creater/download_view.html" target="_blank">/html/dist/creater/download_view.html</a>
+                  </td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>자료실 등록</td>
+                  <td>
+                    <a href="../html/dist/creater/download_write.html" target="_blank">/html/dist/creater/download_write.html</a>
+                  </td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>협업신청 목록</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>협업신청 상세</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>협업신청 등록</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>자유게시판 목록</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>자유게시판 상세</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>협업공간 목록</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>협업공간 등록</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>협업공간 상세</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>협업공간 상세 (답변 완료)</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <!-- 마이페이지 -->
+                <tr>
+                  <td class="count"></td>
+                  <td rowspan="8">마이페이지</td>
+                  <td>내가 좋아요한 영상</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>내가 시청한 영상</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>영상 다운로드 내역</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>내가 찜한 큐레이션</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>내가 만든 큐레이션</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>나의 관심분야</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>관심분야 설정</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="count"></td>
+                  <td>나의 관심분야 선택</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+                <!-- 통합검색 -->
+                <tr>
+                  <td class="count"></td>
+                  <td>통합검색</td>
+                  <td>통합검색</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script>
+      window.addEventListener('load', function () {
+        var count = document.querySelectorAll('.count'),
+          finish = document.querySelectorAll('.finish'),
+          progress = (finish.length / count.length).toFixed(2) * 100;
+
+        count.forEach(function (elem, idx) {
+          elem.innerHTML = idx + 1;
+        });
+
+        $('.progress')
+          .find('b')
+          .append(progress + '%');
+      });
+    </script>
+  </body>
+</html>
