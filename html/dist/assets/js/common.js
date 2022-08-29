@@ -197,12 +197,12 @@ function commonFunction() {
             $(elem).addClass('animation--start');
           });
 
-          currentVd.play();
-
           notCurrentvd.forEach(function (elem) {
             elem.pause();
             $(elem).prop('currentTime', 0);
           });
+
+          currentVd.play();
 
           currentVd.addEventListener('ended', function () {
             gb.mainSwiper.slideNext();
@@ -213,7 +213,12 @@ function commonFunction() {
         });
 
         var currentVd = document.querySelector('.swiper-slide-active video'),
+          notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
           animate = $('.swiper-slide-active .animate').get();
+
+        notCurrentvd.forEach(function (elem) {
+          elem.load();
+        });
 
         currentVd.play();
 
