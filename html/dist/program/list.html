@@ -9,9 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>프로그램 리스트 | 라이브 서울</title>
+    <title>프로그램 목록 | 라이브 서울</title>
 
-    <script defer src="../assets/js/lib.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/gsap.min.js"></script>
+<script src="../assets/js/swiper.min.js"></script>
 <script defer src="../assets/js/common.js"></script>
 
 <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
@@ -49,8 +52,9 @@
 <!-- // 건너띄기 링크 -->
 
 
-    <!-- #gnb -->
-    <header class="active" id="gnb"><div class="h-wrap-01">
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb"><div class="h-wrap-01">
   <div class="inner clear">
     <div>
       <a href="https://www.seoul.go.kr/main/index.jsp" target="_blank" title="새 창 열기" class="symbol-seoul"
@@ -359,318 +363,406 @@
       </li>
     </ul>
     <div>
-      <a href="#" class="sign-in">로그인</a>
-      <span class="text-wrap search">
-        <input class="txt-ellipsis" type="text" title="검색어 입력" />
-        <button type="submit"><em class="hidden-txt">검색</em></button>
-      </span>
+      <!-- <a href="#" class="sign-in">로그인</a> -->
+      <a href="#" class="sign-out">로그아웃</a>
+      <div class="text-wrap search">
+        <form>
+          <fieldset>
+            <legend>검색</legend>
+            <input class="txt-ellipsis" type="text" title="검색어 입력" />
+            <button type="submit"><em class="hidden-txt">검색</em></button>
+          </fieldset>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 </header>
-    <!-- // #gnb -->
+      <!-- // #gnb -->
 
-    <!-- #contents -->
-    <div class="wrap program pd-none" id="contents">
-      <section class="list-view">
-        <header class="page-header">
-          <div class="inner">
-            <h2 class="hidden-txt">방영프로그램<strong>전지적서울시점</strong></h2>
+      <!-- #contents -->
+      <div class="wrap program pdb-none" id="contents">
+        <section class="list-view">
+          <header class="page-header">
+            <div class="inner">
+              <h2 class="hidden-txt">방영프로그램<strong>전지적서울시점</strong></h2>
 
-            <div class="mob-only">
-              <div class="location">
-                <span>
-                  <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em> </a>
-                </span>
-                <span><a href="">방영프로그램</a></span>
-                <span><a href="">전지적서울시점</a></span>
+              <div class="mob-only">
+                <div class="location">
+                  <span>
+                    <a href="">
+                      <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em>
+                    </a>
+                  </span>
+                  <span><a href="">방영프로그램</a></span>
+                  <span><a href="">전지적서울시점</a></span>
+                </div>
               </div>
-            </div>
 
-            <div class="mob-only">
-              <button type="button" class="button-open-sideMenu">
-                <em>최신영상</em>
-              </button>
-              <aside class="mob-sideMenu">
-                <div class="subCate">
-                  <ul>
-                    <li>
-                      <a href="#"><em>최신영상</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>방영프로그램</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>종영프로그램</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>서울온에어</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>자치구방송국</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>마을미디어</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>소통방송</em></a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="mypage">
-                  <ul>
-                    <li>
-                      <a href="#"><em>내가 좋아요한 영상</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>내가 시청한 영상</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>큐레이션</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>영상다운로드 내역</em></a>
-                    </li>
-                    <li>
-                      <a href="#"><em>나의 관심분야</em></a>
-                    </li>
-                  </ul>
-                </div>
-              </aside>
-              <div class="icon-wrap mob">
-                <button type="button" class="icon-share button-active-modal" data-modal-name="share">
-                  <em class="hidden-txt">공유하기</em>
+              <div class="mob-only clear">
+                <button type="button" class="button-open-sideMenu">
+                  <em>최신영상</em>
                 </button>
-                <div class="modal-wrap"></div>
+                <aside class="mob-sideMenu">
+                  <div class="subCate">
+                    <ul>
+                      <li>
+                        <a href="#"><em>최신영상</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>방영프로그램</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>종영프로그램</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>서울온에어</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>자치구방송국</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>마을미디어</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>소통방송</em></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mypage">
+                    <ul>
+                      <li>
+                        <a href="#"><em>내가 좋아요한 영상</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>내가 시청한 영상</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>큐레이션</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>영상다운로드 내역</em></a>
+                      </li>
+                      <li>
+                        <a href="#"><em>나의 관심분야</em></a>
+                      </li>
+                    </ul>
+                  </div>
+                </aside>
+                <div class="icon-wrap mob">
+                  <button type="button" class="icon-share button-active-modal" data-modal-name="share2">
+                    <em class="hidden-txt">공유하기</em>
+                  </button>
+                  <div class="modal-wrap">
+                    <!-- 공유하기 -->
+                    <div class="modal right ivory share is_animated animate__fade_In_Up" id="modal-share2">
+                      <header class="modal-header">
+                        <h5>SNS 공유하기</h5>
+                        <button type="button" class="button-close modal-off">
+                          <em class="hidden-txt">레이어 팝업 닫기</em>
+                        </button>
+                      </header>
+                      <div class="modal-body">
+                        <div class="modal-contents">
+                          <ul class="sns-list">
+                            <li>
+                              <a class="share-facebook" href="javascript:void(0);"
+                                ><em class="hidden-txt">페이스북 공유하기</em></a
+                              >
+                            </li>
+                            <li>
+                              <a class="share-twitter" href="javascript:void(0);"><em class="hidden-txt">트위터 공유하기</em></a>
+                            </li>
+                            <li>
+                              <a class="share-kakaotalk" href="javascript:void(0);"
+                                ><em class="hidden-txt">카카오톡 공유하기</em></a
+                              >
+                            </li>
+                            <li>
+                              <a class="share-N_blog" href="javascript:void(0);"
+                                ><em class="hidden-txt">네이버블로그 공유하기</em></a
+                              >
+                            </li>
+                            <li>
+                              <a class="share-URL" href="javascript:void(0);" onclick="commonFunction().copyUrl();"
+                                ><em class="hidden-txt">URL 공유하기</em></a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </header>
-        <div class="page-body clear inner">
-          <aside class="sideMenu">
-            <button type="button" class="button-open-pgAll" onclick="commonFunction().menuAll(this, '#pg-all');">
-              <em>전체프로그램</em>
-            </button>
-            <div class="subCate">
-              <ul>
-                <li>
-                  <a href="#"><em>최신영상</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>방영프로그램</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>종영프로그램</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>서울온에어</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>자치구방송국</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>마을미디어</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>소통방송</em></a>
-                </li>
-              </ul>
-            </div>
-            <div class="mypage">
-              <ul>
-                <li>
-                  <a href="#"><em>내가 좋아요한 영상</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>내가 시청한 영상</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>큐레이션</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>영상다운로드 내역</em></a>
-                </li>
-                <li>
-                  <a href="#"><em>나의 관심분야</em></a>
-                </li>
-              </ul>
-            </div>
-          </aside>
-          <div class="contents">
-            <div id="pg-all" class="transition-none" tabindex="0">
-              <button type="button" class="button-close" onclick="commonFunction().menuAll('.button-open-pgAll', '#pg-all');">
-                <em>닫기</em>
+          </header>
+          <div class="page-body clear inner">
+            <aside class="sideMenu">
+              <button type="button" class="button-open-pgAll" onclick="commonFunction().menuAll(this, '#pg-all');">
+                <em>전체프로그램</em>
               </button>
-              <h4>
-                <strong>서울오리지널 전체 프로그램</strong>
-              </h4>
-              <div>
-                <dl>
-                  <dt><strong>방영프로그램</strong></dt>
-                  <dd>
-                    <ul class="dot-list">
-                      <li><a href="#">걱정말아요 서울</a></li>
-                      <li><a href="#">해치</a></li>
-                      <li><a href="#">집콕360°VR</a></li>
-                      <li><a href="#">전지적 서울시점</a></li>
-                      <li><a href="#">알려ZOOM 서울</a></li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt><strong>종영프로그램</strong></dt>
-                  <dd>
-                    <ul class="dot-list">
-                      <li><a href="#">서울시 캐보구 시폈동</a></li>
-                      <li><a href="#">가봤냐고</a></li>
-                      <li><a href="#">서울한방</a></li>
-                      <li><a href="#">세대공감썰</a></li>
-                      <li><a href="#">백설기</a></li>
-                      <li><a href="#">해피파이브(#)</a></li>
-                      <li><a href="#">서울, 해봐야 안다</a></li>
-                      <li><a href="#">서울지식채널 서울닷</a></li>
-                      <li><a href="#">서울 핫-클립</a></li>
-                      <li><a href="#">서울컬러뷰</a></li>
-                      <li><a href="#">서울을 가지세요</a></li>
-                      <li><a href="#">서울이써울지마</a></li>
-                      <li><a href="#">서울실험실</a></li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt><strong>서울온에어</strong></dt>
-                  <dd>
-                    <ul class="dot-list">
-                      <li><a href="#">기자브리핑</a></li>
-                      <li><a href="#">특집행사</a></li>
-                      <li><a href="#">시의회감사</a></li>
-                      <li><a href="#">방송</a></li>
-                      <li><a href="#">교통/통행</a></li>
-                      <li><a href="#">면담/MOU</a></li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt><strong>자치구방송국</strong></dt>
-                  <dd>
-                    <ul class="dot-list">
-                      <li><a href="#">강동구청 인터넷방송</a></li>
-                      <li><a href="#">강북구정 인터넷방송국</a></li>
-                      <li><a href="#">관악 인터넷방송</a></li>
-                      <li><a href="#">광진구 인터넷방송국</a></li>
-                      <li><a href="#">금천구 인터넷 방송국</a></li>
-                      <li><a href="#">도봉구청 인터넷방송국</a></li>
-                      <li><a href="#">동작구 인터넷방송국</a></li>
-                      <li><a href="#">서초구청 인터넷방송국</a></li>
-                      <li><a href="#">성북 인터넷방송</a></li>
-                      <li><a href="#">양천구 인터넷방송국</a></li>
-                      <li><a href="#">탁트인 영등포 TV</a></li>
-                      <li><a href="#">용산구청 인터넷방송</a></li>
-                      <li><a href="#">EBN은평 인터넷방송국</a></li>
-                      <li><a href="#">종로구 인터넷방송</a></li>
-                      <li><a href="#">송파TV</a></li>
-                      <li><a href="#">동대문구청 인터넷방송</a></li>
-                      <li><a href="#">성동구 인터넷방송국</a></li>
-                      <li><a href="#">중랑구 인터넷방송국</a></li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt><strong>마음미디어</strong></dt>
-                  <dd>
-                    <ul class="dot-list">
-                      <li><a href="#">wabosyong TV</a></li>
-                      <li><a href="#">구로마을 TV</a></li>
-                      <li><a href="#">서울마을미디어지원센터</a></li>
-                      <li><a href="#">줌인네거리</a></li>
-                      <li><a href="#">라디오 금천</a></li>
-                      <li><a href="#">강서fm</a></li>
-                      <li><a href="#">지구별 여행자</a></li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt><strong>소통방송</strong></dt>
-                  <dd></dd>
-                </dl>
-              </div>
-            </div>
-            <div class="contents-header">
-              <div class="list-filter-swiper">
-                <ul class="swiper-wrapper">
-                  <li class="swiper-slide">
-                    <div class="chk-wrap-type02">
-                      <span>
-                        <input type="checkbox" checked="" name="chkAll" id="chk_all" />
-                        <label for="chk_all"><em>전체</em></label>
-                      </span>
-                    </div>
+              <div class="subCate">
+                <ul>
+                  <li>
+                    <a href="#"><em>최신영상</em></a>
                   </li>
-                  <li class="swiper-slide">
-                    <div class="chk-wrap-type02">
-                      <span>
-                        <input type="checkbox" name="chk_filter_01" id="chk_1" />
-                        <label for="chk_1"><em>백설기</em></label>
-                      </span>
-                    </div>
+                  <li>
+                    <a href="#"><em>방영프로그램</em></a>
                   </li>
-                  <li class="swiper-slide">
-                    <div class="chk-wrap-type02">
-                      <span>
-                        <input type="checkbox" name="chk_filter_02" id="chk_2" />
-                        <label for="chk_2"><em>해치TV</em></label>
-                      </span>
-                    </div>
+                  <li>
+                    <a href="#"><em>종영프로그램</em></a>
                   </li>
-                  <li class="swiper-slide">
-                    <div class="chk-wrap-type02">
-                      <span>
-                        <input type="checkbox" name="chk_filter_03" id="chk_3" />
-                        <label for="chk_3"><em>집콕360°VR</em></label>
-                      </span>
-                    </div>
+                  <li>
+                    <a href="#"><em>서울온에어</em></a>
                   </li>
-                  <li class="swiper-slide">
-                    <div class="chk-wrap-type02">
-                      <span>
-                        <input type="checkbox" name="chk_filter_04" id="chk_4" />
-                        <label for="chk_4"><em>세대공감썰</em></label>
-                      </span>
-                    </div>
+                  <li>
+                    <a href="#"><em>자치구방송국</em></a>
                   </li>
-                  <li class="swiper-slide">
-                    <div class="chk-wrap-type02">
-                      <span>
-                        <input type="checkbox" name="chk_filter_05" id="chk_5" />
-                        <label for="chk_5"><em>알려ZOOM 서울</em></label>
-                      </span>
-                    </div>
+                  <li>
+                    <a href="#"><em>마을미디어</em></a>
+                  </li>
+                  <li>
+                    <a href="#"><em>소통방송</em></a>
                   </li>
                 </ul>
               </div>
-              <div class="swiper-controller">
-                <button class="button-swiper-prev"><em class="hidden-txt">이전</em></button>
-                <button class="button-swiper-nxt"><em class="hidden-txt">다음</em></button>
+              <div class="mypage">
+                <ul>
+                  <li>
+                    <a href="#"><em>내가 좋아요한 영상</em></a>
+                  </li>
+                  <li>
+                    <a href="#"><em>내가 시청한 영상</em></a>
+                  </li>
+                  <li>
+                    <a href="#"><em>큐레이션</em></a>
+                  </li>
+                  <li>
+                    <a href="#"><em>영상다운로드 내역</em></a>
+                  </li>
+                  <li>
+                    <a href="#"><em>나의 관심분야</em></a>
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div class="contents-body">
-              <!-- 영상 목록 -->
-              <section>
-                <h3 class="heading-wrap-03">
-                  <strong>최신영상</strong>
+            </aside>
+            <div class="contents">
+              <div id="pg-all" class="transition-none" tabindex="0">
+                <button type="button" class="button-close" onclick="commonFunction().menuAll('.button-open-pgAll', '#pg-all');">
+                  <em>닫기</em>
+                </button>
+                <h4>
+                  <strong>서울오리지널 전체 프로그램</strong>
+                </h4>
+                <div>
+                  <dl>
+                    <dt><strong>방영프로그램</strong></dt>
+                    <dd>
+                      <ul class="dot-list">
+                        <li><a href="#">걱정말아요 서울</a></li>
+                        <li><a href="#">해치</a></li>
+                        <li><a href="#">집콕360°VR</a></li>
+                        <li><a href="#">전지적 서울시점</a></li>
+                        <li><a href="#">알려ZOOM 서울</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>종영프로그램</strong></dt>
+                    <dd>
+                      <ul class="dot-list">
+                        <li><a href="#">서울시 캐보구 시폈동</a></li>
+                        <li><a href="#">가봤냐고</a></li>
+                        <li><a href="#">서울한방</a></li>
+                        <li><a href="#">세대공감썰</a></li>
+                        <li><a href="#">백설기</a></li>
+                        <li><a href="#">해피파이브(#)</a></li>
+                        <li><a href="#">서울, 해봐야 안다</a></li>
+                        <li><a href="#">서울지식채널 서울닷</a></li>
+                        <li><a href="#">서울 핫-클립</a></li>
+                        <li><a href="#">서울컬러뷰</a></li>
+                        <li><a href="#">서울을 가지세요</a></li>
+                        <li><a href="#">서울이써울지마</a></li>
+                        <li><a href="#">서울실험실</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>서울온에어</strong></dt>
+                    <dd>
+                      <ul class="dot-list">
+                        <li><a href="#">기자브리핑</a></li>
+                        <li><a href="#">특집행사</a></li>
+                        <li><a href="#">시의회감사</a></li>
+                        <li><a href="#">방송</a></li>
+                        <li><a href="#">교통/통행</a></li>
+                        <li><a href="#">면담/MOU</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>자치구방송국</strong></dt>
+                    <dd>
+                      <ul class="dot-list">
+                        <li><a href="#">강동구청 인터넷방송</a></li>
+                        <li><a href="#">강북구정 인터넷방송국</a></li>
+                        <li><a href="#">관악 인터넷방송</a></li>
+                        <li><a href="#">광진구 인터넷방송국</a></li>
+                        <li><a href="#">금천구 인터넷 방송국</a></li>
+                        <li><a href="#">도봉구청 인터넷방송국</a></li>
+                        <li><a href="#">동작구 인터넷방송국</a></li>
+                        <li><a href="#">서초구청 인터넷방송국</a></li>
+                        <li><a href="#">성북 인터넷방송</a></li>
+                        <li><a href="#">양천구 인터넷방송국</a></li>
+                        <li><a href="#">탁트인 영등포 TV</a></li>
+                        <li><a href="#">용산구청 인터넷방송</a></li>
+                        <li><a href="#">EBN은평 인터넷방송국</a></li>
+                        <li><a href="#">종로구 인터넷방송</a></li>
+                        <li><a href="#">송파TV</a></li>
+                        <li><a href="#">동대문구청 인터넷방송</a></li>
+                        <li><a href="#">성동구 인터넷방송국</a></li>
+                        <li><a href="#">중랑구 인터넷방송국</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>마음미디어</strong></dt>
+                    <dd>
+                      <ul class="dot-list">
+                        <li><a href="#">wabosyong TV</a></li>
+                        <li><a href="#">구로마을 TV</a></li>
+                        <li><a href="#">서울마을미디어지원센터</a></li>
+                        <li><a href="#">줌인네거리</a></li>
+                        <li><a href="#">라디오 금천</a></li>
+                        <li><a href="#">강서fm</a></li>
+                        <li><a href="#">지구별 여행자</a></li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>소통방송</strong></dt>
+                    <dd></dd>
+                  </dl>
+                </div>
+              </div>
+              <div class="contents-header">
+                <div class="list-filter-swiper">
+                  <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <div class="chk-wrap-type02">
+                        <span>
+                          <input type="checkbox" checked="" name="chkAll" id="chk_all" />
+                          <label for="chk_all"><em>전체</em></label>
+                        </span>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="chk-wrap-type02">
+                        <span>
+                          <input type="checkbox" name="chk_filter_01" id="chk_1" />
+                          <label for="chk_1"><em>백설기</em></label>
+                        </span>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="chk-wrap-type02">
+                        <span>
+                          <input type="checkbox" name="chk_filter_02" id="chk_2" />
+                          <label for="chk_2"><em>해치TV</em></label>
+                        </span>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="chk-wrap-type02">
+                        <span>
+                          <input type="checkbox" name="chk_filter_03" id="chk_3" />
+                          <label for="chk_3"><em>집콕360°VR</em></label>
+                        </span>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="chk-wrap-type02">
+                        <span>
+                          <input type="checkbox" name="chk_filter_04" id="chk_4" />
+                          <label for="chk_4"><em>세대공감썰</em></label>
+                        </span>
+                      </div>
+                    </li>
+                    <li class="swiper-slide">
+                      <div class="chk-wrap-type02">
+                        <span>
+                          <input type="checkbox" name="chk_filter_05" id="chk_5" />
+                          <label for="chk_5"><em>알려ZOOM 서울</em></label>
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-controller">
+                  <button class="button-swiper-prev"><em class="hidden-txt">이전</em></button>
+                  <button class="button-swiper-nxt"><em class="hidden-txt">다음</em></button>
+                </div>
+              </div>
+              <div class="contents-body">
+                <!-- 영상 목록 -->
+                <section>
+                  <h3 class="heading-wrap-03">
+                    <strong>최신영상</strong>
+                    <span class="sort">
+                      <a href="javascript:;" class="on">최신순</a>
+                      <a href="javascript:;">인기순</a>
+                      <a href="javascript:;">가나다순</a>
+                    </span>
+                  </h3>
                   <div class="icon-wrap pc-only inline">
                     <button type="button" class="icon-share button-active-modal" data-modal-name="share">
                       <em class="hidden-txt">공유하기</em>
                     </button>
-                    <div class="modal-wrap"></div>
+                    <div class="modal-wrap">
+                      <!-- 공유하기 -->
+                      <div class="modal right ivory share is_animated animate__fade_In_Up" id="modal-share">
+                        <header class="modal-header">
+                          <h5>SNS 공유하기</h5>
+                          <button type="button" class="button-close modal-off">
+                            <em class="hidden-txt">레이어 팝업 닫기</em>
+                          </button>
+                        </header>
+                        <div class="modal-body">
+                          <div class="modal-contents">
+                            <ul class="sns-list">
+                              <li>
+                                <a class="share-facebook" href="javascript:void(0);"
+                                  ><em class="hidden-txt">페이스북 공유하기</em></a
+                                >
+                              </li>
+                              <li>
+                                <a class="share-twitter" href="javascript:void(0);"
+                                  ><em class="hidden-txt">트위터 공유하기</em></a
+                                >
+                              </li>
+                              <li>
+                                <a class="share-kakaotalk" href="javascript:void(0);"
+                                  ><em class="hidden-txt">카카오톡 공유하기</em></a
+                                >
+                              </li>
+                              <li>
+                                <a class="share-N_blog" href="javascript:void(0);"
+                                  ><em class="hidden-txt">네이버블로그 공유하기</em></a
+                                >
+                              </li>
+                              <li>
+                                <a class="share-URL" href="javascript:void(0);" onclick="commonFunction().copyUrl();"
+                                  ><em class="hidden-txt">URL 공유하기</em></a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="sort">
-                    <a href="javascript:;" class="on">최신순</a>
-                    <a href="javascript:;">인기순</a>
-                    <a href="javascript:;">가나다순</a>
-                  </div>
-                </h3>
-                <div class="vd-list program"><ul>
+                  <div class="vd-list program"><ul>
   <li>
     <article>
       <div class="img-thumb">
@@ -1036,37 +1128,37 @@
   </li>
 </ul>
 </div>
-                <div class="paging pc-only orange">
-                  <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-                  <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-                  <strong>1</strong>
-                  <a href="#">2</a>
-                  <a href="#">3</a>
-                  <a href="#">4</a>
-                  <a href="#">5</a>
-                  <a href="#">6</a>
-                  <a href="#">7</a>
-                  <a href="#">8</a>
-                  <a href="#">9</a>
-                  <a href="#">10</a>
-                  <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-                  <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-                </div>
-                <div class="btn-wrap align-c mob-only">
-                  <button type="button" class="btn-prev"><em>이전</em></button>
-                  <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-                  <button type="button" class="btn-next"><em>다음</em></button>
-                </div>
-              </section>
+                  <div class="paging pc-only orange">
+                    <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+                    <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+                    <strong>1</strong>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                    <a href="#">8</a>
+                    <a href="#">9</a>
+                    <a href="#">10</a>
+                    <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+                    <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+                  </div>
+                  <div class="btn-wrap align-c mob-only">
+                    <button type="button" class="btn-prev"><em>이전</em></button>
+                    <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+                    <button type="button" class="btn-next"><em>다음</em></button>
+                  </div>
+                </section>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-    <!-- // #contents -->
+        </section>
+      </div>
+      <!-- // #contents -->
 
-    <!-- #footer -->
-    <footer id="footer"><div class="inner">
+      <!-- #footer -->
+      <footer id="footer"><div class="inner">
   <dl>
     <dt><strong>내 손안에 서울</strong></dt>
     <dd>
@@ -1148,6 +1240,7 @@
   </button>
 </div>
 </footer>
-    <!-- // #footer -->
+      <!-- // #footer -->
+    </div>
   </body>
 </html>

@@ -11,7 +11,10 @@
 
     <title>서울영상크리에이터 자료실 등록 | 라이브 서울</title>
 
-    <script defer src="../assets/js/lib.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/gsap.min.js"></script>
+<script src="../assets/js/swiper.min.js"></script>
 <script defer src="../assets/js/common.js"></script>
 
 <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
@@ -49,8 +52,9 @@
 <!-- // 건너띄기 링크 -->
 
 
-    <!-- #gnb -->
-    <header class="active" id="gnb"><div class="h-wrap-01">
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb"><div class="h-wrap-01">
   <div class="inner clear">
     <div>
       <a href="https://www.seoul.go.kr/main/index.jsp" target="_blank" title="새 창 열기" class="symbol-seoul"
@@ -359,167 +363,168 @@
       </li>
     </ul>
     <div>
-      <a href="#" class="sign-in">로그인</a>
-      <span class="text-wrap search">
-        <input class="txt-ellipsis" type="text" title="검색어 입력" />
-        <button type="submit"><em class="hidden-txt">검색</em></button>
-      </span>
+      <!-- <a href="#" class="sign-in">로그인</a> -->
+      <a href="#" class="sign-out">로그아웃</a>
+      <div class="text-wrap search">
+        <form>
+          <fieldset>
+            <legend>검색</legend>
+            <input class="txt-ellipsis" type="text" title="검색어 입력" />
+            <button type="submit"><em class="hidden-txt">검색</em></button>
+          </fieldset>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 </header>
-    <!-- // #gnb -->
+      <!-- // #gnb -->
 
-    <!-- #contents -->
-    <div class="wrap creater board write" id="contents">
-      <section class="board_top">
-        <header class="page-header">
-          <div class="inner">
-            <div class="location">
-              <span
-                ><a href=""
-                  ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
-                ></span
-              >
-              <span><a href="">영상크리에이터</a></span>
-              <span><a href="">커뮤니티채널</a></span>
-              <span><a href="">자료실</a></span>
+      <!-- #contents -->
+      <div class="wrap creater board write" id="contents">
+        <section class="board_top">
+          <header class="page-header">
+            <div class="inner">
+              <div class="location">
+                <span
+                  ><a href=""
+                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
+                  ></span
+                >
+                <span><a href="">영상크리에이터</a></span>
+                <span><a href="">커뮤니티채널</a></span>
+                <span><a href="">자료실</a></span>
+              </div>
+
+              <h2 class="no_st">자료실 등록</h2>
             </div>
+          </header>
+        </section>
 
-            <h2 class="no_st">자료실 등록</h2>
-          </div>
-        </header>
-      </section>
-
-      <!-- 자료실 등록 -->
-      <section>
-        <div class="inner">
-          <div class="b-write">
-            <form>
-              <div class="tblStyle-write">
-                <dl class="w-title">
-                  <dt><label for="input-tit">큐레이션 제목</label></dt>
-                  <dd>
-                    <span class="text-wrap">
-                      <input placeholder="제목필수 입력" type="text" name="" id="input-tit" />
-                    </span>
-                    <p class="txt-bite">0 / 30자</p>
-                  </dd>
-                </dl>
-                <dl class="w-content">
-                  <dt><label for="txt-con">상세 내용</label></dt>
-                  <dd>
-                    <textarea placeholder="내용을 입력해주세요." name="" id="txt-con"></textarea>
-                    <p class="txt-bite">0 / 300자</p>
-                  </dd>
-                </dl>
-                <dl class="w-file">
-                  <dt><label>파일 첨부</label></dt>
-                  <dd>
-                    <div class="file-up-list">
-                      <ul>
-                        <li class="file-attach">
-                          <span class="text-wrap">
-                            <input type="text" name="" id="" class="fileName" disabled="" />
-                          </span>
-                          <span class="file-wrap">
-                            <label for="file_01"><em>파일선택</em></label>
-                            <input
-                              class="hidden-txt"
-                              type="file"
-                              id="file_01"
-                              value=""
-                              title="파일 첨부"
-                              onchange="commonFunction().fileUpload(this);"
-                            />
-                          </span>
-                        </li>
-                        <li class="file-attach">
-                          <span class="text-wrap">
-                            <input type="text" name="" id="" class="fileName" disabled="" />
-                          </span>
-                          <span class="file-wrap">
-                            <label for="file_02"><em>파일선택</em></label>
-                            <input
-                              class="hidden-txt"
-                              type="file"
-                              id="file_02"
-                              value=""
-                              title="파일 첨부"
-                              onchange="commonFunction().fileUpload(this);"
-                            />
-                          </span>
-                        </li>
-                        <li class="file-attach">
-                          <span class="text-wrap">
-                            <input type="text" name="" id="" class="fileName" disabled="" />
-                          </span>
-                          <span class="file-wrap">
-                            <label for="file_03"><em>파일선택</em></label>
-                            <input
-                              class="hidden-txt"
-                              type="file"
-                              id="file_03"
-                              value=""
-                              title="파일 첨부"
-                              onchange="commonFunction().fileUpload(this);"
-                            />
-                          </span>
-                        </li>
-                        <li class="file-attach">
-                          <span class="text-wrap">
-                            <input type="text" name="" id="" class="fileName" disabled="" />
-                          </span>
-                          <span class="file-wrap">
-                            <label for="file_04"><em>파일선택</em></label>
-                            <input
-                              class="hidden-txt"
-                              type="file"
-                              id="file_04"
-                              value=""
-                              title="파일 첨부"
-                              onchange="commonFunction().fileUpload(this);"
-                            />
-                          </span>
-                        </li>
-                        <li class="file-attach">
-                          <span class="text-wrap">
-                            <input type="text" name="" id="" class="fileName" disabled="" />
-                          </span>
-                          <span class="file-wrap">
-                            <label for="file_05"><em>파일선택</em></label>
-                            <input
-                              class="hidden-txt"
-                              type="file"
-                              id="file_05"
-                              value=""
-                              title="파일 첨부"
-                              onchange="commonFunction().fileUpload(this);"
-                            />
-                          </span>
-                        </li>
-                      </ul>
-                      <p class="info-txt">* pdf, ppt, doc, hwp, txt, zip 파일만 등록 가능하며 최대 5개까지 등록 가능 합니다.</p>
-                    </div>
-                  </dd>
-                </dl>
-              </div>
-              <div class="has-btn">
-                <div>
-                  <button class="btn-default md rounded darkGray" type="button"><em>취소</em></button>
-                  <button class="btn-default md rounded lightPurple" type="button"><em>저장</em></button>
-                  <button class="btn-default md rounded purple" type="submit"><em>등록</em></button>
+        <!-- 자료실 등록 -->
+        <section>
+          <div class="inner">
+            <div class="b-write">
+              <form>
+                <div class="tblStyle-write">
+                  <dl class="w-title">
+                    <dt><label for="input-tit">큐레이션 제목</label></dt>
+                    <dd>
+                      <span class="text-wrap">
+                        <input placeholder="제목필수 입력" type="text" id="input-tit" />
+                      </span>
+                      <p class="txt-bite">0 / 30자</p>
+                    </dd>
+                  </dl>
+                  <dl class="w-content">
+                    <dt><label for="txt-con">상세 내용</label></dt>
+                    <dd>
+                      <textarea placeholder="내용을 입력해주세요." id="txt-con"></textarea>
+                      <p class="txt-bite">0 / 300자</p>
+                    </dd>
+                  </dl>
+                  <dl class="w-file">
+                    <dt><label>파일 첨부</label></dt>
+                    <dd>
+                      <div class="file-up-list">
+                        <ul>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" disabled />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_01"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_01"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_02"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_02"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_03"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_03"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_04"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_04"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" disabled />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_05"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_05"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                        </ul>
+                        <p class="info-txt">* pdf, ppt, doc, hwp, txt, zip 파일만 등록 가능하며 최대 5개까지 등록 가능 합니다.</p>
+                      </div>
+                    </dd>
+                  </dl>
                 </div>
-              </div>
-            </form>
+                <div class="has-btn">
+                  <div>
+                    <button class="btn-default md rounded darkGray" type="button"><em>취소</em></button>
+                    <button class="btn-default md rounded lightPurple" type="button"><em>저장</em></button>
+                    <button class="btn-default md rounded purple" type="submit"><em>등록</em></button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-    <!-- // #contents -->
+        </section>
+      </div>
+      <!-- // #contents -->
 
-    <!-- #footer -->
-    <footer id="footer"><div class="inner">
+      <!-- #footer -->
+      <footer id="footer"><div class="inner">
   <dl>
     <dt><strong>내 손안에 서울</strong></dt>
     <dd>
@@ -601,6 +606,7 @@
   </button>
 </div>
 </footer>
-    <!-- // #footer -->
+      <!-- // #footer -->
+    </div>
   </body>
 </html>

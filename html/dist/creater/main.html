@@ -11,7 +11,10 @@
 
     <title>서울영상크리에이터 | 라이브 서울</title>
 
-    <script defer src="../assets/js/lib.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/gsap.min.js"></script>
+<script src="../assets/js/swiper.min.js"></script>
 <script defer src="../assets/js/common.js"></script>
 
 <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
@@ -49,8 +52,9 @@
 <!-- // 건너띄기 링크 -->
 
 
-    <!-- #gnb -->
-    <header class="active" id="gnb"><div class="h-wrap-01">
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb"><div class="h-wrap-01">
   <div class="inner clear">
     <div>
       <a href="https://www.seoul.go.kr/main/index.jsp" target="_blank" title="새 창 열기" class="symbol-seoul"
@@ -359,396 +363,402 @@
       </li>
     </ul>
     <div>
-      <a href="#" class="sign-in">로그인</a>
-      <span class="text-wrap search">
-        <input class="txt-ellipsis" type="text" title="검색어 입력" />
-        <button type="submit"><em class="hidden-txt">검색</em></button>
-      </span>
+      <!-- <a href="#" class="sign-in">로그인</a> -->
+      <a href="#" class="sign-out">로그아웃</a>
+      <div class="text-wrap search">
+        <form>
+          <fieldset>
+            <legend>검색</legend>
+            <input class="txt-ellipsis" type="text" title="검색어 입력" />
+            <button type="submit"><em class="hidden-txt">검색</em></button>
+          </fieldset>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 </header>
-    <!-- // #gnb -->
+      <!-- // #gnb -->
 
-    <!-- #contents -->
-    <div class="wrap creater main" id="contents">
-      <section class="cr-main-top">
-        <div class="cr-visual">
-          <div class="inner">
-            <!-- 최상단 동영상 스와이프 영역 -->
-            <div class="cr-vis-swiper">
+      <!-- #contents -->
+      <div class="wrap creater main" id="contents">
+        <section class="cr-main-top">
+          <div class="cr-visual">
+            <div class="inner">
+              <!-- 최상단 동영상 스와이프 영역 -->
+              <div class="cr-vis-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <article>
+                      <div id="cr_main_vd_01" class="cr_main_vd"></div>
+                      <div class="animate fadeInRight animate-delay-02">
+                        <span class="top5">인기영상 <strong>TOP5</strong></span>
+                        <h2>
+                          <span class="cr-name">주혁TV</span>
+                          <strong>
+                            서울여행영상!<br />
+                            미니어처가 된 SEOUL<br />
+                            (타임랩스 영상)
+                          </strong>
+                          <a href=""><b>영상 바로가기</b></a>
+                        </h2>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article>
+                      <div id="cr_main_vd_02" class="cr_main_vd"></div>
+                      <div class="animate fadeInRight animate-delay-02">
+                        <span class="top5">인기영상 <strong>TOP5</strong></span>
+                        <h2>
+                          <span class="cr-name">주혁TV</span>
+                          <strong>
+                            서울여행영상!<br />
+                            미니어처가 된 SEOUL<br />
+                            (타임랩스 영상)
+                          </strong>
+                          <a href=""><b>영상 바로가기</b></a>
+                        </h2>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article>
+                      <div id="cr_main_vd_03" class="cr_main_vd"></div>
+                      <div class="animate fadeInRight animate-delay-02">
+                        <span class="top5">인기영상 <strong>TOP5</strong></span>
+                        <h2>
+                          <span class="cr-name">주혁TV</span>
+                          <strong>
+                            서울여행영상!<br />
+                            미니어처가 된 SEOUL<br />
+                            (타임랩스 영상)
+                          </strong>
+                          <a href=""><b>영상 바로가기</b></a>
+                        </h2>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article>
+                      <div id="cr_main_vd_04" class="cr_main_vd"></div>
+                      <div class="animate fadeInRight animate-delay-02">
+                        <span class="top5">인기영상 <strong>TOP5</strong></span>
+                        <h2>
+                          <span class="cr-name">주혁TV</span>
+                          <strong>
+                            서울여행영상!<br />
+                            미니어처가 된 SEOUL<br />
+                            (타임랩스 영상)
+                          </strong>
+                          <a href=""><b>영상 바로가기</b></a>
+                        </h2>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="swiper-slide">
+                    <article>
+                      <div id="cr_main_vd_05" class="cr_main_vd"></div>
+                      <div class="animate fadeInRight animate-delay-02">
+                        <span class="top5">인기영상 <strong>TOP5</strong></span>
+                        <h2>
+                          <span class="cr-name">주혁TV</span>
+                          <strong>
+                            서울여행영상!<br />
+                            미니어처가 된 SEOUL<br />
+                            (타임랩스 영상)
+                          </strong>
+                          <a href=""><b>영상 바로가기</b></a>
+                        </h2>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="swiper-content">
+                  <div class="swiper-pagination"></div>
+                  <button class="swiper-playBtn play">멈춤</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cr-vis-con">
+            <div class="cr-profile-swiper">
+              <h3>서울영상크리에이터의 <br /><strong>모든 영상</strong>을 만나보세요!</h3>
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <article>
-                    <video controls><source type="video/mp4" src="../assets/images/video/sample-video01.mp4" /></video>
-                    <div class="animate fadeInRight animate-delay-02">
-                      <span class="top5">인기영상 <strong>TOP5</strong></span>
-                      <h2>
-                        <span class="cr-name">주혁TV</span>
-                        <strong>
-                          서울여행영상!<br />
-                          미니어처가 된 SEOUL<br />
-                          (타임랩스 영상)
-                        </strong>
-                        <a href=""><b>영상 바로가기</b></a>
-                      </h2>
-                    </div>
+                    <a href="../creater/aboutus.html">
+                      <img
+                        src="../assets/images/sample-creator-profile-main.png"
+                        alt="대금이누나"
+                        class="animate fadeInLeft animate-delay-02"
+                      />
+                    </a>
                   </article>
                 </div>
                 <div class="swiper-slide">
                   <article>
-                    <video controls><source type="video/mp4" src="../assets/images/video/sample-video02.mp4" /></video>
-                    <div class="animate fadeInRight animate-delay-02">
-                      <span class="top5">인기영상 <strong>TOP5</strong></span>
-                      <h2>
-                        <span class="cr-name">주혁TV</span>
-                        <strong>
-                          서울여행영상!<br />
-                          미니어처가 된 SEOUL<br />
-                          (타임랩스 영상)
-                        </strong>
-                        <a href=""><b>영상 바로가기</b></a>
-                      </h2>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article>
-                    <video controls><source type="video/mp4" src="../assets/images/video/sample-video01.mp4" /></video>
-                    <div class="animate fadeInRight animate-delay-02">
-                      <span class="top5">인기영상 <strong>TOP5</strong></span>
-                      <h2>
-                        <span class="cr-name">주혁TV</span>
-                        <strong>
-                          서울여행영상!<br />
-                          미니어처가 된 SEOUL<br />
-                          (타임랩스 영상)
-                        </strong>
-                        <a href=""><b>영상 바로가기</b></a>
-                      </h2>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article>
-                    <video controls><source type="video/mp4" src="../assets/images/video/sample-video02.mp4" /></video>
-                    <div class="animate fadeInRight animate-delay-02">
-                      <span class="top5">인기영상 <strong>TOP5</strong></span>
-                      <h2>
-                        <span class="cr-name">주혁TV</span>
-                        <strong>
-                          서울여행영상!<br />
-                          미니어처가 된 SEOUL<br />
-                          (타임랩스 영상)
-                        </strong>
-                        <a href=""><b>영상 바로가기</b></a>
-                      </h2>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article>
-                    <video controls><source type="video/mp4" src="../assets/images/video/sample-video01.mp4" /></video>
-                    <div class="animate fadeInRight animate-delay-02">
-                      <span class="top5">인기영상 <strong>TOP5</strong></span>
-                      <h2>
-                        <span class="cr-name">주혁TV</span>
-                        <strong>
-                          서울여행영상!<br />
-                          미니어처가 된 SEOUL<br />
-                          (타임랩스 영상)
-                        </strong>
-                        <a href=""><b>영상 바로가기</b></a>
-                      </h2>
-                    </div>
+                    <a href="../creater/aboutus.html">
+                      <img
+                        src="../assets/images/sample-creator-profile-main.png"
+                        alt="대금이누나"
+                        class="animate fadeInLeft animate-delay-02"
+                      />
+                    </a>
                   </article>
                 </div>
               </div>
-              <div class="swiper-content">
-                <div class="swiper-pagination"></div>
-                <button class="swiper-playBtn play">멈춤</button>
+              <div class="swiper-button">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               </div>
+            </div>
+            <div class="cr-community">
+              <div class="contents-header">
+                <h3>크리에이터 커뮤니티 채널</h3>
+                <p>크리에이터 전용공간으로 <strong>로그인 후</strong> 이용가능합니다.</p>
+              </div>
+              <ul>
+                <li><a href="">공지사항</a></li>
+                <li><a href="">자료실</a></li>
+                <li><a href="">협업신청</a></li>
+                <li><a href="">자유게시판</a></li>
+                <li><a href="">협업공간</a></li>
+              </ul>
             </div>
           </div>
-        </div>
-        <div class="cr-vis-con">
-          <div class="cr-profile-swiper">
-            <h3>서울영상크리에이터의 <br /><strong>모든 영상</strong>을 만나보세요!</h3>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <article>
-                  <a href="../creater/aboutus.html">
-                    <img
-                      src="../assets/images/sample-creator-profile-main.png"
-                      alt="대금이누나"
-                      class="animate fadeInLeft animate-delay-02"
-                    />
-                  </a>
-                </article>
-              </div>
-              <div class="swiper-slide">
-                <article>
-                  <a href="../creater/aboutus.html">
-                    <img
-                      src="../assets/images/sample-creator-profile-main.png"
-                      alt="대금이누나"
-                      class="animate fadeInLeft animate-delay-02"
-                    />
-                  </a>
-                </article>
-              </div>
-            </div>
-            <div class="swiper-button">
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-            </div>
-          </div>
-          <div class="cr-community">
-            <div class="contents-header">
-              <h3>크리에이터 커뮤니티 채널</h3>
-              <p>크리에이터 전용공간으로 <strong>로그인 후</strong> 이용가능합니다.</p>
-            </div>
-            <ul>
-              <li><a href="">공지사항</a></li>
-              <li><a href="">자료실</a></li>
-              <li><a href="">협업신청</a></li>
-              <li><a href="">자유게시판</a></li>
-              <li><a href="">협업공간</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- 최신영상 -->
-      <section>
-        <div class="inner">
-          <h3 class="heading-wrap-03">
-            <strong><a href="">최신영상</a></strong>
-          </h3>
-          <div class="box-style-list">
-            <ul>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-01.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-02.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-03.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-04.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-05.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-06.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-01.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-02.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-03.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-04.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-05.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-              <li>
-                <article>
-                  <div class="img-thumb">
-                    <a href="../creater/view.html"
-                      ><img src="../assets/images/thumbnail/sub-sample-thumb-02-06.jpg" alt="영상 썸네일"
-                    /></a>
-                  </div>
-                  <div class="info">
-                    <dl>
-                      <dt><a href="">디딤돌</a></dt>
-                      <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                    </dl>
-                  </div>
-                  <div class="date">2021.12.21</div>
-                </article>
-              </li>
-            </ul>
+        <!-- 최신영상 -->
+        <section>
+          <div class="inner">
+            <h3 class="heading-wrap-03">
+              <strong><a href="">최신영상</a></strong>
+            </h3>
+            <div class="box-style-list">
+              <ul>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-01.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-02.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-03.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-04.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-05.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-06.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-01.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-02.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-03.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-04.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-05.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <div class="img-thumb">
+                      <a href="../creater/view.html"
+                        ><img src="../assets/images/thumbnail/sub-sample-thumb-02-06.jpg" alt="영상 썸네일"
+                      /></a>
+                    </div>
+                    <div class="info">
+                      <dl>
+                        <dt><a href="">디딤돌</a></dt>
+                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
+                      </dl>
+                    </div>
+                    <div class="date">2021.12.21</div>
+                  </article>
+                </li>
+              </ul>
+            </div>
+            <div class="paging pc-only purple">
+              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+              <strong>1</strong>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">7</a>
+              <a href="#">8</a>
+              <a href="#">9</a>
+              <a href="#">10</a>
+              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+            </div>
+            <div class="btn-wrap align-c mob-only">
+              <button type="button" class="btn-prev"><em>이전</em></button>
+              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+              <button type="button" class="btn-next"><em>다음</em></button>
+            </div>
           </div>
-          <div class="paging pc-only purple">
-            <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-            <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-            <strong>1</strong>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">7</a>
-            <a href="#">8</a>
-            <a href="#">9</a>
-            <a href="#">10</a>
-            <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-            <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-          </div>
-          <div class="btn-wrap align-c mob-only">
-            <button type="button" class="btn-prev"><em>이전</em></button>
-            <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-            <button type="button" class="btn-next"><em>다음</em></button>
-          </div>
-        </div>
-      </section>
-    </div>
-    <!-- // #contents -->
+        </section>
+      </div>
+      <!-- // #contents -->
 
-    <!-- #footer -->
-    <footer id="footer"><div class="inner">
+      <!-- #footer -->
+      <footer id="footer"><div class="inner">
   <dl>
     <dt><strong>내 손안에 서울</strong></dt>
     <dd>
@@ -830,6 +840,124 @@
   </button>
 </div>
 </footer>
-    <!-- // #footer -->
+      <!-- // #footer -->
+    </div>
+
+    <script src="../tgplayer/conponentRoot.js"></script>
+    <script src="../tgplayer/player_init.js"></script>
+
+    <script>
+      //Object
+      var multiVideoObj = new Object();
+      multiVideoObj.setVideoSrc = new Array();
+      multiVideoObj.sizeList = new Array();
+      multiVideoObj.videoObj = new Object();
+
+      //모바일 확인
+      var isMob = window.innerWidth <= 768 ? true : false;
+
+      if (!isMob) {
+        //웹 브라우저 화질 default 1280x546
+        qualitySize = 1;
+      } else {
+        //모바일 화질 default    484x206
+        qualitySize = 2;
+      }
+
+      window.addEventListener('resize', function () {
+        isMob = window.innerWidth <= 768 ? true : false;
+        if (!isMob) {
+          //웹 브라우저 화질 default 1280x546
+          qualitySize = 1;
+        } else {
+          //모바일 화질 default    484x206
+          qualitySize = 2;
+        }
+      });
+
+      // video src 설정
+      // MP4 파일 테스트용
+      // creator 영상 리스트
+      multiVideoObj.setVideoSrc1 = new Array();
+      multiVideoObj.sizeList1 = new Array();
+      multiVideoObj.videoObj1 = new Object();
+      multiVideoObj.videoObj1.size = '1080';
+      multiVideoObj.videoObj1.src = '../assets/images/video/sample-video01.mp4';
+      multiVideoObj.videoObj1.type = 'video/mp4';
+      multiVideoObj.setVideoSrc1.push(multiVideoObj.videoObj1);
+      multiVideoObj.sizeList1.push(1080);
+
+      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc1);
+      multiVideoObj.sizeList.push(multiVideoObj.sizeList1);
+
+      multiVideoObj.setVideoSrc2 = new Array();
+      multiVideoObj.sizeList2 = new Array();
+      multiVideoObj.videoObj2 = new Object();
+      multiVideoObj.videoObj2.size = '1080';
+      multiVideoObj.videoObj2.src = '../assets/images/video/sample-video02.mp4';
+      multiVideoObj.videoObj2.type = 'video/mp4';
+      multiVideoObj.setVideoSrc2.push(multiVideoObj.videoObj2);
+      multiVideoObj.sizeList2.push(1080);
+
+      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc2);
+      multiVideoObj.sizeList.push(multiVideoObj.sizeList2);
+
+      multiVideoObj.setVideoSrc3 = new Array();
+      multiVideoObj.sizeList3 = new Array();
+      multiVideoObj.videoObj3 = new Object();
+      multiVideoObj.videoObj3.size = '1080';
+      multiVideoObj.videoObj3.src = '../assets/images/video/sample-video01.mp4';
+      multiVideoObj.videoObj3.type = 'video/mp4';
+      multiVideoObj.setVideoSrc3.push(multiVideoObj.videoObj3);
+      multiVideoObj.sizeList3.push(1080);
+
+      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc3);
+      multiVideoObj.sizeList.push(multiVideoObj.sizeList3);
+
+      multiVideoObj.setVideoSrc4 = new Array();
+      multiVideoObj.sizeList4 = new Array();
+      multiVideoObj.videoObj4 = new Object();
+      multiVideoObj.videoObj4.size = '1080';
+      multiVideoObj.videoObj4.src = '../assets/images/video/sample-video02.mp4';
+      multiVideoObj.videoObj4.type = 'video/mp4';
+      multiVideoObj.setVideoSrc4.push(multiVideoObj.videoObj4);
+      multiVideoObj.sizeList4.push(1080);
+
+      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc4);
+      multiVideoObj.sizeList.push(multiVideoObj.sizeList4);
+
+      multiVideoObj.setVideoSrc5 = new Array();
+      multiVideoObj.sizeList5 = new Array();
+      multiVideoObj.videoObj5 = new Object();
+      multiVideoObj.videoObj5.size = '1080';
+      multiVideoObj.videoObj5.src = '../assets/images/video/sample-video01.mp4';
+      multiVideoObj.videoObj5.type = 'video/mp4';
+      multiVideoObj.setVideoSrc5.push(multiVideoObj.videoObj5);
+      multiVideoObj.sizeList5.push(1080);
+
+      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc5);
+      multiVideoObj.sizeList.push(multiVideoObj.sizeList5);
+
+      //품질 변경 버튼 리스트
+      var currentVd_ = $('.cr_main_vd').get();
+
+      currentVd_.forEach(function (el, idx) {
+        $(el).createVideo({
+          // 플레이어 생성 영역 DIV의 아이디
+          id: 'video_' + (idx + 1), // 생성될 비디오 태그 아이디 *필수값
+          src: multiVideoObj.setVideoSrc[idx],
+          speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+          autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+          startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+          seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+          progress: true, // false : 프로그레스바 컨트롤 되지 않도록
+          preview: [{ enabled: false, src: '' }],
+          quality: { default: multiVideoObj.sizeList[idx][qualitySize], options: multiVideoObj.sizeList[idx] }, // "default" : 0, options : [0]
+          isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+          iconUrl: '../tgplayer/plugin/js/plyr.svg',
+          blankVideo: '../tgplayer/plugin/js/blank.mp4',
+        });
+      });
+    </script>
   </body>
 </html>

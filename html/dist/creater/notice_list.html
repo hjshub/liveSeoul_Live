@@ -11,7 +11,10 @@
 
     <title>서울영상크리에이터 공지사항 목록 | 라이브 서울</title>
 
-    <script defer src="../assets/js/lib.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+<script src="../assets/js/jquery-ui.min.js"></script>
+<script src="../assets/js/gsap.min.js"></script>
+<script src="../assets/js/swiper.min.js"></script>
 <script defer src="../assets/js/common.js"></script>
 
 <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
@@ -49,8 +52,9 @@
 <!-- // 건너띄기 링크 -->
 
 
-    <!-- #gnb -->
-    <header class="active" id="gnb"><div class="h-wrap-01">
+    <div id="layout">
+      <!-- #gnb -->
+      <header class="active" id="gnb"><div class="h-wrap-01">
   <div class="inner clear">
     <div>
       <a href="https://www.seoul.go.kr/main/index.jsp" target="_blank" title="새 창 열기" class="symbol-seoul"
@@ -359,211 +363,223 @@
       </li>
     </ul>
     <div>
-      <a href="#" class="sign-in">로그인</a>
-      <span class="text-wrap search">
-        <input class="txt-ellipsis" type="text" title="검색어 입력" />
-        <button type="submit"><em class="hidden-txt">검색</em></button>
-      </span>
+      <!-- <a href="#" class="sign-in">로그인</a> -->
+      <a href="#" class="sign-out">로그아웃</a>
+      <div class="text-wrap search">
+        <form>
+          <fieldset>
+            <legend>검색</legend>
+            <input class="txt-ellipsis" type="text" title="검색어 입력" />
+            <button type="submit"><em class="hidden-txt">검색</em></button>
+          </fieldset>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 </header>
-    <!-- // #gnb -->
+      <!-- // #gnb -->
 
-    <!-- #contents -->
-    <div class="wrap creater board list" id="contents">
-      <section class="board_top">
-        <header class="page-header">
-          <div class="inner">
-            <div class="location">
-              <span
-                ><a href=""
-                  ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
-                ></span
-              >
-              <span><a href="">영상크리에이터</a></span>
-              <span><a href="">커뮤니티채널</a></span>
-              <span><a href="">공지사항</a></span>
+      <!-- #contents -->
+      <div class="wrap creater board list" id="contents">
+        <section class="board_top">
+          <header class="page-header">
+            <div class="inner">
+              <div class="location">
+                <span
+                  ><a href=""
+                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
+                  ></span
+                >
+                <span><a href="">영상크리에이터</a></span>
+                <span><a href="">커뮤니티채널</a></span>
+                <span><a href="">공지사항</a></span>
+              </div>
+
+              <h2 class="no_st">영상크리에이터 전용 커뮤니티 채널 입니다.</h2>
+
+              <nav class="tabStyle-nav">
+                <ul>
+                  <li class="on">
+                    <a href=""><span>공지사항</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>자료실</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>협업신청</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>자유게시판</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>협업공간</span></a>
+                  </li>
+                </ul>
+              </nav>
             </div>
+          </header>
+        </section>
 
-            <h2 class="no_st">영상크리에이터 전용 커뮤니티 채널 입니다.</h2>
+        <!-- 공지사항 목록 -->
+        <section>
+          <div class="inner">
+            <div class="b-search-area">
+              <form>
+                <fieldset>
+                  <span class="select-wrap" style="background-color: #f9f9f9">
+                    <label for="b-search-select">
+                      <em class="hidden-txt">검색 옵션 선택</em>
+                    </label>
+                    <select id="b-search-select">
+                      <option>전체</option>
+                      <option>전체</option>
+                      <option>전체</option>
+                      <option>전체</option>
+                    </select>
+                  </span>
+                  <div class="text-wrap has-button">
+                    <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
+                    <button class="btn-has-icon rounded search purple" type="submit"><em>검색하기</em></button>
+                    <button class="btn-has-icon rounded refresh lightPurple" type="button"><em>새로고침</em></button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
 
-            <nav class="tabStyle-nav">
-              <ul>
-                <li class="on">
-                  <a href=""><span>공지사항</span></a>
+          <div class="tblStyle-list">
+            <div class="inner">
+              <ul class="list-th">
+                <li class="td-num">번호</li>
+                <li class="td-ntType"></li>
+                <li class="td-subject">제목</li>
+                <li class="td-period">협업신청기간</li>
+                <li class="td-date">날짜</li>
+                <li class="td-file">파일</li>
+              </ul>
+              <ul class="list-td">
+                <li>
+                  <a href="">
+                    <div class="td-num"><span>06</span></div>
+                    <div class="td-ntType yellow"><span>협업신청</span></div>
+                    <div class="td-subject">
+                      <span
+                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                        협업서울서울</span
+                      >
+                    </div>
+                    <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
+                    <div class="td-date"><span>2022-07-14</span></div>
+                    <div class="td-file"><span>3</span></div>
+                  </a>
                 </li>
                 <li>
-                  <a href=""><span>자료실</span></a>
+                  <a href="">
+                    <div class="td-num"><span>05</span></div>
+                    <div class="td-ntType navy"><span>필독</span></div>
+                    <div class="td-subject">
+                      <span
+                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                        협업서울서울</span
+                      >
+                    </div>
+                    <div class="td-period"><span>-</span></div>
+                    <div class="td-date"><span>2022-07-14</span></div>
+                    <div class="td-file"><span>3</span></div>
+                  </a>
                 </li>
                 <li>
-                  <a href=""><span>협업신청</span></a>
+                  <a href="">
+                    <div class="td-num"><span>04</span></div>
+                    <div class="td-ntType"></div>
+                    <div class="td-subject">
+                      <span
+                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                        협업서울서울</span
+                      >
+                    </div>
+                    <div class="td-period"><span>-</span></div>
+                    <div class="td-date"><span>2022-07-14</span></div>
+                    <div class="td-file"><span>-</span></div>
+                  </a>
                 </li>
                 <li>
-                  <a href=""><span>자유게시판</span></a>
+                  <a href="">
+                    <div class="td-num"><span>03</span></div>
+                    <div class="td-ntType yellow"><span>협업신청</span></div>
+                    <div class="td-subject">
+                      <span
+                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                        협업서울서울</span
+                      >
+                    </div>
+                    <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
+                    <div class="td-date"><span>2022-07-14</span></div>
+                    <div class="td-file"><span>3</span></div>
+                  </a>
                 </li>
                 <li>
-                  <a href=""><span>협업공간</span></a>
+                  <a href="">
+                    <div class="td-num"><span>02</span></div>
+                    <div class="td-ntType navy"><span>필독</span></div>
+                    <div class="td-subject">
+                      <span
+                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                        협업서울서울</span
+                      >
+                    </div>
+                    <div class="td-period"><span>-</span></div>
+                    <div class="td-date"><span>2022-07-14</span></div>
+                    <div class="td-file"><span>3</span></div>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <div class="td-num"><span>01</span></div>
+                    <div class="td-ntType"></div>
+                    <div class="td-subject">
+                      <span
+                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                        협업서울서울</span
+                      >
+                    </div>
+                    <div class="td-period"><span>-</span></div>
+                    <div class="td-date"><span>2022-07-14</span></div>
+                    <div class="td-file"><span>-</span></div>
+                  </a>
                 </li>
               </ul>
-            </nav>
-          </div>
-        </header>
-      </section>
 
-      <!-- 공지사항 목록 -->
-      <section>
-        <div class="inner">
-          <div class="b-search-area">
-            <form>
-              <fieldset>
-                <span class="select-wrap" style="background-color: #f9f9f9">
-                  <label for="b-search-select">
-                    <em class="hidden-txt">검색 옵션 선택</em>
-                  </label>
-                  <select name="" id="b-search-select">
-                    <option value="">전체</option>
-                    <option value="">전체</option>
-                    <option value="">전체</option>
-                    <option value="">전체</option>
-                  </select>
-                </span>
-                <div class="text-wrap has-button">
-                  <input type="text" name="" id="" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-                  <button class="btn-has-icon rounded search purple" type="submit"><em>검색하기</em></button>
-                  <button class="btn-has-icon rounded refresh lightPurple" type="button"><em>새로고침</em></button>
-                </div>
-              </fieldset>
-            </form>
-          </div>
-        </div>
-
-        <div class="tblStyle-list">
-          <div class="inner">
-            <ul class="list-th">
-              <li class="td-num">번호</li>
-              <li class="td-ntType"></li>
-              <li class="td-subject">제목</li>
-              <li class="td-period">협업신청기간</li>
-              <li class="td-date">날짜</li>
-              <li class="td-file">파일</li>
-            </ul>
-            <ul class="list-td">
-              <li>
-                <a href="">
-                  <div class="td-num"><span>06</span></div>
-                  <div class="td-ntType yellow"><span>협업신청</span></div>
-                  <div class="td-subject">
-                    <span
-                      >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울</span
-                    >
-                  </div>
-                  <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
-                  <div class="td-date"><span>2022-07-14</span></div>
-                  <div class="td-file"><span>3</span></div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <div class="td-num"><span>05</span></div>
-                  <div class="td-ntType navy"><span>필독</span></div>
-                  <div class="td-subject">
-                    <span
-                      >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울</span
-                    >
-                  </div>
-                  <div class="td-period"><span>-</span></div>
-                  <div class="td-date"><span>2022-07-14</span></div>
-                  <div class="td-file"><span>3</span></div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <div class="td-num"><span>04</span></div>
-                  <div class="td-ntType"></div>
-                  <div class="td-subject">
-                    <span
-                      >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울</span
-                    >
-                  </div>
-                  <div class="td-period"><span>-</span></div>
-                  <div class="td-date"><span>2022-07-14</span></div>
-                  <div class="td-file"><span>-</span></div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <div class="td-num"><span>03</span></div>
-                  <div class="td-ntType yellow"><span>협업신청</span></div>
-                  <div class="td-subject">
-                    <span
-                      >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울</span
-                    >
-                  </div>
-                  <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
-                  <div class="td-date"><span>2022-07-14</span></div>
-                  <div class="td-file"><span>3</span></div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <div class="td-num"><span>02</span></div>
-                  <div class="td-ntType navy"><span>필독</span></div>
-                  <div class="td-subject">
-                    <span
-                      >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울</span
-                    >
-                  </div>
-                  <div class="td-period"><span>-</span></div>
-                  <div class="td-date"><span>2022-07-14</span></div>
-                  <div class="td-file"><span>3</span></div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <div class="td-num"><span>01</span></div>
-                  <div class="td-ntType"></div>
-                  <div class="td-subject">
-                    <span
-                      >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울</span
-                    >
-                  </div>
-                  <div class="td-period"><span>-</span></div>
-                  <div class="td-date"><span>2022-07-14</span></div>
-                  <div class="td-file"><span>-</span></div>
-                </a>
-              </li>
-            </ul>
-
-            <div class="paging pc-only purple">
-              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-              <strong>1</strong>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-            </div>
-            <div class="btn-wrap align-c mob-only">
-              <button type="button" class="btn-prev"><em>이전</em></button>
-              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-              <button type="button" class="btn-next"><em>다음</em></button>
+              <div class="paging pc-only purple">
+                <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+                <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+                <strong>1</strong>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+                <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+                <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+              </div>
+              <div class="btn-wrap align-c mob-only">
+                <button type="button" class="btn-prev"><em>이전</em></button>
+                <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+                <button type="button" class="btn-next"><em>다음</em></button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-    <!-- // #contents -->
+        </section>
+      </div>
+      <!-- // #contents -->
 
-    <!-- #footer -->
-    <footer id="footer"><div class="inner">
+      <!-- #footer -->
+      <footer id="footer"><div class="inner">
   <dl>
     <dt><strong>내 손안에 서울</strong></dt>
     <dd>
@@ -645,6 +661,7 @@
   </button>
 </div>
 </footer>
-    <!-- // #footer -->
+      <!-- // #footer -->
+    </div>
   </body>
 </html>

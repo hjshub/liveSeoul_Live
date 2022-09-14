@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>라이브서울 | 파일리스트</title>
 
-    <script defer src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="assets/css/file_list.css" />
   </head>
   <body>
@@ -81,8 +81,10 @@
                   <td class="count"></td>
                   <td>주제별 영상</td>
                   <td>주제별 영상 목록</td>
-                  <td></td>
-                  <td><em></em></td>
+                  <td><a href="../html/dist/by_topic/list.html" target="_blank">/html/dist/by_topic/list.html</a></td>
+                  <td>
+                    <em class=""><em class="finish">완료</em></em>
+                  </td>
                 </tr>
 
                 <!-- 큐레이션 -->
@@ -90,20 +92,26 @@
                   <td class="count"></td>
                   <td rowspan="3">큐레이션</td>
                   <td>큐레이션 목록</td>
-                  <td></td>
-                  <td><em></em></td>
+                  <td><a href="../html/dist/curation/list.html" target="_blank">/html/dist/curation/list.html</a></td>
+                  <td>
+                    <em class=""><em class="finish">완료</em></em>
+                  </td>
                 </tr>
                 <tr>
                   <td class="count"></td>
                   <td>큐레이션 상세</td>
-                  <td></td>
-                  <td><em></em></td>
+                  <td><a href="../html/dist/curation/view.html" target="_blank">/html/dist/curation/view.html</a></td>
+                  <td>
+                    <em class=""><em class="finish">완료</em></em>
+                  </td>
                 </tr>
                 <tr>
                   <td class="count"></td>
                   <td>큐레이션 등록</td>
-                  <td></td>
-                  <td><em></em></td>
+                  <td><a href="../html/dist/curation/write.html" target="_blank">/html/dist/curation/write.html</a></td>
+                  <td>
+                    <em class=""><em class="finish">완료</em></em>
+                  </td>
                 </tr>
 
                 <!-- 영상크리에이터 -->
@@ -165,20 +173,26 @@
                 <tr>
                   <td class="count"></td>
                   <td>협업신청 목록</td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <a href="../html/dist/creater/collabo_list.html" target="_blank">/html/dist/creater/collabo_list.html</a>
+                  </td>
+                  <td><em class="finish">완료</em></td>
                 </tr>
                 <tr>
                   <td class="count"></td>
                   <td>협업신청 상세</td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <a href="../html/dist/creater/collabo_view.html" target="_blank">/html/dist/creater/collabo_view.html</a>
+                  </td>
+                  <td><em class="finish">완료</em></td>
                 </tr>
                 <tr>
                   <td class="count"></td>
                   <td>협업신청 등록</td>
-                  <td></td>
-                  <td></td>
+                  <td>
+                    <a href="../html/dist/creater/collabo_write.html" target="_blank">/html/dist/creater/collabo_write.html</a>
+                  </td>
+                  <td><em class="finish">완료</em></td>
                 </tr>
                 <tr>
                   <td class="count"></td>
@@ -220,16 +234,20 @@
                 <!-- 마이페이지 -->
                 <tr>
                   <td class="count"></td>
-                  <td rowspan="8">마이페이지</td>
+                  <td rowspan="6">마이페이지</td>
                   <td>내가 좋아요한 영상</td>
-                  <td></td>
-                  <td></td>
+                  <td><a href="../html/dist/mypage/like_list.html" target="_blank">/html/dist/mypage/like_list.html</a></td>
+                  <td>
+                    <em class=""><em class="finish">완료</em></em>
+                  </td>
                 </tr>
                 <tr>
                   <td class="count"></td>
                   <td>내가 시청한 영상</td>
-                  <td></td>
-                  <td></td>
+                  <td><a href="../html/dist/mypage/watched_list.html" target="_blank">/html/dist/mypage/watched_list.html</a></td>
+                  <td>
+                    <em class=""><em class="finish">완료</em></em>
+                  </td>
                 </tr>
                 <tr>
                   <td class="count"></td>
@@ -252,20 +270,10 @@
                 <tr>
                   <td class="count"></td>
                   <td>나의 관심분야</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td class="count"></td>
-                  <td>관심분야 설정</td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td class="count"></td>
-                  <td>나의 관심분야 선택</td>
-                  <td></td>
-                  <td></td>
+                  <td><a href="../html/dist/mypage/wish_list.html" target="_blank">/html/dist/mypage/wish_list.html</a></td>
+                  <td>
+                    <em class=""><em class="finish">완료</em></em>
+                  </td>
                 </tr>
 
                 <!-- 통합검색 -->
@@ -286,7 +294,7 @@
       window.addEventListener('load', function () {
         var count = document.querySelectorAll('.count'),
           finish = document.querySelectorAll('.finish'),
-          progress = (finish.length / count.length).toFixed(2) * 100;
+          progress = (finish.length / count.length) * 100;
 
         count.forEach(function (elem, idx) {
           elem.innerHTML = idx + 1;
@@ -294,7 +302,7 @@
 
         $('.progress')
           .find('b')
-          .append(progress + '%');
+          .append(progress.toFixed(2) + '%');
       });
     </script>
   </body>
