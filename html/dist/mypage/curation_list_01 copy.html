@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>서울영상크리에이터 공지사항 목록 | 라이브 서울</title>
+    <title>마이페이지 | 라이브 서울</title>
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/jquery-ui.min.js"></script>
@@ -381,8 +381,8 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap creater board list" id="contents">
-        <h1 class="hidden-txt">서울영상크리에이터 공지사항 목록</h1>
+      <div class="wrap mypage board list" id="contents">
+        <h1 class="hidden-txt">내가 찜한 큐레이션</h1>
         <section class="board_top">
           <header class="page-header">
             <div class="inner">
@@ -392,29 +392,38 @@
                     ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
                   ></span
                 >
-                <span><a href="">영상크리에이터</a></span>
-                <span><a href="">커뮤니티채널</a></span>
-                <span><a href="">공지사항</a></span>
+                <span><a href="">마이페이지</a></span>
               </div>
 
-              <h2 class="no_st">영상크리에이터 전용 커뮤니티 채널 입니다.</h2>
+              <h2 class="no_st"><strong>홍길동</strong><em>님 안녕하세요.</em></h2>
 
-              <nav class="tabStyle-nav">
+              <nav class="tabStyle-nav red">
+                <ul>
+                  <li>
+                    <a href=""><span>내가 좋아요한 영상</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>내가 시청한 영상</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>영상다운로드 내역</span></a>
+                  </li>
+                  <li class="on">
+                    <a href=""><span>큐레이션 영상</span></a>
+                  </li>
+                  <li>
+                    <a href=""><span>나의 관심분야</span></a>
+                  </li>
+                </ul>
+              </nav>
+
+              <nav class="tabStyle-nav2 red">
                 <ul>
                   <li class="on">
-                    <a href=""><span>공지사항</span></a>
+                    <a href=""><span>내가 찜한 큐레이션</span></a>
                   </li>
                   <li>
-                    <a href=""><span>자료실</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>협업신청</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>자유게시판</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>협업공간</span></a>
+                    <a href=""><span>내가 만든 큐레이션</span></a>
                   </li>
                 </ul>
               </nav>
@@ -422,137 +431,272 @@
           </header>
         </section>
 
-        <!-- 공지사항 목록 -->
+        <!-- 큐레이션 목록 -->
         <section>
-          <div class="inner">
-            <div class="b-search-area">
-              <form>
-                <fieldset>
-                  <span class="select-wrap" style="background-color: #f9f9f9">
-                    <label for="b-search-select">
-                      <em class="hidden-txt">검색 옵션 선택</em>
-                    </label>
-                    <select id="b-search-select">
-                      <option>전체</option>
-                      <option>전체</option>
-                      <option>전체</option>
-                      <option>전체</option>
-                    </select>
-                  </span>
-                  <div class="text-wrap has-button">
-                    <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-                    <button class="btn-has-icon rounded search purple" type="submit"><em>검색하기</em></button>
-                    <button class="btn-has-icon rounded refresh lightPurple" type="button"><em>새로고침</em></button>
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-          </div>
-
-          <div class="tblStyle-list">
+          <h3 class="hidden-txt">내가 찜한 큐레이션</h3>
+          <div class="tblStyle-list red curation">
             <div class="inner">
               <ul class="list-th">
                 <li class="td-num">번호</li>
-                <li class="td-ntType"></li>
-                <li class="td-subject">제목</li>
-                <li class="td-period">협업신청기간</li>
-                <li class="td-date">날짜</li>
-                <li class="td-file">파일</li>
+                <li class="td-subject">큐레이션 제목</li>
+                <li class="td-name">보기</li>
+                <li class="td-date">좋아요</li>
+                <li class="td-file">조회수</li>
               </ul>
               <ul class="list-td">
                 <li>
-                  <a href="">
+                  <div>
+                    <div class="td-num"><span>10</span></div>
+                    <div class="td-subject">
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
+                    </div>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <div class="td-num"><span>09</span></div>
+                    <div class="td-subject">
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
+                    </div>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <div class="td-num"><span>08</span></div>
+                    <div class="td-subject">
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
+                    </div>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <div class="td-num"><span>07</span></div>
+                    <div class="td-subject">
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
+                    </div>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div>
                     <div class="td-num"><span>06</span></div>
-                    <div class="td-ntType yellow"><span>협업신청</span></div>
                     <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
                     </div>
-                    <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>3</span></div>
-                  </a>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
                 </li>
                 <li>
-                  <a href="">
+                  <div>
                     <div class="td-num"><span>05</span></div>
-                    <div class="td-ntType navy"><span>필독</span></div>
                     <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
                     </div>
-                    <div class="td-period"><span>-</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>3</span></div>
-                  </a>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
                 </li>
                 <li>
-                  <a href="">
+                  <div>
                     <div class="td-num"><span>04</span></div>
-                    <div class="td-ntType"></div>
                     <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
                     </div>
-                    <div class="td-period"><span>-</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>-</span></div>
-                  </a>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
                 </li>
                 <li>
-                  <a href="">
+                  <div>
                     <div class="td-num"><span>03</span></div>
-                    <div class="td-ntType yellow"><span>협업신청</span></div>
                     <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
                     </div>
-                    <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>3</span></div>
-                  </a>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
                 </li>
                 <li>
-                  <a href="">
+                  <div>
                     <div class="td-num"><span>02</span></div>
-                    <div class="td-ntType navy"><span>필독</span></div>
                     <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
                     </div>
-                    <div class="td-period"><span>-</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>3</span></div>
-                  </a>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
                 </li>
                 <li>
-                  <a href="">
+                  <div>
                     <div class="td-num"><span>01</span></div>
-                    <div class="td-ntType"></div>
                     <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
+                      <span>
+                        서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울서울
+                      </span>
                     </div>
-                    <div class="td-period"><span>-</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>-</span></div>
-                  </a>
+                    <div class="td-detail">
+                      <button
+                        class="btn-default rounded xs2 white txt-color org"
+                        type="button"
+                        onclick="location.href='../curation/view.html'"
+                      >
+                        <em>큐레이션 보기</em>
+                      </button>
+                    </div>
+                    <div class="td-like">
+                      <span><b class="mob-only inline">좋아요</b> 100</span>
+                    </div>
+                    <div class="td-view">
+                      <span><b class="mob-only inline">조회수</b>312</span>
+                    </div>
+                  </div>
                 </li>
               </ul>
 
-              <div class="paging pc-only purple">
+              <div class="paging pc-only orange">
                 <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
                 <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
                 <strong>1</strong>
