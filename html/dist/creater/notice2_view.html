@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>마이페이지 | 라이브 서울</title>
+    <title>서울영상크리에이터 자유게시판 상세 | 라이브 서울</title>
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/jquery-ui.min.js"></script>
@@ -381,8 +381,8 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap mypage board list" id="contents">
-        <h1 class="hidden-txt">영상 다운로드 내역</h1>
+      <div class="wrap creater board view" id="contents">
+        <h1 class="hidden-txt">서울영상크리에이터 자유게시판 상세</h1>
         <section class="board_top">
           <header class="page-header">
             <div class="inner">
@@ -392,254 +392,92 @@
                     ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
                   ></span
                 >
-                <span><a href="">마이페이지</a></span>
+                <span><a href="">영상크리에이터</a></span>
+                <span><a href="">커뮤니티채널</a></span>
+                <span><a href="">자유게시판</a></span>
               </div>
 
-              <h2 class="no_st"><strong>홍길동</strong><em>님 안녕하세요.</em></h2>
-
-              <nav class="tabStyle-nav red">
-                <ul>
-                  <li>
-                    <a href=""><span>내가 좋아요한 영상</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>내가 시청한 영상</span></a>
-                  </li>
-                  <li class="on">
-                    <a href=""><span>영상다운로드 내역</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>큐레이션 영상</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>나의 관심분야</span></a>
-                  </li>
-                </ul>
-              </nav>
+              <h2 class="no_st">자유게시판 상세</h2>
             </div>
           </header>
         </section>
 
-        <!-- 영상 다운로드 내역 -->
+        <!-- 공지사항 상세 -->
         <section>
-          <h3 class="hidden-txt">영상 다운로드 내역</h3>
-          <div class="tblStyle-list red download">
-            <div class="inner">
-              <ul class="list-th">
-                <li class="td-num">번호</li>
-                <li class="td-thumb">썸네일</li>
-                <li class="td-subject">영상 제목</li>
-                <li class="td-date">요청일</li>
-                <li class="td-state">
-                  다운로드<br />
-                  요청상태
-                </li>
-                <li class="td-detail">영상다운</li>
-                <li class="td-period">다운로드 기간</li>
-              </ul>
-              <ul class="list-td">
-                <li>
-                  <div>
-                    <div class="td-num"><span>10</span></div>
-                    <div class="td-thumb">
-                      <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="영상 썸네일 01" />
-                    </div>
-                    <div class="td-subject">
-                      <span> 성북동 나들이! (한옥마을, 예쁜골목, 관광명소) [서울영상크리에이터]</span>
-                    </div>
-                    <div class="td-date">
-                      <span>2022-07-20</span>
-                    </div>
-                    <div class="td-state">
-                      <span><b class="mob-only inline">다운로드 요청상태</b>요청</span>
-                    </div>
-                    <div class="td-detail">
-                      <span>승인대기중</span>
-                    </div>
-                    <div class="td-period">
-                      <span> 2022-07-19~2022-08-19 </span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <div class="td-num"><span>09</span></div>
-                    <div class="td-thumb">
-                      <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="영상 썸네일 02" />
-                    </div>
-                    <div class="td-subject">
-                      <span> 성북동 나들이! (한옥마을, 예쁜골목, 관광명소) [서울영상크리에이터] </span>
-                    </div>
-                    <div class="td-date">
-                      <span>2022-07-20</span>
-                    </div>
-                    <div class="td-state">
-                      <span><b class="mob-only inline">다운로드 요청상태</b>요청</span>
-                    </div>
-                    <div class="td-detail">
-                      <span>승인대기중</span>
-                    </div>
-                    <div class="td-period">
-                      <span> 2022-07-19~2022-08-19 </span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <div class="td-num"><span>08</span></div>
-                    <div class="td-thumb">
-                      <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="영상 썸네일 03" />
-                    </div>
-                    <div class="td-subject">
-                      <span> 성북동 나들이! (한옥마을, 예쁜골목, 관광명소) [서울영상크리에이터] </span>
-                    </div>
-                    <div class="td-date">
-                      <span>2022-07-20</span>
-                    </div>
-                    <div class="td-state red">
-                      <span><b class="mob-only inline">다운로드 요청상태</b>반려</span>
-                    </div>
-                    <div class="td-detail">
-                      <button
-                        class="btn-default rounded xs2 white txt-color lgtRed button-active-modal fixed"
-                        data-modal-name="reject"
-                        type="button"
-                      >
-                        <em>반려내역</em>
-                      </button>
-                    </div>
-                    <div class="td-period empty"></div>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <div class="td-num"><span>07</span></div>
-                    <div class="td-thumb">
-                      <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="영상 썸네일 04" />
-                    </div>
-                    <div class="td-subject">
-                      <span> 성북동 나들이! (한옥마을, 예쁜골목, 관광명소) [서울영상크리에이터] </span>
-                    </div>
-                    <div class="td-date">
-                      <span>2022-07-20</span>
-                    </div>
-                    <div class="td-state">
-                      <span><b class="mob-only inline">다운로드 요청상태</b>승인</span>
-                    </div>
-                    <div class="td-detail">
-                      <button
-                        class="btn-default rounded xs2 white txt-color org"
-                        type="button"
-                        onclick="commonFunction().modalDownload();"
-                      >
-                        <em>영상다운</em>
-                      </button>
-                    </div>
-                    <div class="td-period"><span>2022-07-19~2022-08-19</span></div>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <div class="td-num"><span>06</span></div>
-                    <div class="td-thumb">
-                      <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="영상 썸네일 05" />
-                    </div>
-                    <div class="td-subject">
-                      <span> 성북동 나들이! (한옥마을, 예쁜골목, 관광명소) [서울영상크리에이터] </span>
-                    </div>
-                    <div class="td-date">
-                      <span>2022-07-20</span>
-                    </div>
-                    <div class="td-state">
-                      <span><b class="mob-only inline">다운로드 요청상태</b>승인</span>
-                    </div>
-                    <div class="td-detail">
-                      <button
-                        class="btn-default rounded xs2 white txt-color org"
-                        type="button"
-                        onclick="commonFunction().modalDownload();"
-                      >
-                        <em>영상다운</em>
-                      </button>
-                    </div>
-                    <div class="td-period"><span>2022-07-19~2022-08-19</span></div>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <div class="td-num"><span>05</span></div>
-                    <div class="td-thumb">
-                      <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="영상 썸네일 06" />
-                    </div>
-                    <div class="td-subject">
-                      <span> 성북동 나들이! (한옥마을, 예쁜골목, 관광명소) [서울영상크리에이터] </span>
-                    </div>
-                    <div class="td-date">
-                      <span>2022-07-20</span>
-                    </div>
-                    <div class="td-state">
-                      <span><b class="mob-only inline">다운로드 요청상태</b>승인</span>
-                    </div>
-                    <div class="td-detail">
-                      <button
-                        class="btn-default rounded xs2 white txt-color org"
-                        type="button"
-                        onclick="commonFunction().modalDownload();"
-                      >
-                        <em>영상다운</em>
-                      </button>
-                    </div>
-                    <div class="td-period"><span>2022-07-19~2022-08-19</span></div>
-                  </div>
-                </li>
-              </ul>
-
-              <div class="paging pc-only orange">
-                <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-                <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-                <strong>1</strong>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">7</a>
-                <a href="#">8</a>
-                <a href="#">9</a>
-                <a href="#">10</a>
-                <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-                <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+          <div class="inner">
+            <div class="b-view">
+              <h3 class="contents-head">남산타워 체험 영상 나눔합니다.</h3>
+              <div class="contents-info">
+                <span class="name"><strong>이름</strong>홍*동</span>
+                <span class="date"><strong>날짜</strong>2022-06-07</span>
+                <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+                <span class="reply"><em class="hidden-txt">답글 수</em>300</span>
               </div>
-              <div class="btn-wrap align-c mob-only">
-                <button type="button" class="btn-prev"><em>이전</em></button>
-                <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-                <button type="button" class="btn-next"><em>다음</em></button>
+              <div class="contents-body">
+                <p>안녕하세요 여러분.</p>
+                <p>작업 시 남은 영상으로 짧게 영상을 제작하여, 나눔을 합니다.</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>다들 무더운 더위 힘내시고 남은 년도도 화이팅 합시다!</p>
+              </div>
+              <div class="contents-file">
+                <dl>
+                  <dt>첨부파일</dt>
+                  <dd>
+                    <ul>
+                      <li><a href="" download>filename.pdf</a></li>
+                      <li><a href="" download>filename.xls</a></li>
+                      <li><a href="" download>filename.hwp</a></li>
+                    </ul>
+                  </dd>
+                </dl>
+              </div>
+
+              <div class="list-nav pc-only">
+                <dl>
+                  <dt>
+                    <a class="go_prev" href=""><b>이전글</b></a>
+                  </dt>
+                  <dd>
+                    <span>
+                      <a href="">벌써 한여름이 다가오네요.</a>
+                    </span>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>
+                    <a class="go_nxt" href=""><b>다음글</b></a>
+                  </dt>
+                  <dd>
+                    <span>
+                      <a href="">서울 크리에이터분들 너무 웃기고 영상이 유익해서 좋네요!</a>
+                    </span>
+                  </dd>
+                </dl>
+              </div>
+
+              <div class="mob-list-nav mob-only">
+                <div class="btn-wrap">
+                  <button class="go_prev" type="button" onclick="location.href=''"><em>이전글</em></button>
+                  <button class="go_nxt" type="button" onclick="location.href=''"><em>다음글</em></button>
+                </div>
+              </div>
+
+              <!-- 댓글 영역 -->
+              <div class="contents-review"></div>
+              <!-- // 댓글 영역 -->
+
+              <div class="has-btn">
+                <div>
+                  <button class="btn-default md rounded darkGray" type="button"><em>목록</em></button>
+                  <button class="btn-default md rounded purple" type="button"><em>수정</em></button>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </div>
       <!-- // #contents -->
-
-      <!-- modal -->
-      <!-- 영상 다운로드 반려내역 -->
-      <div class="modal fixed reject" id="modal-reject">
-        <header class="modal-header">
-          <h5>반려내역</h5>
-          <button type="button" class="button-close type02 modal-off">
-            <em class="hidden-txt">레이어 팝업 닫기</em>
-          </button>
-        </header>
-        <div class="modal-body">
-          <div class="modal-contents">
-            <p><img src="../assets/images/img-notice.png" width="85" alt="반려내역" /></p>
-            <p>
-              타 웹사이트 게재를 위해서는 <br />
-              영상 다운로드가 <b>불가능</b> 합니다.
-            </p>
-          </div>
-        </div>
-      </div>
 
       <!-- #footer -->
       <footer id="footer"><div class="inner">

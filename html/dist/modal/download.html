@@ -1,0 +1,96 @@
+<div class="modal fixed download" id="modal-download">
+  <header class="modal-header">
+    <h5>영상 다운로드 하기</h5>
+    <button type="button" class="button-close type02" onclick="commonFunction().modalDownloadOff();">
+      <em class="hidden-txt">레이어 팝업 닫기</em>
+    </button>
+  </header>
+  <div class="modal-body">
+    <div class="modal-contents customedScroll pink">
+      <div class="contents-header">
+        <ul>
+          <li>
+            <dl>
+              <dt>영상제목</dt>
+              <dd><strong>아픈 역사를 기억하는 공간이자 시민의 쉼터, 남산예장공원</strong></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>영역선택</dt>
+              <dd>
+                <div class="radio-wrap">
+                  <span>
+                    <input type="radio" checked name="download" id="dw-all" />
+                    <label for="dw-all"><em>전체영상 다운</em></label>
+                  </span>
+                  <span>
+                    <input type="radio" name="download" id="dw-piece" />
+                    <label for="dw-piece"><em>부분영상 다운</em></label>
+                  </span>
+                </div>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+      <div class="contents-body">
+        <!-- 전체영상 다운로드 -->
+        <div class="dw-section">
+          <div class="btn-wrap align-c">
+            <button class="btn-default md rounded red2" type="submit" onclick="commonFunction().modalLoadingbar();">
+              <em>다운로드</em>
+            </button>
+          </div>
+        </div>
+
+        <!-- 부분영상 다운로드 -->
+        <div class="dw-section">
+          <div class="set-dw-section">
+            <dl>
+              <dt><strong>부분 영상 구간 설정</strong></dt>
+              <dd>
+                <div class="both">
+                  <span class="text-wrap">
+                    <input type="text" title="부분 영상 시작 구간" id="rangeStart" />
+                  </span>
+                  <span class="text-wrap">
+                    <input type="text" title="부분 영상 종료 구간" id="rangeEnd" />
+                  </span>
+                </div>
+              </dd>
+            </dl>
+            <div class="multi-range-wrapper">
+              <div class="multi-range-slider">
+                <input type="range" id="multiRangeLeft" min="0" step="1" max="6000" value="0" title="영상 시작 구간 설정" />
+                <input type="range" id="multiRangeRight" min="0" step="1" max="6000" value="6000" title="영상 종료 구간 설정" />
+
+                <div class="slider">
+                  <div class="track"></div>
+                  <div class="range"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap align-c">
+            <button class="btn-default md rounded red2" type="submit" onclick="commonFunction().modalLoadingbar();">
+              <em>다운로드</em>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="contents-footer">
+        <dl>
+          <dt><strong>다운로드 내역</strong></dt>
+          <dd>
+            <ul>
+              <li>2022-07-20 10:31 부분영상 다운 (01:31~03:11)</li>
+              <li>2022-07-20 10:31 부분영상 다운 (01:31~03:11)</li>
+              <li>2022-07-20 10:31 전체영상 다운</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>

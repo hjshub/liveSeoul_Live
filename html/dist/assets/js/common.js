@@ -74,7 +74,7 @@ function commonFunction() {
 
           gb.layout.css({
             height: '100vh',
-            overflow: 'hidden',
+            'overflow-y': 'hidden',
           });
         });
 
@@ -89,7 +89,7 @@ function commonFunction() {
           if (!$('.button-open-sideMenu').hasClass('active')) {
             gb.layout.css({
               height: 'auto',
-              overflow: 'visible',
+              'overflow-y': 'visible',
             });
           }
         });
@@ -145,7 +145,7 @@ function commonFunction() {
               $('.dimmed fixed').remove();
               gb.body.css({
                 height: 'auto',
-                overflow: 'visible',
+                'overflow-y': 'visible',
               });
             }
           } else {
@@ -154,30 +154,200 @@ function commonFunction() {
 
             $('.modal').css('display', 'none');
             $('.modal#modal-' + modalName)
+              .find('textarea')
+              .val('');
+            $('.modal#modal-' + modalName)
               .stop()
               .fadeIn(300);
 
             if (trg.hasClass('fixed')) {
-              gb.body.append('<div class="dimmed fixed"></div>');
+              gb.body.append('<div class="dimmed fixed modal-off"></div>');
               gb.body.css({
                 height: '100vh',
-                overflow: 'hidden',
+                'overflow-y': 'hidden',
               });
             }
           }
         });
 
-        $(document).on('click', '.modal-off, .dimmed.fixed', function () {
+        $(document).on('click', '.modal-off', function () {
           modalOff();
         });
       },
       modalOff = function () {
+        // 공통 모달 닫기
         $('.button-active-modal').removeClass('on');
         $('.modal').css('display', 'none');
         $('.dimmed.fixed').remove();
         gb.body.css({
           height: 'auto',
-          overflow: 'visible',
+          'overflow-y': 'visible',
+        });
+      },
+      modalDownload = function () {
+        // 영상 다운로드
+        $.ajax({
+          url: '../modal/download.html',
+          type: 'get',
+          dataType: 'html',
+          success: function (result) {
+            gb.body.append(result);
+            gb.body.append('<div class="dimmed fixed" onclick="commonFunction().modalDownloadOff();"></div>');
+            gb.body.css({
+              height: '100vh',
+              'overflow-y': 'hidden',
+            });
+
+            // 다운로드 영역 선택
+            var _radio = $('input[type=radio][name=download]');
+
+            _radio.on('change', function () {
+              var _trg = $(this),
+                idx = $('input[type=radio][name^=download]').index(_trg);
+
+              if (_trg.prop('checked')) {
+                $('.dw-section').css('display', 'none');
+                $('.dw-section').eq(idx).css('display', 'block');
+              }
+            });
+
+            // 부분 영상 다운 구간설정
+            multiRange();
+          },
+        });
+      },
+      modalDownloadOff = function () {
+        // 영상 다운로드 모달 닫기
+        $('.modal#modal-download').remove();
+        $('.dimmed.fixed').remove();
+        gb.body.css({
+          height: 'auto',
+          'overflow-y': 'visible',
+        });
+      },
+      modalLoadingbar = function () {
+        // 로딩 바
+        $.ajax({
+          url: '../modal/loadingbar.html',
+          type: 'get',
+          dataType: 'html',
+          success: function (result) {
+            gb.body.append(result);
+            gb.body.append('<div class="dimmed fixed" id="cover" onclick="commonFunction().modalLoadingbarOff();"></div>');
+          },
+        });
+      },
+      modalLoadingbarOff = function () {
+        // 로딩 바 닫기
+        $('.modal#modal-loadingbar').remove();
+        $('.dimmed.fixed#cover').remove();
+      },
+      multiRange = function () {
+        //영상 구간 설정
+        var _left = document.getElementById('multiRangeLeft'),
+          _right = document.getElementById('multiRangeRight'),
+          range = document.querySelector('.multi-range-slider .range'),
+          rangeStart = document.getElementById('rangeStart'),
+          rangeEnd = document.getElementById('rangeEnd');
+
+        setLeftValue();
+        setRightValue();
+
+        function setLeftValue() {
+          var trg = _left,
+            min = parseInt(trg.min), // 최소값 => 0
+            max = parseInt(trg.max); // 최대값 => 영상 재생 시간
+
+          trg.value = Math.min(parseInt(trg.value), parseInt(_right.value) - 1);
+
+          var _time = {
+            h:
+              Math.floor(trg.value / 3600).toString().length > 1
+                ? Math.floor(trg.value / 3600)
+                : '0' + Math.floor(trg.value / 3600), // 시간
+            m:
+              Math.floor((trg.value % 3600) / 60).toString().length > 1
+                ? Math.floor((trg.value % 3600) / 60)
+                : '0' + Math.floor((trg.value % 3600) / 60), // 분
+            s:
+              Math.floor((trg.value % 3600) % 60).toString().length > 1
+                ? Math.floor((trg.value % 3600) % 60)
+                : '0' + Math.floor((trg.value % 3600) % 60), // 초
+          };
+
+          rangeStart.value = _time.h + ':' + _time.m + ':' + _time.s;
+
+          var percent = ((trg.value - min) / (max - min)) * 100;
+
+          range.style.left = percent + '%';
+        }
+
+        function setRightValue() {
+          var trg = _right,
+            min = parseInt(trg.min),
+            max = parseInt(trg.max);
+
+          trg.value = Math.max(parseInt(trg.value), parseInt(_left.value) + 1);
+
+          var _time = {
+            h:
+              Math.floor(trg.value / 3600).toString().length > 1
+                ? Math.floor(trg.value / 3600)
+                : '0' + Math.floor(trg.value / 3600), // 시간
+            m:
+              Math.floor((trg.value % 3600) / 60).toString().length > 1
+                ? Math.floor((trg.value % 3600) / 60)
+                : '0' + Math.floor((trg.value % 3600) / 60), // 분
+            s:
+              Math.floor((trg.value % 3600) % 60).toString().length > 1
+                ? Math.floor((trg.value % 3600) % 60)
+                : '0' + Math.floor((trg.value % 3600) % 60), // 초
+          };
+
+          rangeEnd.value = _time.h + ':' + _time.m + ':' + _time.s;
+
+          var percent = ((trg.value - min) / (max - min)) * 100;
+
+          range.style.right = 100 - percent + '%';
+        }
+
+        _left.addEventListener('input', setLeftValue);
+        _right.addEventListener('input', setRightValue);
+
+        $(_left).on({
+          mouseover: function () {
+            $(this).addClass('hover');
+          },
+
+          mouseout: function () {
+            $(this).removeClass('hover');
+          },
+
+          'mousedown touchstart': function () {
+            $(this).addClass('active');
+          },
+
+          'mouseup touchend': function () {
+            $(this).removeClass('active');
+          },
+        });
+
+        $(_right).on({
+          mouseover: function () {
+            $(this).addClass('hover');
+          },
+
+          mouseout: function () {
+            $(this).removeClass('hover');
+          },
+
+          'mousedown touchstart': function () {
+            $(this).addClass('active');
+          },
+
+          'mouseup touchend': function () {
+            $(this).removeClass('active');
+          },
         });
       },
       MainSwiper = function () {
@@ -610,7 +780,7 @@ function commonFunction() {
 
             gb.layout.css({
               height: 'auto',
-              overflow: 'visible',
+              'overflow-y': 'visible',
             });
           } else {
             $('.mob-sideMenu')
@@ -630,7 +800,7 @@ function commonFunction() {
 
             gb.layout.css({
               height: '100vh',
-              overflow: 'hidden',
+              'overflow-y': 'hidden',
             });
           }
 
@@ -650,7 +820,7 @@ function commonFunction() {
               );
             gb.layout.css({
               height: 'auto',
-              overflow: 'visible',
+              'overflow-y': 'visible',
             });
             $(this).remove();
           });
@@ -857,7 +1027,6 @@ function commonFunction() {
 
     return {
       init: init,
-      modalOff: modalOff,
       MainSwiper: MainSwiper,
       VdSwiper: VdSwiper,
       LiveOnSwiper: LiveOnSwiper,
@@ -869,6 +1038,11 @@ function commonFunction() {
       fileUpload: fileUpload,
       setCurList: setCurList,
       menuAll: menuAll,
+      modalOff: modalOff,
+      modalDownload: modalDownload,
+      modalDownloadOff: modalDownloadOff,
+      modalLoadingbar: modalLoadingbar,
+      modalLoadingbarOff: modalLoadingbarOff,
       copyUrl: copyUrl,
     };
   };
@@ -904,7 +1078,7 @@ function commonFunction() {
 
       gb.layout.css({
         height: 'auto',
-        overflow: 'visible',
+        'overflow-y': 'visible',
       });
     }
   });
