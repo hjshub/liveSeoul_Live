@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    uploadUrl: './upload.jsp' // 업로드 URL
+                });
+
+                // 업로드 완료 이벤트
+                control.on('uploadComplete', function (p) {
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+                });
+            };
+            
+            function upload() {
+                var postObj = new Object();
+                    postObj.type = "t31",
+                    postObj.part = "p25"
+                    
+                    /*
+                    postObj =
+                        {
+                            type : "t31",
+                            part : "p25",
+                        }
+                    */
+
+                control.setPostData(postObj); // 업로드시 함께 전달될 POST Param 추가
+                control.upload(); // 업로드 시작
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index.html">&larr; 예제 목록</a><br /><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="파일추가" onclick="control.openFileDialog();"/>
+        <input type="button" value="업로드" onclick="upload();"/>
+    </body>
+</html>

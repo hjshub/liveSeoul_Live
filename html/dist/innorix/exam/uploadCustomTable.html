@@ -1,0 +1,164 @@
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        button { font-size:9pt; }
+        table.fileTable {
+            width: 500px;
+            font-size: 9pt;
+            color: #333333;
+            border-width: 1px;
+            border-color: #c0c0c0;
+            border-collapse: collapse;
+        }
+        table.fileTable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #c0c0c0;
+            background-color: #dedede;
+        }
+        table.fileTable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #c0c0c0;
+            background-color: #ffffff;
+        }
+        #fileTable tr > .fileInfo { display:none; }
+    </style>
+    <link rel="stylesheet" href="../innorix.css">
+    <script src="../innorix.js"></script>
+    <script>
+        var innoJquery = innorix._load("innoJquery");
+        var control = new Object(); // 파일전송 컨트롤
+        var tableRowInsert = true; // 파일 추가시 커스텀 테이블에 정보전달 여부
+
+        innoJquery(document).ready(function() {
+            // 파일전송 컨트롤 생성
+            control = innorix.create({
+                el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                installUrl: '../install/install.html', // Agent 설치 페이지
+                uploadUrl: './upload.jsp' // 업로드 URL
+            });
+
+            innoJquery("#dropZone").on({ // 외부 HTML 객체 DropZone 활성
+                "dragenter": function(innoJqueryevt) {
+                    control.setDropZone(innoJqueryevt, this); // DropZone 으로 지정
+                }
+            });
+
+            // 업로드 완료 이벤트
+            control.on('uploadComplete', function (p) {
+                var f = p.files;
+                var r = "Upload complete\n\n";
+                for (var i = 0; i < f.length; i++ ) {
+                    r += f[i].clientFileName + " " + f[i].fileSize + "\n";
+                }
+                alert(r);
+            });
+
+            // 파일을 추가후 발생 이벤트
+            control.on('afterAddFiles', function (p) {
+
+                // 커스텀 테이블 사용하는 경우 선택된 파일정보 전달
+                if (tableRowInsert == true) {
+                    for (var i = 0; i < p.length; i++ ) {
+
+                        var _filePath = p[i].filePath;
+                        var _fileSize = p[i].fileSize;
+                        var _fileID = p[i].id;
+                        var _fileType = "normal";
+
+                        var arr = (_filePath.replace(/\\/gi,"/")).split("/");
+                        var fileName = arr[arr.length-1];
+                        var fileSize = bytesToSize(_fileSize);
+                        var fileType = "일반";
+                        
+                        if (_fileSize > 104857600) {
+                            var _fileType = "large";
+                            var fileType = "대용량";
+                        }
+
+                        // 선택된 파일을 커스텀 테이블에 추가
+                        innoJquery('#fileTable > tbody:last').append(' \
+                            <tr class="fileTable"> \
+                                <td class="fileInfo">' + _filePath + '</td> \
+                                <td class="fileInfo">' + _fileSize + '</td> \
+                                <td class="fileInfo">' + _fileType + '</td> \
+                                <td>' + fileName + '</td> \
+                                <td>' + fileSize + '</td> \
+                                <td>' + fileType + '</td> \
+                                <td><input type="button" value="삭제" onClick="deleteRow(this,\'' + _fileID + '\')"/></td> \
+                            </tr> \
+                        ');
+                    }
+                }
+            });
+        });
+
+        // 파일 사이즈 bytes 를 KB, MB... 형식으로 변환
+        function bytesToSize(bytes) {
+            var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+            if (bytes == 0) return 'n/a';
+            var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+            if (i == 0) return bytes + ' ' + sizes[i];
+            return (bytes / Math.pow(1024, i)).toFixed(1) + ' ' + sizes[i];
+        }
+
+        // 커스텀 테이블 행 삭제
+        function deleteRow(obj, fileID) {
+            var row = obj.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            control.removeFileById(fileID);
+        }
+
+        // 커스텀 테이블 파일 정보를 확인
+        function getTableFiles() {
+            var tbl = innoJquery('#fileTable tr:has(td)').map(function(i, v) {
+                var innoJquerytd =  innoJquery('td', this);
+                var type = innoJquerytd.eq(2).text();
+                if (type == "large") {
+                    var uploadUrl = control.option.uploadUrl + "?type=large";
+                } else {
+                    var uploadUrl = control.option.uploadUrl + "?type=normal";
+                }
+                return {
+                         basePath: "",
+                         filePath: innoJquerytd.eq(0).text(),
+                         fileSize: Number(innoJquerytd.eq(1).text()),
+                         fileType: innoJquerytd.eq(2).text(),
+                         uploadUrl: uploadUrl
+                       }
+            }).get();
+
+            return tbl;
+        }
+    </script>
+
+<head>
+<body>
+    <a href="../index.html">&larr; 예제 목록</a><br /><br />
+    <div id="dropZone" style="overflow:auto; width:500px; height:200px; border: 1px solid #c0c0c0;">
+        <table id="fileTable" class="fileTable">
+            <thead>
+                <tr>
+                    <th class="fileInfo">filePath</th>
+                    <th class="fileInfo">fileSize</th>
+                    <th class="fileInfo">fileType</th>
+                    <th>파일명</th>
+                    <th>용량</th>
+                    <th>구분</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    <div id="fileControl" style="display:none"></div><br/>
+
+    <input type="button" value="파일추가" onclick="control.openFileDialog();"/>
+    <input type="button" value="업로드" onclick="control.upload();"/>
+</body>
+</html>

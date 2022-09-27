@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            innorix.setLanguage('ko');
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+					transferMode: 'upload', // 업로드, 다운로드 혼합사용
+					agent : true,
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+					allowExtension : ["png", "jpg", "jpeg"],
+					showPreviewImage: true, // 이미지 미리보기
+                    uploadUrl: './upload.jsp', // 업로드 URL
+                });
+
+                // 업로드 완료 이벤트
+                control.on('uploadComplete', function (p) {
+					
+                    console.log(p.files);
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].controlId + " " + f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+					
+                    var files = JSON.stringify(f);
+                    var innoJquery = innorix._load("innoJquery");
+                    innoJquery('form#f_write').append('<input type="hidden" name="files" id="files" value=\'' + files + '\' />');
+                    //innoJquery('form#f_write').submit();
+                });
+                
+             	// 파일 선택 시
+                control.on('onSelectRows', function (p) {
+                	console.log(p);
+                	console.log('---------------------------');
+                });
+            };
+			
+			function imageUpload(){
+				control.appendThumbnailProperty("ALL", 200, 200, "VERTICAL");
+				control.appendWatermarkProperty("ALL", "innorix_logo.png", "CENTER|BOTTOM");
+				
+				control.upload();
+			}
+			
+			/*
+				이미지 미리보기 
+				- 옵션 : showPreviewImage: true
+				
+				- 썸네일 생성(리사이징) : control.appendThumbnailProperty((1), (2), (3), (4));
+				(1) 리사이징을 진행할 원본 이미지 인덱스 Number를 입력해주시거나 ALL을 입력받습니다.				
+					ex: control.appendThumnailProperty(1, 300, 300, "VERTICAL");
+				(2) 가로 픽셀 사이즈 (Number)
+				(3) 세로 픽셀 사이즈 (Number)
+				(4) 리사이징을 진행할 가로세로 기준
+				 	VERTICAL : 세로축 기준 리사이징
+				 	HORIZONTAL : 가로축 기준 리사이징
+				 	FIX : 설정한 사이즈에 맞게 리사이징(비율무시)
+				
+				- 워터마크 추가 : control.appendWatermarkProperty((1), (2), (3));
+				(1) 워터마크를 적용할 원본 파일 인덱스 Number를 입력해주시거나 ALL을 입력받습니다.
+				 	ex : control.appendWatermarkProperty(2, "innorix_logo.png", "LEFT|MIDDLE")
+				(2) 워터마크 이미지 URL
+				(3) 워터마크를 적용할 위치 ("횡축|종축") ("가로|세로") 
+				 	가로 기준 위치 : "LEFT" / "RIGHT" / "CENTER"
+				 	세로 기준 위치 : "TOP" / "BOTTOM" / "MIDDLE"
+			*/
+			
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+        
+        <form action="resultImg.jsp" id="f_write" name="f_write" method="post">
+        test1 : <input type="text" name="test1" />
+        </form><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="멀티 파일 추가" onclick="control.openFileDialog();"/>
+        <input type="button" value="업로드" onclick="imageUpload();"/>
+    </body>
+</html>

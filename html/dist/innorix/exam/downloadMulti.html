@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control1 = new Object();
+            var control2 = new Object();
+            
+            var urlBase = location.href.substring(0, location.href.lastIndexOf("/") + 1);
+            
+            window.onload = function() {
+
+                // 파일전송 컨트롤 생성
+                control1 = innorix.create({
+                    el: '#fileControl1',
+                    installUrl: '../install/install.html' // Agent 설치 페이지
+                });
+
+                control2 = innorix.create({
+                    el: '#fileControl2',
+                    installUrl: '../install/install.html'
+                });
+
+                control1.on('loadComplete', function (p) {
+                    control1.presetDownloadFiles([{
+                        printFileName: "INNORIX WEB PAGES 브로셔.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "download.jsp?fileID=1"
+                    },
+                    {
+                        printFileName: "INNORIX WEB PAGES Brochure.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "download.jsp?fileID=2"
+                    }]);
+                 });
+
+                control2.on('loadComplete', function (p) {
+                    control2.presetDownloadFiles([{
+                        printFileName: "INNORIX WEB PAGES パンフレット.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "download.jsp?fileID=3"
+                    }]);
+                 });
+            };
+        </script>
+    </head>
+    <body>
+        <a href="../index.html">&larr; 예제 목록</a><br /><br />
+
+        <div id="fileControl1"></div><br/>
+
+        <input type="button" value="선택 다운로드" onclick="control1.downloadSelectedFiles();"/>
+        <input type="button" value="전체 다운로드" onclick="control1.download();"/><br /><br />
+        
+        <div id="fileControl2"></div><br/>
+
+        <input type="button" value="선택 다운로드" onclick="control2.downloadSelectedFiles();"/>
+        <input type="button" value="전체 다운로드" onclick="control2.download();"/>
+    </body>
+</html>

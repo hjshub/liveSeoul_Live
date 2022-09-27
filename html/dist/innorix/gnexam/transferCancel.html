@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+					transferMode: 'both', // 업로드, 다운로드 혼합사용
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    uploadUrl: './upload0.jsp' // 업로드 URL ( 에러발생을 위해 잘못된 주소로 설정 )
+                });
+
+                // 업로드 완료 이벤트
+                control.on('uploadComplete', function (p) {
+					
+                    console.log(p.files);
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].controlId + " " + f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+					
+                    var files = JSON.stringify(f);
+                    var innoJquery = innorix._load("innoJquery");
+                    innoJquery('form#f_write').append('<input type="hidden" name="files" id="files" value=\'' + files + '\' />');
+                    innoJquery('form#f_write').submit();
+                });
+             	// 업로드 완료 이벤트
+                control.on('uploadError', function (p) {
+                	console.log('---- uploadError! ----');
+                	control.transferCancel(); // 진행중인 업로드 취소
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+        
+        <form action="result.jsp" id="f_write" name="f_write" method="post">
+        test1 : <input type="text" name="test1" />
+        </form><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="멀티 파일 추가" onclick="control.openFileDialog();"/>
+        <input type="button" value="단일 파일 추가" onclick="control.openFileDialogSingle();"/>
+        <input type="button" value="업로드" onclick="control.upload();"/>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="http://code.jquery.com/jquery-latest.min.js" charset="UTF-8"></script>
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            var fileArray = new Array();
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    transferMode: 'both', // 업로드, 다운로드 혼합사용
+                    uploadUrl: './upload.jsp' // 업로드 URL
+                });
+
+                // 업로드 완료 이벤트
+				control.on('uploadComplete', function (p) {
+					
+                    console.log(p.files);
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].controlId + " " + f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+                    
+                    var files = JSON.stringify(f);
+                    var innoJquery = innorix._load("innoJquery");
+                    
+                    $('#f_write').submit(); // deleteServer.jsp로 넘어가 삭제된 파일정보가 보여집니다.
+                    
+                    /*innoJquery('form#f_write').append('<input type="hidden" name="files" id="files" value=\'' + files + '\' />');
+                    innoJquery('form#f_write').submit();*/
+                });
+            };
+            
+            // 선택삭제
+            function deleteTest(){ 
+            	var fileInfo = control.getSelectedFiles(); //선택된파일 정보
+            	var arrId = new Array();
+        		var arrName = new Array();
+        		var arrSize = new Array();
+            	for(var i=0; i<fileInfo.length; i++){
+            		arrId.push(fileInfo[i].id);
+            		arrName.push(fileInfo[i].printFileName);
+            		arrSize.push(fileInfo[i].fileSize);
+            		$('#f_write').append('<input type="hidden" name="_innorix_deleted_id" id="_innorix_deleted_id" value=\'' + arrId[i] + '\' />');
+                	$('#f_write').append('<input type="hidden" name="_innorix_deleted_name" id="_innorix_deleted_name" value=\'' + arrName[i] + '\' />');
+                	$('#f_write').append('<input type="hidden" name="_innorix_deleted_size" id="_innorix_deleted_size" value=\'' + arrSize[i] + '\' />');	
+            	}
+            	control.removeSelectedFiles(); //선택된파일삭제
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+        <p>삭제한 파일정보를 서버에 출력 - 삭제한 파일정보를 확인할 수 있습니다. 선택삭제 후 업로드를 진행해주세요.</p>
+        
+		<form action="./deleteServer.jsp" id="f_write" name="f_write" method="post">
+        test1 : <input type="text" name="test1" />
+        </form><br />
+        
+        <div id="fileControl"></div><br/>
+        <input type="button" value="멀티 파일 추가" onclick="control.openFileDialog();"/>  
+        <input type="button" value="단일 파일 추가" onclick="control.openFileDialogSingle();"/>  
+        <input type="button" value="업로드" onclick="control.upload();"/>  
+		<input type="button" value="선택삭제" onclick="deleteTest();"/>  
+    </body>
+</html>

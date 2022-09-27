@@ -1,0 +1,5 @@
+// 체험버전 설치, 활용과 관련된 기술문의는 02-856-4161로 문의하여 주십시오.
+
+// 라이선스 유형 : INNORIX WP 91일 체험 (만료 2022-09-30)
+
+var INNORIX_LICENSE = "WEiCgfGkBpqQN/Zw0Ae0YQDFQoK5vit/hNZK/8gGNUm+mtjwAJr4dLSFCiLgiY9BOWSg925hgOfaW1olUgUTccrrl6Y=";

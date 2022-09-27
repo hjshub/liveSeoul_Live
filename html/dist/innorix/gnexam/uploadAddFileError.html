@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+					transferMode: 'both', // 업로드, 다운로드 혼합사용
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    limitExtension: ["zip","pdf"], // 정의된 확장자 파일을 제외
+                    maxTotalSize: 9000000, //전체파일 사이즈 제한
+                    maxFileSize: 2000, //개별파일 사이즈 제한
+                    addDuplicateFile: false, //중복파일 추가 제한
+                    maxFileCount: 2, //첨부파일 개수 제한
+                    uploadUrl: './upload.jsp' // 업로드 URL
+                });
+                
+          		// 파일 첨부시 에러
+                control.on('addFileError', function (p) {
+                    /**
+                        A.  개별파일 사이즈 : maxFileSize
+                        B.  전체파일 사이즈 : maxTotalSize
+                        C.  첨부파일 개수제한 : maxFileCount
+                        D.  특정확장자 제외 : limitExtension
+                        E.  특정확장자만 추가 : allowExtension
+                        F.  중복파일 추가 : addDuplicateFile 
+                    */
+                    console.log(p); //첨부에 실패한 파일 개수만큼의 인덱스 배열로 리턴
+                    console.log(p.length); //첨부에 실패한 파일 개수
+                    
+                    for (var i = 0; i < p.length; i++ ) {
+                    	console.log(p[i].type); 			//위반 정책 출력
+                        console.log(p[i].message); 			//위반 시의 기본 메시지 출력 (이노릭스 자체 메세지)
+                        console.log(p[i].file); 			//에러 파일에 대한 상세 정보
+                        console.log(p[i].file.fileSize);  	//파일에대한 상세정보중 필요한 정보 출력 ex) basePath, filePath 등 
+                    }
+                    
+                                        
+                  	/*
+                  		개개별의 에러를 보여줄 필요가 없는 경우,
+                  		리턴되는 p파라메터의 첫번째 인덱스의 에러 메시지를 바로 출력하는 방식으로 구성이 가능
+                  	*/
+                    console.log(p[0].type);
+                  	
+                    //이노릭스 기본메세지가아닌 다른 메세지를 출력할때
+                    if(p[0].type == "allowExtension") {
+                        alert("확장자 제한");
+                    } else if(p[0].type == "maxFileCount") {
+                        alert("개수 제한");
+                    } else if(p[0].type == "maxTotalSize") {
+                        alert("사이즈 제한");
+                    } else if(p[0].type == "limitExtension") {
+                    	alert("확장자 제한");
+                    } else if(p[0].type == "addDuplicateFile") {
+                        alert("중복파일 제한");
+                    } else if(p[0].type == "maxFileSize") {
+                        alert("개별파일 사이즈 제한");
+                    }
+                });
+                
+
+                // 업로드 완료 이벤트
+                control.on('uploadComplete', function (p) {
+					
+                    console.log(p.files);
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].controlId + " " + f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+					
+                    var files = JSON.stringify(f);
+                    console.log(files);
+                    var innoJquery = innorix._load("innoJquery");
+                    innoJquery('form#f_write').append('<input type="hidden" name="files" id="files" value=\'' + files + '\' />');
+                   // innoJquery('form#f_write').submit();
+                });
+
+                
+            };
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+        
+        <form action="result.jsp" id="f_write" name="f_write" method="post">
+        test1 : <input type="text" name="test1" />
+        </form><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="멀티 파일 추가" onclick="control.openFileDialog();"/>
+        <input type="button" value="단일 파일 추가" onclick="control.openFileDialogSingle();"/>
+        <input type="button" value="업로드" onclick="control.upload();"/>
+    </body>
+</html>

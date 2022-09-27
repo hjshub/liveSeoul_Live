@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    transferMode: 'upload', // 업로드, 다운로드 혼합사용
+                    uploadUrl: './postData.jsp' // 업로드 URL
+                });
+
+                // 업로드 완료 이벤트
+                control.on('uploadComplete', function (p) {
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+                });
+            };
+            
+            // 업로드
+            function upload() {
+                var fileInfo = control.getAllFiles(); // 모든 파일 정보 출력
+                if (fileInfo.length == 0 ) { // 파일 개수가 0 이면 return
+                    return;
+                }
+             	
+                // 트랜잭션 별 업로드시 함께 전달될 POST Param 추가
+                var postObj1 = new Object(); // postdata 를 전달할 object 객체 생성
+                var paramVal = "Transection"; 
+                postObj1.transParam1 = paramVal; // 임의의 텍스트 할당
+                postObj1.transParam2 = fileInfo[0].mode; // 전송모드 할당
+                control.setPostData(postObj1); // 트랜잭션 별 postdata로  값  저장
+				
+                
+             	// 파일 별 업로드시 함께 전달될 POST Param 추가
+                for (i=0; i<fileInfo.length; i++){ 
+                      var postObj2 = new Object(); //파일별 postdata를  전달할  object 객체  생성
+                      postObj2.fileParam1 = fileInfo[i].basePath; // 각 파일 index의 basePath 할당
+                      postObj2.fileParam2 = fileInfo[i].printFileName; // 각 파일 index의 printFileName 할당
+                	  control.setFilePostDataByIndex(i, postObj2); // 파일별 postdata로  값  저장
+                }
+                
+                control.upload(); // 파일 업로드 시작
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="파일추가" onclick="control.openFileDialog();"/>
+        <input type="button" value="업로드" onclick="upload();"/>
+    </body>
+</html>

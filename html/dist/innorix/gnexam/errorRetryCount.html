@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            innorix.setLanguage('ko'); // 한/영설정 [en,ko]
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    transferMode : 'download',	// 다운로드 모드 설정
+                    agent : true,				// Agent 모드 사용
+                    
+                    retryCount: 2,			// 재전송 횟수
+                    retryDelay: 2,			// 재전송 간격(sec)
+                    maximumErrorCount: 2 	// 최대 에러 허용 횟수
+                });
+                
+                /*
+                	오류 발생 시 재전송을 시도할 횟수 설정
+                	
+                	※ retryCount나 retryDelay는 내부에서 처리되는 재시도이기에 별도의 로그 및 이벤트 등으로 캐치 되지 않습니다.
+                	
+					retryCount (※ Agent 모드 전용 옵션)
+                	- 기본값 : 무제한
+					- 전송 내부 쓰레드 재시도 횟수. 지정된 횟수만큼 내부 쓰레드의 재전송을 진행 후, Error로 상태를 반영 
+					  즉, 전송에 문제가 있을 시 에러라고 판별하기 전까지 진행할 재전송 횟수
+					
+					retryDelay (※ Agent 모드 전용 옵션)
+					- 기본값 : 3
+					- 전송 내부 쓰레드 재시도 간격으로, 몇 초마다 재시도 할 것인지를 정의
+					
+					maximumErrorCount (※ Agent 모드 전용 옵션)
+					- 기본값 : 무제한
+					- 최대 에러 출력 갯수. retryCount에 따라 재시도 후 에러로 상태기록이 될때 ErrorCount가 1씩 증가
+					
+					
+					[ 진행 예시 ]
+					전송 ※※ --2초간격--재전송(1회) ※※ --2초간격--재전송(2회) ※※ 에러카운트(1회-downloadError 캐치)
+					전송 ※※ --2초간격--재전송(1회) ※※ --2초간격--재전송(2회) ※※ 에러카운트(2회-downloadError 캐치)
+					전송 ※※ --2초간격--재전송(1회) ※※ --2초간격--재전송(2회) ※※ 에러카운트(3회-downloadError 캐치) => maximumErrorCount 2회를 초과하여 전송중단.
+					
+					[ 진행 예시 기호 풀이 ]
+					오류 : ※※
+					retryCount : 재전송(n회)
+					retryDelay : --n초간격--
+					maximumErrorCount : 에러카운트(n회)
+				
+                */
+                
+                
+                control.on('loadComplete', function (p) { // 다운로드 파일 추가
+                    var urlBase = location.href.substring(0, location.href.lastIndexOf("/") + 1);
+                	
+                    control.presetDownloadFiles(
+                    [{
+                    	printFileName: "INNORIX WP 브로셔.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "downloadErr.jsp?fileID=1" //오류 발생을 위해 downloadErr.jsp(존재하지않는파일)설정	
+                    },
+                    {
+                        printFileName: "INNORIX WP Brochure.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "downloadErr.jsp?fileID=2" //오류 발생을 위해 downloadErr.jsp(존재하지않는파일)설정
+                    },
+                    {
+                        printFileName: "INNORIX WP パンフレット.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "downloadErr.jsp?fileID=3" //오류 발생을 위해 downloadErr.jsp(존재하지않는파일)설정
+                    }]);
+                 });
+				
+				//다운로드 에러 이벤트 (Agent 모드 전용)
+                control.on('downloadError', function (p) {
+                	console.log(p);
+                	
+                	var f = p.files;
+                	for(var i=0; i<f.length; i++){
+                		console.log("파일이름: " + f[i].fileName +"\n에러코드: " + f[i].errorCode);
+                	}
+                	
+                });	
+                
+            };
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+        
+        <div id="fileControl"></div><br/>
+        
+        <input type="button" value="선택 다운로드" onclick="control.downloadSelectedFiles();"/>
+        <input type="button" value="전체 다운로드" onclick="control.download();"/>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* RESET CSS */
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, dl, dt, dd, menu, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary{font-family: 'NanumBarunGothic',sans-serif !important;margin: 0;padding: 0;border: 0;font: inherit;vertical-align: baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {display: block;}
+body {line-height: 1;}
+menu, ol, ul, li {list-style: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+a {color: #333;text-decoration: none;cursor: pointer;font-size:inherit;}
+em {color: #73b644; font-weight: bold;}
+i {font-style: italic;display: inline;}
+
+.clear {clear: both;display: block;height: 0;overflow: hidden;visibility: hidden;width: 0;}
+
+
+/* GNIT SAMPLE CSS */
+html, body{min-width: 900px;}
+#header{width: 100%; height: 70px; background-color: #73b644; border-bottom: 2px solid #539426; box-sizing: border-box; text-align: center;}
+#header img{display: inline-block; height: 40px; padding:15px 20px; vertical-align: middle;}
+#header h1{display: inline-block; font-size: 22px; color: #fff; font-weight: bold;}
+
+#footer{width: 100%; height: 70px; background-color: #eff4e5; box-sizing: border-box; padding: 45px 0; border-top: 1px solid #539426;}
+#footer p{color: #333; text-align: center;}
+#footer .top_btn{
+	display: block; width: 50px; height: 50px; 
+	background:url('../img/top_btn.jpg') 0 0 no-repeat; text-indent: -99999px; 
+	position: fixed; bottom: 40px; right: 0;
+}
+
+.section{width: 100%; height: auto;  background-color: #fdfdfd;}
+.section .cont-wrap{width: 100%; padding: 40px; box-sizing: border-box; max-width: 1300px; margin:0 auto;}
+
+.notice-tb{width: 100%; table-layout: fixed;}
+.notice-tb th, .notice-tb td{padding: 15px 30px;}
+.notice-wrap{padding-bottom: 20px; box-sizing: border-box;}
+.notice-txt p{font-size: 18px; color:#2b3a58;}
+.notice-txt p::before{
+	content: ""; display: inline-block; width: 60px; height: 50px; 
+	vertical-align: middle; background: url(../img/notice.png) no-repeat; background-size: contain;
+}
+.notice{padding-bottom: 20px; }
+.notice p{padding-bottom: 8px; font-size: 16px; font-weight: bold;}
+.notice img{width: 24px; vertical-align: text-bottom; padding-right: 5px;}
+.notice span{font-size: 15px; display: block; padding: 5px;}
+.notice span::before{content: "-"; display: inline-block; width: 14px;}
+.notice-a p{color: #005DA6;}
+.notice-h p{color: #fb843f;}
+
+.notice-pdf img{width: 20px; padding: 0 10px 0 2px;}
+.notice-pdf p{color: #444;}
+.notice-pdf a:hover{text-decoration: underline; color: #0f6fb9;}
+
+.origin-exam{font-size: 14px; color: #666; text-align: right;}
+.origin-exam a:hover{text-decoration: underline; color: #0f6fb9;}
+
+/* (공통)목록 table */
+.list-tb{counter-reset: tr 0;}
+.list-tb tr td:first-child::before{counter-increment: tr 1; content:counter(tr) '';}
+.list-tb{width: 100%; table-layout: fixed; border-top: 2px solid #539426; margin: 20px 0 50px; font-size: 15px;}
+.list-tb th, .list-tb td{border-right: 1px solid #cecece; text-align: center; padding:12px 18px; line-height: 24px; vertical-align:middle; background-color: #fff; word-break:break-all;}
+.list-tb th:last-child, .list-tb td:last-child{border:none;}
+.list-tb th{background-color: #eff4e5; font-size: 16px; color: #333; font-weight: bold;}
+.list-tb td.ta_l{text-align: left;}
+.list-tb td.ta_r{text-align: right;}
+.list-tb td p{font-size: 16px;}
+.list-tb td > img{width: 24px; padding: 0 5px; vertical-align: middle;}
+.list-tb td a:hover{ text-decoration:underline;}
+.list-tb tr{border-bottom: 1px solid #cecece;}
+.list-tb tr:last-child{border-bottom: 2px solid #2b3a58;}
+
+.refer{color: #999; font-size: 14px;}
+
+.exam-link{border-radius: 5px; }
+.exam-link::before{content: ""; display: inline-block; width: 22px; height: 18px; 
+vertical-align: middle; background: url(../img/code.png) no-repeat; background-size: contain;}
+.exam-link:hover{color: #0f6fb9;}
+
+
+
+

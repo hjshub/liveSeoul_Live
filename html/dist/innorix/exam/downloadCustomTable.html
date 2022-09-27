@@ -1,0 +1,121 @@
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        button { font-size:9pt; }
+        table.fileTable {
+            width: 500px;
+            font-size: 9pt;
+            color: #333333;
+            border-width: 1px;
+            border-color: #c0c0c0;
+            border-collapse: collapse;
+        }
+        table.fileTable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #c0c0c0;
+            background-color: #dedede;
+        }
+        table.fileTable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #c0c0c0;
+            background-color: #ffffff;
+        }
+        #fileTable tr > .fileInfo { display:none; }
+    </style>
+    <link rel="stylesheet" href="../innorix.css">
+    <script src="../innorix.js"></script>
+    <script>
+        var innoJquery = innorix._load("innoJquery");
+        var control = new Object(); // 파일전송 컨트롤
+        
+        innoJquery(document).ready(function() {
+            // 파일전송 컨트롤 생성
+            control = innorix.create({
+                el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                installUrl: '../install/install.html' // Agent 설치 페이지
+            });
+
+            var urlBase = location.href.substring(0, location.href.lastIndexOf("/") + 1);
+            for (var i=1; i<4; i++) {
+                var _filePath = urlBase + "download.jsp?fileID=" + i;
+                var _fileSize = 1433885;
+                var _fileType = "normal";
+                
+                var fileName = i + ". INNORIX WP 소개서.pdf";
+                var fileSize = bytesToSize(_fileSize);
+                var fileType = "일반";
+                
+                // 다운로드 파일 목록을 커스텀 테이블에 추가
+                innoJquery('#fileTable > tbody:last').append(' \
+                    <tr class="fileTable"> \
+                        <td class="fileInfo">' + _filePath + '</td> \
+                        <td class="fileInfo">' + _fileSize + '</td> \
+                        <td class="fileInfo">' + _fileType + '</td> \
+                        <td>' + fileName + '</td> \
+                        <td>' + fileSize + '</td> \
+                        <td>' + fileType + '</td> \
+                    </tr> \
+                ');
+            }
+        });
+        
+        // 파일 사이즈 bytes 를 KB, MB... 형식으로 변환
+        function bytesToSize(bytes) {
+            var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+            if (bytes == 0) return 'n/a';
+            var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+            if (i == 0) return bytes + ' ' + sizes[i];
+            return (bytes / Math.pow(1024, i)).toFixed(1) + ' ' + sizes[i];
+        }
+
+        // 커스텀 테이블 파일 정보를 확인
+        function getTableFiles() {
+            var tbl = innoJquery('#fileTable tr:has(td)').map(function(i, v) {
+                var innoJquerytd =  innoJquery('td', this);
+                return {
+                         downloadUrl: innoJquerytd.eq(0).text(),
+                         fileSize: Number(innoJquerytd.eq(1).text()),
+                         printFileName: innoJquerytd.eq(3).text()
+                       }
+            }).get();
+
+            return tbl;
+        }
+
+        // 다운로드 실행
+        function download(obj, type) {
+            control.removeAllFiles(); // 이전에 컨트롤에 담겨진 파일정보 모두 삭제
+            var data = getTableFiles(); // 커스텀 테이블로부터 파일 다운로드 정보 얻어옴
+            control.presetDownloadFiles(data); // 커스텀 테이블의 파일정보를 컨트롤에 추가
+            setTimeout(function(){ control.download(); }, 500);
+        }
+    </script>
+
+<head>
+<body>
+    <a href="../index.html">&larr; 예제 목록</a><br /><br />
+
+    <table id="fileTable" class="fileTable">
+        <thead>
+            <tr>
+                <th class="fileInfo">filePath</th>
+                <th class="fileInfo">fileSize</th>
+                <th class="fileInfo">fileType</th>
+                <th>파일명</th>
+                <th>용량</th>
+                <th>구분</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="fileControl" style="display:none"></div><br/>
+
+    <input type="button" value="모든파일 다운로드" onclick="download();"/>
+</body>
+</html>

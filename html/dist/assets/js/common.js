@@ -369,44 +369,87 @@ function commonFunction() {
           debugger: true, // Enable debugger
         });
 
-        gb.mainSwiper.on('activeIndexChange', function (swiper) {
-          setTimeout(function () {
-            var currentVd = document.querySelector('.swiper-slide-active video'),
-              notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
-              animate = $('.swiper-slide-active .animate').get(),
-              animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
+        gb.mainSwiper.on('slideChangeTransitionStart', function (swiper) {
+          var notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
+            animate = $('.swiper-slide-active .animate').get(),
+            animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
 
-            animate_.forEach(function (elem) {
-              $(elem).removeClass('animation--start');
-            });
-            animate.forEach(function (elem) {
-              $(elem).addClass('animation--start');
-            });
+          clearTimeout(gb.timeSet); // 이미지 스와이프 리셋
+          console.log('이미지 스와이프 리셋');
 
+          if (notCurrentvd.length) {
             notCurrentvd.forEach(function (elem) {
               elem.pause();
               $(elem).prop('currentTime', 0);
             });
+          }
 
+          animate_.forEach(function (elem) {
+            $(elem).removeClass('animation--start');
+          });
+
+          animate.forEach(function (elem) {
+            $(elem).addClass('animation--start');
+          });
+
+          $('.button-swiperController').removeClass('play').addClass('pause').find('em').text('일시정지');
+        });
+
+        gb.mainSwiper.on('slideChangeTransitionEnd', function () {
+          var currentVd = document.querySelector('.swiper-slide-active video'),
+            currentImg = document.querySelector('.swiper-slide-active .imgBnr');
+
+          if (currentVd) {
+            // 비디오 타입인 경우
             currentVd.play();
-
             currentVd.addEventListener('ended', function () {
+              // 현재 비디오 재생종료 후 스와이프
               gb.mainSwiper.slideNext();
             });
 
-            $('.button-swiperController').removeClass('play').addClass('pause').find('em').text('일시정지');
-          }, 100);
+            console.log('video');
+          }
+
+          if (currentImg) {
+            // 이미지 타입인 경우 (5초 뒤 스와이프)
+            gb.timeSet = setTimeout(function () {
+              gb.mainSwiper.slideNext();
+            }, 5000);
+
+            console.log('image');
+          }
         });
 
         var currentVd = document.querySelector('.swiper-slide-active video'),
+          currentImg = document.querySelector('.swiper-slide-active .imgBnr'),
           notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
           animate = $('.swiper-slide-active .animate').get();
 
-        notCurrentvd.forEach(function (elem) {
-          elem.load();
-        });
+        if (notCurrentvd.length) {
+          notCurrentvd.forEach(function (elem) {
+            elem.load();
+          });
+        }
 
-        currentVd.play();
+        if (currentVd) {
+          // 비디오 타입인 경우
+          currentVd.play();
+          currentVd.addEventListener('ended', function () {
+            // 현재 비디오 재생종료 후 스와이프
+            gb.mainSwiper.slideNext();
+          });
+
+          console.log('video');
+        }
+
+        if (currentImg) {
+          // 이미지 타입인 경우 (5초 뒤 스와이프)
+          gb.timeSet = setTimeout(function () {
+            gb.mainSwiper.slideNext();
+          }, 5000);
+
+          console.log('image');
+        }
 
         setTimeout(function () {
           animate.forEach(function (elem) {
@@ -414,28 +457,28 @@ function commonFunction() {
           });
         }, 100);
 
-        /*********************************************
-          동영상 재생이 끝나고
-          다음 동영상으로 이어서 스와이프
-          *********************************************/
-        currentVd.addEventListener('ended', function () {
-          gb.mainSwiper.slideNext();
-        });
-
         $('.main-swiper')
           .find('.swiper-pagination')
           .append('<button type="button" class="button-swiperController pause"><em class="hidden-txt">일시정지</em></button>');
 
         $(document).on('click', '.button-swiperController', function () {
           var trg = $(this),
-            currentVd = document.querySelector('.swiper-slide-active video');
+            currentVd = document.querySelector('.swiper-slide-active video'),
+            currentImg = document.querySelector('.swiper-slide-active .imgBnr');
 
           if (trg.hasClass('play')) {
             trg.removeClass('play').addClass('pause').find('em').text('일시정지');
-            currentVd.play();
+            if (currentVd) currentVd.play();
+
+            if (currentImg) {
+              gb.timeSet = setTimeout(function () {
+                gb.mainSwiper.slideNext();
+              }, 5000);
+            }
           } else {
             trg.removeClass('pause').addClass('play').find('em').text('재생');
-            currentVd.pause();
+            if (currentVd) currentVd.pause();
+            if (currentImg) clearTimeout(gb.timeSet);
           }
         });
       },
@@ -616,7 +659,7 @@ function commonFunction() {
         $(document).on('mouseenter focusin', '.liveOnAir .info', function () {
           var trg = $(this);
 
-          trg.closest('article').addClass('on');
+          trg.closest('.article').addClass('on');
           trg
             .find('.preview')
             .stop()
@@ -628,7 +671,7 @@ function commonFunction() {
         $(document).on('mouseleave focusout', '.liveOnAir .info', function () {
           var trg = $(this);
 
-          trg.closest('article').removeClass('on');
+          trg.closest('.article').removeClass('on');
           gsap.to(trg.find('.preview'), { opacity: 0, scaleY: 0, duration: 0.4 });
           trg.find('.preview').stop().fadeOut(300);
         });

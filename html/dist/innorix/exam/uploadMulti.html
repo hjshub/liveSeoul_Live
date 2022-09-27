@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control1 = new Object(); // 파일전송 컨트롤 1
+            var control2 = new Object(); // 파일전송 컨트롤 2
+            var control3 = new Object(); // 파일전송 컨트롤 3
+
+            function uploadAll() {
+                control3.addFiles(control1.getAllFiles());
+                control3.addFiles(control2.getAllFiles());
+                control3.upload();
+            }
+
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control1 = innorix.create({
+                    el: '#fileControll', // 컨트롤 출력 HTML 객체 ID
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    uploadUrl: './upload.jsp?el=fileControll'
+                });
+
+                control2 = innorix.create({
+                    el: '#fileControl2',
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    uploadUrl: './upload.jsp?el=fileControl2'
+                });
+
+                control3 = innorix.create({
+                    el: '#fileControl3',
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    uploadUrl: './upload.jsp'
+                });
+
+                // 업로드 완료 이벤트
+                control1.on('uploadComplete', function (p) {
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].controlId + " " + f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+                });
+
+                control2.on('uploadComplete', function (p) {
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].controlId + " " + f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+                });
+
+                control3.on('uploadComplete', function (p) {
+                    console.log(p.files);
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].controlId + " " + f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <a href="../index.html">&larr; 예제 목록</a><br /><br />
+        <div id="fileControll"></div><br />
+
+        <input type="button" value="파일추가" onclick="control1.openFileDialog();"/>
+        <input type="button" value="업로드" onclick="control1.upload();" /><br /><br />
+
+        <div id="fileControl2"></div><br />
+
+        <input type="button" value="파일추가" onclick="control2.openFileDialog();"/>
+        <input type="button" value="업로드" onclick="control2.upload();" /><br /><br />
+
+        <div id="fileControl3" style="display:none"></div>
+
+        <input type="button" value="전체 업로드" onclick="uploadAll();" />
+    </body>
+</html>

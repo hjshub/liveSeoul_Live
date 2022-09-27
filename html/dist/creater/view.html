@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="Author" content="" />
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
@@ -428,7 +428,7 @@
                     <div class="text-support modal-wrap">
                       <button
                         type="button"
-                        class="btn-has-icon rounded voice type-01 button-active-modal"
+                        class="btn-has-icon rounded voice type-02 button-active-modal"
                         data-modal-name="text-support"
                       >
                         <em>음성&middot;문자 지원</em>
@@ -455,123 +455,246 @@
                         </div>
                       </div>
                     </div>
-                    <ul class="utility">
-                      <li class="">
-                        <a href="" class="icon-download button-active-modal" data-modal-name="applyDownload"><em>다운로드</em></a>
+                    <div class="utility">
+                      <div class="add-curation">
+                        <button
+                          type="button"
+                          class="btn-has-icon rounded add navy button-active-modal"
+                          data-modal-name="addCuration"
+                        >
+                          <em>큐레이션 담기</em>
+                        </button>
                         <div class="modal-wrap">
-                          <!-- 다운로드 신청 -->
-                          <div class="modal right ivory applyDownload is_animated animate__fade_In_Up" id="modal-applyDownload">
+                          <!-- 큐레이션 담기 -->
+                          <div class="modal right ivory addCuration is_animated animate__fade_In_Up" id="modal-addCuration">
                             <header class="modal-header">
                               <h5>
-                                다운로드 사유 입력 후 신청해 주세요.<br />
-                                <em>* 관리자 승인 후 다운로드가 가능합니다. 승인 기간 평일기준 1~2일 소요</em>
+                                큐레이션 담기<br />
+                                <em>* 영상을 미리 담은 후에 큐레이션을 만들어 보세요.</em>
                               </h5>
                               <button type="button" class="button-close modal-off">
                                 <em class="hidden-txt">레이어 팝업 닫기</em>
                               </button>
                             </header>
                             <div class="modal-body">
-                              <div class="modal-contents">
-                                <textarea
-                                  cols="30"
-                                  rows="10"
-                                  title="다운로드 사유 입력 - 사유입력 100자 이내"
-                                  placeholder="사유입력 100자 이내"
-                                ></textarea>
-                              </div>
-                              <div class="btn-wrap align-c">
-                                <button
-                                  class="btn-default rounded orange"
-                                  data-modal-name="download-finish"
-                                  type="submit"
-                                  onclick="applyDownload();"
-                                >
-                                  <em>다운로드 신청</em>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-
-                          <!-- 다운로드 완료 -->
-                          <div class="modal right ivory applyDownload is_animated animate__fade_In_Up" id="modal-download-finish">
-                            <header class="modal-header">
-                              <h5 class="finish align-c">신청이 완료되었습니다.</h5>
-                              <button type="button" class="button-close modal-off">
-                                <em class="hidden-txt">레이어 팝업 닫기</em>
-                              </button>
-                            </header>
-                            <div class="modal-body finish">
-                              <div class="modal-contents align-c">
-                                <p>
-                                  마이페이지로 이동하여 영상다운이 가능합니다.<br />
-                                  이동하시겠습니까?
-                                </p>
-                              </div>
-                              <div class="btn-wrap align-c">
-                                <button
-                                  class="btn-default xs rounded orange"
-                                  type="button"
-                                  onclick="location.href='../mypage/download_list.html'"
-                                >
-                                  <em>확인</em>
-                                </button>
-                                <button class="btn-default xs rounded darkGray modal-off" type="button">
-                                  <em>취소</em>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <a href="" class="icon-share button-active-modal" data-modal-name="share"><em>공유하기</em></a>
-                        <div class="modal-wrap">
-                          <!-- 공유하기 -->
-                          <div class="modal right ivory share is_animated animate__fade_In_Up" id="modal-share">
-                            <header class="modal-header">
-                              <h5>SNS 공유하기</h5>
-                              <button type="button" class="button-close modal-off">
-                                <em class="hidden-txt">레이어 팝업 닫기</em>
-                              </button>
-                            </header>
-                            <div class="modal-body">
-                              <div class="modal-contents">
-                                <ul class="sns-list">
+                              <div class="modal-contents customedScroll pink">
+                                <ul class="my-curation">
                                   <li>
-                                    <a class="share-facebook" href="javascript:void(0);"
-                                      ><em class="hidden-txt">페이스북 공유하기</em></a
-                                    >
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" checked id="cur-list01" />
+                                        <label for="cur-list01"><em>코로나19 관련 큐레이션</em></label>
+                                      </span>
+                                    </div>
                                   </li>
                                   <li>
-                                    <a class="share-twitter" href="javascript:void(0);"
-                                      ><em class="hidden-txt">트위터 공유하기</em></a
-                                    >
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list02" />
+                                        <label for="cur-list02"><em>맛집 영상 모음_1</em></label>
+                                      </span>
+                                    </div>
                                   </li>
                                   <li>
-                                    <a class="share-kakaotalk" href="javascript:void(0);"
-                                      ><em class="hidden-txt">카카오톡 공유하기</em></a
-                                    >
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list03" />
+                                        <label for="cur-list03"><em>맛집 영상 모음_2</em></label>
+                                      </span>
+                                    </div>
                                   </li>
                                   <li>
-                                    <a class="share-N_blog" href="javascript:void(0);"
-                                      ><em class="hidden-txt">네이버블로그 공유하기</em></a
-                                    >
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list04" />
+                                        <label for="cur-list04"><em>맛집 영상 모음_3</em></label>
+                                      </span>
+                                    </div>
                                   </li>
                                   <li>
-                                    <a class="share-URL" href="javascript:void(0);" onclick="commonFunction().copyUrl();"
-                                      ><em class="hidden-txt">URL 공유하기</em></a
-                                    >
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list05" />
+                                        <label for="cur-list05"><em>맛집 영상 모음_4</em></label>
+                                      </span>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list06" />
+                                        <label for="cur-list06"><em>맛집 영상 모음_5</em></label>
+                                      </span>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list07" />
+                                        <label for="cur-list07"><em>맛집 영상 모음_6</em></label>
+                                      </span>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list08" />
+                                        <label for="cur-list08"><em>맛집 영상 모음_7</em></label>
+                                      </span>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list09" />
+                                        <label for="cur-list09"><em>맛집 영상 모음_8</em></label>
+                                      </span>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="chk-wrap list-type">
+                                      <span>
+                                        <input type="checkbox" id="cur-list10" />
+                                        <label for="cur-list10"><em>맛집 영상 모음_9</em></label>
+                                      </span>
+                                    </div>
                                   </li>
                                 </ul>
                               </div>
+                              <div class="btn-wrap half align-c">
+                                <button class="btn-default rounded orange" type="submit">
+                                  <em>큐레이션 영상 저장</em>
+                                </button>
+                                <button class="btn-has-icon rounded add navy" type="button" onclick="addCuration(this);">
+                                  <em>새로운 큐레이션 만들기</em>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </li>
-                      <li>
-                        <a href="" class="icon-like"><em>좋아요</em></a>
-                      </li>
-                    </ul>
+                      </div>
+                      <ul>
+                        <li>
+                          <a href="" class="icon-download button-active-modal" data-modal-name="applyDownload"
+                            ><em>다운로드</em></a
+                          >
+                          <div class="modal-wrap">
+                            <!-- 다운로드 신청 -->
+                            <div class="modal right ivory applyDownload is_animated animate__fade_In_Up" id="modal-applyDownload">
+                              <header class="modal-header">
+                                <h5>
+                                  다운로드 사유 입력 후 신청해 주세요.<br />
+                                  <em>* 관리자 승인 후 다운로드가 가능합니다. 승인 기간 평일기준 1~2일 소요</em>
+                                </h5>
+                                <button type="button" class="button-close modal-off">
+                                  <em class="hidden-txt">레이어 팝업 닫기</em>
+                                </button>
+                              </header>
+                              <div class="modal-body">
+                                <div class="modal-contents">
+                                  <textarea
+                                    cols="30"
+                                    rows="10"
+                                    title="다운로드 사유 입력 - 사유입력 100자 이내"
+                                    placeholder="사유입력 100자 이내"
+                                  ></textarea>
+                                </div>
+                                <div class="btn-wrap align-c">
+                                  <button
+                                    class="btn-default rounded orange"
+                                    data-modal-name="download-finish"
+                                    type="submit"
+                                    onclick="applyDownload();"
+                                  >
+                                    <em>다운로드 신청</em>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 다운로드 완료 -->
+                            <div
+                              class="modal right ivory applyDownload is_animated animate__fade_In_Up"
+                              id="modal-download-finish"
+                            >
+                              <header class="modal-header">
+                                <h5 class="finish align-c">신청이 완료되었습니다.</h5>
+                                <button type="button" class="button-close modal-off">
+                                  <em class="hidden-txt">레이어 팝업 닫기</em>
+                                </button>
+                              </header>
+                              <div class="modal-body finish">
+                                <div class="modal-contents align-c">
+                                  <p>
+                                    마이페이지로 이동하여 영상다운이 가능합니다.<br />
+                                    이동하시겠습니까?
+                                  </p>
+                                </div>
+                                <div class="btn-wrap align-c">
+                                  <button
+                                    class="btn-default xs rounded orange"
+                                    type="button"
+                                    onclick="location.href='../mypage/download_list.html'"
+                                  >
+                                    <em>확인</em>
+                                  </button>
+                                  <button class="btn-default xs rounded darkGray modal-off" type="button">
+                                    <em>취소</em>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <a href="" class="icon-share button-active-modal" data-modal-name="share"><em>공유하기</em></a>
+                          <div class="modal-wrap">
+                            <!-- 공유하기 -->
+                            <div class="modal right ivory share is_animated animate__fade_In_Up" id="modal-share">
+                              <header class="modal-header">
+                                <h5>SNS 공유하기</h5>
+                                <button type="button" class="button-close modal-off">
+                                  <em class="hidden-txt">레이어 팝업 닫기</em>
+                                </button>
+                              </header>
+                              <div class="modal-body">
+                                <div class="modal-contents">
+                                  <ul class="sns-list">
+                                    <li>
+                                      <a class="share-facebook" href="javascript:void(0);"
+                                        ><em class="hidden-txt">페이스북 공유하기</em></a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="share-twitter" href="javascript:void(0);"
+                                        ><em class="hidden-txt">트위터 공유하기</em></a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="share-kakaotalk" href="javascript:void(0);"
+                                        ><em class="hidden-txt">카카오톡 공유하기</em></a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="share-N_blog" href="javascript:void(0);"
+                                        ><em class="hidden-txt">네이버블로그 공유하기</em></a
+                                      >
+                                    </li>
+                                    <li>
+                                      <a class="share-URL" href="javascript:void(0);" onclick="commonFunction().copyUrl();"
+                                        ><em class="hidden-txt">URL 공유하기</em></a
+                                      >
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <a href="" class="icon-like"><em>좋아요</em></a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                   <div class="contents-body">
                     <p>졸업하면 무조건 취업! 기적의 사관학교가 있다?! (f.청년취업사관학교)</p>
@@ -789,7 +912,7 @@
             <div class="box-style-list">
               <ul>
                 <li>
-                  <article>
+                  <div class="article">
                     <div class="img-thumb">
                       <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-01.jpg" alt="영상 썸네일" /></a>
                     </div>
@@ -800,10 +923,10 @@
                       </dl>
                     </div>
                     <div class="date">2021.12.21</div>
-                  </article>
+                  </div>
                 </li>
                 <li>
-                  <article>
+                  <div class="article">
                     <div class="img-thumb">
                       <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-02.jpg" alt="영상 썸네일" /></a>
                     </div>
@@ -814,10 +937,10 @@
                       </dl>
                     </div>
                     <div class="date">2021.12.21</div>
-                  </article>
+                  </div>
                 </li>
                 <li>
-                  <article>
+                  <div class="article">
                     <div class="img-thumb">
                       <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-03.jpg" alt="영상 썸네일" /></a>
                     </div>
@@ -828,10 +951,10 @@
                       </dl>
                     </div>
                     <div class="date">2021.12.21</div>
-                  </article>
+                  </div>
                 </li>
                 <li>
-                  <article>
+                  <div class="article">
                     <div class="img-thumb">
                       <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-04.jpg" alt="영상 썸네일" /></a>
                     </div>
@@ -842,10 +965,10 @@
                       </dl>
                     </div>
                     <div class="date">2021.12.21</div>
-                  </article>
+                  </div>
                 </li>
                 <li>
-                  <article>
+                  <div class="article">
                     <div class="img-thumb">
                       <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-05.jpg" alt="영상 썸네일" /></a>
                     </div>
@@ -856,10 +979,10 @@
                       </dl>
                     </div>
                     <div class="date">2021.12.21</div>
-                  </article>
+                  </div>
                 </li>
                 <li>
-                  <article>
+                  <div class="article">
                     <div class="img-thumb">
                       <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-06.jpg" alt="영상 썸네일" /></a>
                     </div>
@@ -870,7 +993,7 @@
                       </dl>
                     </div>
                     <div class="date">2021.12.21</div>
-                  </article>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -994,6 +1117,26 @@
         // 다운로드 신청
         commonFunction().modalOff();
         $('#modal-download-finish').css('display', 'block');
+      }
+
+      function addCuration(t) {
+        // 새로운 큐레이션 만들기
+        var newList =
+          '<li>' +
+          '<div class="chk-wrap list-type">' +
+          '<span>' +
+          '<input type="checkbox" id="newList01" />' +
+          '<label for="newList01"><em class="hidden-txt">새로운 큐레이션 제목</em></label>' +
+          '</span>' +
+          '<span class="text-wrap line">' +
+          '<input type=text title="큐레이션 제목 입력" placeholder="큐레이션 제목 입력">' +
+          '<button type=submit class="btn-default xs3 rounded red2"><em>저장</em></button>' +
+          '</span>' +
+          '</div>' +
+          '</li>';
+
+        $(t).closest('.modal').find('.modal-contents').scrollTop(0);
+        $(t).closest('.modal-body').find('.my-curation').prepend(newList);
       }
 
       //화질 Object 리스트

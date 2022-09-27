@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    
+                    downloadDelay: 1000 // ms 단위 다운로드 딜레이 설정 | 기본 : 200
+                });
+				/*
+					downloadDelay
+					- 다운로드 딜레이 설정 (기본값 : 0.2초)
+					빠르고 반복되게 다운로드 요청이 이루어질 때, 브라우저 자체에서 악성 접근으로 감지하여 
+					차단되어 다운로드가 정상적으로 진행되지 않을 수 있습니다.
+					해당 경우 downloadDelay 옵션을 통해 딜레이 시간을 보다 길게 설정하여 조치할 수 있습니다.
+				*/
+                control.on('loadComplete', function (p) { // 다운로드 파일 추가
+                    var urlBase = location.href.substring(0, location.href.lastIndexOf("/") + 1);
+                    control.presetDownloadFiles(
+                    [{
+                        printFileName: "INNORIX WP 브로셔.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "download.jsp?fileID=1"
+                    },
+                    {
+                        printFileName: "INNORIX WP Brochure.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "download.jsp?fileID=2"
+                    },
+                    {
+                        printFileName: "INNORIX WP パンフレット.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "download.jsp?fileID=3"
+                    }]);
+                 });
+            };
+			
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="선택 다운로드" onclick="control.downloadSelectedFiles();"/>
+        <input type="button" value="전체 다운로드" onclick="control.download();"/>
+    </body>
+</html>

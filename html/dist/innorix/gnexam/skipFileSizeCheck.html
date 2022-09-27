@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    
+                    agent : false, // Html5 모드 사용
+                    skipFileSizeCheck : true // Html5 모드 사용 시 파일 사이즈 체크 건너 뜀
+                });
+                
+                /*
+                	skipFileSizeCheck (※ Html5 모드 전용 옵션)
+                	 - 입력되지 않았거나 잘못된 FileSize인 경우 downloadUrl로 접속하여 사이즈를 확인하는 과정을 건너뜁니다.
+                */
+
+                control.on('loadComplete', function (p) { // 다운로드 파일 추가
+                    var urlBase = location.href.substring(0, location.href.lastIndexOf("/") + 1);
+                    control.presetDownloadFiles(
+                    [{
+                        printFileName: "INNORIX WP 브로셔.pdf",
+                        // 파일 사이즈를 입력하지 않음
+                        downloadUrl: urlBase + "download.jsp?fileID=1"
+                    },
+                    {
+                        printFileName: "INNORIX WP Brochure.pdf",
+                        fileSize: 305, // 잘못된 파일 사이즈를 입력함 (실제사이즈보다 작게)
+                        downloadUrl: urlBase + "download.jsp?fileID=2"
+                    },
+                    {
+                        printFileName: "INNORIX WP パンフレット.pdf",
+                        fileSize: 2785, // 잘못된 파일 사이즈를 입력함 (실제사이즈보다 크게)
+                        downloadUrl: urlBase + "download.jsp?fileID=3"
+                    }]);
+                 });
+                
+                // 다운로드 취소
+                control.on('downloadCancel', function (p) { 
+               		alert("다운로드가 취소되었습니다.");
+                });
+            };
+			
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="선택 다운로드" onclick="control.downloadSelectedFiles();"/>
+        <input type="button" value="전체 다운로드" onclick="control.download();"/>
+    </body>
+</html>

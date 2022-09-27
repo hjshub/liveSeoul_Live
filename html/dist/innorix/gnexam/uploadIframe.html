@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            innorix.setLanguage('ko'); // 한/영설정 [en,ko]
+            var innoJquery = innorix._load("innoJquery");
+          	window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    transferMode: 'upload', // 업로드, 다운로드 혼합사용
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+                    showGraph: 'true', // 우측 그래프 출력
+                    uploadUrl: './upload.jsp', // 업로드 URL
+                    agent: false, // Agent 사용여부
+                    iframeView: true, // iframe 내 출력 여부
+                    iframeViewLocation: 'parent', // iframe 영역 내 출력시 전송창 출력 위치 top(최상단) | parent(바로위)
+                    iframeViewCssUrl: '<link rel="stylesheet" href="../innorix.css">' // 영역 외 출력 시 참조 css 경로
+                   	// iframeViewTop: '20px', //xx px 출력 영역 내 상단 기준 출력 위치
+                    // iframeViewLeft: '20px', //xx px 출력 영역 내 장축 기준 출력 위치
+                    // iframeViewMarginTop: '200px', //xx px 출력 영역 내 상단 기준 마진 
+                    // iframeViewMarginLeft: '20px', //xx px 출력 영역 내 장축 기준 마진
+                });
+                
+                // 업로드 완료 이벤트
+                control.on('uploadComplete', function (p) {
+                	console.log(p);
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <div id="fileControl"></div><br/>
+        <input type="button" value="멀티 파일 추가" onclick="control.openFileDialog();"/>
+        <input type="button" value="단일 파일 추가" onclick="control.openFileDialogSingle();"/>
+        <input type="button" value="업로드" onclick="control.upload();"/>
+         
+    </body>
+</html>

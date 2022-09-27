@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl',
+                    installUrl: '../install/install.html',
+                    uploadUrl: './upload.jsp'
+                });
+
+                // 업로드 완료 이벤트
+                control.on('uploadComplete', function (p) {
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+                });
+            };
+
+            function addFiles() {
+                var fileArray = new Array();
+                // 자동으로 추가할 사용자측 파일목록 구성
+                var fileObj = new Object();
+                    fileObj.filePath = "c:\\windows\\notepad.exe",
+                    fileObj.fileSize = "246784",
+
+                fileArray.push(fileObj);
+                
+                control.addFiles(fileArray); // 리스트 컨트롤에 파일 추가
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index.html">&larr; 예제 목록</a><br /><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="파일 자동추가" onclick="addFiles();"/>
+        <input type="button" value="업로드" onclick="control.upload();"/>
+    </body>
+</html>

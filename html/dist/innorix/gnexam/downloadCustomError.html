@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+            innorix.setLanguage('ko'); // 한/영설정 [en,ko]
+            var innoJquery = innorix._load("innoJquery");
+            
+            window.onload = function() {
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    installUrl: '../install/install.html', // Agent 설치 페이지
+ 					agent : true,			// Agent 모드 사용
+                    
+                    retryCount: 1,			// 재전송 횟수
+                    retryDelay: 1,			// 재전송 간격(sec)
+                    maximumErrorCount: 0 	// 최대 에러 허용 횟수
+                });
+                /*
+                	파일 전송 간 오류 발생 시 재전송 시도 횟수 및 간격에 대한 설정을 해줍니다.
+					미설정 시 무제한으로 재전송을 시도하게 됩니다.
+                	- 관련 예제 [오류 시 전송 시도 횟수]참고
+                */
+                
+                control.on('loadComplete', function (p) { // 다운로드 파일 추가
+                	var urlBase = location.href.substring(0, location.href.lastIndexOf("/") + 1);
+                	
+                    control.presetDownloadFiles(
+                    [{
+                     	printFileName: "INNORIX WP 브로셔.pdf",
+						fileSize: 1433885,
+                        downloadUrl: urlBase + "downloadCustomError.jsp?fileID=1"
+                    },
+                    {
+                        printFileName: "INNORIX WP Brochure.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "downloadCustomError.jsp?fileID=2"
+                    },
+                    {
+                        printFileName: "INNORIX WP パンフレット.pdf",
+                        fileSize: 1433885,
+                        downloadUrl: urlBase + "downloadCustomError.jsp?fileID=3"
+                    }]);
+                });
+                
+             	//다운로드 에러 이벤트 (※ Agent 모드 전용)
+                control.on('downloadError', function (p) {
+                	control.closeTransferWindow(); //전송창 바로 닫힘
+                	
+                	console.log(p);
+                	
+                	console.log('---- Download Error Event ----');
+                	var f = p.files;
+                	for(var i=0; i<f.length; i++){
+                		console.log("fileName:" + f[i].fileName);
+                		console.log("errorCode:" + f[i].errorCode);
+                		console.log("errorMessage:" + f[i].errorMessage);
+                	}
+                });
+               
+            };
+            
+        </script>
+    </head>
+    <body>
+        <a href="../gnIndex.html">&larr; 예제 목록</a><br /><br />
+        <div id="fileControl"></div><br/>
+        <input type="button" value="선택 다운로드" onclick="control.downloadSelectedFiles();"/>
+        <input type="button" value="전체 다운로드" onclick="control.download();"/>
+    </body>
+</html>

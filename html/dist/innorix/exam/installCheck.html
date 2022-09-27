@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../innorix.css">
+        <script src="../innorix.js"></script>
+        <script>
+            var control = new Object();
+
+            window.onload = function() {
+                // 강제 html5 모드여부 확인 
+                var useHtml5 = !!(getCookie("forceHtml5Mode"));
+                
+                // agent 설치 URL
+                var installUrl = "../install/install.html?redirect="+ encodeURIComponent("http://innorix.com");
+
+                // 강제 html5 모드가 아니면
+
+                if (useHtml5 != true) {
+                    // agent 설치 또는 버전체크
+                    innorix.checkVersion(function (result) {
+                        if (result != true) {
+                            location.href = installUrl;
+                        }
+                    });
+                }
+
+                // 파일전송 컨트롤 생성
+                control = innorix.create({
+                    el: '#fileControl', // 컨트롤 출력 HTML 객체 ID
+                    installUrl: installUrl,
+                    uploadUrl: './upload.jsp' // 업로드 URL
+                });
+                
+                // 업로드 완료 이벤트
+                control.on('uploadComplete', function (p) {
+                    var f = p.files;
+                    var r = "Upload complete\n\n";
+                    for (var i = 0; i < f.length; i++ ) {
+                        r += f[i].clientFileName + " " + f[i].fileSize + "\n";
+                    }
+                    alert(r);
+                });
+            };
+            
+            function getCookie( name ) {
+                var nameOfCookie = name + "=", endOfCookie, x = 0;
+
+                while ( x <= document.cookie.length ) {
+                  var y = (x+nameOfCookie.length);
+                  if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+                    if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+                      endOfCookie = document.cookie.length;
+                    return unescape( document.cookie.substring( y, endOfCookie ) );
+                  }
+                  x = document.cookie.indexOf( " ", x ) + 1;
+                  if ( x === 0 )
+                    break;
+                }
+                return "";
+            }
+            
+            function setCookie( name, value, expiredays ) {
+                var todayDate = new Date();
+                todayDate.setDate( todayDate.getDate() + expiredays);
+                document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" ;
+            }
+        </script>
+    </head>
+    <body>
+        <a href="../index.html">&larr; 예제 목록</a><br /><br />
+
+        <div id="fileControl"></div><br/>
+
+        <input type="button" value="파일추가" onclick="control.openFileDialog();"/>
+        <input type="button" value="업로드" onclick="control.upload();"/>
+        <input type="button" value="forceHtml5Mode 쿠키삭제" onclick="setCookie('forceHtml5Mode', false, 0);"/>
+    </body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
+	<meta name="author" content="(주)지엔기술">
+	<title>GNIT 이노릭스 샘플 목록</title>
+	<link rel="shortcut icon" href="./gnexam/img/favicon.ico" />
+	<link rel="stylesheet" href="./gnexam/css/gnit.css">
+</head>
+<body>
+
+<header id="header">	
+	<h1><img src="./gnexam/img/gnlogo.png">INNORIX SAMPLE LIST</h1>	
+</header>
+
+<div class="section">
+	<div class="cont-wrap">
+		<div class="notice-wrap">
+			<table class="notice-tb">
+				<colgroup>
+					<col style="width:50%">
+					<col style="width:50%">
+				</colgroup>
+				<tr>
+					<th colspan="2" class="notice-txt"><p>이노릭스는 사용하고 계시는 모드별로 제공되는 기능이 다릅니다. 샘플 비고란을 참고해주세요.</p></th>
+				</tr>
+				<tr>
+					<td>
+						<div class="notice notice-a">
+							<p><img src="./gnexam/img/agent.png"> Agent 모드 </p>
+							<span>사용자 PC에 exe파일로 설치되며, 제공되는 기능이 더 많습니다. (agent : true)</span>
+						</div>
+					</td>
+					<td>
+						<div class="notice notice-h">
+							<p><img src="./gnexam/img/html5.png"> Html5 모드 </p>
+							<span>무설치형으로 파일전송을 이용하며, 제약되는 기능이 있습니다. (agent : false)</span>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<p class="origin-exam"><a href="./index.html">이노릭스제공 기본예제로 이동</a></p>
+		<div class="table-wrap">
+			<table class="list-tb">
+				<colgroup>
+					<col style="width:60px">
+					<col style="width:auto">
+					<col style="width:15%">
+					<col style="width:15%">
+				</colgroup>
+				<tr>
+					<th>No</th>
+					<th>기능설명</th>
+					<th>샘플</th>
+					<th>비고</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>커스텀 포스트데이터 전송(클라이언트→서버)</p>
+						<span class="refer">클라이언트메소트 setPostData, setFilePostDataByIndex를 이용한 포스트 데이터 전송</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/postData.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>업로드 시 커스텀 벨류 전송(서버→클라이언트)</p>
+						<span class="refer">서버메소드 setCustomValue를 이용한 커스텀 벨류 전송</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/uploadCustomValue.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>업로드 시 커스텀 에러 전송(서버→클라이언트)</p>
+						<span class="refer">InnorixCustomError 커스텀 에러 전송</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/uploadCustomError.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>업로드 시 서버 저장경로 변경</p>
+						<span class="refer">서버메소드 setDirectory를 이용한 서버 저장경로 지정</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/uploadSetDirectory.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>업로드 시 서버 저장파일명 변경</p>
+						<span class="refer">서버메소드 setFileName를 이용한 저장파일명 변경</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/changeFileName.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>업로드 서버경로 숨김 처리</p>
+						<span class="refer">서버메소드 setHideServerPathInfo를 이용한 서버경로 숨김 처리</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/hideServerPathInfo.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>업로드 파일 확장자 제한, 그룹화</p>
+						<span class="refer">allowExtension, limitExtension 옵션 활용법</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/uploadExtension.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>파일첨부 에러 시 메세지 출력(382이상 버전)</p>
+						<span class="refer">addFileError이벤트를 이용한 에러 메세지 출력</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/uploadAddFileError.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>파일첨부 에러 시 메세지 출력(373이하 버전)</p>
+						<span class="refer">addFileError이벤트를 이용한 에러 메세지 출력</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/uploadAddFileError_old.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>다운로드 시 커스텀 에러 전송(서버→클라이언트)</p>
+						<span class="refer">downloadCustomError 에러코드, 에러메시지 설정</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/downloadCustomError.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>다운로드 이중 무결성</p>
+						<span class="refer">다운로드 간 파일 해시 값을 이용한 이중 무결성 체크 예제</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/downloadIntegrity.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>다운로드 요청 간격 설정</p>
+						<span class="refer">downloadDelay옵션이용 ms단위 다운로드 딜레이 설정</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/downloadDelay.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>압축(.zip)하여 파일 다운로드</p>
+						<span class="refer">파일 다운로드 시 파일을 압축하여 다운로드</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/zipCombine.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>설정된 드랍존 영역을 확인하는 방법</p>
+						<span class="refer">isDebugDropZone옵션을 활용한 드랍존 영역 표시</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/debugDropZone.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>출력 언어 설정(한글/영어)</p>
+						<span class="refer">영어 메시지를 기본으로 출력하며 설정을 한글로 변경</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/setLanguage.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>에이전트 설치 시 팝업창으로 출력</p>
+						<span class="refer">installPopupWindow옵션활용 설치페이지 팝업창으로 출력</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/installPopup.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>삭제한 파일정보를 서버에 출력</p>
+						<span class="refer">파일추가 후 업로드 전 삭제된 파일에대한 정보출력</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/deleteFileInfo.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>전송 조각 사이즈변경, 세션 개수 설정</p>
+						<span class="refer">기본 조각 사이즈 2MB, 세션 16개가 적용</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/sliceSizeSession.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>오류 시 전송 시도 횟수</p>
+						<span class="refer">retryCount, retryDelay, maximumErrorCount 옵션활용</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/errorRetryCount.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>다운로드목록 구성 시 파일사이즈를 가상의사이즈로 지정 (Agent 모드)</p>
+						<span class="refer">isTempFileSize 옵션을 활용한 가상파일 사이즈 선언</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/isTempFileSize.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>다운로드목록 구성 시 파일사이즈를 가상의사이즈로 지정 (Html5 모드)</p>
+						<span class="refer">skipFileSizeCheck 옵션을 활용한 파일 사이즈 체크 건너 뜀용</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/skipFileSizeCheck.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>폴더구조 업로드, 다운로드</p>
+						<span class="refer">folderIntact, showFolderItems 옵션활용</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/upDownFolder.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>리스트 전송창 모드에서 파일별 전송상태 출력</p>
+						<span class="refer">showTransferFileStatus 옵션활용</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/showTransferFileStatus.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>파일 아이템 이동, 삭제 기능버튼 출력</p>
+						<span class="refer">useFuncBtn 옵션활용</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/useFuncBtn.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<!-- 
+				미사용
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>커스텀테이블을 이용한 선택파일 다운로드</p>
+						<span class="refer"></span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/downloadSelectedFileCustomTable.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>커스텀테이블을 이용한 업로드 폴더 구조 나타내기</p>
+						<span class="refer">설명부분</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/uploadFolderCustomTable.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr> 
+				<tr>
+					<td></td>
+					<td class="ta_l">
+						<p>색상 변경 샘플</p>
+						<span class="refer">페이지 컨셉에 맞는 색상으로 변경 (커스텀)</span>
+					</td>
+					<td><a class="exam-link" href="./gnexam/upload.html">샘플보기</a></td>
+					<td>
+						<img src="./gnexam/img/agent.png">
+						<img src="./gnexam/img/html5.png">
+					</td>
+				</tr>
+				-->
+			</table>
+		</div>
+		
+		<div class="notice notice-pdf">
+			<p><img src="./gnexam/img/pdf.png">이노릭스 참고 문서</p>
+			<span><a href="../INNORIX Platform WP v9.2 Manual.pdf" target="_blank">INNORIX Platform WP v9.2 Manual.pdf</a></span>
+			<span><a href="../이노릭스 에이전트 오동작 조치 매뉴얼.pdf" target="_blank">이노릭스 에이전트 오동작 조치 매뉴얼.pdf</a></span>
+			<span><a href="../INNORIX-WP-JSP-빠른설치-R2.pdf" target="_blank">INNORIX-WP-JSP-빠른설치-R2.pdf</a></span>
+		</div>
+
+	</div>	
+</div><!-- //.section -->
+
+<footer id="footer">
+	<p>추가 문의사항은 <em>innorix@gnit.co.kr</em>로 보내주시길 바랍니다.</p>
+	<span class="top_btn" onclick="window.scrollTo(0,0);">TOP</span>
+</footer>
+
+</body>
+</html>
