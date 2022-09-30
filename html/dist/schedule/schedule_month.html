@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>광장24시 | 라이브 서울</title>
+    <title>편성표 | 라이브 서울</title>
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/jquery-ui.min.js"></script>
@@ -21,7 +21,6 @@
 <link rel="stylesheet" href="../assets/css/swiper.min.css" />
 <link rel="stylesheet" href="../assets/css/style.css" />
 
-    <script src="../assets/js/hls.js"></script>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -382,8 +381,8 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap seoul24 list" id="contents">
-        <h1 class="hidden-txt">광장24시 메인</h1>
+      <div class="wrap schedule list" id="contents">
+        <h1 class="hidden-txt">편성표</h1>
         <section class="list_top">
           <header class="page-header">
             <div class="inner">
@@ -391,161 +390,34 @@
                 <span>
                   <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em> </a>
                 </span>
-                <span><a href="">#서울</a></span>
-                <span><a href="">광장24시</a></span>
+                <span><a href="">서울온에어</a></span>
+                <span><a href="">편성표</a></span>
               </div>
 
               <h2 class="no_st">
-                <strong>광장24시</strong>
-                <span class="signal"><em>LIVE COVERAGE</em></span>
+                <strong>편성표</strong>
               </h2>
-
-              <nav class="tabStyle-nav col-3 red mob-tabMenu">
-                <ul>
-                  <li class="on">
-                    <a href="#seoul-praza"><span>서울광장</span></a>
-                  </li>
-                  <li>
-                    <a href="#gwang-hwa-moon"><span>광화문광장</span></a>
-                  </li>
-                  <li>
-                    <a href="#chung-gye-chun"><span>청계천광장</span></a>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </header>
         </section>
 
-        <!-- 광장24 -->
+        <!-- 편성표 -->
         <section>
           <div class="inner">
-            <div class="box-item-wrapper clear">
-              <div class="box-item l-box" id="seoul-praza">
-                <h3 class="ft-md has-caption">
-                  <span class="caption orange">생방송</span>
-                  <strong>서울광장 24시간 생중계</strong>
-                </h3>
-                <div class="liveContents">
-                  <iframe
-                    width="100%"
-                    height="450"
-                    src="https://www.youtube.com/embed/A4jhrbRwZMo?feature=player_detailpage&amp;rel=0&amp;showinfo=0&amp;autoplay=1"
-                    frameborder="0"
-                    allowfullscreen=""
-                  ></iframe>
-                </div>
+            <header class="schedule-month-header clear">
+              <div class="classify">
+                <span>생방송</span>
+                <span>다시보기</span>
+                <span>예정</span>
+                <span>다시보기 준비중</span>
               </div>
-              <div class="box-item l-box cl" id="gwang-hwa-moon">
-                <h3 class="ft-md has-caption">
-                  <span class="caption orange">생방송</span>
-                  <strong>광화문광장 24시간 생중계</strong>
-                </h3>
-                <div class="liveContents">
-                  <span class="vd-play transition-none"><em class="hidden-txt">재생</em></span>
-                  <video
-                    webkit-playsinline
-                    playsinline
-                    controls
-                    crossorigin="anonymous"
-                    preload="metadata"
-                    class="vd-streaming"
-                  ></video>
-                </div>
+              <div class="r-box ctrl">
+                <button class="btn-view-calendar" type="button"><em>달력형</em></button>
+                <button class="btn-view-list" type="button"><em>목록형</em></button>
               </div>
-              <div class="box-item r-box" id="chung-gye-chun">
-                <h3 class="ft-md has-caption">
-                  <span class="caption orange">생방송</span>
-                  <strong>청계천 24시간 생중계</strong>
-                </h3>
-                <div class="liveContents">
-                  <span class="vd-play transition-none"><em class="hidden-txt">재생</em></span>
-                  <video
-                    webkit-playsinline
-                    playsinline
-                    controls
-                    crossorigin="anonymous"
-                    preload="metadata"
-                    class="vd-streaming"
-                  ></video>
-                </div>
-              </div>
-              <div class="floating-layer">
-                <div class="l-box">
-                  <h3 class="ft-md has-caption">
-                    <span class="caption red">서울광장</span>
-                    <strong>행사안내</strong>
-                  </h3>
-                  <article class="event-info">
-                    <h4>9월 7일 수요일 행사 안내</h4>
-                    <dl>
-                      <dt>
-                        <b>잔디광장</b>
-                      </dt>
-                      <dd>
-                        <em class="tag red">전시</em>
-                        <span class="desc">I.SEOUL.U 홍보조형물 전시 [수리]</span><br />
-                        <span class="time">사용시간 : 00:00~24:00</span>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>
-                        <b>동편광장</b>
-                      </dt>
-                      <dd class="empty">등록된 행사가 없습니다.</dd>
-                    </dl>
-                    <dl>
-                      <dt>
-                        <b>서편광장</b>
-                      </dt>
-                      <dd class="empty">등록된 행사가 없습니다.</dd>
-                    </dl>
-                  </article>
-                </div>
-                <div class="r-box">
-                  <h3 class="ft-md has-caption icon">
-                    <span class="caption comm"><em class="hidden-txt">소통</em></span>
-                    <strong>온라인소통</strong>
-                  </h3>
-                  <article class="schedule-info">
-                    <h4>서울 안 다양한 광장의 소식</h4>
-                    <dl>
-                      <dt>
-                        <a href="#">서울광장</a>
-                      </dt>
-                      <dd>
-                        <span>
-                          서울의 새로운 일정을<br />
-                          확인해보세요.
-                        </span>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>
-                        <a href="#">광화문광장</a>
-                      </dt>
-                      <dd>
-                        <span>
-                          광화문의 새로운 일정을<br />
-                          확인해보세요.
-                        </span>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt>
-                        <a href="#">청계광장</a>
-                      </dt>
-                      <dd>
-                        <span>
-                          청계천의 새로운 일정을<br />
-                          확인해보세요.
-                        </span>
-                      </dd>
-                    </dl>
-                  </article>
-                </div>
-              </div>
-            </div>
+            </header>
+            <div clas="schedule-calendarType"></div>
+            <div clas="schedule-listType"></div>
           </div>
         </section>
       </div>
@@ -637,42 +509,6 @@
       <!-- // #footer -->
     </div>
 
-    <script>
-      // 스트리밍 재생
-      var vd = $('.vd-streaming').get();
-      var vdTimeSet;
-      var vdSrc = [
-        'https://topiscctv.eseoul.go.kr/sd1/ch96.stream/playlist.m3u8',
-        'https://topiscctv.eseoul.go.kr/sd1/ch61.stream/playlist.m3u8',
-      ];
-
-      vd.forEach(function (el, idx) {
-        if (el.canPlayType('application/vnd.apple.mpegurl')) {
-          el.src = vdSrc[idx];
-        } else if (Hls.isSupported()) {
-          var hls = new Hls();
-          hls.loadSource(vdSrc[idx]);
-          hls.attachMedia(el);
-        }
-      });
-
-      $('.vd-play').each(function (i) {
-        var t = $(this);
-
-        t.on('click', function () {
-          t.stop().fadeOut(300);
-          vd[i].play();
-
-          vdTimeSet = setTimeout(function () {
-            vd[i].pause(); // 재생 시작 30초 후 일시정지
-          }, 30000);
-        });
-
-        vd[i].addEventListener('pause', function () {
-          t.stop().fadeIn(300);
-          clearTimeout(vdTimeSet);
-        });
-      });
-    </script>
+    <script></script>
   </body>
 </html>
