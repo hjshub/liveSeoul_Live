@@ -18,11 +18,13 @@ var _gb = function () {
     this.allMenu = $('#allMenu');
     this.footer = $('footer');
     this.tabMenu = $('.tab-menu');
+    this.mobTabMenu = $('.mob-tabMenu');
     this.vdSwiper = $('.vd-swiper').get();
     this.tabSwiper = $('.tab-swiper').get();
     this.liveOnAir = $('.liveOnAir');
     this.btnActiveModal = $('.button-active-modal');
     this.isMob = this.wW <= 768 ? true : false;
+    this.isMobTab = false;
   },
   gb = new _gb();
 
@@ -39,6 +41,7 @@ window.addEventListener('load', function () {
   if (gb.vdSwiper.length) commonFunction().VdSwiper();
   if (gb.tabSwiper.length) commonFunction().TabSwiper();
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
+  if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
   if ($('.curation-swiper').length) commonFunction().CurationSwiper();
   if ($('.dropArea').length) commonFunction().setCurList();
 });
@@ -489,6 +492,7 @@ function commonFunction() {
         gb.vdSwiper.forEach(function (elem, i) {
           if (typeof gb._vdSwiper[i] !== 'undefined') {
             gb._vdSwiper[i].destroy();
+            gb._vdSwiper[i] = undefined;
           }
 
           gb.vdSwiperOption = {
@@ -523,6 +527,7 @@ function commonFunction() {
         // 편성표 스와이퍼
         if (typeof gb._liveOnSwiper !== 'undefined') {
           gb._liveOnSwiper.destroy();
+          gb._liveOnSwiper = undefined;
         }
 
         gb._liveOnSwiper = new Swiper('.liveOn-swiper', {
@@ -547,6 +552,7 @@ function commonFunction() {
         gb.tabSwiper.forEach(function (elem, i) {
           if (typeof gb._tabSwiper[i] !== 'undefined') {
             gb._tabSwiper[i].destroy();
+            gb._tabSwiper[i] = undefined;
           }
 
           gb.tabSwiperOption = {
@@ -572,6 +578,7 @@ function commonFunction() {
         // 서울오리지널 필터 스와이퍼
         if (typeof gb.filterSwiper !== 'undefined') {
           gb.filterSwiper.destroy();
+          gb.filterSwiper = undefined;
         }
 
         gb.filterSwiperOption = {
@@ -590,6 +597,30 @@ function commonFunction() {
         };
 
         gb.filterSwiper = new Swiper('.list-filter-swiper', gb.filterSwiperOption);
+      },
+      KeywordSwiper = function () {
+        // 서울오리지널 필터 스와이퍼
+        if (typeof gb.keywordSwiper !== 'undefined') {
+          gb.keywordSwiper.destroy();
+          gb.keywordSwiper = undefined;
+        }
+
+        gb.keywordSwiperOption = {
+          // Optional parameters
+          loop: false,
+          speed: 600,
+          direction: 'horizontal',
+          slidesPerView: 'auto',
+          spaceBetween: 0,
+          centeredSlides: false,
+          debugger: true, // Enable debugger,
+          navigation: {
+            nextEl: '.button-swiper-nxt',
+            prevEl: '.button-swiper-prev',
+          },
+        };
+
+        gb.keywordSwiper = new Swiper('.keyword-swiper', gb.keywordSwiperOption);
       },
       CurationSwiper = function () {
         // 큐레이션 스와이퍼
@@ -711,6 +742,23 @@ function commonFunction() {
                 });
               }
             });
+        });
+      },
+      mobTabMenu = function () {
+        //광장 24시
+        gb.mobTabMenu.find('a').on('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          gb.isMobTab = true;
+
+          var trg = $(this),
+            dataId = trg.attr('href');
+
+          trg.closest('li').addClass('on');
+          gb.mobTabMenu.find('a').not(trg).closest('li').removeClass('on');
+          $('.box-item').not(dataId).css('display', 'none');
+          $('.box-item').filter(dataId).css('display', 'block');
         });
       },
       datePick = function () {
@@ -1061,6 +1109,7 @@ function commonFunction() {
         setGnb();
         setLnb();
         tabMenu();
+        mobTabMenu();
         allCheck();
         datePick();
         modal();
@@ -1075,6 +1124,7 @@ function commonFunction() {
       LiveOnSwiper: LiveOnSwiper,
       TabSwiper: TabSwiper,
       FilterSwiper: FilterSwiper,
+      KeywordSwiper: KeywordSwiper,
       CurationSwiper: CurationSwiper,
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
@@ -1086,6 +1136,7 @@ function commonFunction() {
       modalDownloadOff: modalDownloadOff,
       modalLoadingbar: modalLoadingbar,
       modalLoadingbarOff: modalLoadingbarOff,
+      mobTabMenu: mobTabMenu,
       copyUrl: copyUrl,
     };
   };
@@ -1095,12 +1146,14 @@ function commonFunction() {
   };
 
   window.addEventListener('resize', function () {
-    gb.isMob = this.wW <= 768 ? true : false;
+    gb.isMob = window.innerWidth <= 768 ? true : false;
+    gb.isMob2 = window.innerWidth <= 1080 ? true : false;
 
     if (gb.vdSwiper.length) commonFunction().VdSwiper();
     if (gb.liveOnAir.length) commonFunction().LiveOnSwiper();
     if (gb.tabSwiper.length) commonFunction().TabSwiper();
     if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
+    if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
 
     if (!gb.isMob) {
       $('.mob-sideMenu')
@@ -1123,6 +1176,24 @@ function commonFunction() {
         height: 'auto',
         'overflow-y': 'visible',
       });
+    }
+
+    if (gb.mobTabMenu.length) {
+      if (gb.isMob2) {
+        if (!gb.isMobTab) {
+          $('.box-item').css('display', 'none');
+          $('.box-item').first().css('display', 'block');
+
+          gb.mobTabMenu.find('li').removeClass('on');
+          gb.mobTabMenu.find('li').first().addClass('on');
+
+          gb.isMobTab = true;
+        }
+      } else {
+        $('.box-item').css('display', 'block');
+
+        gb.isMobTab = false;
+      }
     }
   });
 

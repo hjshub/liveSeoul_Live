@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>큐레이션 목록 | 라이브 서울</title>
+    <title>광장24시 | 라이브 서울</title>
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/jquery-ui.min.js"></script>
@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="../assets/css/swiper.min.css" />
 <link rel="stylesheet" href="../assets/css/style.css" />
 
+    <script src="../assets/js/hls.js"></script>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -381,30 +382,34 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap curation board list" id="contents">
-        <h1 class="hidden-txt">큐레이션 목록</h1>
-        <section class="board_top">
+      <div class="wrap seoul24 list" id="contents">
+        <h1 class="hidden-txt">광장24시 메인</h1>
+        <section class="list_top">
           <header class="page-header">
             <div class="inner">
               <div class="location">
-                <span
-                  ><a href=""
-                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
-                  ></span
-                >
+                <span>
+                  <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em> </a>
+                </span>
                 <span><a href="">#서울</a></span>
-                <span><a href="">큐레이션</a></span>
+                <span><a href="">광장24시</a></span>
               </div>
 
-              <h2 class="no_st">큐레이션</h2>
+              <h2 class="no_st">
+                <strong>광장24시</strong>
+                <span class="signal"><em>LIVE COVERAGE</em></span>
+              </h2>
 
-              <nav class="tabStyle-nav col-2 red">
+              <nav class="tabStyle-nav col-3 red mob-tabMenu">
                 <ul>
                   <li class="on">
-                    <a href=""><span>전문가 큐레이션</span></a>
+                    <a href="#seoul-praza"><span>서울광장</span></a>
                   </li>
                   <li>
-                    <a href=""><span>사용자 큐레이션</span></a>
+                    <a href="#gwang-hwa-moon"><span>광화문광장</span></a>
+                  </li>
+                  <li>
+                    <a href="#chung-gye-chun"><span>청계천광장</span></a>
                   </li>
                 </ul>
               </nav>
@@ -412,216 +417,134 @@
           </header>
         </section>
 
-        <!-- 큐레이션 목록 -->
+        <!-- 최신영상 -->
         <section>
           <div class="inner">
-            <div class="search-area">
-              <form>
-                <fieldset>
-                  <div class="text-wrap has-button">
-                    <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-                    <button class="btn-has-icon rounded search orange" type="submit"><em>검색하기</em></button>
-                    <button class="btn-has-icon rounded refresh burgundy" type="button"><em>새로고침</em></button>
-                  </div>
-                  <div class="hash-list">
-                    <span>코로나19</span>
-                    <span>경제</span>
-                    <span>서울</span>
-                    <span>나들이</span>
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-            <h3 class="heading-wrap-03">
-              <span class="desc txt-color lightGray">등록된 큐레이션 수 <b class="txt-color darkGray">132</b>개</span>
-              <span class="sort mrt-none">
-                <a href="javascript:;" class="on">최신순</a>
-                <a href="javascript:;">인기순</a>
-                <a href="javascript:;">가나다순</a>
-              </span>
-            </h3>
-            <div class="curation-list"><ul>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-01.jpg" alt="큐레이션 목록 썸네일 01"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-02.jpg" alt="큐레이션 목록 썸네일 02"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-03.jpg" alt="큐레이션 목록 썸네일 03"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-04.jpg" alt="큐레이션 목록 썸네일 04"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-01.jpg" alt="큐레이션 목록 썸네일 05"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-02.jpg" alt="큐레이션 목록 썸네일 06"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-03.jpg" alt="큐레이션 목록 썸네일 07"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-04.jpg" alt="큐레이션 목록 썸네일 08"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-</ul>
-</div>
-            <div class="btn-wrap align-r">
-              <button class="btn-default md rounded red2" type="submit"><em>큐레이션 제작</em></button>
-            </div>
-
-            <!-- paging -->
-            <div class="paging pc-only orange">
-              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-              <strong>1</strong>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-            </div>
-
-            <!-- 더보기 (mobile) -->
-            <div class="btn-wrap align-c mob-only">
-              <button type="button" class="btn-prev"><em>이전</em></button>
-              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-              <button type="button" class="btn-next"><em>다음</em></button>
+            <div class="box-item-wrapper clear">
+              <div class="box-item l-box" id="seoul-praza">
+                <h3 class="ft-md has-caption">
+                  <span class="caption orange">생방송</span>
+                  <strong>서울광장 24시간 생중계</strong>
+                </h3>
+                <div class="liveContents">
+                  <iframe
+                    width="100%"
+                    height="450"
+                    src="https://www.youtube.com/embed/A4jhrbRwZMo?feature=player_detailpage&amp;rel=0&amp;showinfo=0&amp;autoplay=1"
+                    frameborder="0"
+                    allowfullscreen=""
+                  ></iframe>
+                </div>
+              </div>
+              <div class="box-item l-box cl" id="gwang-hwa-moon">
+                <h3 class="ft-md has-caption">
+                  <span class="caption orange">생방송</span>
+                  <strong>광화문광장 24시간 생중계</strong>
+                </h3>
+                <div class="liveContents">
+                  <span class="vd-play transition-none"><em class="hidden-txt">재생</em></span>
+                  <video
+                    webkit-playsinline
+                    playsinline
+                    controls
+                    crossorigin="anonymous"
+                    preload="metadata"
+                    class="vd-streaming"
+                  ></video>
+                </div>
+              </div>
+              <div class="box-item r-box" id="chung-gye-chun">
+                <h3 class="ft-md has-caption">
+                  <span class="caption orange">생방송</span>
+                  <strong>청계천 24시간 생중계</strong>
+                </h3>
+                <div class="liveContents">
+                  <span class="vd-play transition-none"><em class="hidden-txt">재생</em></span>
+                  <video
+                    webkit-playsinline
+                    playsinline
+                    controls
+                    crossorigin="anonymous"
+                    preload="metadata"
+                    class="vd-streaming"
+                  ></video>
+                </div>
+              </div>
+              <div class="floating-layer">
+                <div class="l-box">
+                  <h3 class="ft-md has-caption">
+                    <span class="caption red">서울광장</span>
+                    <strong>행사안내</strong>
+                  </h3>
+                  <article class="event-info">
+                    <h4>9월 7일 수요일 행사 안내</h4>
+                    <dl>
+                      <dt>
+                        <b>잔디광장</b>
+                      </dt>
+                      <dd>
+                        <em class="tag red">전시</em>
+                        <span class="desc">I.SEOUL.U 홍보조형물 전시 [수리]</span><br />
+                        <span class="time">사용시간 : 00:00~24:00</span>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>
+                        <b>동편광장</b>
+                      </dt>
+                      <dd class="empty">등록된 행사가 없습니다.</dd>
+                    </dl>
+                    <dl>
+                      <dt>
+                        <b>서편광장</b>
+                      </dt>
+                      <dd class="empty">등록된 행사가 없습니다.</dd>
+                    </dl>
+                  </article>
+                </div>
+                <div class="r-box">
+                  <h3 class="ft-md has-caption icon">
+                    <span class="caption comm"><em class="hidden-txt">소통</em></span>
+                    <strong>온라인소통</strong>
+                  </h3>
+                  <article class="schedule-info">
+                    <h4>서울 안 다양한 광장의 소식</h4>
+                    <dl>
+                      <dt>
+                        <a href="#">서울광장</a>
+                      </dt>
+                      <dd>
+                        <span>
+                          서울의 새로운 일정을<br />
+                          확인해보세요.
+                        </span>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>
+                        <a href="#">광화문광장</a>
+                      </dt>
+                      <dd>
+                        <span>
+                          광화문의 새로운 일정을<br />
+                          확인해보세요.
+                        </span>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>
+                        <a href="#">청계광장</a>
+                      </dt>
+                      <dd>
+                        <span>
+                          청계천의 새로운 일정을<br />
+                          확인해보세요.
+                        </span>
+                      </dd>
+                    </dl>
+                  </article>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -713,5 +636,43 @@
 </footer>
       <!-- // #footer -->
     </div>
+
+    <script>
+      // 스트리밍 재생
+      var vd = $('.vd-streaming').get();
+      var vdTimeSet;
+      var vdSrc = [
+        'https://topiscctv.eseoul.go.kr/sd1/ch96.stream/playlist.m3u8',
+        'https://topiscctv.eseoul.go.kr/sd1/ch61.stream/playlist.m3u8',
+      ];
+
+      vd.forEach(function (el, idx) {
+        if (el.canPlayType('application/vnd.apple.mpegurl')) {
+          el.src = vdSrc[idx];
+        } else if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource(vdSrc[idx]);
+          hls.attachMedia(el);
+        }
+      });
+
+      $('.vd-play').each(function (i) {
+        var t = $(this);
+
+        t.on('click', function () {
+          t.stop().fadeOut(300);
+          vd[i].play();
+
+          vdTimeSet = setTimeout(function () {
+            vd[i].pause(); // 재생 시작 30초 후 일시정지
+          }, 30000);
+        });
+
+        vd[i].addEventListener('pause', function () {
+          t.stop().fadeIn(300);
+          clearTimeout(vdTimeSet);
+        });
+      });
+    </script>
   </body>
 </html>

@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>큐레이션 목록 | 라이브 서울</title>
+    <title>통합검색 | 라이브 서울</title>
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/jquery-ui.min.js"></script>
@@ -381,10 +381,10 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap curation board list" id="contents">
-        <h1 class="hidden-txt">큐레이션 목록</h1>
+      <div class="wrap search board list" id="contents">
+        <h1 class="hidden-txt">통합 검색</h1>
         <section class="board_top">
-          <header class="page-header">
+          <header class="page-header pdb-none">
             <div class="inner">
               <div class="location">
                 <span
@@ -392,239 +392,504 @@
                     ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
                   ></span
                 >
-                <span><a href="">#서울</a></span>
-                <span><a href="">큐레이션</a></span>
+                <span><a href="">검색결과</a></span>
               </div>
-
-              <h2 class="no_st">큐레이션</h2>
-
-              <nav class="tabStyle-nav col-2 red">
-                <ul>
-                  <li class="on">
-                    <a href=""><span>전문가 큐레이션</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>사용자 큐레이션</span></a>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </header>
-        </section>
 
-        <!-- 큐레이션 목록 -->
-        <section>
           <div class="inner">
-            <div class="search-area">
+            <div class="date-search-area type-02">
               <form>
                 <fieldset>
-                  <div class="text-wrap has-button">
-                    <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-                    <button class="btn-has-icon rounded search orange" type="submit"><em>검색하기</em></button>
-                    <button class="btn-has-icon rounded refresh burgundy" type="button"><em>새로고침</em></button>
-                  </div>
-                  <div class="hash-list">
-                    <span>코로나19</span>
-                    <span>경제</span>
-                    <span>서울</span>
-                    <span>나들이</span>
+                  <ul>
+                    <li>
+                      <dl>
+                        <dt>기간선택</dt>
+                        <dd>
+                          <div class="datePick-bt">
+                            <button type="button"><em>오늘</em></button>
+                            <button type="button"><em>최근 일주일</em></button>
+                            <button type="button"><em>최근한달</em></button>
+                          </div>
+                          <div class="both">
+                            <span class="text-wrap">
+                              <input
+                                class="calendar"
+                                title="기간 선택 - 기간을 선택하세요"
+                                placeholder="기간을 선택하세요"
+                                type="text"
+                              />
+                            </span>
+                            <span class="text-wrap">
+                              <input
+                                class="calendar"
+                                title="기간 선택 - 기간을 선택하세요"
+                                placeholder="기간을 선택하세요"
+                                type="text"
+                              />
+                            </span>
+                          </div>
+                        </dd>
+                      </dl>
+                    </li>
+                    <li>
+                      <dl>
+                        <dt>검색어</dt>
+                        <dd>
+                          <div class="text-wrap has-button">
+                            <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
+                            <button class="btn-has-icon rounded search orange" type="submit"><em>검색하기</em></button>
+                          </div>
+                        </dd>
+                      </dl>
+                    </li>
+                  </ul>
+                  <div class="keyword">
+                    <dl>
+                      <dt><strong>추천키워드</strong></dt>
+                      <dd>
+                        <div class="keyword-swiper">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide"><span>취업</span></div>
+                            <div class="swiper-slide"><span>경제</span></div>
+                            <div class="swiper-slide"><span>봄나들이</span></div>
+                            <div class="swiper-slide"><span>야경</span></div>
+                            <div class="swiper-slide"><span>역사</span></div>
+                            <div class="swiper-slide"><span>드론영상</span></div>
+                            <div class="swiper-slide"><span>낮과밤</span></div>
+                            <div class="swiper-slide"><span>봄</span></div>
+                          </div>
+                        </div>
+                      </dd>
+                    </dl>
                   </div>
                 </fieldset>
               </form>
             </div>
-            <h3 class="heading-wrap-03">
-              <span class="desc txt-color lightGray">등록된 큐레이션 수 <b class="txt-color darkGray">132</b>개</span>
-              <span class="sort mrt-none">
+          </div>
+        </section>
+
+        <!-- 영상 목록 -->
+        <section>
+          <div class="inner">
+            <h2 class="clear">
+              <span class="ft-md txt-color black">
+                <b class="txt-color navy">&lsquo;서울시&rsquo;</b>에 대한 검색결과는 <b class="txt-color navy">2,555건</b>입니다.
+              </span>
+              <span class="sort">
                 <a href="javascript:;" class="on">최신순</a>
                 <a href="javascript:;">인기순</a>
                 <a href="javascript:;">가나다순</a>
               </span>
-            </h3>
-            <div class="curation-list"><ul>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-01.jpg" alt="큐레이션 목록 썸네일 01"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-02.jpg" alt="큐레이션 목록 썸네일 02"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
+            </h2>
+
+            <nav class="tabStyle-nav col-3 red">
+              <ul>
+                <li class="on">
+                  <a href=""><span>전체</span></a>
+                </li>
+                <li>
+                  <a href=""><span>프로그램</span></a>
+                </li>
+                <li>
+                  <a href=""><span>영상크리에이터</span></a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="vd-list"><ul>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 01"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">그냥마리엘</a></dt>
+          <dd><a href="../program/view.html">성북동 나들이!</a></dd>
+        </dl>
+      </div>
+      <div class="date">2021-01-11</div>
     </div>
   </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-03.jpg" alt="큐레이션 목록 썸네일 03"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-04.jpg" alt="큐레이션 목록 썸네일 04"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 02"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">로케트펀치</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              도심속 산책,<br />
+              청계천 나들이 어때요??
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2019-12-30</div>
     </div>
   </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-01.jpg" alt="큐레이션 목록 썸네일 05"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
-    </div>
-  </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-02.jpg" alt="큐레이션 목록 썸네일 06"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 03"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">팀치도(4기)</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              왕이 되었다.<br />
+              경복궁 나들이
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2019-12-30</div>
     </div>
   </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-03.jpg" alt="큐레이션 목록 썸네일 07"
-      /></a>
-    </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
-    </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 04"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">에이사이트</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              나만 알고 싶은 한강<br />
+              한적한 공원
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2020-06-16</div>
     </div>
   </li>
-  <li tabindex="0">
-    <div class="img-thumb">
-      <a href="../program/view.html"
-        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-04.jpg" alt="큐레이션 목록 썸네일 08"
-      /></a>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 05"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">주혁TV</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              서울의 터줏대감들!<br />
+              노포 대신 오래가게
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2020-06-16</div>
     </div>
-    <div class="info">
-      <span class="title txt-ellipsis"
-        ><a href="#">
-          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
-        </a></span
-      >
-      <span class="name">이름<em>홍*동</em></span>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 06"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">Rachel Kim</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              서울의 가을을 만끽할 수 있는<br />
+              안산자락길
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2021-11-22</div>
     </div>
-    <div class="etc">
-      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
-      <span class="like"><em class="hidden-txt">조회수</em>300</span>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 07"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">그냥마리엘</a></dt>
+          <dd><a href="../program/view.html">성북동 나들이!</a></dd>
+        </dl>
+      </div>
+      <div class="date">2021-01-11</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 08"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">로케트펀치</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              도심속 산책,<br />
+              청계천 나들이 어때요??
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2019-12-30</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 09"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">팀치도(4기)</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              왕이 되었다.<br />
+              경복궁 나들이
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2019-12-30</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 10"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">에이사이트</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              나만 알고 싶은 한강<br />
+              한적한 공원
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2020-06-16</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 11"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">주혁TV</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              서울의 터줏대감들!<br />
+              노포 대신 오래가게
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2020-06-16</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 12"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">Rachel Kim</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              서울의 가을을 만끽할 수 있는<br />
+              안산자락길
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2021-11-22</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 13"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">그냥마리엘</a></dt>
+          <dd><a href="../program/view.html">성북동 나들이!</a></dd>
+        </dl>
+      </div>
+      <div class="date">2021-01-11</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 14"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">로케트펀치</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              도심속 산책,<br />
+              청계천 나들이 어때요??
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2019-12-30</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 15"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">팀치도(4기)</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              왕이 되었다.<br />
+              경복궁 나들이
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2019-12-30</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 16"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">에이사이트</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              나만 알고 싶은 한강<br />
+              한적한 공원
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2020-06-16</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 17"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">주혁TV</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              서울의 터줏대감들!<br />
+              노포 대신 오래가게
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2020-06-16</div>
+    </div>
+  </li>
+  <li>
+    <div class="article">
+      <div class="img-thumb">
+        <a href="../program/view.html"
+          ><img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 18"
+        /></a>
+      </div>
+      <div class="info">
+        <dl>
+          <dt><a href="">Rachel Kim</a></dt>
+          <dd>
+            <a href="../program/view.html">
+              서울의 가을을 만끽할 수 있는<br />
+              안산자락길
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <div class="date">2021-11-22</div>
     </div>
   </li>
 </ul>
 </div>
-            <div class="btn-wrap align-r">
-              <button class="btn-default md rounded red2" type="submit"><em>큐레이션 제작</em></button>
-            </div>
-
-            <!-- paging -->
-            <div class="paging pc-only orange">
-              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-              <strong>1</strong>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-            </div>
-
-            <!-- 더보기 (mobile) -->
-            <div class="btn-wrap align-c mob-only">
-              <button type="button" class="btn-prev"><em>이전</em></button>
-              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-              <button type="button" class="btn-next"><em>다음</em></button>
-            </div>
           </div>
         </section>
+
+        <!-- paging -->
+        <div class="paging pc-only orange">
+          <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+          <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+          <strong>1</strong>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+          <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+        </div>
+
+        <!-- 더보기 (mobile) -->
+        <div class="btn-wrap align-c mob-only">
+          <button type="button" class="btn-prev"><em>이전</em></button>
+          <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+          <button type="button" class="btn-next"><em>다음</em></button>
+        </div>
       </div>
       <!-- // #contents -->
 
