@@ -732,61 +732,61 @@
 
                 <!-- 영상 목록 -->
                 <section>
-                  <header class="list-header clear">
-                    <h3 class="heading-wrap-03 pc-only inline"><strong>최신영상</strong></h3>
-                    <div class="icon-wrap pc-only inline">
-                      <button type="button" class="icon-share button-active-modal" data-modal-name="share">
-                        <em class="hidden-txt">공유하기</em>
-                      </button>
-                      <div class="modal-wrap">
-                        <!-- 공유하기 -->
-                        <div class="modal right ivory share is_animated animate__fade_In_Up" id="modal-share">
-                          <header class="modal-header">
-                            <h5>SNS 공유하기</h5>
-                            <button type="button" class="button-close modal-off">
-                              <em class="hidden-txt">레이어 팝업 닫기</em>
-                            </button>
-                          </header>
-                          <div class="modal-body">
-                            <div class="modal-contents">
-                              <ul class="sns-list">
-                                <li>
-                                  <a class="share-facebook" href="javascript:void(0);"
-                                    ><em class="hidden-txt">페이스북 공유하기</em></a
-                                  >
-                                </li>
-                                <li>
-                                  <a class="share-twitter" href="javascript:void(0);"
-                                    ><em class="hidden-txt">트위터 공유하기</em></a
-                                  >
-                                </li>
-                                <li>
-                                  <a class="share-kakaotalk" href="javascript:void(0);"
-                                    ><em class="hidden-txt">카카오톡 공유하기</em></a
-                                  >
-                                </li>
-                                <li>
-                                  <a class="share-N_blog" href="javascript:void(0);"
-                                    ><em class="hidden-txt">네이버블로그 공유하기</em></a
-                                  >
-                                </li>
-                                <li>
-                                  <a class="share-URL" href="javascript:void(0);" onclick="commonFunction().copyUrl();"
-                                    ><em class="hidden-txt">URL 공유하기</em></a
-                                  >
-                                </li>
-                              </ul>
-                            </div>
+                  <h3 class="heading-wrap-03">
+                    <strong>최신영상</strong>
+                    <span class="sort">
+                      <a href="javascript:;" class="on">최신순</a>
+                      <a href="javascript:;">인기순</a>
+                      <a href="javascript:;">가나다순</a>
+                    </span>
+                  </h3>
+                  <div class="icon-wrap pc-only inline">
+                    <button type="button" class="icon-share button-active-modal" data-modal-name="share">
+                      <em class="hidden-txt">공유하기</em>
+                    </button>
+                    <div class="modal-wrap">
+                      <!-- 공유하기 -->
+                      <div class="modal right ivory share is_animated animate__fade_In_Up" id="modal-share">
+                        <header class="modal-header">
+                          <h5>SNS 공유하기</h5>
+                          <button type="button" class="button-close modal-off">
+                            <em class="hidden-txt">레이어 팝업 닫기</em>
+                          </button>
+                        </header>
+                        <div class="modal-body">
+                          <div class="modal-contents">
+                            <ul class="sns-list">
+                              <li>
+                                <a class="share-facebook" href="javascript:void(0);"
+                                  ><em class="hidden-txt">페이스북 공유하기</em></a
+                                >
+                              </li>
+                              <li>
+                                <a class="share-twitter" href="javascript:void(0);"
+                                  ><em class="hidden-txt">트위터 공유하기</em></a
+                                >
+                              </li>
+                              <li>
+                                <a class="share-kakaotalk" href="javascript:void(0);"
+                                  ><em class="hidden-txt">카카오톡 공유하기</em></a
+                                >
+                              </li>
+                              <li>
+                                <a class="share-N_blog" href="javascript:void(0);"
+                                  ><em class="hidden-txt">네이버블로그 공유하기</em></a
+                                >
+                              </li>
+                              <li>
+                                <a class="share-URL" href="javascript:void(0);" onclick="commonFunction().copyUrl();"
+                                  ><em class="hidden-txt">URL 공유하기</em></a
+                                >
+                              </li>
+                            </ul>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="sort">
-                      <a href="javascript:;" class="on">최신순</a>
-                      <a href="javascript:;">인기순</a>
-                      <a href="javascript:;">가나다순</a>
-                    </div>
-                  </header>
+                  </div>
                   <div class="vd-list program"><ul>
   <li>
     <div class="article">
@@ -906,7 +906,10 @@
           </dd>
         </dl>
       </div>
-      <div class="date">2021-11-22</div>
+      <div class="date">
+        <span><em>2021-11-22</em><em>10:45 ~ 11:30</em></span>
+        <span>브리핑룸</span>
+      </div>
     </div>
   </li>
   <li>
