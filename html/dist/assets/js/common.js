@@ -745,7 +745,7 @@ function commonFunction() {
         });
       },
       mobTabMenu = function () {
-        //광장 24시
+        //광장 24시 탭 메뉴
         gb.mobTabMenu.find('a').on('click', function (e) {
           e.preventDefault();
           e.stopPropagation();
@@ -759,6 +759,22 @@ function commonFunction() {
           gb.mobTabMenu.find('a').not(trg).closest('li').removeClass('on');
           $('.box-item').not(dataId).css('display', 'none');
           $('.box-item').filter(dataId).css('display', 'block');
+        });
+      },
+      selectSchedType = function () {
+        //편성표 타입 선택
+        gb.btnSchedType = $('.sched-header .ctrl-box button');
+        gb.btnSchedType.on('click', function () {
+          var trg = $(this),
+            type = trg.data('view-type');
+
+          trg.addClass('selected');
+          gb.btnSchedType.not(trg).removeClass('selected');
+
+          $('.sched-cts').css('display', 'none');
+          $('.sched-cts')
+            .filter('#month-' + type)
+            .css('display', 'block');
         });
       },
       datePick = function () {
@@ -1110,6 +1126,7 @@ function commonFunction() {
         setLnb();
         tabMenu();
         mobTabMenu();
+        selectSchedType();
         allCheck();
         datePick();
         modal();
@@ -1176,6 +1193,9 @@ function commonFunction() {
         height: 'auto',
         'overflow-y': 'visible',
       });
+    } else {
+      $('#pg-all').css('display', 'none');
+      $('.button-open-pgAll').removeClass('active');
     }
 
     if (gb.mobTabMenu.length) {

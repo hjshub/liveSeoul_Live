@@ -381,7 +381,7 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap schedule list" id="contents">
+      <div class="wrap sched list" id="contents">
         <h1 class="hidden-txt">편성표</h1>
         <section class="list_top">
           <header class="page-header">
@@ -396,6 +396,7 @@
 
               <h2 class="no_st">
                 <strong>편성표</strong>
+                <span class="sub-tit">월간편성</span>
               </h2>
             </div>
           </header>
@@ -404,20 +405,341 @@
         <!-- 편성표 -->
         <section>
           <div class="inner">
-            <header class="schedule-month-header clear">
-              <div class="classify">
-                <span>생방송</span>
-                <span>다시보기</span>
-                <span>예정</span>
-                <span>다시보기 준비중</span>
+            <header class="sched-header clear">
+              <div class="l-box classify">
+                <span class="live">생방송</span>
+                <span class="rep">다시보기</span>
+                <span class="exp">예정</span>
+                <span class="prep">다시보기 준비중</span>
               </div>
-              <div class="r-box ctrl">
-                <button class="btn-view-calendar" type="button"><em>달력형</em></button>
-                <button class="btn-view-list" type="button"><em>목록형</em></button>
+              <div class="l-box s-month">
+                <button type="button" class="button-prev"><em class="hidden-txt">이전 달</em></button>
+                <span><b>2022.09</b></span>
+                <button type="button" class="button-nxt"><em class="hidden-txt">다음 달</em></button>
+              </div>
+              <div class="r-box ctrl-box">
+                <button class="btn-view-calendar selected" type="button" data-view-type="calendar"><em>달력형</em></button>
+                <button class="btn-view-list" type="button" data-view-type="list"><em>목록형</em></button>
               </div>
             </header>
-            <div clas="schedule-calendarType"></div>
-            <div clas="schedule-listType"></div>
+
+            <!-- pc -->
+            <div class="sched-pc-only">
+              <!-- 편성표 달력형 -->
+              <div class="sched-cts sched-calendar" id="month-calendar">
+                <!-- 요일 -->
+                <dl class="days">
+                  <dt><em class="hidden-txt">요일</em></dt>
+                  <dd class="sun">일요일</dd>
+                  <dd>월요일</dd>
+                  <dd>화요일</dd>
+                  <dd>수요일</dd>
+                  <dd>목요일</dd>
+                  <dd>금요일</dd>
+                  <dd class="sat">토요일</dd>
+                </dl>
+
+                <!-- 1주 -->
+                <dl>
+                  <dt><em class="hidden-txt">1주차</em></dt>
+                  <dd></dd>
+                  <dd></dd>
+                  <dd></dd>
+                  <dd></dd>
+                  <dd tabindex="0">
+                    <span class="dates">1</span>
+                    <div class="live">
+                      <strong><a href="">2022 한옥정책 심포지엄 1차 | 다음 세대를 위한 K-House RE</a></strong>
+                      <em>주한스위스대사관</em>
+                      <em>13:50~16:40</em>
+                    </div>
+                    <div class="rep">
+                      <strong><a href="">광화문광장 개장 기념 광화문원팀과 함께하는 시네마콘서트다시보기</a></strong>
+                      <em>놀이마당</em>
+                    </div>
+                  </dd>
+                  <dd tabindex="0">
+                    <span class="dates">2</span>
+                    <div class="rep">
+                      <strong><a href="">2022 서울시 태권도의 날 기념공연 | K-TIGERS | 라치카</a></strong>
+                      <em>세종문화회관 미디어파사드 및 광화문광장 특설무대</em>
+                      <em>18:50~20:30</em>
+                    </div>
+                  </dd>
+                  <dd tabindex="0">
+                    <span class="dates">3</span>
+                    <div class="exp">
+                      <strong><a href="">책 읽는 서울광장 하반기 개막 행사</a></strong>
+                      <em>서울광장</em>
+                      <em>10:50~13:00</em>
+                    </div>
+                  </dd>
+                </dl>
+
+                <!-- 2주 -->
+                <dl>
+                  <dt><em class="hidden-txt">2주차</em></dt>
+                  <dd><span class="dates">4</span></dd>
+                  <dd><span class="dates">5</span></dd>
+                  <dd><span class="dates">6</span></dd>
+                  <dd tabindex="0">
+                    <span class="dates">7</span>
+                    <div class="prep">
+                      <strong><a href="">대안적 소득보장정책 안심소득 정책 토론회다시보기</a></strong>
+                      <em>서울시청 3층 대회의실</em>
+                      <em>13:50~16:00</em>
+                    </div>
+                  </dd>
+                  <dd><span class="dates">8</span></dd>
+                  <dd><span class="dates">9</span></dd>
+                  <dd><span class="dates">10</span></dd>
+                </dl>
+
+                <!-- 3주 -->
+                <dl>
+                  <dt><em class="hidden-txt">3주차</em></dt>
+                  <dd><span class="dates">11</span></dd>
+                  <dd><span class="dates">12</span></dd>
+                  <dd><span class="dates">13</span></dd>
+                  <dd tabindex="0">
+                    <span class="dates">14</span>
+                    <div class="exp">
+                      <strong><a href="">제314회 서울특별시의회 임시회 본회의 - 09월 14일(수)</a></strong>
+                      <em>서울시의회</em>
+                      <em>13:50~16:00</em>
+                    </div>
+                    <div class="exp">
+                      <strong><a href="">수해예방 시민 대토론회 | 방재성능목표 재설정 및 대심도 배수터널 필요성</a></strong>
+                      <em>서울시청 3층 대회의실</em>
+                    </div>
+                  </dd>
+                  <dd><span class="dates">15</span></dd>
+                  <dd><span class="dates">16</span></dd>
+                  <dd><span class="dates">17</span></dd>
+                </dl>
+
+                <!-- 4주 -->
+                <dl>
+                  <dt><em class="hidden-txt">4주차</em></dt>
+                  <dd><span class="dates">18</span></dd>
+                  <dd><span class="dates">19</span></dd>
+                  <dd><span class="dates">20</span></dd>
+                  <dd><span class="dates">21</span></dd>
+                  <dd><span class="dates">22</span></dd>
+                  <dd><span class="dates">23</span></dd>
+                  <dd><span class="dates">24</span></dd>
+                </dl>
+
+                <!-- 5주 -->
+                <dl>
+                  <dt><em class="hidden-txt">5주차</em></dt>
+                  <dd><span class="dates">25</span></dd>
+                  <dd><span class="dates">26</span></dd>
+                  <dd><span class="dates">27</span></dd>
+                  <dd><span class="dates">28</span></dd>
+                  <dd><span class="dates">29</span></dd>
+                  <dd><span class="dates">30</span></dd>
+                  <dd></dd>
+                </dl>
+              </div>
+
+              <!-- 편성표 목록형 -->
+              <div class="sched-cts sched-list" id="month-list">
+                <div class="table--style-01">
+                  <table>
+                    <colgroup>
+                      <col style="width: 12%" />
+                      <col style="width: 12%" />
+                      <col style="width: 15%" />
+                      <col style="width: 10%" />
+                      <col style="width: auto" />
+                      <col style="width: 10%" />
+                    </colgroup>
+                    <caption>
+                      편성표 (일자, 이미지, 장소, 시간, 내용, 영상보기로 구성된 표)
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col"><span>일자</span></th>
+                        <th scope="col"><span>이미지</span></th>
+                        <th scope="col"><span>장소</span></th>
+                        <th scope="col"><span>시간</span></th>
+                        <th scope="col"><span>내용</span></th>
+                        <th scope="col"><span>영상보기</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="rowgroup" rowspan="2"><span>9월 1일 (목요일)</span></th>
+                        <td>
+                          <a href=""><img src="../assets/images/no-image.png" alt="썸네일" width="140" /></a>
+                        </td>
+                        <td><span>주한스위스대사관</span></td>
+                        <td><span>13:50~16:40</span></td>
+                        <td class="tit">
+                          <span><a href="">[특집행사] 2022 한옥정책 심포지엄 1차 | 다음 세대를 위한 K-House RE</a></span>
+                        </td>
+                        <td>
+                          <button class="btn-default rounded sm navy" type="button" onclick="location.href=''">
+                            <em>다시보기</em>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <a href=""><img src="../assets/images/no-image.png" alt="썸네일" width="140" /></a>
+                        </td>
+                        <td><span>놀이마당</span></td>
+                        <td><span>19:50~21:30</span></td>
+                        <td class="tit">
+                          <span><a href="">[특집행사] 광화문광장 개장 기념 광화문원팀과 함께하는 시네마콘서트</a></span>
+                        </td>
+                        <td>
+                          <button class="btn-default rounded sm navy" type="button" onclick="location.href=''">
+                            <em>다시보기</em>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+
+                    <tbody>
+                      <tr>
+                        <th scope="row"><span>9월 2일 (금요일)</span></th>
+                        <td>
+                          <a href=""><img src="../assets/images/no-image.png" alt="썸네일" width="140" /></a>
+                        </td>
+                        <td>
+                          <span>세종문화회관 미디어파사드 및 광화문광장 특설무대</span>
+                        </td>
+                        <td><span>18:50~20:30</span></td>
+                        <td class="tit">
+                          <span><a href="">[특집행사] 2022 서울시 태권도의 날 기념공연 | K-TIGERS | 라치카 |</a></span>
+                        </td>
+                        <td>
+                          <button class="btn-default rounded sm orange" type="button" onclick="location.href=''">
+                            <em>예정</em>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><span>9월 3일 (금요일)</span></th>
+                        <td>
+                          <a href=""><img src="../assets/images/no-image.png" alt="썸네일" width="140" /></a>
+                        </td>
+                        <td>
+                          <span>서울광장</span>
+                        </td>
+                        <td><span>10:50~13:00</span></td>
+                        <td class="tit">
+                          <span><a href="">[특집행사] 책 읽는 서울광장 하반기 개막 행사</a></span>
+                        </td>
+                        <td>
+                          <button class="btn-default rounded sm red" type="button" onclick="location.href=''">
+                            <em>생방송</em>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><span>9월 7일 (금요일)</span></th>
+                        <td>
+                          <a href=""><img src="../assets/images/no-image.png" alt="썸네일" width="140" /></a>
+                        </td>
+                        <td>
+                          <span>서울시청 3층 대회의실</span>
+                        </td>
+                        <td><span>13:50~16:00</span></td>
+                        <td class="tit">
+                          <span><a href="">[특집행사] 대안적 소득보장정책 안심소득 정책 토론회</a></span>
+                        </td>
+                        <td>
+                          <button class="btn-default rounded sm mint" type="button" onclick="location.href=''">
+                            <em>다시보기 준비중</em>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- mobile -->
+            <div class="sched-mob-only">
+              <div class="mob-sched-list">
+                <ul>
+                  <li>
+                    <a href="">
+                      <div class="img">
+                        <img src="../assets/images/no-image.png" alt="썸네일" />
+                      </div>
+                      <div class="info">
+                        <span><em>2022.09.14</em><em>13:50~16:00</em></span>
+                        <span class="live tit">
+                          <b>[시의회감사] 제314회 서울특별시의회 임시회 시정 서울특별시의회 임시회 시정</b>
+                        </span>
+                        <span>서울시의회</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <div class="img">
+                        <img src="../assets/images/no-image.png" alt="썸네일" />
+                      </div>
+                      <div class="info">
+                        <span><em>2022.09.14</em><em>13:50~16:00</em></span>
+                        <span class="rep tit">
+                          <b>[특집행사] 수해예방 시민 대토론회 |특별시의회 임시회</b>
+                        </span>
+                        <span>서울시청 3층 대회의실</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <div class="img">
+                        <img src="../assets/images/no-image.png" alt="썸네일" />
+                      </div>
+                      <div class="info">
+                        <span><em>2022.09.15</em><em>09:50~18:00</em></span>
+                        <span class="rep tit">
+                          <b>[시의회감사] 제314회 서울특별시의회 임시회 본회의 서울특별시의회 임시회 본회의</b>
+                        </span>
+                        <span>서울시의회</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <div class="img">
+                        <img src="../assets/images/no-image.png" alt="썸네일" />
+                      </div>
+                      <div class="info">
+                        <span><em>2022.09.15</em><em>09:50~18:00</em></span>
+                        <span class="exp tit">
+                          <b>[시의회감사] 제314회 서울특별시의회 임시회 본회의 서울특별시의회 임시회 본회의</b>
+                        </span>
+                        <span>서울시의회</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <div class="img">
+                        <img src="../assets/images/no-image.png" alt="썸네일" />
+                      </div>
+                      <div class="info">
+                        <span><em>2022.09.15</em><em>09:50~18:00</em></span>
+                        <span class="prep tit">
+                          <b>[시의회감사] 제314회 서울특별시의회 임시회 본회의 서울특별시의회 임시회 본회의</b>
+                        </span>
+                        <span>서울시의회</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
       </div>
