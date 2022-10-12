@@ -349,6 +349,7 @@
             <li><a href="#">자치구방송국</a></li>
             <li><a href="#">마을미디어</a></li>
             <li><a href="#">소통방통</a></li>
+            <li><a href="#">영상크리에이터</a></li>
           </ul>
         </div>
       </li>
@@ -1146,6 +1147,12 @@
                 <button class="button-swiper-nxt"><em class="hidden-txt">다음</em></button>
               </div>
             </div>
+            <!-- 등록된 영상이 없을 시
+            <div class="no-files">
+              <p><img src="../assets/images/img-notice.png" alt="알림 이미지" /></p>
+              <p>등록된 영상이 없습니다.</p>
+            </div>
+            -->
           </div>
         </section>
 
@@ -1534,6 +1541,12 @@
   </li>
 </ul>
 </div>
+            <!-- 등록된 영상이 없을 시
+            <div class="no-files">
+              <p><img src="../assets/images/img-notice.png" alt="알림 이미지" /></p>
+              <p>등록된 영상이 없습니다.</p>
+            </div>
+            -->
             <div class="paging pc-only orange">
               <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
               <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
@@ -1561,7 +1574,7 @@
       <!-- // #contents -->
 
       <!-- #footer -->
-      <footer id="footer"><div class="inner">
+      <footer id="footer"><!-- <div class="inner">
   <dl>
     <dt><strong>내 손안에 서울</strong></dt>
     <dd>
@@ -1624,7 +1637,7 @@
       <div><img src="../assets/images/thumbnail/footer-bnr-sample-02.gif" alt="하단 배너" /></div>
     </dd>
   </dl>
-</div>
+</div> -->
 <div class="inner">
   <div>
     <ul>
@@ -1683,34 +1696,55 @@
       //모바일 확인
       var isMob = window.innerWidth <= 768 ? true : false;
 
-      if (!isMob) {
-        //웹 브라우저 화질 default 1280x546
-        qualitySize = 1;
-      } else {
-        //모바일 화질 default    484x206
-        qualitySize = 2;
-      }
-
-      window.addEventListener('resize', function () {
-        isMob = window.innerWidth <= 768 ? true : false;
-        if (!isMob) {
-          //웹 브라우저 화질 default 1280x546
-          qualitySize = 1;
-        } else {
-          //모바일 화질 default    484x206
-          qualitySize = 2;
-        }
-      });
-
       // video src 설정
       // MP4 파일 테스트용
       // 공통 영상 상세
-      var videoObj = new Object();
-      videoObj.size = '1080';
-      videoObj.src = '../assets/images/video/sample-video02.mp4';
-      videoObj.type = 'video/mp4';
-      setVideoSrc.push(videoObj);
-      sizeList.push(1080);
+      var videoObj1 = new Object();
+      videoObj1.size = '1';
+      videoObj1.src = '../assets/images/video/sample-video02.mp4';
+      videoObj1.type = 'video/mp4';
+      setVideoSrc.push(videoObj1);
+      sizeList.push(1);
+
+      var videoObj2 = new Object();
+      videoObj2.size = '720';
+      videoObj2.src = '../assets/images/video/sample-video02.mp4';
+      videoObj2.type = 'video/mp4';
+      setVideoSrc.push(videoObj2);
+      sizeList.push(720);
+
+      var videoObj3 = new Object();
+      videoObj3.size = '272';
+      videoObj3.src = '../assets/images/video/sample-video02.mp4';
+      videoObj3.type = 'video/mp4';
+      setVideoSrc.push(videoObj3);
+      sizeList.push(272);
+
+      //처음 영상 재생 화질 default값 설정
+      if (sizeList.length == 1) {
+        qualitySize = 0;
+      } else {
+        //자동화질 설정
+        if (sizeList[0] == '1') {
+          if (!isMob || sizeList.length == 2) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 1;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 2;
+          }
+        }
+        //자동화질 미설정
+        else {
+          if (!isMob) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 0;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 1;
+          }
+        }
+      }
 
       //품질 변경 버튼 리스트
       $('#currentVd').createVideo({
@@ -1724,6 +1758,7 @@
         progress: true, // false : 프로그레스바 컨트롤 되지 않도록
         preview: [{ enabled: false, src: '' }],
         quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+        qualitySize: qualitySize,
         isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
         iconUrl: '../tgplayer/plugin/js/plyr.svg',
         blankVideo: '../tgplayer/plugin/js/blank.mp4',

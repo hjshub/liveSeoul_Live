@@ -597,6 +597,16 @@ function commonFunction() {
         };
 
         gb.filterSwiper = new Swiper('.list-filter-swiper', gb.filterSwiperOption);
+
+        $('.list-filter-swiper')
+          .find('input[type=radio]')
+          .on('change', function () {
+            var index = $('.list-filter-swiper').find('input[type=radio]').index(this);
+
+            if ($(this).prop('checked')) {
+              gb.filterSwiper.slideTo(index);
+            }
+          });
       },
       KeywordSwiper = function () {
         // 서울오리지널 필터 스와이퍼

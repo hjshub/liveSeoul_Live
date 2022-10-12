@@ -349,6 +349,7 @@
             <li><a href="#">자치구방송국</a></li>
             <li><a href="#">마을미디어</a></li>
             <li><a href="#">소통방통</a></li>
+            <li><a href="#">영상크리에이터</a></li>
           </ul>
         </div>
       </li>
@@ -732,6 +733,12 @@
                 </li>
               </ul>
             </div>
+            <!-- 등록된 영상이 없을 시
+            <div class="no-files">
+              <p><img src="../assets/images/img-notice.png" alt="알림 이미지" /></p>
+              <p>등록된 영상이 없습니다.</p>
+            </div>
+            -->
             <div class="paging pc-only purple">
               <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
               <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
@@ -759,7 +766,7 @@
       <!-- // #contents -->
 
       <!-- #footer -->
-      <footer id="footer"><div class="inner">
+      <footer id="footer"><!-- <div class="inner">
   <dl>
     <dt><strong>내 손안에 서울</strong></dt>
     <dd>
@@ -822,7 +829,7 @@
       <div><img src="../assets/images/thumbnail/footer-bnr-sample-02.gif" alt="하단 배너" /></div>
     </dd>
   </dl>
-</div>
+</div> -->
 <div class="inner">
   <div>
     <ul>
@@ -849,111 +856,238 @@
 
     <script>
       //Object
-      var multiVideoObj = new Object();
-      multiVideoObj.setVideoSrc = new Array();
-      multiVideoObj.sizeList = new Array();
-      multiVideoObj.videoObj = new Object();
+      var mvObj = new Object();
+      mvObj.setVideoSrc = new Array();
+      mvObj.sizeList = new Array();
 
       //모바일 확인
       var isMob = window.innerWidth <= 768 ? true : false;
 
-      if (!isMob) {
-        //웹 브라우저 화질 default 1280x546
-        qualitySize = 1;
-      } else {
-        //모바일 화질 default    484x206
-        qualitySize = 2;
-      }
-
-      window.addEventListener('resize', function () {
-        isMob = window.innerWidth <= 768 ? true : false;
-        if (!isMob) {
-          //웹 브라우저 화질 default 1280x546
-          qualitySize = 1;
-        } else {
-          //모바일 화질 default    484x206
-          qualitySize = 2;
-        }
-      });
-
       // video src 설정
       // MP4 파일 테스트용
       // creator 영상 리스트
-      multiVideoObj.setVideoSrc1 = new Array();
-      multiVideoObj.sizeList1 = new Array();
-      multiVideoObj.videoObj1 = new Object();
-      multiVideoObj.videoObj1.size = '1080';
-      multiVideoObj.videoObj1.src = '../assets/images/video/sample-video01.mp4';
-      multiVideoObj.videoObj1.type = 'video/mp4';
-      multiVideoObj.setVideoSrc1.push(multiVideoObj.videoObj1);
-      multiVideoObj.sizeList1.push(1080);
 
-      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc1);
-      multiVideoObj.sizeList.push(multiVideoObj.sizeList1);
+      /********
+       ** 영상 1
+       ********/
+      mvObj.setVideoSrc1 = new Array();
+      mvObj.sizeList1 = new Array();
 
-      multiVideoObj.setVideoSrc2 = new Array();
-      multiVideoObj.sizeList2 = new Array();
-      multiVideoObj.videoObj2 = new Object();
-      multiVideoObj.videoObj2.size = '1080';
-      multiVideoObj.videoObj2.src = '../assets/images/video/sample-video02.mp4';
-      multiVideoObj.videoObj2.type = 'video/mp4';
-      multiVideoObj.setVideoSrc2.push(multiVideoObj.videoObj2);
-      multiVideoObj.sizeList2.push(1080);
+      // 영상 1 자동해상도
+      mvObj.videoObj1_1 = new Object();
+      mvObj.videoObj1_1.size = '1';
+      mvObj.videoObj1_1.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj1_1.type = 'video/mp4';
 
-      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc2);
-      multiVideoObj.sizeList.push(multiVideoObj.sizeList2);
+      mvObj.setVideoSrc1.push(mvObj.videoObj1_1);
+      mvObj.sizeList1.push(1);
 
-      multiVideoObj.setVideoSrc3 = new Array();
-      multiVideoObj.sizeList3 = new Array();
-      multiVideoObj.videoObj3 = new Object();
-      multiVideoObj.videoObj3.size = '1080';
-      multiVideoObj.videoObj3.src = '../assets/images/video/sample-video01.mp4';
-      multiVideoObj.videoObj3.type = 'video/mp4';
-      multiVideoObj.setVideoSrc3.push(multiVideoObj.videoObj3);
-      multiVideoObj.sizeList3.push(1080);
+      // 1280 * 720
+      mvObj.videoObj1_2 = new Object();
+      mvObj.videoObj1_2.size = '720';
+      mvObj.videoObj1_2.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj1_2.type = 'video/mp4';
 
-      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc3);
-      multiVideoObj.sizeList.push(multiVideoObj.sizeList3);
+      mvObj.setVideoSrc1.push(mvObj.videoObj1_2);
+      mvObj.sizeList1.push(720);
 
-      multiVideoObj.setVideoSrc4 = new Array();
-      multiVideoObj.sizeList4 = new Array();
-      multiVideoObj.videoObj4 = new Object();
-      multiVideoObj.videoObj4.size = '1080';
-      multiVideoObj.videoObj4.src = '../assets/images/video/sample-video02.mp4';
-      multiVideoObj.videoObj4.type = 'video/mp4';
-      multiVideoObj.setVideoSrc4.push(multiVideoObj.videoObj4);
-      multiVideoObj.sizeList4.push(1080);
+      // 484 * 272
+      mvObj.videoObj1_3 = new Object();
+      mvObj.videoObj1_3.size = '272';
+      mvObj.videoObj1_3.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj1_3.type = 'video/mp4';
 
-      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc4);
-      multiVideoObj.sizeList.push(multiVideoObj.sizeList4);
+      mvObj.setVideoSrc1.push(mvObj.videoObj1_3);
+      mvObj.sizeList1.push(272);
 
-      multiVideoObj.setVideoSrc5 = new Array();
-      multiVideoObj.sizeList5 = new Array();
-      multiVideoObj.videoObj5 = new Object();
-      multiVideoObj.videoObj5.size = '1080';
-      multiVideoObj.videoObj5.src = '../assets/images/video/sample-video01.mp4';
-      multiVideoObj.videoObj5.type = 'video/mp4';
-      multiVideoObj.setVideoSrc5.push(multiVideoObj.videoObj5);
-      multiVideoObj.sizeList5.push(1080);
+      mvObj.setVideoSrc.push(mvObj.setVideoSrc1);
+      mvObj.sizeList.push(mvObj.sizeList1);
 
-      multiVideoObj.setVideoSrc.push(multiVideoObj.setVideoSrc5);
-      multiVideoObj.sizeList.push(multiVideoObj.sizeList5);
+      /********
+       ** 영상 2
+       ********/
+      mvObj.setVideoSrc2 = new Array();
+      mvObj.sizeList2 = new Array();
 
-      //품질 변경 버튼 리스트
+      // 영상 2 자동해상도
+      mvObj.videoObj2_1 = new Object();
+      mvObj.videoObj2_1.size = '1';
+      mvObj.videoObj2_1.src = '../assets/images/video/sample-video02.mp4';
+      mvObj.videoObj2_1.type = 'video/mp4';
+
+      mvObj.setVideoSrc2.push(mvObj.videoObj2_1);
+      mvObj.sizeList2.push(1);
+
+      // 1280 * 720
+      mvObj.videoObj2_2 = new Object();
+      mvObj.videoObj2_2.size = '720';
+      mvObj.videoObj2_2.src = '../assets/images/video/sample-video02.mp4';
+      mvObj.videoObj2_2.type = 'video/mp4';
+
+      mvObj.setVideoSrc2.push(mvObj.videoObj2_2);
+      mvObj.sizeList2.push(720);
+
+      // 484 * 272
+      mvObj.videoObj2_3 = new Object();
+      mvObj.videoObj2_3.size = '272';
+      mvObj.videoObj2_3.src = '../assets/images/video/sample-video02.mp4';
+      mvObj.videoObj2_3.type = 'video/mp4';
+
+      mvObj.setVideoSrc2.push(mvObj.videoObj2_3);
+      mvObj.sizeList2.push(272);
+
+      mvObj.setVideoSrc.push(mvObj.setVideoSrc2);
+      mvObj.sizeList.push(mvObj.sizeList2);
+
+      /********
+       ** 영상 3
+       ********/
+      mvObj.setVideoSrc3 = new Array();
+      mvObj.sizeList3 = new Array();
+
+      // 자동해상도
+      mvObj.videoObj3_1 = new Object();
+      mvObj.videoObj3_1.size = '1';
+      mvObj.videoObj3_1.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj3_1.type = 'video/mp4';
+
+      mvObj.setVideoSrc3.push(mvObj.videoObj3_1);
+      mvObj.sizeList3.push(1);
+
+      // 1280 * 720
+      mvObj.videoObj3_2 = new Object();
+      mvObj.videoObj3_2.size = '720';
+      mvObj.videoObj3_2.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj3_2.type = 'video/mp4';
+
+      mvObj.setVideoSrc3.push(mvObj.videoObj3_2);
+      mvObj.sizeList3.push(720);
+
+      // 484 * 272
+      mvObj.videoObj3_3 = new Object();
+      mvObj.videoObj3_3.size = '272';
+      mvObj.videoObj3_3.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj3_3.type = 'video/mp4';
+
+      mvObj.setVideoSrc3.push(mvObj.videoObj3_3);
+      mvObj.sizeList3.push(272);
+
+      mvObj.setVideoSrc.push(mvObj.setVideoSrc3);
+      mvObj.sizeList.push(mvObj.sizeList3);
+
+      /********
+       ** 영상 4
+       ********/
+      mvObj.setVideoSrc4 = new Array();
+      mvObj.sizeList4 = new Array();
+
+      // 자동해상도
+      mvObj.videoObj4_1 = new Object();
+      mvObj.videoObj4_1.size = '1';
+      mvObj.videoObj4_1.src = '../assets/images/video/sample-video02.mp4';
+      mvObj.videoObj4_1.type = 'video/mp4';
+
+      mvObj.setVideoSrc4.push(mvObj.videoObj4_1);
+      mvObj.sizeList4.push(1);
+
+      // 1280 * 720
+      mvObj.videoObj4_2 = new Object();
+      mvObj.videoObj4_2.size = '720';
+      mvObj.videoObj4_2.src = '../assets/images/video/sample-video02.mp4';
+      mvObj.videoObj4_2.type = 'video/mp4';
+
+      mvObj.setVideoSrc4.push(mvObj.videoObj4_2);
+      mvObj.sizeList4.push(720);
+
+      // 484 * 272
+      mvObj.videoObj4_3 = new Object();
+      mvObj.videoObj4_3.size = '272';
+      mvObj.videoObj4_3.src = '../assets/images/video/sample-video02.mp4';
+      mvObj.videoObj4_3.type = 'video/mp4';
+
+      mvObj.setVideoSrc4.push(mvObj.videoObj4_3);
+      mvObj.sizeList4.push(272);
+
+      mvObj.setVideoSrc.push(mvObj.setVideoSrc4);
+      mvObj.sizeList.push(mvObj.sizeList4);
+
+      /********
+       ** 영상 5
+       ********/
+      mvObj.setVideoSrc5 = new Array();
+      mvObj.sizeList5 = new Array();
+
+      // 자동해상도
+      mvObj.videoObj5_1 = new Object();
+      mvObj.videoObj5_1.size = '1';
+      mvObj.videoObj5_1.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj5_1.type = 'video/mp4';
+
+      mvObj.setVideoSrc5.push(mvObj.videoObj5_1);
+      mvObj.sizeList5.push(1);
+
+      // 1280 * 720
+      mvObj.videoObj5_2 = new Object();
+      mvObj.videoObj5_2.size = '720';
+      mvObj.videoObj5_2.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj5_2.type = 'video/mp4';
+
+      mvObj.setVideoSrc5.push(mvObj.videoObj5_2);
+      mvObj.sizeList5.push(720);
+
+      // 484 * 272
+      mvObj.videoObj5_3 = new Object();
+      mvObj.videoObj5_3.size = '272';
+      mvObj.videoObj5_3.src = '../assets/images/video/sample-video01.mp4';
+      mvObj.videoObj5_3.type = 'video/mp4';
+
+      mvObj.setVideoSrc5.push(mvObj.videoObj5_3);
+      mvObj.sizeList5.push(272);
+
+      mvObj.setVideoSrc.push(mvObj.setVideoSrc5);
+      mvObj.sizeList.push(mvObj.sizeList5);
+
+      //처음 영상 재생 화질 default값 설정
+      if (mvObj.sizeList[0][0].length == 1) {
+        qualitySize = 0;
+      } else {
+        //자동화질 설정
+        if (mvObj.sizeList[0][0] == '1') {
+          if (!isMob || mvObj.sizeList[0][0].length == 2) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 1;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 2;
+          }
+        }
+        //자동화질 미설정
+        else {
+          if (!isMob) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 0;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 1;
+          }
+        }
+      }
+
       var currentVd_ = $('.cr_main_vd').get();
 
       currentVd_.forEach(function (el, idx) {
         $(el).createVideo({
           // 플레이어 생성 영역 DIV의 아이디
           id: 'video_' + (idx + 1), // 생성될 비디오 태그 아이디 *필수값
-          src: multiVideoObj.setVideoSrc[idx],
+          src: mvObj.setVideoSrc[idx],
           speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
           autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
           startTime: 0, //영상 재생 시작 시간(이어보기 기능)
           seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
           progress: true, // false : 프로그레스바 컨트롤 되지 않도록
           preview: [{ enabled: false, src: '' }],
-          quality: { default: multiVideoObj.sizeList[idx][qualitySize], options: multiVideoObj.sizeList[idx] }, // "default" : 0, options : [0]
+          quality: { default: mvObj.sizeList[idx][qualitySize], options: mvObj.sizeList[idx] }, // "default" : 0, options : [0]
+          qualitySize: qualitySize,
           isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
           iconUrl: '../tgplayer/plugin/js/plyr.svg',
           blankVideo: '../tgplayer/plugin/js/blank.mp4',

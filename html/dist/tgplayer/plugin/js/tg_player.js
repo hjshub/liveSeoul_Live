@@ -1936,22 +1936,32 @@ typeof navigator === "object" && (function (global, factory) {
     },
     // Create an <input type='range'>
     createRange: function createRange(type, attributes) {
-      // Seek input
-      var input = createElement('input', extend(getAttributesFromSelector(this.config.selectors.inputs[type]), {
-        type: 'range',
-        min: 0,
-        max: 100,
-        step: 0.01,
-        value: 0,
-        autocomplete: 'off',
-        // A11y fixes for https://github.com/sampotts/plyr/issues/905
-        role: 'slider',
-        'aria-label': i18n.get(type, this.config),
-        'aria-valuemin': 0,
-        'aria-valuemax': 100,
-        'aria-valuenow': 0,
-        title : 'inputTitle'
-      }, attributes));
+    	
+    	var tsTitle= '';
+    	if (type == 'seek'){		// seek input
+    		tsTitle = 'inputTitle';
+    	}					
+    	else if(type == 'volume'){	// volume input
+    		tsTitle = 'inputSound';
+    	}
+    	
+    	var input = createElement('input', extend(getAttributesFromSelector(this.config.selectors.inputs[type]), {
+   	        type: 'range',
+   	        min: 0,
+   	        max: 100,
+   	        step: 0.01,
+   	        value: 0,
+   	        autocomplete: 'off',
+   	        // A11y fixes for https://github.com/sampotts/plyr/issues/905
+   	        role: 'slider',
+   	        'aria-label': i18n.get(type, this.config),
+   	        'aria-valuemin': 0,
+   	        'aria-valuemax': 100,
+   	        'aria-valuenow': 0,
+   	        title : tsTitle
+   	      }, attributes));
+    	
+      
       this.elements.inputs[type] = input; // Set the fill for webkit now
 
       controls.updateRangeFill.call(this, input); // Improve support on touch devices

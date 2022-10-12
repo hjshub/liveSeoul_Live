@@ -21,7 +21,6 @@
 <link rel="stylesheet" href="../assets/css/swiper.min.css" />
 <link rel="stylesheet" href="../assets/css/style.css" />
 
-    <script src="../assets/js/hls.js"></script>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -350,6 +349,7 @@
             <li><a href="#">자치구방송국</a></li>
             <li><a href="#">마을미디어</a></li>
             <li><a href="#">소통방통</a></li>
+            <li><a href="#">영상크리에이터</a></li>
           </ul>
         </div>
       </li>
@@ -441,34 +441,14 @@
                   <span class="caption orange">생방송</span>
                   <strong>광화문광장 24시간 생중계</strong>
                 </h3>
-                <div class="liveContents">
-                  <span class="vd-play transition-none"><em class="hidden-txt">재생</em></span>
-                  <video
-                    webkit-playsinline
-                    playsinline
-                    controls
-                    crossorigin="anonymous"
-                    preload="metadata"
-                    class="vd-streaming"
-                  ></video>
-                </div>
+                <div id="vd-streaming01" class="liveContents vd-streaming"></div>
               </div>
               <div class="box-item r-box" id="chung-gye-chun">
                 <h3 class="ft-md has-caption">
                   <span class="caption orange">생방송</span>
                   <strong>청계천 24시간 생중계</strong>
                 </h3>
-                <div class="liveContents">
-                  <span class="vd-play transition-none"><em class="hidden-txt">재생</em></span>
-                  <video
-                    webkit-playsinline
-                    playsinline
-                    controls
-                    crossorigin="anonymous"
-                    preload="metadata"
-                    class="vd-streaming"
-                  ></video>
-                </div>
+                <div id="vd-streaming02" class="liveContents vd-streaming"></div>
               </div>
               <div class="floating-layer">
                 <div class="l-box">
@@ -552,7 +532,7 @@
       <!-- // #contents -->
 
       <!-- #footer -->
-      <footer id="footer"><div class="inner">
+      <footer id="footer"><!-- <div class="inner">
   <dl>
     <dt><strong>내 손안에 서울</strong></dt>
     <dd>
@@ -615,7 +595,7 @@
       <div><img src="../assets/images/thumbnail/footer-bnr-sample-02.gif" alt="하단 배너" /></div>
     </dd>
   </dl>
-</div>
+</div> -->
 <div class="inner">
   <div>
     <ul>
@@ -637,42 +617,184 @@
       <!-- // #footer -->
     </div>
 
+    <script src="../tgplayer/conponentRoot.js"></script>
+    <script src="../tgplayer/player_init.js"></script>
+
     <script>
-      // 스트리밍 재생
-      var vd = $('.vd-streaming').get();
-      var vdTimeSet;
-      var vdSrc = [
-        'https://topiscctv.eseoul.go.kr/sd1/ch96.stream/playlist.m3u8',
-        'https://topiscctv.eseoul.go.kr/sd1/ch61.stream/playlist.m3u8',
-      ];
+      //Object
+      var mvObj = new Object(),
+        timeSet = new Array();
+      mvObj.setVideoSrc = new Array();
+      mvObj.sizeList = new Array();
 
-      vd.forEach(function (el, idx) {
-        if (el.canPlayType('application/vnd.apple.mpegurl')) {
-          el.src = vdSrc[idx];
-        } else if (Hls.isSupported()) {
-          var hls = new Hls();
-          hls.loadSource(vdSrc[idx]);
-          hls.attachMedia(el);
+      //모바일 확인
+      var isMob = window.innerWidth <= 768 ? true : false;
+
+      // video src 설정
+      // m3u8 파일
+      /********
+       ** 영상 1
+       ********/
+      mvObj.setVideoSrc1 = new Array();
+      mvObj.sizeList1 = new Array();
+
+      // 영상 1 자동해상도
+      mvObj.videoObj1_1 = new Object();
+      mvObj.videoObj1_1.size = '1';
+      mvObj.videoObj1_1.src = 'https://topiscctv.eseoul.go.kr/sd1/ch96.stream/playlist.m3u8';
+      mvObj.videoObj1_1.type = 'video/mp4';
+
+      mvObj.setVideoSrc1.push(mvObj.videoObj1_1);
+      mvObj.sizeList1.push(1);
+
+      // 1280 * 720
+      mvObj.videoObj1_2 = new Object();
+      mvObj.videoObj1_2.size = '720';
+      mvObj.videoObj1_2.src = 'https://topiscctv.eseoul.go.kr/sd1/ch96.stream/playlist.m3u8';
+      mvObj.videoObj1_2.type = 'video/mp4';
+
+      mvObj.setVideoSrc1.push(mvObj.videoObj1_2);
+      mvObj.sizeList1.push(720);
+
+      // 484 * 272
+      mvObj.videoObj1_3 = new Object();
+      mvObj.videoObj1_3.size = '272';
+      mvObj.videoObj1_3.src = 'https://topiscctv.eseoul.go.kr/sd1/ch96.stream/playlist.m3u8';
+      mvObj.videoObj1_3.type = 'video/mp4';
+
+      mvObj.setVideoSrc1.push(mvObj.videoObj1_3);
+      mvObj.sizeList1.push(272);
+
+      mvObj.setVideoSrc.push(mvObj.setVideoSrc1);
+      mvObj.sizeList.push(mvObj.sizeList1);
+
+      /********
+       ** 영상 2
+       ********/
+      mvObj.setVideoSrc2 = new Array();
+      mvObj.sizeList2 = new Array();
+
+      // 영상 2 자동해상도
+      mvObj.videoObj2_1 = new Object();
+      mvObj.videoObj2_1.size = '1';
+      mvObj.videoObj2_1.src = 'https://topiscctv.eseoul.go.kr/sd1/ch61.stream/playlist.m3u8';
+      mvObj.videoObj2_1.type = 'video/mp4';
+
+      mvObj.setVideoSrc2.push(mvObj.videoObj2_1);
+      mvObj.sizeList2.push(1);
+
+      // 1280 * 720
+      mvObj.videoObj2_2 = new Object();
+      mvObj.videoObj2_2.size = '720';
+      mvObj.videoObj2_2.src = 'https://topiscctv.eseoul.go.kr/sd1/ch61.stream/playlist.m3u8';
+      mvObj.videoObj2_2.type = 'video/mp4';
+
+      mvObj.setVideoSrc2.push(mvObj.videoObj2_2);
+      mvObj.sizeList2.push(720);
+
+      // 484 * 272
+      mvObj.videoObj2_3 = new Object();
+      mvObj.videoObj2_3.size = '272';
+      mvObj.videoObj2_3.src = 'https://topiscctv.eseoul.go.kr/sd1/ch61.stream/playlist.m3u8';
+      mvObj.videoObj2_3.type = 'video/mp4';
+
+      mvObj.setVideoSrc2.push(mvObj.videoObj2_3);
+      mvObj.sizeList2.push(272);
+
+      mvObj.setVideoSrc.push(mvObj.setVideoSrc2);
+      mvObj.sizeList.push(mvObj.sizeList2);
+
+      //처음 영상 재생 화질 default값 설정
+      if (mvObj.sizeList[0][0].length == 1) {
+        qualitySize = 0;
+      } else {
+        //자동화질 설정
+        if (mvObj.sizeList[0][0] == '1') {
+          if (!isMob || mvObj.sizeList[0][0].length == 2) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 1;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 2;
+          }
         }
+        //자동화질 미설정
+        else {
+          if (!isMob) {
+            //웹 브라우저 화질 default 1280 x 720
+            qualitySize = 0;
+          } else {
+            //모바일 화질 default    484 x 272
+            qualitySize = 1;
+          }
+        }
+      }
+
+      $('#vd-streaming01').createVideo({
+        // 플레이어 생성 영역 DIV의 아이디
+        id: 'video_1', // 생성될 비디오 태그 아이디 *필수값
+        src: mvObj.setVideoSrc[0],
+        speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+        autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+        startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+        seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+        progress: false, // false : 프로그레스바 컨트롤 되지 않도록
+        preview: [{ enabled: false, src: '' }],
+        quality: { default: mvObj.sizeList[0][qualitySize], options: mvObj.sizeList[0] }, // "default" : 0, options : [0]
+        qualitySize: qualitySize,
+        callback: [
+          {
+            start: vdStart1, // Player 시작 시 호출할 함수
+            pause: clearSet1, // Player 일시정지 시 호출할 함수
+          },
+        ],
+        isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+        iconUrl: '../tgplayer/plugin/js/plyr.svg',
+        blankVideo: '../tgplayer/plugin/js/blank.mp4',
       });
 
-      $('.vd-play').each(function (i) {
-        var t = $(this);
-
-        t.on('click', function () {
-          t.stop().fadeOut(300);
-          vd[i].play();
-
-          vdTimeSet = setTimeout(function () {
-            vd[i].pause(); // 재생 시작 30초 후 일시정지
-          }, 30000);
-        });
-
-        vd[i].addEventListener('pause', function () {
-          t.stop().fadeIn(300);
-          clearTimeout(vdTimeSet);
-        });
+      $('#vd-streaming02').createVideo({
+        // 플레이어 생성 영역 DIV의 아이디
+        id: 'video_2', // 생성될 비디오 태그 아이디 *필수값
+        src: mvObj.setVideoSrc[1],
+        speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+        autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+        startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+        seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+        progress: false, // false : 프로그레스바 컨트롤 되지 않도록
+        preview: [{ enabled: false, src: '' }],
+        quality: { default: mvObj.sizeList[1][qualitySize], options: mvObj.sizeList[1] }, // "default" : 0, options : [0]
+        qualitySize: qualitySize,
+        callback: [
+          {
+            start: vdStart2, // Player 시작 시 호출할 함수
+            pause: clearSet2, // Player 일시정지 시 호출할 함수
+          },
+        ],
+        isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+        iconUrl: '../tgplayer/plugin/js/plyr.svg',
+        blankVideo: '../tgplayer/plugin/js/blank.mp4',
       });
+
+      function vdStart1() {
+        timeSet[0] = setTimeout(function () {
+          $('#video_1').vodPause(); // 재생 시작 30초 후 일시정지
+        }, 30000);
+      }
+
+      function clearSet1() {
+        clearTimeout(timeSet[0]);
+      }
+
+      function vdStart2() {
+        timeSet[1] = setTimeout(function () {
+          $('#video_2').vodPause(); // 재생 시작 30초 후 일시정지
+        }, 30000);
+      }
+
+      function clearSet2() {
+        clearTimeout(timeSet[1]);
+      }
     </script>
   </body>
 </html>

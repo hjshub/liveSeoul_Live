@@ -349,6 +349,7 @@
             <li><a href="#">자치구방송국</a></li>
             <li><a href="#">마을미디어</a></li>
             <li><a href="#">소통방통</a></li>
+            <li><a href="#">영상크리에이터</a></li>
           </ul>
         </div>
       </li>
@@ -516,7 +517,7 @@
                       <button
                         class="btn-default rounded xs2 white txt-color org"
                         type="button"
-                        onclick="location.href='../curation/view.innerHTML'"
+                        onclick="location.href='../curation/view.html'"
                       >
                         <em>요청하기</em>
                       </button>
@@ -547,7 +548,7 @@
                       <button
                         class="btn-default rounded xs2 white txt-color org"
                         type="button"
-                        onclick="location.href='../curation/view.innerHTML'"
+                        onclick="location.href='../curation/view.html'"
                       >
                         <em>요청하기</em>
                       </button>
@@ -576,9 +577,9 @@
                     </div>
                     <div class="td-detail">
                       <button
-                        class="btn-default rounded xs2 white txt-color lgtRed"
+                        class="btn-default rounded xs2 white txt-color lgtRed button-active-modal fixed"
+                        data-modal-name="reject"
                         type="button"
-                        onclick="location.href='../curation/view.innerHTML'"
                       >
                         <em>반려내역 보기</em>
                       </button>
@@ -610,6 +611,12 @@
                 </li>
               </ul>
 
+              <!-- 등록된 큐레이션이 없을 시
+              <div class="no-files">
+                <p><img src="../assets/images/img-notice.png" alt="알림 이미지" /></p>
+                <p>등록된 큐레이션이 없습니다.</p>
+              </div>
+              -->
               <div class="btn-wrap align-r">
                 <button class="btn-default md rounded red2" type="submit"><em>제작하기</em></button>
               </div>
@@ -641,8 +648,28 @@
       </div>
       <!-- // #contents -->
 
+      <!-- modal -->
+      <!-- 영상 다운로드 반려내역 -->
+      <div class="modal fixed reject" id="modal-reject">
+        <header class="modal-header">
+          <h5>반려내역</h5>
+          <button type="button" class="button-close type02 modal-off">
+            <em class="hidden-txt">레이어 팝업 닫기</em>
+          </button>
+        </header>
+        <div class="modal-body">
+          <div class="modal-contents">
+            <p><img src="../assets/images/img-notice.png" width="85" alt="반려내역" /></p>
+            <p>
+              타 웹사이트 게재를 위해서는 <br />
+              영상 다운로드가 <b>불가능</b> 합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- #footer -->
-      <footer id="footer"><div class="inner">
+      <footer id="footer"><!-- <div class="inner">
   <dl>
     <dt><strong>내 손안에 서울</strong></dt>
     <dd>
@@ -705,7 +732,7 @@
       <div><img src="../assets/images/thumbnail/footer-bnr-sample-02.gif" alt="하단 배너" /></div>
     </dd>
   </dl>
-</div>
+</div> -->
 <div class="inner">
   <div>
     <ul>

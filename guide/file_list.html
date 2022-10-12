@@ -21,7 +21,66 @@
             사용자 작업리스트
           </h2>
           <div class="table-style">
-            <div class="progress">진척률 : <b></b></div>
+            <div class="progress">최근수정 : <b>10&#47;12</b>,&nbsp;&nbsp;진척률 : <b class="perc"></b></div>
+
+            <h3>수정 내역</h3>
+            <table class="notice">
+              <caption>
+                위플즈 (NO, 구분, 파일경로, 완료일정)
+              </caption>
+              <colgroup>
+                <col style="width: 10%" />
+                <col style="width: 18%" />
+                <col style="width: auto" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">날짜</th>
+                  <th scope="col">구분</th>
+                  <th scope="col">내용</th>
+                </tr>
+              </thead>
+              <tfoot></tfoot>
+              <tbody>
+                <tr>
+                  <td class="date" rowspan="4">10&#47;12</td>
+                  <td>공통</td>
+                  <td>
+                    1. 등록영상 없음, 검색결과 없음 레이아웃 추가<br />
+                    2. 푸터 상단 부분 제거
+                  </td>
+                </tr>
+                <tr>
+                  <td>프로그램 목록</td>
+                  <td>
+                    1. 프로그램 전체메뉴 1depth 링크 추가<br />
+                    2. Lnb 영상크리에이터 메뉴 추가 (아이콘 시안요청)
+                  </td>
+                </tr>
+                <tr>
+                  <td>내가 만든 큐레이션</td>
+                  <td>반려내역 레이어 팝업 추가</td>
+                </tr>
+                <tr>
+                  <td>
+                    메인 라이브,<br />
+                    프로그램 상세,<br />
+                    큐레이션 상세,<br />
+                    영상크리에이터 메인,<br />
+                    영상크리에이터 상세,<br />
+                    광장24,<br />
+                    통합영상관리
+                  </td>
+                  <td>티젠 플레이어 오류로 인한 패치에 따라 로직이 일부 변경 되었음</td>
+                </tr>
+                <!-- <tr>
+                  <td>프로그램 목록, 영상크리에이터 메인</td>
+                  <td>네비게이션 노출 (시안 요청)</td>
+                </tr> -->
+              </tbody>
+            </table>
+
+            <h3>파일 경로</h3>
             <table>
               <caption>
                 위플즈 (NO, 구분, 파일경로, 완료일정)
@@ -341,6 +400,19 @@
                     <em class="finish">완료</em>
                   </td>
                 </tr>
+
+                <!-- 통합영상관리 -->
+                <tr>
+                  <td class="count"></td>
+                  <td>통합영상관리</td>
+                  <td>샘플</td>
+                  <td>
+                    <a href="../html/dist/video/sample.html" target="_blank">/html/dist/video/sample.html</a>
+                  </td>
+                  <td>
+                    <em class="finish">완료</em>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -358,7 +430,7 @@
         });
 
         $('.progress')
-          .find('b')
+          .find('.perc')
           .append(progress.toFixed(2) + '%');
       });
     </script>

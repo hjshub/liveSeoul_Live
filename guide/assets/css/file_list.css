@@ -65,7 +65,8 @@ h2 * {
   line-height: 1;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1.7;
 }
 h4 {
   font-size: 1.286rem;
@@ -112,13 +113,24 @@ section + section {
 [class^='table-style'] table td {
   border-width: 1px 0 0 1px;
 }
-[class^='table-style'] table td:first-of-type {
+[class^='table-style'] table:not(.notice) td:first-of-type {
   border-left: none;
   padding-left: 0;
   text-align: center;
 }
 [class^='table-style'] table tr:first-of-type td {
   border-top: none;
+}
+[class^='table-style'] table.notice {
+  margin-bottom: 50px;
+}
+[class^='table-style'] table.notice td {
+  border-bottom-width: 1px;
+}
+[class^='table-style'] table.notice td.date {
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
 }
 
 .progress {
