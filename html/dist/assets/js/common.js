@@ -785,12 +785,13 @@ function commonFunction() {
           fileReader.readAsDataURL($(el)[0].files[0]);
         }
 
+        $(el).closest('.file-attach').find('.text-wrap input[type=text]').val(fileName);
         if (type == 'image') {
           // 이미지 업로드
           if (filetype == 'jpg' || filetype == 'gif' || filetype == 'png' || filetype == 'jpeg' || filetype == 'bmp') {
             // 정상적인 이미지 확장자 파일일 경우
             fileReader.onload = function (e) {
-              $(el).siblings('img').attr('src', e.target.result);
+              $(el).closest('.file-up-list').find('.file-attach-image img').attr('src', e.target.result);
             };
           } else {
             alert('이미지 파일만 선택 할 수 있습니다.');
@@ -798,8 +799,6 @@ function commonFunction() {
             node = parentObj.replaceChild(el.cloneNode(true), el);
             return false;
           }
-        } else {
-          $(el).closest('.file-attach').find('.text-wrap input[type=text]').val(fileName);
         }
       },
       copyToClipboard = function (val) {

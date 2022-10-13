@@ -432,18 +432,23 @@
                     <dl>
                       <dt><label>썸네일 등록</label></dt>
                       <dd>
-                        <div class="file-up-list">
+                        <div class="file-up-list clear">
                           <div class="file-attach-image">
-                            <span class="img-wrap">
-                              <label for="imgAttach"><em class="hidden-txt">이미지 첨부</em></label>
+                            <img src="../assets/images/no-image.png" alt="기본 이미지" />
+                          </div>
+                          <div class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" disabled title="첨부 파일명 및 확장자" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file" class="orange"><em>첨부하기</em></label>
                               <input
                                 class="hidden-txt"
                                 type="file"
-                                id="imgAttach"
-                                title="이미지 첨부"
-                                onchange="commonFunction().fileUpload(this, 'image');"
+                                id="file"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this , 'image');"
                               />
-                              <img src="../assets/images/no-image.png" alt="기본 이미지" />
                             </span>
                           </div>
                           <div class="etc">
