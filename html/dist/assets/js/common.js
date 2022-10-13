@@ -170,6 +170,34 @@ function commonFunction() {
                 'overflow-y': 'hidden',
               });
             }
+
+            // 큐레이션 담기 리셋
+            if (modalName == 'addCuration') {
+              $('.modal#modal-' + modalName)
+                .find('li.add')
+                .remove();
+
+              $('.modal#modal-' + modalName)
+                .find('input[type=checkbox]')
+                .prop('checked', '');
+            }
+
+            // 영상 다운로드 요청
+            if (modalName == 'applyDownload') {
+              $.ajax({
+                url: '../modal/download.html',
+                type: 'get',
+                dataType: 'html',
+                success: function (result) {
+                  $('.modal#modal-' + modalName)
+                    .find('.set-dw-section')
+                    .html(result);
+
+                  // 구간설정
+                  multiRange();
+                },
+              });
+            }
           }
         });
 
@@ -182,68 +210,15 @@ function commonFunction() {
         $('.button-active-modal').removeClass('on');
         $('.modal').css('display', 'none');
         $('.dimmed.fixed').remove();
+
+        // 입력 폼 리셋
+        $('.modal').find('input').val('');
+        $('.modal').find('textarea').val('');
+
         gb.body.css({
           height: 'auto',
           'overflow-y': 'visible',
         });
-      },
-      modalDownload = function () {
-        // 영상 다운로드
-        $.ajax({
-          url: '../modal/download.html',
-          type: 'get',
-          dataType: 'html',
-          success: function (result) {
-            gb.body.append(result);
-            gb.body.append('<div class="dimmed fixed" onclick="commonFunction().modalDownloadOff();"></div>');
-            gb.body.css({
-              height: '100vh',
-              'overflow-y': 'hidden',
-            });
-
-            // 다운로드 영역 선택
-            var _radio = $('input[type=radio][name=download]');
-
-            _radio.on('change', function () {
-              var _trg = $(this),
-                idx = $('input[type=radio][name^=download]').index(_trg);
-
-              if (_trg.prop('checked')) {
-                $('.dw-section').css('display', 'none');
-                $('.dw-section').eq(idx).css('display', 'block');
-              }
-            });
-
-            // 부분 영상 다운 구간설정
-            multiRange();
-          },
-        });
-      },
-      modalDownloadOff = function () {
-        // 영상 다운로드 모달 닫기
-        $('.modal#modal-download').remove();
-        $('.dimmed.fixed').remove();
-        gb.body.css({
-          height: 'auto',
-          'overflow-y': 'visible',
-        });
-      },
-      modalLoadingbar = function () {
-        // 로딩 바
-        $.ajax({
-          url: '../modal/loadingbar.html',
-          type: 'get',
-          dataType: 'html',
-          success: function (result) {
-            gb.body.append(result);
-            gb.body.append('<div class="dimmed fixed" id="cover" onclick="commonFunction().modalLoadingbarOff();"></div>');
-          },
-        });
-      },
-      modalLoadingbarOff = function () {
-        // 로딩 바 닫기
-        $('.modal#modal-loadingbar').remove();
-        $('.dimmed.fixed#cover').remove();
       },
       multiRange = function () {
         //영상 구간 설정
@@ -1159,10 +1134,6 @@ function commonFunction() {
       setCurList: setCurList,
       menuAll: menuAll,
       modalOff: modalOff,
-      modalDownload: modalDownload,
-      modalDownloadOff: modalDownloadOff,
-      modalLoadingbar: modalLoadingbar,
-      modalLoadingbarOff: modalLoadingbarOff,
       mobTabMenu: mobTabMenu,
       copyUrl: copyUrl,
     };
@@ -1313,41 +1284,6 @@ $crVisSwiper_playBtn.click(function () {
     crVisSwiper.autoplay.start();
     $(this).text('멈춤').removeClass('stop').addClass('play');
   }
-});
-
-var crProfileSwiper = new Swiper('.cr-profile-swiper', {
-  // Optional parameters
-  loop: true,
-  speed: 600,
-  centeredSlides: true,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-  autoplay: {
-    delay: 5000,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: false,
-  slidesPerView: 1,
-  debugger: true, // Enable debugger
-});
-
-crProfileSwiper.on('activeIndexChange', function (swiper) {
-  setTimeout(function () {
-    var animate = $('.swiper-slide-active .animate').get(),
-      animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
-
-    animate_.forEach(function (elem) {
-      $(elem).removeClass('animation--start');
-    });
-    animate.forEach(function (elem) {
-      $(elem).addClass('animation--start');
-    });
-  }, 100);
 });
 
 var animate = $('.swiper-slide-active .animate').get();

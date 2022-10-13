@@ -628,14 +628,26 @@
                           <div class="modal-wrap">
                             <!-- 다운로드 신청 -->
                             <div class="modal right ivory applyDownload is_animated animate__fade_In_Up" id="modal-applyDownload">
+                              <!-- 다운로드 구간 설정 -->
+                              <header class="modal-header">
+                                <h5>영상 다운로드 신청</h5>
+                                <button type="button" class="button-close modal-off">
+                                  <em class="hidden-txt">레이어 팝업 닫기</em>
+                                </button>
+                              </header>
+                              <div class="modal-body">
+                                <div class="modal-contents">
+                                  <!-- 구간설정 -->
+                                  <div class="set-dw-section"></div>
+                                </div>
+                              </div>
+
+                              <!-- 다운로드 사유 입력  -->
                               <header class="modal-header">
                                 <h5>
                                   다운로드 사유 입력 후 신청해 주세요.<br />
                                   <em>* 관리자 승인 후 다운로드가 가능합니다. 승인 기간 평일기준 1~2일 소요</em>
                                 </h5>
-                                <button type="button" class="button-close modal-off">
-                                  <em class="hidden-txt">레이어 팝업 닫기</em>
-                                </button>
                               </header>
                               <div class="modal-body">
                                 <div class="modal-contents">
@@ -1672,7 +1684,7 @@
       function addCuration(t) {
         // 새로운 큐레이션 만들기
         var newList =
-          '<li>' +
+          '<li class="add">' +
           '<div class="chk-wrap list-type">' +
           '<span>' +
           '<input type="checkbox" id="newList01" />' +
@@ -1689,6 +1701,7 @@
         $(t).closest('.modal-body').find('.my-curation').prepend(newList);
       }
 
+      //티젠 플레이어 설정
       //화질 Object 리스트
       var setVideoSrc = new Array();
       var sizeList = new Array();
