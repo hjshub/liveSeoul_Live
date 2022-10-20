@@ -843,7 +843,20 @@
             <article>
               <h3 class="hidden-txt">영상 상세</h3>
               <div class="vd-container">
+                <!-- tgplayer 영상영역 -->
                 <div id="cr_vd"></div>
+
+                <!-- youtube 영상영역
+                <div class="ytp-wrap">
+                  <iframe
+                    src="https://www.youtube.com/embed/XsXV6XBV_qQ"
+                    title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                -->
               </div>
               <div class="vd-info">
                 <div class="contents">
@@ -1650,23 +1663,24 @@
         }
       }
 
-      //품질 변경 버튼 리스트
-      $('#cr_vd').createVideo({
-        // 플레이어 생성 영역 DIV의 아이디
-        id: 'video', // 생성될 비디오 태그 아이디 *필수값
-        src: setVideoSrc,
-        speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
-        autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
-        startTime: 0, //영상 재생 시작 시간(이어보기 기능)
-        seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
-        progress: true, // false : 프로그레스바 컨트롤 되지 않도록
-        preview: [{ enabled: false, src: '' }],
-        quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
-        qualitySize: qualitySize,
-        isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
-        iconUrl: '../tgplayer/plugin/js/plyr.svg',
-        blankVideo: '../tgplayer/plugin/js/blank.mp4',
-      });
+      if ($('#cr_vd').length) {
+        $('#cr_vd').createVideo({
+          // 플레이어 생성 영역 DIV의 아이디
+          id: 'video', // 생성될 비디오 태그 아이디 *필수값
+          src: setVideoSrc,
+          speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+          autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+          startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+          seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+          progress: true, // false : 프로그레스바 컨트롤 되지 않도록
+          preview: [{ enabled: false, src: '' }],
+          quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+          qualitySize: qualitySize,
+          isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+          iconUrl: '../tgplayer/plugin/js/plyr.svg',
+          blankVideo: '../tgplayer/plugin/js/blank.mp4',
+        });
+      }
     </script>
   </body>
 </html>

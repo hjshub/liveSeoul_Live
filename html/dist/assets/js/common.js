@@ -702,20 +702,20 @@ function commonFunction() {
           var trg = $(this);
 
           trg.closest('.article').addClass('on');
-          trg
-            .find('.preview')
-            .stop()
-            .fadeIn(200, function () {
-              gsap.to(trg.find('.preview'), { opacity: 1, scaleY: 1, duration: 0.4 });
-            });
+          // trg
+          //   .find('.preview')
+          //   .stop()
+          //   .fadeIn(200, function () {
+          //     gsap.to(trg.find('.preview'), { opacity: 1, scaleY: 1, duration: 0.4 });
+          //   });
         });
 
         $(document).on('mouseleave focusout', '.liveOnAir .info', function () {
           var trg = $(this);
 
           trg.closest('.article').removeClass('on');
-          gsap.to(trg.find('.preview'), { opacity: 0, scaleY: 0, duration: 0.4 });
-          trg.find('.preview').stop().fadeOut(300);
+          // gsap.to(trg.find('.preview'), { opacity: 0, scaleY: 0, duration: 0.4 });
+          // trg.find('.preview').stop().fadeOut(300);
         });
       },
       tabMenu = function () {
