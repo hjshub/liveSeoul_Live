@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>서울영상크리에이터 상세 | 라이브 서울</title>
+    <title>서울영상크리에이터 영상제작소 수정 | 라이브 서울</title>
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/jquery-ui.min.js"></script>
@@ -21,6 +21,10 @@
 <link rel="stylesheet" href="../assets/css/swiper.min.css" />
 <link rel="stylesheet" href="../assets/css/style.css" />
 
+
+    <!--  이노릭스 업로드 컴포넌트 -->
+    <script type="text/javascript" src="../innorix/innorix.js"></script>
+    <link rel="stylesheet" type="text/css" href="../innorix/innorix.css" />
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -827,9 +831,9 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap program creater view" id="contents">
-        <h1 class="hidden-txt">서울영상크리에이터 상세</h1>
-        <section class="detail-view">
+      <div class="wrap creater board write" id="contents">
+        <h1 class="hidden-txt">서울영상크리에이터 영상제작소 수정</h1>
+        <section class="board_top">
           <header class="page-header">
             <div class="inner">
               <div class="location">
@@ -838,666 +842,87 @@
                     ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
                   ></span
                 >
-                <span><a href="">서울오리지널</a></span>
-                <span><a href="">방영프로그램</a></span>
+                <span><a href="">영상크리에이터</a></span>
+                <span><a href="">커뮤니티채널</a></span>
+                <span><a href="">영상제작소</a></span>
               </div>
 
-              <div class="creater-view-top">
-                <div>
-                  <span>CREATOR</span>
-                  <h2>대금이누나</h2>
-                  <p>우리의 것이 소중한 것이여! 대금이누나와 함께하는 서울 속 전통을 찾아서</p>
-                  <button type="button"><em>주소복사</em></button>
-                </div>
-                <img src="../assets/images/sample-creator-profile.png" alt="대금이누나" class="img-profile" />
-              </div>
+              <h2 class="no_st">영상제작소 수정</h2>
             </div>
           </header>
-          <div class="page-body inner">
-            <article>
-              <h3 class="hidden-txt">영상 상세</h3>
-              <div class="vd-container">
-                <!-- tgplayer 영상영역 -->
-                <div id="cr_vd"></div>
-
-                <!-- youtube 영상영역
-                <div class="ytp-wrap">
-                  <iframe
-                    src="https://www.youtube.com/embed/XsXV6XBV_qQ"
-                    title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                -->
-              </div>
-              <div class="vd-info">
-                <div class="contents">
-                  <h4 class="contents-header">
-                    <span class="hash-list">
-                      <em>서울시장</em>
-                      <em>출근</em>
-                      <em>서울시청</em> </span
-                    ><br />
-                    <strong class="title">졸업하면 무조건 취업! 기적의 사관학교가 있다?! (f.청년취업사관학교)</strong><br />
-                    <span class="etc"><em>2022-06-02</em><em>서울시청 1층</em></span>
-                  </h4>
-                  <div class="contents-mid">
-                    <div class="text-support modal-wrap">
-                      <button
-                        type="button"
-                        class="btn-has-icon rounded voice type-02 button-active-modal"
-                        data-modal-name="text-support"
-                      >
-                        <em>음성&middot;문자 지원</em>
-                      </button>
-                      <div class="modal-wrap">
-                        <!-- 음성ㆍ문자 지원 -->
-                        <div class="modal left purple textSupport is_animated animate__fade_In_Up" id="modal-text-support">
-                          <div class="modal-body">
-                            <div class="modal-contents customedScroll lightPurple">
-                              <p>서울시장 출근 환영행사가 시작되었습니다.</p>
-                              <p>서울시장 출근 환영행사가 시작되었습니다.</p>
-                              <p>
-                                이 행사가 어느 행사보다 값지고 뜻깊은 날이 되어 앞으로도 빛이 날 수 있도록 최선을
-                                다하여보겠습니다.
-                              </p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="utility">
-                      <div class="add-curation">
-                        <button
-                          type="button"
-                          class="btn-has-icon rounded add navy button-active-modal"
-                          data-modal-name="addCuration"
-                        >
-                          <em>큐레이션 담기</em>
-                        </button>
-                        <div class="modal-wrap">
-                          <!-- 큐레이션 담기 -->
-                          <div class="modal right ivory addCuration is_animated animate__fade_In_Up" id="modal-addCuration">
-                            <header class="modal-header">
-                              <h5>
-                                큐레이션 담기<br />
-                                <em>* 영상을 미리 담은 후에 큐레이션을 만들어 보세요.</em>
-                              </h5>
-                              <button type="button" class="button-close modal-off">
-                                <em class="hidden-txt">레이어 팝업 닫기</em>
-                              </button>
-                            </header>
-                            <div class="modal-body">
-                              <div class="modal-contents customedScroll pink">
-                                <ul class="my-curation">
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" checked id="cur-list01" />
-                                        <label for="cur-list01"><em>코로나19 관련 큐레이션</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list02" />
-                                        <label for="cur-list02"><em>맛집 영상 모음_1</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list03" />
-                                        <label for="cur-list03"><em>맛집 영상 모음_2</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list04" />
-                                        <label for="cur-list04"><em>맛집 영상 모음_3</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list05" />
-                                        <label for="cur-list05"><em>맛집 영상 모음_4</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list06" />
-                                        <label for="cur-list06"><em>맛집 영상 모음_5</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list07" />
-                                        <label for="cur-list07"><em>맛집 영상 모음_6</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list08" />
-                                        <label for="cur-list08"><em>맛집 영상 모음_7</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list09" />
-                                        <label for="cur-list09"><em>맛집 영상 모음_8</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="chk-wrap list-type">
-                                      <span>
-                                        <input type="checkbox" id="cur-list10" />
-                                        <label for="cur-list10"><em>맛집 영상 모음_9</em></label>
-                                      </span>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-                              <div class="btn-wrap half align-c">
-                                <button class="btn-default rounded orange" type="submit">
-                                  <em>큐레이션 영상 저장</em>
-                                </button>
-                                <button class="btn-has-icon rounded add navy" type="button" onclick="addCuration(this);">
-                                  <em>새로운 큐레이션 만들기</em>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <ul>
-                        <li>
-                          <a href="" class="icon-download button-active-modal" data-modal-name="applyDownload"
-                            ><em>다운로드</em></a
-                          >
-                          <div class="modal-wrap">
-                            <!-- 다운로드 신청 -->
-                            <div class="modal right ivory applyDownload is_animated animate__fade_In_Up" id="modal-applyDownload">
-                              <!-- 다운로드 구간 설정 -->
-                              <header class="modal-header">
-                                <h5>영상 다운로드 신청</h5>
-                                <button type="button" class="button-close modal-off">
-                                  <em class="hidden-txt">레이어 팝업 닫기</em>
-                                </button>
-                              </header>
-                              <div class="modal-body">
-                                <div class="modal-contents">
-                                  <!-- 구간설정 -->
-                                  <div class="set-dw-section"></div>
-                                </div>
-                              </div>
-
-                              <!-- 다운로드 사유 입력  -->
-                              <header class="modal-header">
-                                <h5>
-                                  다운로드 사유 입력 후 신청해 주세요.<br />
-                                  <em>* 관리자 승인 후 다운로드가 가능합니다. 승인 기간 평일기준 1~2일 소요</em>
-                                </h5>
-                              </header>
-                              <div class="modal-body">
-                                <div class="modal-contents">
-                                  <textarea
-                                    cols="30"
-                                    rows="10"
-                                    title="다운로드 사유 입력 - 사유입력 100자 이내"
-                                    placeholder="사유입력 100자 이내"
-                                  ></textarea>
-                                </div>
-                                <div class="btn-wrap align-c">
-                                  <button
-                                    class="btn-default rounded orange"
-                                    data-modal-name="download-finish"
-                                    type="submit"
-                                    onclick="applyDownload();"
-                                  >
-                                    <em>다운로드 신청</em>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- 다운로드 완료 -->
-                            <div
-                              class="modal right ivory applyDownload is_animated animate__fade_In_Up"
-                              id="modal-download-finish"
-                            >
-                              <header class="modal-header">
-                                <h5 class="finish align-c">신청이 완료되었습니다.</h5>
-                                <button type="button" class="button-close modal-off">
-                                  <em class="hidden-txt">레이어 팝업 닫기</em>
-                                </button>
-                              </header>
-                              <div class="modal-body finish">
-                                <div class="modal-contents align-c">
-                                  <p>
-                                    마이페이지로 이동하여 영상다운이 가능합니다.<br />
-                                    이동하시겠습니까?
-                                  </p>
-                                </div>
-                                <div class="btn-wrap align-c">
-                                  <button
-                                    class="btn-default xs rounded orange"
-                                    type="button"
-                                    onclick="location.href='../mypage/download_list.html'"
-                                  >
-                                    <em>확인</em>
-                                  </button>
-                                  <button class="btn-default xs rounded darkGray modal-off" type="button">
-                                    <em>취소</em>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <a href="" class="icon-share button-active-modal" data-modal-name="share"><em>공유하기</em></a>
-                          <div class="modal-wrap">
-                            <!-- 공유하기 -->
-                            <div class="modal right ivory share is_animated animate__fade_In_Up" id="modal-share">
-                              <header class="modal-header">
-                                <h5>SNS 공유하기</h5>
-                                <button type="button" class="button-close modal-off">
-                                  <em class="hidden-txt">레이어 팝업 닫기</em>
-                                </button>
-                              </header>
-                              <div class="modal-body">
-                                <div class="modal-contents">
-                                  <ul class="sns-list">
-                                    <li>
-                                      <a class="share-facebook" href="javascript:void(0);"
-                                        ><em class="hidden-txt">페이스북 공유하기</em></a
-                                      >
-                                    </li>
-                                    <li>
-                                      <a class="share-twitter" href="javascript:void(0);"
-                                        ><em class="hidden-txt">트위터 공유하기</em></a
-                                      >
-                                    </li>
-                                    <li>
-                                      <a class="share-kakaotalk" href="javascript:void(0);"
-                                        ><em class="hidden-txt">카카오톡 공유하기</em></a
-                                      >
-                                    </li>
-                                    <li>
-                                      <a class="share-N_blog" href="javascript:void(0);"
-                                        ><em class="hidden-txt">네이버블로그 공유하기</em></a
-                                      >
-                                    </li>
-                                    <li>
-                                      <a class="share-URL" href="javascript:void(0);" onclick="commonFunction().copyUrl();"
-                                        ><em class="hidden-txt">URL 공유하기</em></a
-                                      >
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <a href="" class="icon-like on"><em>좋아요</em></a>
-                          <!-- 좋아요 시 on class 추가-->
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="contents-body">
-                    <p>졸업하면 무조건 취업! 기적의 사관학교가 있다?! (f.청년취업사관학교)</p>
-                    <p>&nbsp;</p>
-                    <p>늦지 않게 신청하고, 꼭 취!뽀! 하세요!</p>
-                  </div>
-                </div>
-              </div>
-              <aside>
-                <h4>추천영상</h4>
-                <div class="customedScroll lightPurple">
-                  <ul>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-01.jpg" alt="추천영상 썸네일 01" />
-                        </div>
-                        <div>
-                          <b>아픈 역사를 기억하는 공간이자 신의 쉼터, 남산 예장공원</b><br />
-                          <em>2021.12.28</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-02.jpg" alt="추천영상 썸네일 02" />
-                        </div>
-                        <div>
-                          <b>가을 품은 창경궁 ㅣ서울영상크리에이터</b><br />
-                          <em>2022.01.10</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-03.jpg" alt="추천영상 썸네일 03" />
-                        </div>
-                        <div>
-                          <b>서울미래유산을 곁들인 서울 뚜벅이 투어</b><br />
-                          <em>2022.01.10</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-04.jpg" alt="추천영상 썸네일 04" />
-                        </div>
-                        <div>
-                          <b>공예의 과거부터 미래까지 연결짓다! 서울공예박물관</b><br />
-                          <em>2022.01.10</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-05.jpg" alt="추천영상 썸네일 05" />
-                        </div>
-                        <div>
-                          <b>서울에서 놀면 어디가니????? 서울 골목 곳곳 카페, 맛집</b><br />
-                          <em>2022.01.10</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-06.jpg" alt="추천영상 썸네일 06" />
-                        </div>
-                        <div>
-                          <b>서울여행영상! 미니어처가 된 SEOUL (타임랩스 영상)</b><br />
-                          <em>2021.04.27</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-07.jpg" alt="추천영상 썸네일 07" />
-                        </div>
-                        <div>
-                          <b>[그렉 Vlog] 고즈넉한 핫플 돈의문박물관마을 | 한옥 여행</b><br />
-                          <em>2022.04.27</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-08.jpg" alt="추천영상 썸네일 08" />
-                        </div>
-                        <div>
-                          <b>나도 제로웨이스트에 한 걸음 더, 서울 제로숲 제로웨이스트 마켓</b><br />
-                          <em>2021.06.17</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-01.jpg" alt="추천영상 썸네일 09" />
-                        </div>
-                        <div>
-                          <b>아픈 역사를 기억하는 공간이자 신의 쉼터, 남산 예장공원</b><br />
-                          <em>2021.12.28</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-02.jpg" alt="추천영상 썸네일 10" />
-                        </div>
-                        <div>
-                          <b>가을 품은 창경궁 ㅣ서울영상크리에이터</b><br />
-                          <em>2022.01.10</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-03.jpg" alt="추천영상 썸네일 11" />
-                        </div>
-                        <div>
-                          <b>서울미래유산을 곁들인 서울 뚜벅이 투어</b><br />
-                          <em>2022.01.10</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-04.jpg" alt="추천영상 썸네일 12" />
-                        </div>
-                        <div>
-                          <b>공예의 과거부터 미래까지 연결짓다! 서울공예박물관</b><br />
-                          <em>2022.01.10</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-05.jpg" alt="추천영상 썸네일 13" />
-                        </div>
-                        <div>
-                          <b>서울에서 놀면 어디가니????? 서울 골목 곳곳 카페, 맛집</b><br />
-                          <em>2022.01.10</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-06.jpg" alt="추천영상 썸네일 14" />
-                        </div>
-                        <div>
-                          <b>서울여행영상! 미니어처가 된 SEOUL (타임랩스 영상)</b><br />
-                          <em>2021.04.27</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-07.jpg" alt="추천영상 썸네일 15" />
-                        </div>
-                        <div>
-                          <b>[그렉 Vlog] 고즈넉한 핫플 돈의문박물관마을 | 한옥 여행</b><br />
-                          <em>2022.04.27</em>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <div class="img">
-                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-08.jpg" alt="추천영상 썸네일 16" />
-                        </div>
-                        <div>
-                          <b>나도 제로웨이스트에 한 걸음 더, 서울 제로숲 제로웨이스트 마켓</b><br />
-                          <em>2021.06.17</em>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </aside>
-            </article>
-          </div>
         </section>
 
-        <!-- 관련영상, 추천영상 -->
+        <!-- 영상제작소 수정 -->
         <section>
-          <div class="inner mob-only">
-            <nav class="tabStyle-nav col-2">
-              <ul>
-                <li class="on">
-                  <a href=""><span>관련 영상</span></a>
-                </li>
-                <li>
-                  <a href=""><span>추천 영상</span></a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <div class="list-tab-contents inner">
-            <h3 class="heading-wrap-03">
-              <strong><a href="">관련 영상</a></strong>
-            </h3>
-            <div class="box-style-list">
-              <ul>
-                <li>
-                  <div class="article">
-                    <div class="img-thumb">
-                      <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-01.jpg" alt="영상 썸네일" /></a>
-                    </div>
-                    <div class="info">
-                      <dl>
-                        <dt><a href="">디딤돌</a></dt>
-                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                      </dl>
-                    </div>
-                    <div class="date">2021.12.21</div>
+          <div class="inner">
+            <div class="b-write">
+              <form>
+                <div class="tblStyle-write">
+                  <dl class="w-title">
+                    <dt><label for="input-tit">제목</label></dt>
+                    <dd>
+                      <span class="text-wrap">
+                        <input placeholder="제목필수 입력" type="text" id="input-tit" />
+                      </span>
+                      <p class="txt-bite">0 / 30자</p>
+                    </dd>
+                  </dl>
+                  <dl class="w-content">
+                    <dt><label for="txt-con">상세 내용</label></dt>
+                    <dd>
+                      <textarea placeholder="내용을 입력해주세요." id="txt-con"></textarea>
+                      <p class="txt-bite">0 / 300자</p>
+                    </dd>
+                  </dl>
+                  <dl class="w-attachedFile">
+                    <dt>첨부파일</dt>
+                    <dd>
+                      <ul>
+                        <li>
+                          <a href="" download>attached_file_01.pdf</a>
+                          <button type="button" class="button-delete" onclick="dataDelete(this);">
+                            <em class="hidden-txt">삭제</em>
+                          </button>
+                        </li>
+                        <li>
+                          <a href="" download>ABCDEFG.pdf</a>
+                          <button type="button" class="button-delete" onclick="dataDelete(this);">
+                            <em class="hidden-txt">삭제</em>
+                          </button>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl class="w-file">
+                    <dt><label>파일 첨부</label></dt>
+                    <dd>
+                      <div class="file-up-list">
+                        <div class="file-list-tit">
+                          <span class="tit-name"><b>파일이름</b></span>
+                          <span class="tit-size"><b>파일크기(Bytes)</b></span>
+                          <span class="tit-button">&nbsp;</span>
+                        </div>
+                        <div id="uploadWrapper"></div>
+                        <!-- <div class="file-list-size">
+                          <span class="cur-size"><em>현재 용량</em><em>0.00MB</em></span>
+                          <span class="rm-size"><em>남은 용량</em><em>00.00MB</em></span>
+                        </div> -->
+                        <p class="info-txt">* pdf, ppt, doc, hwp, txt, zip 파일만 등록 가능하며 최대 5개까지 등록 가능 합니다.</p>
+                        <div class="btn-wrapper align-r">
+                          <button class="btn-default xs rounded lightPurple" type="button"><em>업로드</em></button>
+                          <button class="btn-default xs rounded purple" type="button"><em>다운로드</em></button>
+                        </div>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="has-btn">
+                  <div>
+                    <button class="btn-default md rounded darkGray" type="button"><em>취소</em></button>
+                    <button class="btn-default md rounded lightPurple" type="button"><em>저장</em></button>
                   </div>
-                </li>
-                <li>
-                  <div class="article">
-                    <div class="img-thumb">
-                      <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-02.jpg" alt="영상 썸네일" /></a>
-                    </div>
-                    <div class="info">
-                      <dl>
-                        <dt><a href="">디딤돌</a></dt>
-                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                      </dl>
-                    </div>
-                    <div class="date">2021.12.21</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="article">
-                    <div class="img-thumb">
-                      <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-03.jpg" alt="영상 썸네일" /></a>
-                    </div>
-                    <div class="info">
-                      <dl>
-                        <dt><a href="">디딤돌</a></dt>
-                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                      </dl>
-                    </div>
-                    <div class="date">2021.12.21</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="article">
-                    <div class="img-thumb">
-                      <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-04.jpg" alt="영상 썸네일" /></a>
-                    </div>
-                    <div class="info">
-                      <dl>
-                        <dt><a href="">디딤돌</a></dt>
-                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                      </dl>
-                    </div>
-                    <div class="date">2021.12.21</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="article">
-                    <div class="img-thumb">
-                      <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-05.jpg" alt="영상 썸네일" /></a>
-                    </div>
-                    <div class="info">
-                      <dl>
-                        <dt><a href="">디딤돌</a></dt>
-                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                      </dl>
-                    </div>
-                    <div class="date">2021.12.21</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="article">
-                    <div class="img-thumb">
-                      <a href="#"><img src="../assets/images/thumbnail/sub-sample-thumb-02-06.jpg" alt="영상 썸네일" /></a>
-                    </div>
-                    <div class="info">
-                      <dl>
-                        <dt><a href="">디딤돌</a></dt>
-                        <dd><a href="">지하철역에 인스타 포토존이 있다? 서울시 지하철 녹색공간</a></dd>
-                      </dl>
-                    </div>
-                    <div class="date">2021.12.21</div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-            <!-- 등록된 영상이 없을 시
-            <div class="no-files">
-              <p><img src="../assets/images/img-notice.png" alt="알림 이미지" /></p>
-              <p>등록된 영상이 없습니다.</p>
-            </div>
-            -->
-
-            <div class="paging pc-only purple">
-              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-              <strong>1</strong>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
-              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-            </div>
-            <div class="btn-wrap align-c mob-only">
-              <button type="button" class="btn-prev"><em>이전</em></button>
-              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-              <button type="button" class="btn-next"><em>다음</em></button>
+                </div>
+              </form>
             </div>
           </div>
         </section>
@@ -1590,112 +1015,39 @@
       <!-- // #footer -->
     </div>
 
-    <script src="../tgplayer/conponentRoot.js"></script>
-    <script src="../tgplayer/player_init.js"></script>
-
     <script>
-      function applyDownload() {
-        // 다운로드 신청
-        commonFunction().modalOff();
-        $('#modal-download-finish').css('display', 'block');
+      function dataDelete(t) {
+        var t_ = $(t);
+
+        t_.closest('li').remove();
       }
 
-      function addCuration(t) {
-        // 새로운 큐레이션 만들기
-        var newList =
-          '<li class="add">' +
-          '<div class="chk-wrap list-type">' +
-          '<span>' +
-          '<input type="checkbox" id="newList01" />' +
-          '<label for="newList01"><em class="hidden-txt">새로운 큐레이션 제목</em></label>' +
-          '</span>' +
-          '<span class="text-wrap line">' +
-          '<input type=text title="큐레이션 제목 입력" placeholder="큐레이션 제목 입력">' +
-          '<button type=submit class="btn-default xs3 rounded red2"><em>저장</em></button>' +
-          '</span>' +
-          '</div>' +
-          '</li>';
+      var uploadController = new Object();
 
-        $(t).closest('.modal').find('.modal-contents').scrollTop(0);
-        $(t).closest('.modal-body').find('.my-curation').prepend(newList);
-      }
+      // 파일전송 컨트롤 생성
+      uploadController = innorix.create({
+        el: '#uploadWrapper', // 컨트롤 출력 HTML 객체 ID
+        agent: false, // true = Agent 설치, false = html5 모드 사용 (기본값 : true)
+        // maxFileCount: 100, // 첨부가능 파일 전체 개수 (기본값 : 무제한)
+        maxFileSize: 104857600, // 100MB 첨부가능 전체 사이즈(bytes) (기본값 : 무제한)
+        // maxTotalSize: 10000, // 첨부가능 파일 사이즈(bytes) (기본값 : 무제한)
+        width: 550, // 컨트롤 출력 너비(pixel)
+        height: 155, // 컨트롤 출력 높이(pixel
+        //uploadUrl: './upload.jsp', // 업로드 URL
+        addDuplicateFile: false, // 중복파일 추가 유무 (기본값 : true)
+        allowExtension: ['pdf', 'ppt', 'pptx', 'doc', 'hwp', 'txt', 'zip'], // 허용 확장자 지정
+        showFileListHeader: false, // 리스트 헤더에 선택 툴팁 출력
+      });
 
-      //티젠 플레이어 설정
-      //화질 Object 리스트
-      var setVideoSrc = new Array();
-      var sizeList = new Array();
-
-      //모바일 확인
-      var isMob = window.innerWidth <= 768 ? true : false;
-
-      // video src 설정
-      // MP4 파일 테스트용
-      // 공통 영상 상세
-      var videoObj1 = new Object();
-      videoObj1.size = '1';
-      videoObj1.src = '../assets/images/video/sample-video01.mp4';
-      videoObj1.type = 'video/mp4';
-      setVideoSrc.push(videoObj1);
-      sizeList.push(1);
-
-      var videoObj2 = new Object();
-      videoObj2.size = '720';
-      videoObj2.src = '../assets/images/video/sample-video01.mp4';
-      videoObj2.type = 'video/mp4';
-      setVideoSrc.push(videoObj2);
-      sizeList.push(720);
-
-      var videoObj3 = new Object();
-      videoObj3.size = '272';
-      videoObj3.src = '../assets/images/video/sample-video01.mp4';
-      videoObj3.type = 'video/mp4';
-      setVideoSrc.push(videoObj3);
-      sizeList.push(272);
-
-      //처음 영상 재생 화질 default값 설정
-      if (sizeList.length == 1) {
-        qualitySize = 0;
-      } else {
-        //자동화질 설정
-        if (sizeList[0] == '1') {
-          if (!isMob || sizeList.length == 2) {
-            //웹 브라우저 화질 default 1280 x 720
-            qualitySize = 1;
-          } else {
-            //모바일 화질 default    484 x 272
-            qualitySize = 2;
-          }
+      // 업로드 완료 이벤트
+      uploadController.on('uploadComplete', function (p) {
+        var f = p.files;
+        var r = 'Upload complete\n\n';
+        for (var i = 0; i < f.length; i++) {
+          r += f[i].clientFileName + ' ' + f[i].fileSize + '\n';
         }
-        //자동화질 미설정
-        else {
-          if (!isMob) {
-            //웹 브라우저 화질 default 1280 x 720
-            qualitySize = 0;
-          } else {
-            //모바일 화질 default    484 x 272
-            qualitySize = 1;
-          }
-        }
-      }
-
-      if ($('#cr_vd').length) {
-        $('#cr_vd').createVideo({
-          // 플레이어 생성 영역 DIV의 아이디
-          id: 'video', // 생성될 비디오 태그 아이디 *필수값
-          src: setVideoSrc,
-          speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
-          autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
-          startTime: 0, //영상 재생 시작 시간(이어보기 기능)
-          seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
-          progress: true, // false : 프로그레스바 컨트롤 되지 않도록
-          preview: [{ enabled: false, src: '' }],
-          quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
-          qualitySize: qualitySize,
-          isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
-          iconUrl: '../tgplayer/plugin/js/plyr.svg',
-          blankVideo: '../tgplayer/plugin/js/blank.mp4',
-        });
-      }
+        alert(r);
+      });
     </script>
   </body>
 </html>
