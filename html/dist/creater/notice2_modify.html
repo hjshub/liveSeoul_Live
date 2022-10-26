@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>큐레이션 수정 | 라이브 서울</title>
+    <title>서울영상크리에이터 우리들공간 수정 | 라이브 서울</title>
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
 <script src="../assets/js/jquery-ui.min.js"></script>
@@ -827,546 +827,161 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap curation board write" id="contents">
-        <h1 class="hidden-txt">큐레이션 만들기</h1>
+      <div class="wrap creater board write" id="contents">
+        <h1 class="hidden-txt">서울영상크리에이터 우리들공간 수정</h1>
         <section class="board_top">
           <header class="page-header">
-            <div class="inner-wrap">
+            <div class="inner">
               <div class="location">
                 <span
                   ><a href=""
                     ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
                   ></span
                 >
-                <span><a href="">#서울</a></span>
-                <span><a href="">큐레이션</a></span>
-                <span><a href="">큐레이션 만들기</a></span>
+                <span><a href="">영상크리에이터</a></span>
+                <span><a href="">커뮤니티채널</a></span>
+                <span><a href="">우리들공간</a></span>
               </div>
 
-              <h2 class="no_st">큐레이션 만들기</h2>
+              <h2 class="no_st">우리들공간 수정</h2>
             </div>
           </header>
         </section>
 
-        <!-- 큐레이션 정보 등록 -->
+        <!-- 우리들공간 수정 -->
         <section>
-          <div class="inner-wrap">
-            <h4 class="hidden-txt">큐레이션 정보 등록</h4>
+          <div class="inner">
             <div class="b-write">
               <form>
-                <fieldset>
-                  <legend>큐레이션 정보 등록</legend>
-                  <div class="tblStyle-write">
-                    <dl>
-                      <dt><label for="cur_tit">큐레이션 제목</label></dt>
-                      <dd>
-                        <span class="text-wrap">
-                          <input placeholder="제목필수 입력" type="text" id="cur_tit" />
-                        </span>
-                        <p class="txt-bite">0 / 30자</p>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt><label for="cur_hashTag">태그 등록</label></dt>
-                      <dd>
-                        <span class="text-wrap">
-                          <input placeholder="(,) 쉼표로 구분하여 입력" type="text" id="cur_hashTag" />
-                        </span>
-                      </dd>
-                    </dl>
-                    <dl>
-                      <dt><label>썸네일 등록</label></dt>
-                      <dd>
-                        <div class="file-up-list clear">
-                          <div class="file-attach-image">
-                            <img src="../assets/images/no-image.png" alt="기본 이미지" />
-                          </div>
-                          <div class="file-attach">
+                <div class="tblStyle-write">
+                  <dl class="w-title">
+                    <dt><label for="input-tit">제목</label></dt>
+                    <dd>
+                      <span class="text-wrap">
+                        <input placeholder="제목필수 입력" type="text" id="input-tit" />
+                      </span>
+                      <p class="txt-bite">0 / 30자</p>
+                    </dd>
+                  </dl>
+                  <dl class="w-content">
+                    <dt><label for="txt-con">상세 내용</label></dt>
+                    <dd>
+                      <textarea placeholder="내용을 입력해주세요." id="txt-con"></textarea>
+                      <p class="txt-bite">0 / 300자</p>
+                    </dd>
+                  </dl>
+                  <dl class="w-attachedFile">
+                    <dt>첨부파일</dt>
+                    <dd>
+                      <ul>
+                        <li>
+                          <a href="" download>attached_file_01.pdf</a>
+                          <button type="button" class="button-delete" onclick="dataDelete(this);">
+                            <em class="hidden-txt">삭제</em>
+                          </button>
+                        </li>
+                        <li>
+                          <a href="" download>ABCDEFG.pdf</a>
+                          <button type="button" class="button-delete" onclick="dataDelete(this);">
+                            <em class="hidden-txt">삭제</em>
+                          </button>
+                        </li>
+                      </ul>
+                    </dd>
+                  </dl>
+                  <dl class="w-file">
+                    <dt><label>파일 첨부</label></dt>
+                    <dd>
+                      <div class="file-up-list">
+                        <ul>
+                          <li class="file-attach">
                             <span class="text-wrap">
-                              <input type="text" class="fileName" disabled title="첨부 파일명 및 확장자" />
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled />
                             </span>
                             <span class="file-wrap">
-                              <label for="file" class="orange"><em>첨부하기</em></label>
+                              <label for="file_01"><em>파일선택</em></label>
                               <input
                                 class="hidden-txt"
                                 type="file"
-                                id="file"
+                                id="file_01"
                                 title="파일 첨부"
-                                onchange="commonFunction().fileUpload(this , 'image');"
+                                onchange="commonFunction().fileUpload(this);"
                               />
                             </span>
-                          </div>
-                          <div class="etc">
-                            <p class="info-txt">* JPG, PNG, GIF, BMP 이미지 형식 파일의 5MB 이하로 등록해주세요.</p>
-                            <p class="info-txt">* 썸네일을 등록하지 않을 경우 기본 썸네일이 노출 됩니다.</p>
-                          </div>
-                        </div>
-                      </dd>
-                    </dl>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_02"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_02"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_03"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_03"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled="" />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_04"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_04"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                          <li class="file-attach">
+                            <span class="text-wrap">
+                              <input type="text" class="fileName" title="파일명 및 확장자" disabled />
+                            </span>
+                            <span class="file-wrap">
+                              <label for="file_05"><em>파일선택</em></label>
+                              <input
+                                class="hidden-txt"
+                                type="file"
+                                id="file_05"
+                                title="파일 첨부"
+                                onchange="commonFunction().fileUpload(this);"
+                              />
+                            </span>
+                          </li>
+                        </ul>
+                        <p class="info-txt">* pdf, ppt, doc, hwp, txt, zip 파일만 등록 가능하며 최대 5개까지 등록 가능 합니다.</p>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="has-btn">
+                  <div>
+                    <button class="btn-default md rounded darkGray" type="button"><em>취소</em></button>
+                    <button class="btn-default md rounded lightPurple" type="button"><em>저장</em></button>
                   </div>
-                </fieldset>
+                </div>
               </form>
-            </div>
-          </div>
-        </section>
-
-        <!-- TOP영역 영상 설정 -->
-        <section>
-          <div class="inner-wrap">
-            <div class="set-Top set-cur-list clear">
-              <h4>
-                <strong>TOP영역 영상 설정</strong>&nbsp;&nbsp;
-                <span>※ TOP 공간에 노출되는 영상 입니다. 최대 5개까지 등록가능합니다.</span>
-              </h4>
-
-              <!-- 영상 검색 영역 -->
-              <div class="vd-search">
-                <h5>
-                  <strong>영상찾기</strong>&nbsp;
-                  <span>영상선택 후 이동버튼을 눌러주세요.</span>
-                </h5>
-                <div class="list-wrap">
-                  <div class="search-area clear">
-                    <span class="select-wrap">
-                      <label for="selectCate">
-                        <em class="hidden-txt">카테고리</em>
-                      </label>
-                      <select id="selectCate">
-                        <option value="">카테고리</option>
-                        <option value="">카테고리 1</option>
-                        <option value="">카테고리 2</option>
-                        <option value="">카테고리 3</option>
-                      </select>
-                    </span>
-                    <span class="text-wrap has-button">
-                      <label class="hidden-txt" for="cateSearch">검색어 입력</label>
-                      <input placeholder="검색어 입력" type="text" id="cateSearch" />
-                      <button class="btn-default xs rounded orange"><em>조회</em></button>
-                    </span>
-                  </div>
-                  <div class="dragArea list-box">
-                    <div class="customedScroll pink">
-                      <ul>
-                        <li class="drag-item" data-number="1">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="영상 썸네일 01" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2">
-                                    성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이!
-                                  </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2021-01-11</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="chk1" />
-                                <label for="chk1"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="2">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="영상 썸네일 02" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2">
-                                    도심속 산책,<br />
-                                    청계천 나들이 어때요??
-                                  </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2019-12-30</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="chk2" />
-                                <label for="chk2"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="3">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="영상 썸네일 03" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">방영프로그램</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2"> 익선동 혼자 가는 건 처음이지?! 혼자여서 즐거운 *한옥마을* </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2019-12-30</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="chk3" />
-                                <label for="chk3"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="4">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="영상 썸네일 04" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">방영프로그램</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2">왕이 되었다 경복궁 나들이</b>
-                                </dd>
-                              </dl>
-                              <div class="date">2019-12-30</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="chk4" />
-                                <label for="chk4"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="5">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="영상 썸네일 05" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2">
-                                    서울의 터줏대감들!<br />
-                                    노포 대신 오래가게
-                                  </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2020-06-16</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="chk5" />
-                                <label for="chk5"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="6">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="영상 썸네일 06" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2"> 서울의 가을을 만끽할 수 있는 안산자락길 </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2021-11-22</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="chk6" />
-                                <label for="chk6"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- paging -->
-                  <div class="paging pc-only orange">
-                    <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-                    <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-                    <strong>1</strong>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-                    <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-                  </div>
-
-                  <!-- 더보기 (mobile) -->
-                  <div class="btn-wrap align-c mob-only">
-                    <button type="button" class="btn-prev"><em>이전</em></button>
-                    <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-                    <button type="button" class="btn-next"><em>다음</em></button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 영상 이동 (copy) -->
-              <div class="btn-wrap inline">
-                <button type="button" class="button-item-move"><em>이동</em></button>
-              </div>
-
-              <!-- 영상 등록 -->
-              <div class="vd-regist">
-                <h5>
-                  <strong>등록할 영상</strong>&nbsp;&nbsp;
-                  <span>Drag&amp;drop으로 영상 선택 및 순서변경이 가능합니다.</span>
-                </h5>
-                <div class="list-wrap">
-                  <div class="dropArea list-box">
-                    <div>
-                      <ul class="sort-inner"></ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="set-BT set-cur-list clear">
-              <h4>
-                <strong>하단 영상 목록 설정</strong>
-              </h4>
-
-              <!-- 영상 검색 영역 -->
-              <div class="vd-search">
-                <h5>
-                  <strong>영상찾기</strong>&nbsp;
-                  <span>영상선택 후 이동버튼을 눌러주세요.</span>
-                </h5>
-                <div class="list-wrap">
-                  <div class="search-area clear">
-                    <span class="select-wrap">
-                      <label for="selectCate2">
-                        <em class="hidden-txt">카테고리</em>
-                      </label>
-                      <select id="selectCate2">
-                        <option value="">카테고리</option>
-                        <option value="">카테고리 1</option>
-                        <option value="">카테고리 2</option>
-                        <option value="">카테고리 3</option>
-                      </select>
-                    </span>
-                    <span class="text-wrap has-button">
-                      <label class="hidden-txt" for="cateSearch2">검색어 입력</label>
-                      <input placeholder="검색어 입력" type="text" id="cateSearch2" />
-                      <button class="btn-default xs rounded orange"><em>조회</em></button>
-                    </span>
-                  </div>
-                  <div class="dragArea list-box">
-                    <div class="customedScroll pink">
-                      <ul>
-                        <li class="drag-item" data-number="1">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="영상 썸네일 01" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2">
-                                    성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이! 성북동 나들이!
-                                  </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2021-01-11</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="_chk1" />
-                                <label for="_chk1"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="2">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="영상 썸네일 02" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2">
-                                    도심속 산책,<br />
-                                    청계천 나들이 어때요??
-                                  </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2019-12-30</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="_chk2" />
-                                <label for="_chk2"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="3">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="영상 썸네일 03" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">방영프로그램</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2"> 익선동 혼자 가는 건 처음이지?! 혼자여서 즐거운 *한옥마을* </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2019-12-30</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="_chk3" />
-                                <label for="_chk3"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="4">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="영상 썸네일 04" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">방영프로그램</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2">왕이 되었다 경복궁 나들이</b>
-                                </dd>
-                              </dl>
-                              <div class="date">2019-12-30</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="_chk4" />
-                                <label for="_chk4"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="5">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="영상 썸네일 05" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2">
-                                    서울의 터줏대감들!<br />
-                                    노포 대신 오래가게
-                                  </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2020-06-16</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="_chk5" />
-                                <label for="_chk5"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="drag-item" data-number="6">
-                          <div class="dataArea">
-                            <div class="img-thumb">
-                              <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="영상 썸네일 06" />
-                            </div>
-                            <div class="info">
-                              <dl>
-                                <dt><span class="txt-ellipsis">서울영상크리에이터</span></dt>
-                                <dd>
-                                  <b class="txt-line-clamp2"> 서울의 가을을 만끽할 수 있는 안산자락길 </b>
-                                </dd>
-                              </dl>
-                              <div class="date">2021-11-22</div>
-                            </div>
-                            <div class="chk-wrap inline">
-                              <span>
-                                <input type="checkbox" id="_chk6" />
-                                <label for="_chk6"><em class="hidden-txt">checked</em></label>
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- paging -->
-                  <div class="paging pc-only orange">
-                    <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-                    <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-                    <strong>1</strong>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">7</a>
-                    <a href="#">8</a>
-                    <a href="#">9</a>
-                    <a href="#">10</a>
-                    <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-                    <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-                  </div>
-
-                  <!-- 더보기 (mobile) -->
-                  <div class="btn-wrap align-c mob-only">
-                    <button type="button" class="btn-prev"><em>이전</em></button>
-                    <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-                    <button type="button" class="btn-next"><em>다음</em></button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 영상 이동 (copy) -->
-              <div class="btn-wrap inline">
-                <button type="button" class="button-item-move"><em>이동</em></button>
-              </div>
-
-              <!-- 영상 등록 -->
-              <div class="vd-regist">
-                <h5>
-                  <strong>등록할 영상</strong>&nbsp;&nbsp;
-                  <span>Drag&amp;drop으로 영상 선택 및 순서변경이 가능합니다.</span>
-                </h5>
-                <div class="list-wrap">
-                  <div class="dropArea list-box">
-                    <div class="customedScroll pink">
-                      <ul class="sort-inner"></ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="has-btn">
-              <div class="btn-wrap align-c">
-                <button class="btn-default md rounded darkGray" type="submit"><em>취소</em></button>
-                <button class="btn-default md rounded red2" type="button"><em>수정</em></button>
-              </div>
             </div>
           </div>
         </section>
@@ -1457,6 +1072,14 @@
 </div>
 </footer>
       <!-- // #footer -->
+
+      <script>
+        function dataDelete(t) {
+          var t_ = $(t);
+
+          t_.closest('li').remove();
+        }
+      </script>
     </div>
   </body>
 </html>

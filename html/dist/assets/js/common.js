@@ -209,8 +209,21 @@ function commonFunction() {
                 dataType: 'html',
                 success: function (result) {
                   $('.modal#modal-' + modalName)
-                    .find('.set-dw-section')
+                    .find('#downloadArea')
                     .html(result);
+
+                  // 다운로드 영역 선택
+                  var _radio = $('input[type=radio][name^=download]');
+
+                  _radio.on('change', function () {
+                    var _trg = $(this);
+
+                    if (_trg.filter('#dw_piece').prop('checked')) {
+                      $('.set-dw-section').css('display', 'block');
+                    } else {
+                      $('.set-dw-section').css('display', 'none');
+                    }
+                  });
 
                   // 구간설정
                   multiRange();
@@ -603,7 +616,7 @@ function commonFunction() {
           });
       },
       KeywordSwiper = function () {
-        // 서울오리지널 필터 스와이퍼
+        // 통합검색 영상분류 필터 스와이퍼
         if (typeof gb.keywordSwiper !== 'undefined') {
           gb.keywordSwiper.destroy();
           gb.keywordSwiper = undefined;
@@ -625,6 +638,16 @@ function commonFunction() {
         };
 
         gb.keywordSwiper = new Swiper('.keyword-swiper', gb.keywordSwiperOption);
+
+        $('.keyword-swiper')
+          .find('input[type=checkbox]')
+          .on('change', function () {
+            var index = $('.keyword-swiper').find('input[type=checkbox]').index(this);
+
+            if ($(this).prop('checked')) {
+              gb.keywordSwiper.slideTo(index);
+            }
+          });
       },
       CurationSwiper = function () {
         // 큐레이션 스와이퍼

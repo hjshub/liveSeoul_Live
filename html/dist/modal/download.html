@@ -1,24 +1,41 @@
-<dl>
-  <dt><strong>구간 설정</strong></dt>
-  <dd>
-    <div class="both">
-      <span class="text-wrap">
-        <input type="text" title="부분 영상 시작 구간" id="rangeStart" />
-      </span>
-      <span class="text-wrap">
-        <input type="text" title="부분 영상 종료 구간" id="rangeEnd" />
-      </span>
-    </div>
-  </dd>
-</dl>
-<div class="multi-range-wrapper">
-  <div class="multi-range-slider">
-    <input type="range" id="multiRangeLeft" min="0" step="1" max="6000" value="0" title="영상 시작 구간 설정" />
-    <input type="range" id="multiRangeRight" min="0" step="1" max="6000" value="6000" title="영상 종료 구간 설정" />
+<!-- 다운로드 타입 선택 -->
+<div class="radio-wrap">
+  <span>
+    <input type="radio" checked name="download" id="dw_all" />
+    <label for="dw_all"><em>전체영상 다운</em></label>
+  </span>
+  <span>
+    <input type="radio" name="download" id="dw_piece" />
+    <label for="dw_piece"><em>부분영상 다운</em></label>
+  </span>
+</div>
 
-    <div class="slider transition-none">
-      <div class="track"></div>
-      <div class="range"></div>
+<div class="dw-section">
+  <!-- 부분영상 구간설정 -->
+  <div class="set-dw-section">
+    <dl>
+      <dt><strong>구간 설정</strong></dt>
+      <dd>
+        <div class="both">
+          <span class="text-wrap">
+            <input type="text" title="부분 영상 시작 구간" id="rangeStart" />
+          </span>
+          <span class="text-wrap">
+            <input type="text" title="부분 영상 종료 구간" id="rangeEnd" />
+          </span>
+        </div>
+      </dd>
+    </dl>
+    <div class="multi-range-wrapper">
+      <div class="multi-range-slider">
+        <input type="range" id="multiRangeLeft" min="0" step="1" max="6000" value="0" title="영상 시작 구간 설정" />
+        <input type="range" id="multiRangeRight" min="0" step="1" max="6000" value="6000" title="영상 종료 구간 설정" />
+
+        <div class="slider transition-none">
+          <div class="track"></div>
+          <div class="range"></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
