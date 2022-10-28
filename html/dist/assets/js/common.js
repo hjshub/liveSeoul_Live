@@ -44,6 +44,7 @@ window.addEventListener('load', function () {
   if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
   if ($('.curation-swiper').length) commonFunction().CurationSwiper();
   if ($('.dropArea').length) commonFunction().setCurList();
+  if ($('.previewOn').length) commonFunction().PreviewOn();
 });
 
 function commonFunction() {
@@ -380,9 +381,9 @@ function commonFunction() {
         });
 
         gb.mainSwiper.on('slideChangeTransitionStart', function (swiper) {
-          var notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
-            animate = $('.swiper-slide-active .animate').get(),
-            animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
+          var notCurrentvd = $('.main-swiper .swiper-slide:not(.swiper-slide-active) video').get(),
+            animate = $('.main-swiper .swiper-slide-active .animate').get(),
+            animate_ = $('.main-swiper .swiper-slide:not(.swiper-slide-active) .animate').get();
 
           clearTimeout(gb.timeSet); // 이미지 스와이프 리셋
           console.log('이미지 스와이프 리셋');
@@ -406,8 +407,8 @@ function commonFunction() {
         });
 
         gb.mainSwiper.on('slideChangeTransitionEnd', function () {
-          var currentVd = document.querySelector('.swiper-slide-active video'),
-            currentImg = document.querySelector('.swiper-slide-active .imgBnr');
+          var currentVd = document.querySelector('.main-swiper .swiper-slide-active video'),
+            currentImg = document.querySelector('.main-swiper .swiper-slide-active .imgBnr');
 
           if (currentVd) {
             // 비디오 타입인 경우
@@ -430,10 +431,10 @@ function commonFunction() {
           }
         });
 
-        var currentVd = document.querySelector('.swiper-slide-active video'),
-          currentImg = document.querySelector('.swiper-slide-active .imgBnr'),
-          notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
-          animate = $('.swiper-slide-active .animate').get();
+        var currentVd = document.querySelector('.main-swiper .swiper-slide-active video'),
+          currentImg = document.querySelector('.main-swiper .swiper-slide-active .imgBnr'),
+          notCurrentvd = $('.main-swiper .swiper-slide:not(.main-swiper .swiper-slide-active) video').get(),
+          animate = $('.main-swiper .swiper-slide-active .animate').get();
 
         if (notCurrentvd.length) {
           notCurrentvd.forEach(function (elem) {
@@ -473,8 +474,8 @@ function commonFunction() {
 
         $(document).on('click', '.button-swiperController', function () {
           var trg = $(this),
-            currentVd = document.querySelector('.swiper-slide-active video'),
-            currentImg = document.querySelector('.swiper-slide-active .imgBnr');
+            currentVd = document.querySelector('.main-swiper .swiper-slide-active video'),
+            currentImg = document.querySelector('.main-swiper .swiper-slide-active .imgBnr');
 
           if (trg.hasClass('play')) {
             trg.removeClass('play').addClass('pause').find('em').text('일시정지');
@@ -579,6 +580,25 @@ function commonFunction() {
           //if (window.innerWidth <= 1280) {
           gb._tabSwiper[i] = new Swiper(elem, gb.tabSwiperOption);
           //}
+        });
+      },
+      PreviewOn = function () {
+        // 영상 미리보기
+        $(document).on('mouseenter', '.previewOn', function () {
+          var trg = $(this);
+
+          $.ajax({
+            url: '../video/preview.html',
+            type: 'get',
+            dataType: 'html',
+            success: function (result) {
+              trg.append(result);
+            },
+          });
+        });
+
+        $(document).on('mouseleave', '.previewOn', function () {
+          $('.vd-preview').remove();
         });
       },
       FilterSwiper = function () {
@@ -1173,6 +1193,7 @@ function commonFunction() {
       VdSwiper: VdSwiper,
       LiveOnSwiper: LiveOnSwiper,
       TabSwiper: TabSwiper,
+      PreviewOn: PreviewOn,
       FilterSwiper: FilterSwiper,
       KeywordSwiper: KeywordSwiper,
       CurationSwiper: CurationSwiper,
@@ -1304,10 +1325,10 @@ var crVisSwiper = new Swiper('.cr-vis-swiper', {
 
 crVisSwiper.on('activeIndexChange', function (swiper) {
   setTimeout(function () {
-    var currentVd = document.querySelector('.swiper-slide-active video'),
-      notCurrentvd = $('.swiper-slide:not(.swiper-slide-active) video').get(),
-      animate = $('.swiper-slide-active .animate').get(),
-      animate_ = $('.swiper-slide:not(.swiper-slide-active) .animate').get();
+    var currentVd = document.querySelector('.cr-vis-swiper .swiper-slide-active video'),
+      notCurrentvd = $('.cr-vis-swiper .swiper-slide:not(.swiper-slide-active) video').get(),
+      animate = $('.cr-vis-swiper .swiper-slide-active .animate').get(),
+      animate_ = $('.cr-vis-swiper .swiper-slide:not(.swiper-slide-active) .animate').get();
 
     animate_.forEach(function (elem) {
       $(elem).removeClass('animation--start');
@@ -1334,7 +1355,7 @@ $crVisSwiper_playBtn.click(function () {
   }
 });
 
-var animate = $('.swiper-slide-active .animate').get();
+var animate = $('.cr-vis-swiper .swiper-slide-active .animate').get();
 
 setTimeout(function () {
   animate.forEach(function (elem) {
