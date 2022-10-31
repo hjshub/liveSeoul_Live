@@ -131,23 +131,23 @@ function commonFunction() {
           });
         });
 
-        $('.dropDown > a').on({
+        $('.dropDown .item > a').on({
           'mouseenter focusin': function () {
             var trg = $(this);
 
             $('.dropDown .item').removeClass('on');
-            $('.dropDown .item').find('.depth2').stop().slideUp(300);
+            $('.dropDown .item').find('.depth2').stop().fadeOut(300);
             trg.closest('.item').addClass('on');
-            trg.next('.depth2').stop().slideDown(300);
+            trg.next('.depth2').stop().fadeIn(300);
           },
         });
 
-        $('.dropDown').on({
+        $('.dropDown .item').on({
           mouseleave: function () {
             var trg = $(this);
 
             trg.removeClass('on');
-            trg.find('.depth2').stop().slideUp(300);
+            trg.find('.depth2').stop().fadeOut(300);
           },
         });
       },
