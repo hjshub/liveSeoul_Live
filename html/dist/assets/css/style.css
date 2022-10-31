@@ -3816,6 +3816,14 @@ textarea {
 		display: none !important;
 	}
 }
+.pc-only-1024 {
+	display: block !important;
+}
+@media only screen and (max-width: 1024px) {
+	.pc-only-1024 {
+		display: none !important;
+	}
+}
 .pc-only.inline {
 	display: inline-block !important;
 }
@@ -3830,6 +3838,14 @@ textarea {
 }
 @media only screen and (max-width: 768px) {
 	.mob-only {
+		display: block !important;
+	}
+}
+.mob-only-1024 {
+	display: none !important;
+}
+@media only screen and (max-width: 1024px) {
+	.mob-only-1024 {
 		display: block !important;
 	}
 }
@@ -6164,7 +6180,7 @@ keyword swiper
 }
 
 /*list tab contents*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
 	.list-tab-contents .heading-wrap-03 {
 		overflow: hidden;
 		position: absolute;
