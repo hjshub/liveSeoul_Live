@@ -1992,7 +1992,7 @@ a.ui-button:active,
 }
 .modal::before {
 	position: absolute;
-	top: -11px;
+	top: -10px;
 	border-width: 0 11px 11px 11px;
 	border-style: solid;
 	border-color: transparent;
@@ -8639,101 +8639,75 @@ keyword swiper
 .wrap.curation .curation-list + .btn-wrap {
 	margin-top: 40px;
 }
+.wrap.curation .detail-view .page-header .inner {
+	font-size: 0;
+}
 .wrap.curation .detail-view .page-header h2 {
 	display: inline-block;
-	max-width: -webkit-calc(100% - 300px);
-	max-width: -moz-calc(100% - 300px);
-	max-width: calc(100% - 300px);
+	max-width: -webkit-calc(100% - 332px);
+	max-width: -moz-calc(100% - 332px);
+	max-width: calc(100% - 332px);
 }
-@media only screen and (max-width: 961px) {
+@media only screen and (max-width: 768px) {
 	.wrap.curation .detail-view .page-header h2 {
-		max-width: -webkit-calc(100% - 45px);
-		max-width: -moz-calc(100% - 45px);
-		max-width: calc(100% - 45px);
+		max-width: -webkit-calc(100% - 154px);
+		max-width: -moz-calc(100% - 154px);
+		max-width: calc(100% - 154px);
 	}
 }
 @media only screen and (max-width: 391px) {
 	.wrap.curation .detail-view .page-header h2 {
-		max-width: none;
-		width: 100%;
+		max-width: -webkit-calc(100% - 144px);
+		max-width: -moz-calc(100% - 144px);
+		max-width: calc(100% - 144px);
 	}
 }
 .wrap.curation .detail-view .page-header h2 * {
-	vertical-align: middle;
+	vertical-align: top;
 }
-.wrap.curation .detail-view .page-header h2 .btn-wrap {
+.wrap.curation .detail-view .page-header h2 strong {
+	width: 100%;
+}
+.wrap.curation .detail-view .page-header .btn-wrap {
 	margin-left: 20px;
 }
-@media only screen and (max-width: 768px) {
-	.wrap.curation .detail-view .page-header h2 .btn-wrap {
+@media only screen and (max-width: 391px) {
+	.wrap.curation .detail-view .page-header .btn-wrap {
 		margin-left: 10px;
 	}
 }
-@media only screen and (max-width: 391px) {
-	.wrap.curation .detail-view .page-header h2 .btn-wrap {
-		margin-left: 0;
-		margin-top: 20px;
-		width: -webkit-calc(100% - 45px);
-		width: -moz-calc(100% - 45px);
-		width: calc(100% - 45px);
-	}
-}
-.wrap.curation .detail-view .page-header h2 strong {
-	max-width: -webkit-calc(100% - 300px);
-	max-width: -moz-calc(100% - 300px);
-	max-width: calc(100% - 300px);
-}
-@media only screen and (max-width: 768px) {
-	.wrap.curation .detail-view .page-header h2 strong {
-		max-width: -webkit-calc(100% - 110px);
-		max-width: -moz-calc(100% - 110px);
-		max-width: calc(100% - 110px);
-	}
-}
-@media only screen and (max-width: 391px) {
-	.wrap.curation .detail-view .page-header h2 strong {
-		max-width: none;
-		width: 100%;
-	}
-}
-.wrap.curation .detail-view .page-header h2 .btn-has-icon.like.active {
+.wrap.curation .detail-view .page-header .btn-has-icon.like.active {
 	background-color: #cb2121 !important;
 }
 @media only screen and (max-width: 768px) {
-	.wrap.curation .detail-view .page-header h2 .btn-has-icon.like.active::before {
+	.wrap.curation .detail-view .page-header .btn-has-icon.like.active::before {
 		background-image: url("../images/mob/icon-like-wh.png");
 	}
 }
-.wrap.curation .detail-view .page-header h2 .btn-has-icon.like.active em {
+.wrap.curation .detail-view .page-header .btn-has-icon.like.active em {
 	color: #fff !important;
 }
-.wrap.curation .detail-view .page-header h2 .btn-has-icon.like.active em::before {
+.wrap.curation .detail-view .page-header .btn-has-icon.like.active em::before {
 	background-image: url("../images/icon-like-wh.png");
 }
-.wrap.curation .detail-view .page-header h2 .btn-has-icon.flag.active {
+.wrap.curation .detail-view .page-header .btn-has-icon.flag.active {
 	background-color: #081240 !important;
 }
 @media only screen and (max-width: 768px) {
-	.wrap.curation .detail-view .page-header h2 .btn-has-icon.flag.active::before {
+	.wrap.curation .detail-view .page-header .btn-has-icon.flag.active::before {
 		background-image: url("../images/mob/icon-flag-wh.png");
 	}
 }
-.wrap.curation .detail-view .page-header h2 .btn-has-icon.flag.active em {
+.wrap.curation .detail-view .page-header .btn-has-icon.flag.active em {
 	color: #fff !important;
 }
-.wrap.curation .detail-view .page-header h2 .btn-has-icon.flag.active em::before {
+.wrap.curation .detail-view .page-header .btn-has-icon.flag.active em::before {
 	background-image: url("../images/icon-flag-wh.png");
 }
 .wrap.curation .detail-view .page-header .icon-wrap {
 	display: inline-block;
 	position: relative;
-}
-@media only screen and (max-width: 391px) {
-	.wrap.curation .detail-view .page-header .icon-wrap {
-		position: absolute;
-		bottom: 0;
-		right: 15px;
-	}
+	margin-left: 10px;
 }
 .wrap.curation .detail-view .page-header .icon-wrap > button {
 	background-color: transparent;
@@ -8755,41 +8729,25 @@ keyword swiper
 .wrap.curation .detail-view .page-header .icon-wrap > button.icon-share::before {
 	background-position: 0 0;
 }
-@media only screen and (max-width: 961px) {
-	.wrap.curation .detail-view .page-header .icon-wrap .modal.share {
-		margin-right: -55px;
-	}
+.wrap.curation .detail-view .page-header .icon-wrap .modal.share {
+	top: 50px;
+	margin-right: -50px;
 }
 @media only screen and (max-width: 768px) {
-	.wrap.curation .detail-view .page-header .icon-wrap .modal.share {
-		margin-right: -43px;
-	}
-}
-@media only screen and (max-width: 391px) {
 	.wrap.curation .detail-view .page-header .icon-wrap .modal.share {
 		margin-right: -34px;
-		top: 53px;
 	}
 }
-@media only screen and (max-width: 961px) {
-	.wrap.curation .detail-view .page-header .icon-wrap .modal.share::before {
-		right: 27px;
-	}
+.wrap.curation .detail-view .page-header .icon-wrap .modal.share::before {
+	right: 22px;
 }
 @media only screen and (max-width: 768px) {
 	.wrap.curation .detail-view .page-header .icon-wrap .modal.share::before {
-		right: 14px;
+		right: 7px;
 	}
 }
-@media only screen and (max-width: 391px) {
-	.wrap.curation .detail-view .page-header .icon-wrap .modal.share::before {
-		right: 8px;
-	}
-}
-@media only screen and (max-width: 961px) {
-	.wrap.curation .detail-view .page-header .location {
-		top: -30px;
-	}
+.wrap.curation .detail-view .page-header .location {
+	top: -30px;
 }
 .wrap.curation .detail-view .page-body {
 	padding-top: 40px;
@@ -11326,7 +11284,7 @@ keyword swiper
 		margin-top: 0;
 	}
 }
-.date-search-area ul li dl dd .datePick-bt button:hover, .date-search-area ul li dl dd .datePick-bt button:active, .date-search-area ul li dl dd .datePick-bt button:focus {
+.date-search-area ul li dl dd .datePick-bt button.on, .date-search-area ul li dl dd .datePick-bt button:hover, .date-search-area ul li dl dd .datePick-bt button:active, .date-search-area ul li dl dd .datePick-bt button:focus {
 	color: #fff;
 	background: #9741b6;
 }
@@ -11349,38 +11307,60 @@ keyword swiper
 		width: 100%;
 	}
 }
-@media only screen and (max-width: 768px) {
+.date-search-area ul li dl dd .has-button input[type=text] {
+	width: -webkit-calc(100% - 340px);
+	width: -moz-calc(100% - 340px);
+	width: calc(100% - 340px);
+}
+@media only screen and (max-width: 1024px) {
 	.date-search-area ul li dl dd .has-button input[type=text] {
-		border-radius: 0 !important;
-		width: -webkit-calc(100% - 160px);
-		width: -moz-calc(100% - 160px);
-		width: calc(100% - 160px);
+		width: -webkit-calc(100% - 260px);
+		width: -moz-calc(100% - 260px);
+		width: calc(100% - 260px);
 	}
 }
-@media only screen and (max-width: 391px) {
+@media only screen and (max-width: 768px) {
+	.date-search-area ul li dl dd .has-button input[type=text] {
+		width: -webkit-calc(100% - 120px);
+		width: -moz-calc(100% - 120px);
+		width: calc(100% - 120px);
+	}
+}
+@media only screen and (max-width: 640px) {
 	.date-search-area ul li dl dd .has-button input[type=text] {
 		width: 100%;
+		margin: 5px 0 15px;
+	}
+}
+.date-search-area ul li dl dd .has-button button {
+	width: 160px;
+}
+@media only screen and (max-width: 1024px) {
+	.date-search-area ul li dl dd .has-button button {
+		width: 120px;
+		min-width: 0;
 	}
 }
 @media only screen and (max-width: 768px) {
 	.date-search-area ul li dl dd .has-button button {
-		margin-left: 10px;
-		width: 150px !important;
-		border-radius: 7px !important;
+		width: 60px !important;
 	}
 }
-@media only screen and (max-width: 391px) {
+@media only screen and (max-width: 640px) {
 	.date-search-area ul li dl dd .has-button button {
-		width: 100% !important;
-		margin: 20px 0 0;
+		width: -webkit-calc((100% - 10px)/2) !important;
+		width: -moz-calc((100% - 10px)/2) !important;
+		width: calc((100% - 10px) / 2) !important;
+		border-radius: 3px !important;
 	}
-}
-@media only screen and (max-width: 768px) {
+	.date-search-area ul li dl dd .has-button button:last-child {
+		margin: 0 0 0 10px;
+	}
 	.date-search-area ul li dl dd .has-button button:before {
 		display: none;
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 640px) and (max-width: 640px) {
 	.date-search-area ul li dl dd .has-button button em {
 		overflow: visible !important;
 		position: relative !important;
@@ -11391,7 +11371,7 @@ keyword swiper
 		clip: auto !important;
 	}
 }
-@media only screen and (max-width: 561px) {
+@media only screen and (max-width: 640px) and (max-width: 640px) {
 	.date-search-area ul li dl dd .has-button button em:before {
 		top: 0 !important;
 	}
@@ -11430,7 +11410,7 @@ keyword swiper
 		background: #f9f9f9;
 	}
 }
-.date-search-area.type-02 ul li dl dd .datePick-bt button:hover, .date-search-area.type-02 ul li dl dd .datePick-bt button:active, .date-search-area.type-02 ul li dl dd .datePick-bt button:focus {
+.date-search-area.type-02 ul li dl dd .datePick-bt button.on, .date-search-area.type-02 ul li dl dd .datePick-bt button:hover, .date-search-area.type-02 ul li dl dd .datePick-bt button:active, .date-search-area.type-02 ul li dl dd .datePick-bt button:focus {
 	color: #fff;
 	background: #cb2121;
 }
