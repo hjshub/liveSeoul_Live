@@ -4989,7 +4989,7 @@ main.live .main-section-01 > article .live-contentsInfo .info-wrap > div b {
 }
 main.live .main-section-01 > article .live-contentsInfo .info-wrap > div + div {
 	padding-right: 10px;
-	max-height: 110px;
+	height: 110px;
 	font-weight: 600;
 	color: #333;
 	margin-top: 15px;
@@ -5229,6 +5229,14 @@ main.live .main-section-01 .liveOnAir .liveOn-swiper .swiper-controller {
 	bottom: 30px;
 	left: -130px;
 	z-index: 20;
+}
+main.empty .main-section-01 .fixed-wrap {
+	margin-top: 160px;
+}
+@media only screen and (max-width: 1200px) {
+	main.empty .main-section-01 .fixed-wrap {
+		margin-top: 0;
+	}
 }
 main .heading-wrap-03 strong {
 	padding-right: 0;
