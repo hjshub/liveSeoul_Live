@@ -1988,7 +1988,7 @@ a.ui-button:active,
 	margin-right: -80px;
 }
 .modal.right::before {
-	right: 51px;
+	right: 49px;
 }
 .modal::before {
 	position: absolute;
@@ -2025,23 +2025,48 @@ a.ui-button:active,
 	}
 }
 .modal.addCuration {
-	width: 490px;
-	margin-right: -140px;
+	width: 450px;
+	margin-right: -155px;
+}
+.modal.addCuration button[class*=btn-] em {
+	font-size: 1.5rem !important;
+	top: 0;
 }
 @media only screen and (max-width: 1280px) {
 	.modal.addCuration {
-		margin-right: -320px;
+		margin-right: -295px;
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.modal.addCuration {
+		margin-right: -250px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.modal.addCuration {
+		width: 450px !important;
 	}
 }
 @media only screen and (max-width: 561px) {
 	.modal.addCuration {
+		width: -webkit-calc(100vw - 30px) !important;
+		width: -moz-calc(100vw - 30px) !important;
+		width: calc(100vw - 30px) !important;
 		margin-right: 0;
 		right: 0;
 	}
 }
+.modal.addCuration::before {
+	right: 66px;
+}
 @media only screen and (max-width: 1280px) {
 	.modal.addCuration::before {
-		right: 230px;
+		right: 205px;
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.modal.addCuration::before {
+		right: 160px;
 	}
 }
 @media only screen and (max-width: 561px) {
@@ -7032,8 +7057,8 @@ keyword swiper
 }
 .wrap.program .detail-view article aside > div {
 	margin-top: 20px;
-	max-height: 1000px;
-	padding: 10px 0 0 30px;
+	max-height: 100%;
+	padding: 10px 10px 50px 30px;
 	position: relative;
 	z-index: 1;
 }
