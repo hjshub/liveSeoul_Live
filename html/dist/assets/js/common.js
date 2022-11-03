@@ -584,20 +584,28 @@ function commonFunction() {
       },
       PreviewOn = function () {
         // 영상 미리보기
-        $(document).on('mouseenter', '.previewOn', function () {
-          var trg = $(this);
-
+        var videoPreviewAjax = function (el) {
           $.ajax({
             url: '../video/preview.html',
             type: 'get',
             dataType: 'html',
             success: function (result) {
-              trg.append(result);
+              $(el).append(result);
             },
           });
+        };
+
+        $(document).on('mouseenter touchstart', '.previewOn', function (e) {
+          var trg = $(this);
+          $('.vd-preview').remove();
+          videoPreviewAjax(trg);
         });
 
         $(document).on('mouseleave', '.previewOn', function () {
+          $('.vd-preview').remove();
+        });
+
+        document.addEventListener('touchstart', function () {
           $('.vd-preview').remove();
         });
       },

@@ -4773,6 +4773,7 @@ main.live .main-section-01 > article {
 	max-width: 1920px;
 	height: 675px;
 	background-color: #f09300;
+	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
 }
@@ -5672,6 +5673,11 @@ main .no-files p * {
 }
 .wrap .vd-list ul li .article > div.img-thumb .ytp-wrap {
 	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
 	padding-bottom: 56.25%;
 	height: 0;
 	overflow: hidden;
@@ -5816,6 +5822,11 @@ main .no-files p * {
 }
 [class*=vd-swiper] .swiper-slide .article > div.img-thumb .ytp-wrap {
 	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
 	padding-bottom: 56.25%;
 	height: 0;
 	overflow: hidden;
@@ -6275,8 +6286,8 @@ keyword swiper
 }
 .tab-menu ul li a::before {
 	position: absolute;
-	left: 50%;
-	right: 50%;
+	left: 52%;
+	right: 52%;
 	bottom: 0;
 	height: 5px;
 	border-radius: 3px;
@@ -6293,7 +6304,7 @@ keyword swiper
 }
 .tab-menu ul li.on a::before {
 	left: -3px;
-	right: -5px;
+	right: -3px;
 }
 
 .tab-contents > div {
@@ -11175,6 +11186,11 @@ keyword swiper
 }
 .box-style-list ul li .article > div.img-thumb .ytp-wrap {
 	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
 	padding-bottom: 56.25%;
 	height: 0;
 	overflow: hidden;
