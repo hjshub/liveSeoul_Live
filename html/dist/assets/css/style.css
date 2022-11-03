@@ -5613,6 +5613,7 @@ main .no-files p * {
 @media only screen and (max-width: 391px) {
 	.wrap .vd-list ul li .article > div.img-thumb {
 		height: auto;
+		max-height: 200px;
 	}
 }
 .wrap .vd-list ul li .article > div.img-thumb .topic {
