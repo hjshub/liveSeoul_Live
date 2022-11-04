@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
   if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
   if ($('.curation-swiper').length) commonFunction().CurationSwiper();
-  if ($('.dropArea').length) commonFunction().setCurList();
+  if ($('.sort-inner').length) commonFunction().setCurList();
   if ($('.previewOn').length) commonFunction().PreviewOn();
 });
 
@@ -726,7 +726,17 @@ function commonFunction() {
       },
       showOnLayer = function () {
         // 편성표 보기
-        $('.button-showLayer').on('click', function () {
+        gb.buttonShowLayer = $('.button-showLayer');
+
+        if (gb.buttonShowLayer.hasClass('on')) {
+          if ($('.liveOn-swiper').length) {
+            gb.liveOnAir.slideDown(300, LiveOnSwiper);
+          } else {
+            gb.liveOnAir.slideDown(300);
+          }
+        }
+
+        gb.buttonShowLayer.on('click', function () {
           var trg = $(this);
 
           if (trg.hasClass('on')) {
@@ -753,20 +763,20 @@ function commonFunction() {
           var trg = $(this);
 
           trg.closest('.article').addClass('on');
-          // trg
-          //   .find('.preview')
-          //   .stop()
-          //   .fadeIn(200, function () {
-          //     gsap.to(trg.find('.preview'), { opacity: 1, scaleY: 1, duration: 0.4 });
-          //   });
+          trg
+            .find('.preview')
+            .stop()
+            .fadeIn(200, function () {
+              gsap.to(trg.find('.preview'), { opacity: 1, scaleY: 1, duration: 0.4 });
+            });
         });
 
         $(document).on('mouseleave focusout', '.liveOnAir .info', function () {
           var trg = $(this);
 
           trg.closest('.article').removeClass('on');
-          // gsap.to(trg.find('.preview'), { opacity: 0, scaleY: 0, duration: 0.4 });
-          // trg.find('.preview').stop().fadeOut(300);
+          gsap.to(trg.find('.preview'), { opacity: 0, scaleY: 0, duration: 0.4 });
+          trg.find('.preview').stop().fadeOut(300);
         });
       },
       tabMenu = function () {
@@ -1018,157 +1028,10 @@ function commonFunction() {
         });
       },
       setCurList = function () {
-        // 큐레이션 등록 영상 설정
-        $('.set-cur-list').each(function () {
-          var curTrg = $(this),
-            curTop = curTrg.filter('.set-Top'),
-            curBT = curTrg.filter('.set-BT');
-
-          // Top 영역에 등록된 영상이 없을 시
-          if (!curTop.find('.sort-inner li').length) {
-            curTop
-              .find('.sort-inner')
-              .prepend('<div class="empty"><b>TOP영역에 등록할 영상을<br/> 드래그해서 이곳에 놓아주세요.</b></div>');
-          }
-
-          // 하단 영역에 등록된 영상이 없을 시
-          if (!curBT.find('.sort-inner li').length) {
-            curBT
-              .find('.sort-inner')
-              .prepend('<div class="empty"><b>하단영역에 등록할 영상을<br/> 드래그해서 이곳에 놓아주세요.</b></div>');
-          }
-
-          // 영상선택 (drag)
-          curTrg.find('.drag-item').draggable({
-            helper: function () {
-              var trg = $(this),
-                chWidth = trg.find('.dataArea').outerWidth(),
-                _cloneItem = trg.clone();
-              gb.dragItemNumb = $(_cloneItem).data('number');
-
-              _cloneItem.css('width', chWidth + 'px').addClass('drag');
-
-              curTrg.find('.sort-inner').prepend('<div class="dropped"><em class="hidden-txt">드롭영역</em></div>');
-
-              gb.draggable = curTrg.find('.sort-inner li[data-number=' + gb.dragItemNumb + ']').length > 0;
-
-              return _cloneItem
-                .appendTo(curTrg.find('.sort-inner'))
-                .css({
-                  zIndex: 20,
-                })
-                .show();
-            },
-            stop: function (e, el) {
-              var trg = $(this);
-
-              curTrg.find('.sort-inner .dropped').remove();
-              trg.removeClass('drag');
-            },
-            opacity: 0.7,
-            cursor: 'move',
-            containment: 'document',
-          });
-
-          // 영상 등록 (drop)
-          curTrg
-            .find('.sort-inner')
-            .droppable({
-              accept: curTrg.find('.drag-item'),
-              drop: function (e, el) {
-                var _currentItem = $(el.draggable),
-                  _cloneItem = _currentItem.clone(),
-                  trg = $(this),
-                  dropEl = trg.find('li').get();
-
-                _cloneItem.removeClass('ui-draggable').removeClass('drag-item').removeClass('drag');
-                $(_cloneItem).find('.chk-wrap').remove();
-                $(_cloneItem).find('.dataArea').append('<button class="button-delete"><em class="hiddne-txt">삭제</em></button>');
-
-                // 등록 영상이 있을 경우
-                if (dropEl.length) {
-                  trg.find('.empty').remove();
-                }
-
-                // 영상을 드롭하는 경우
-                trg.find('.dropped').remove();
-
-                if (gb.draggable) {
-                  // 중복 영상 구분
-                  alert('해당 영상은 이미 등록된 영상입니다.');
-                  return false;
-                } else {
-                  if (curTrg.hasClass('set-Top')) {
-                    // Top 영역
-                    if (dropEl.length <= 5) {
-                      // 등록 영상 개수 설정 최대 5개
-                      trg.append(_cloneItem);
-                    } else {
-                      alert('TOP영역 영상은 최대 5개까지 설정가능합니다.');
-                      return false;
-                    }
-                  } else {
-                    // 하단 영역
-                    trg.append(_cloneItem);
-                  }
-                }
-              },
-            })
-            .sortable({
-              placeholder: 'ui-shift',
-              cursor: 'move',
-            });
-
-          // 이동(copy) 버튼
-          curTrg.find('.button-item-move').on('click', function () {
-            var trg = $(this),
-              itemChecked = curTrg.find('.drag-item input[type=checkbox]:checked'),
-              itemDropArea = curTrg.find('.sort-inner'),
-              itemDropped = itemDropArea.find('li'),
-              itemCheckedArray = itemChecked.get();
-
-            itemCheckedArray.forEach(function (elem, idx) {
-              var itemClone = $(elem).closest('.drag-item').clone();
-
-              gb.clickItemNumb = $(itemClone).data('number');
-              gb.draggable = curTrg.find('.sort-inner li[data-number=' + gb.clickItemNumb + ']').length > 0;
-
-              $(itemClone).removeClass('ui-draggable').removeClass('drag-item');
-              $(itemClone).find('.chk-wrap').remove();
-              $(itemClone).find('.dataArea').append('<button class="button-delete"><em class="hiddne-txt">삭제</em></button>');
-
-              console.log(gb.draggable);
-
-              if (gb.draggable) {
-                // 중복 영상 구분
-                alert('해당 영상은 이미 등록된 영상입니다.');
-
-                return false;
-              } else {
-                if (curTrg.hasClass('set-Top')) {
-                  // Top 영역
-                  if (itemDropped.length + itemCheckedArray.length <= 5) {
-                    // 등록 영상 개수 설정 최대 5개
-                    itemDropArea.append(itemClone);
-                  } else {
-                    alert('TOP영역 영상은 최대 5개까지 설정가능합니다.');
-
-                    return false;
-                  }
-                } else {
-                  itemDropArea.append(itemClone);
-                }
-              }
-            });
-
-            curTrg.find('.drag-item input[type=checkbox]').prop('checked', '');
-
-            if (itemChecked.length) {
-              itemDropArea.find('.empty').remove();
-            }
-          });
+        $('.sort-inner').sortable({
+          placeholder: 'ui-shift',
+          cursor: 'move',
         });
-
         $('.sort-inner li').disableSelection();
 
         // 등록 영상 삭제
