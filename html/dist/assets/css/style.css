@@ -8256,6 +8256,11 @@ keyword swiper
 	padding: 0;
 	background-color: transparent;
 }
+@media only screen and (max-width: 768px) {
+	.wrap.curation.board.write .board_top .page-header .location {
+		top: -30px;
+	}
+}
 .wrap.curation.board.write .set-cur-list {
 	margin-top: 40px;
 	padding-top: 40px;
@@ -10619,6 +10624,7 @@ keyword swiper
 }
 .wrap .no-files.type02 {
 	height: 100%;
+	min-height: 250px;
 	margin: 0;
 	padding: 0;
 	position: relative;
