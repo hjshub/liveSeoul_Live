@@ -3461,6 +3461,7 @@ footer .inner > div {
 @media only screen and (max-width: 961px) {
 	footer .inner > div {
 		padding: 0;
+		width: 100%;
 	}
 }
 footer .inner > div ul {
@@ -3548,6 +3549,33 @@ footer .inner > div .copyright {
 		font-size: 1.6rem;
 	}
 }
+footer .inner > div .foot_bnr {
+	width: 300px;
+	margin-top: -10px;
+}
+@media only screen and (max-width: 961px) {
+	footer .inner > div .foot_bnr {
+		width: 100%;
+		margin-top: 30px;
+	}
+}
+footer .inner > div .foot_bnr img {
+	width: 100%;
+}
+@media only screen and (max-width: 961px) {
+	footer .inner > div .foot_bnr img {
+		width: auto;
+		max-width: 100%;
+	}
+}
+footer .inner > div + div {
+	margin-left: 60px;
+}
+@media only screen and (max-width: 961px) {
+	footer .inner > div + div {
+		margin-left: 0;
+	}
+}
 footer .inner + .inner {
 	margin-top: 20px;
 	overflow: visible;
@@ -3577,7 +3605,7 @@ footer .inner .button-scroll-top {
 	display: inline-block;
 	background-color: transparent;
 	position: absolute;
-	bottom: 50px;
+	bottom: 60px;
 	right: -67px;
 }
 footer .inner .button-scroll-top::before {
