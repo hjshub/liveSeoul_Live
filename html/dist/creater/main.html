@@ -438,7 +438,7 @@
                       <li>
                         <a href="../creater/main.html">영상크리에이터</a>
                         <ul class="depth3">
-                          <li><a href="../creater/aboutus.html">About us</a></li>
+                          <li><a href="../creater/aboutus.html">영상크리에이터 만나기</a></li>
                         </ul>
                       </li>
                       <li>
@@ -773,8 +773,8 @@
         <a href="../creater/main.html">영상크리에이터</a>
         <div class="depth2">
           <ul>
-            <li><a href="../creater/main.html">index</a></li>
-            <li><a href="../creater/aboutus.html">about us</a></li>
+            <li><a href="../creater/main.html">최신영상</a></li>
+            <li><a href="../creater/aboutus.html">영상크리에이터 만나기</a></li>
           </ul>
         </div>
       </li>
@@ -825,6 +825,7 @@
                   </a>
                 </span>
                 <span class="lt"><a href="" class="txt-color white">영상크리에이터</a></span>
+                <span class="lt"><a href="" class="txt-color white">최신영상</a></span>
               </div>
             </div>
           </header>
@@ -1490,12 +1491,12 @@
       mvObj.sizeList.push(mvObj.sizeList5);
 
       //처음 영상 재생 화질 default값 설정
-      if (mvObj.sizeList[0][0].length == 1) {
+      if (mvObj.sizeList[0].length == 1) {
         qualitySize = 0;
       } else {
         //자동화질 설정
         if (mvObj.sizeList[0][0] == '1') {
-          if (!isMob || mvObj.sizeList[0][0].length == 2) {
+          if (!isMob || mvObj.sizeList[0].length == 2) {
             //웹 브라우저 화질 default 1280 x 720
             qualitySize = 1;
           } else {
