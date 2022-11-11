@@ -21,10 +21,12 @@ var _gb = function () {
     this.mobTabMenu = $('.mob-tabMenu');
     this.vdSwiper = $('.vd-swiper').get();
     this.tabSwiper = $('.tab-swiper').get();
+    this.vdContainer = $('.vd-container');
     this.liveOnAir = $('.liveOnAir');
     this.btnActiveModal = $('.button-active-modal');
     this.isMob = this.wW <= 768 ? true : false;
     this.isMobTab = false;
+    this.vdMiniPlayer = false;
   },
   gb = new _gb();
 
@@ -204,31 +206,17 @@ function commonFunction() {
 
             // 영상 다운로드 요청
             if (modalName == 'applyDownload') {
-              $.ajax({
-                url: '../modal/download.html',
-                type: 'get',
-                dataType: 'html',
-                success: function (result) {
-                  $('.modal#modal-' + modalName)
-                    .find('#downloadArea')
-                    .html(result);
+              // 다운로드 영역 선택
+              var _radio = $('input[type=radio][name^=download]');
 
-                  // 다운로드 영역 선택
-                  var _radio = $('input[type=radio][name^=download]');
+              _radio.on('change', function () {
+                var _trg = $(this);
 
-                  _radio.on('change', function () {
-                    var _trg = $(this);
-
-                    if (_trg.filter('#dw_piece').prop('checked')) {
-                      $('.set-dw-section').css('display', 'block');
-                    } else {
-                      $('.set-dw-section').css('display', 'none');
-                    }
-                  });
-
-                  // 구간설정
-                  multiRange();
-                },
+                if (_trg.filter('#dw_piece').prop('checked')) {
+                  $('.set-dw-section').css('display', 'block');
+                } else {
+                  $('.set-dw-section').css('display', 'none');
+                }
               });
             }
           }
@@ -253,114 +241,114 @@ function commonFunction() {
           'overflow-y': 'visible',
         });
       },
-      multiRange = function () {
-        //영상 구간 설정
-        var _left = document.getElementById('multiRangeLeft'),
-          _right = document.getElementById('multiRangeRight'),
-          range = document.querySelector('.multi-range-slider .range'),
-          rangeStart = document.getElementById('rangeStart'),
-          rangeEnd = document.getElementById('rangeEnd');
+      // multiRange = function () {
+      //   //영상 구간 설정
+      //   var _left = document.getElementById('multiRangeLeft'),
+      //     _right = document.getElementById('multiRangeRight'),
+      //     range = document.querySelector('.multi-range-slider .range'),
+      //     rangeStart = document.getElementById('rangeStart'),
+      //     rangeEnd = document.getElementById('rangeEnd');
 
-        setLeftValue();
-        setRightValue();
+      //   setLeftValue();
+      //   setRightValue();
 
-        function setLeftValue() {
-          var trg = _left,
-            min = parseInt(trg.min), // 최소값 => 0
-            max = parseInt(trg.max); // 최대값 => 영상 재생 시간
+      //   function setLeftValue() {
+      //     var trg = _left,
+      //       min = parseInt(trg.min), // 최소값 => 0
+      //       max = parseInt(trg.max); // 최대값 => 영상 재생 시간
 
-          trg.value = Math.min(parseInt(trg.value), parseInt(_right.value) - 1);
+      //     trg.value = Math.min(parseInt(trg.value), parseInt(_right.value) - 1);
 
-          var _time = {
-            h:
-              Math.floor(trg.value / 3600).toString().length > 1
-                ? Math.floor(trg.value / 3600)
-                : '0' + Math.floor(trg.value / 3600), // 시간
-            m:
-              Math.floor((trg.value % 3600) / 60).toString().length > 1
-                ? Math.floor((trg.value % 3600) / 60)
-                : '0' + Math.floor((trg.value % 3600) / 60), // 분
-            s:
-              Math.floor((trg.value % 3600) % 60).toString().length > 1
-                ? Math.floor((trg.value % 3600) % 60)
-                : '0' + Math.floor((trg.value % 3600) % 60), // 초
-          };
+      //     var _time = {
+      //       h:
+      //         Math.floor(trg.value / 3600).toString().length > 1
+      //           ? Math.floor(trg.value / 3600)
+      //           : '0' + Math.floor(trg.value / 3600), // 시간
+      //       m:
+      //         Math.floor((trg.value % 3600) / 60).toString().length > 1
+      //           ? Math.floor((trg.value % 3600) / 60)
+      //           : '0' + Math.floor((trg.value % 3600) / 60), // 분
+      //       s:
+      //         Math.floor((trg.value % 3600) % 60).toString().length > 1
+      //           ? Math.floor((trg.value % 3600) % 60)
+      //           : '0' + Math.floor((trg.value % 3600) % 60), // 초
+      //     };
 
-          rangeStart.value = _time.h + ':' + _time.m + ':' + _time.s;
+      //     rangeStart.value = _time.h + ':' + _time.m + ':' + _time.s;
 
-          var percent = ((trg.value - min) / (max - min)) * 100;
+      //     var percent = ((trg.value - min) / (max - min)) * 100;
 
-          range.style.left = percent + '%';
-        }
+      //     range.style.left = percent + '%';
+      //   }
 
-        function setRightValue() {
-          var trg = _right,
-            min = parseInt(trg.min),
-            max = parseInt(trg.max);
+      //   function setRightValue() {
+      //     var trg = _right,
+      //       min = parseInt(trg.min),
+      //       max = parseInt(trg.max);
 
-          trg.value = Math.max(parseInt(trg.value), parseInt(_left.value) + 1);
+      //     trg.value = Math.max(parseInt(trg.value), parseInt(_left.value) + 1);
 
-          var _time = {
-            h:
-              Math.floor(trg.value / 3600).toString().length > 1
-                ? Math.floor(trg.value / 3600)
-                : '0' + Math.floor(trg.value / 3600), // 시간
-            m:
-              Math.floor((trg.value % 3600) / 60).toString().length > 1
-                ? Math.floor((trg.value % 3600) / 60)
-                : '0' + Math.floor((trg.value % 3600) / 60), // 분
-            s:
-              Math.floor((trg.value % 3600) % 60).toString().length > 1
-                ? Math.floor((trg.value % 3600) % 60)
-                : '0' + Math.floor((trg.value % 3600) % 60), // 초
-          };
+      //     var _time = {
+      //       h:
+      //         Math.floor(trg.value / 3600).toString().length > 1
+      //           ? Math.floor(trg.value / 3600)
+      //           : '0' + Math.floor(trg.value / 3600), // 시간
+      //       m:
+      //         Math.floor((trg.value % 3600) / 60).toString().length > 1
+      //           ? Math.floor((trg.value % 3600) / 60)
+      //           : '0' + Math.floor((trg.value % 3600) / 60), // 분
+      //       s:
+      //         Math.floor((trg.value % 3600) % 60).toString().length > 1
+      //           ? Math.floor((trg.value % 3600) % 60)
+      //           : '0' + Math.floor((trg.value % 3600) % 60), // 초
+      //     };
 
-          rangeEnd.value = _time.h + ':' + _time.m + ':' + _time.s;
+      //     rangeEnd.value = _time.h + ':' + _time.m + ':' + _time.s;
 
-          var percent = ((trg.value - min) / (max - min)) * 100;
+      //     var percent = ((trg.value - min) / (max - min)) * 100;
 
-          range.style.right = 100 - percent + '%';
-        }
+      //     range.style.right = 100 - percent + '%';
+      //   }
 
-        _left.addEventListener('input', setLeftValue);
-        _right.addEventListener('input', setRightValue);
+      //   _left.addEventListener('input', setLeftValue);
+      //   _right.addEventListener('input', setRightValue);
 
-        $(_left).on({
-          mouseover: function () {
-            $(this).addClass('hover');
-          },
+      //   $(_left).on({
+      //     mouseover: function () {
+      //       $(this).addClass('hover');
+      //     },
 
-          mouseout: function () {
-            $(this).removeClass('hover');
-          },
+      //     mouseout: function () {
+      //       $(this).removeClass('hover');
+      //     },
 
-          'mousedown touchstart': function () {
-            $(this).addClass('active');
-          },
+      //     'mousedown touchstart': function () {
+      //       $(this).addClass('active');
+      //     },
 
-          'mouseup touchend': function () {
-            $(this).removeClass('active');
-          },
-        });
+      //     'mouseup touchend': function () {
+      //       $(this).removeClass('active');
+      //     },
+      //   });
 
-        $(_right).on({
-          mouseover: function () {
-            $(this).addClass('hover');
-          },
+      //   $(_right).on({
+      //     mouseover: function () {
+      //       $(this).addClass('hover');
+      //     },
 
-          mouseout: function () {
-            $(this).removeClass('hover');
-          },
+      //     mouseout: function () {
+      //       $(this).removeClass('hover');
+      //     },
 
-          'mousedown touchstart': function () {
-            $(this).addClass('active');
-          },
+      //     'mousedown touchstart': function () {
+      //       $(this).addClass('active');
+      //     },
 
-          'mouseup touchend': function () {
-            $(this).removeClass('active');
-          },
-        });
-      },
+      //     'mouseup touchend': function () {
+      //       $(this).removeClass('active');
+      //     },
+      //   });
+      // },
       MainSwiper = function () {
         // 메인 스와이퍼
         gb.mainSwiper = new Swiper('.main-swiper', {
@@ -1039,6 +1027,20 @@ function commonFunction() {
           $(this).closest('li').remove();
         });
       },
+      vdMiniPlayerOff = function () {
+        // 소형 플레이어 닫기
+        $(document).on('click', '.button-vd-close', function () {
+          gb.vdContainer.removeClass('fixed');
+          gb.vdContainer.css('height', 'auto');
+          if (gb.vdContainer.find('.plyr--video').length) {
+            gb.vdContainer.find('video').vodPause();
+          }
+          if (gb.vdContainer.find('.ytp-container').length) {
+            gb.YTplayer.pauseVideo();
+          }
+          $(this).remove();
+        });
+      },
       blockContextMenu = function () {
         // 우 클릭, 드래그 방지
         $(document).on('contextmenu selectstart dragstart', function () {
@@ -1054,7 +1056,8 @@ function commonFunction() {
         allCheck();
         datePick();
         modal();
-        filterMoreView();
+        //filterMoreView();
+        vdMiniPlayerOff();
         //blockContextMenu();
       };
 
@@ -1143,6 +1146,63 @@ function commonFunction() {
       gb.header.addClass('fixed');
     } else {
       gb.header.removeClass('fixed');
+    }
+
+    if (gb.vdContainer.length) {
+      if (document.documentElement.scrollTop >= gb.vdContainer.offset().top + gb.vdContainer.height() - gb.header.height()) {
+        if (!gb.vdMiniPlayer) {
+          if (gb.vdContainer.find('.plyr--video').length) {
+            // 티젠 플레이어
+            // 소형플레이어로 전환
+            if (gb.vdContainer.find('.plyr--video').hasClass('plyr--playing')) {
+              gb.vdContainer.css('height', gb.vdContainer.height());
+              gb.vdContainer.addClass('fixed');
+              gb.vdContainer
+                .find('> div')
+                .append(
+                  '<button class="button-vd-close" type="button" title="영상 닫기"><em class="hidden-txt">영상 닫기</em></button>'
+                );
+              gb.vdMiniPlayer = true;
+            } else {
+              gb.vdContainer.css('height', 'auto');
+              gb.vdContainer.removeClass('fixed');
+            }
+          }
+
+          if (gb.vdContainer.find('.ytp-container').length) {
+            // 유튜브 플레이어
+            // 소형플레이어로 전환
+            if (gb.ytpStatus == 'play') {
+              // 재생 중
+              gb.vdContainer.css('height', gb.vdContainer.height());
+              gb.vdContainer.addClass('fixed');
+              gb.vdContainer
+                .find('> div')
+                .append(
+                  '<button class="button-vd-close" type="button" title="영상 닫기"><em class="hidden-txt">영상 닫기</em></button>'
+                );
+              gb.vdMiniPlayer = true;
+            } else {
+              gb.vdContainer.css('height', 'auto');
+              gb.vdContainer.removeClass('fixed');
+            }
+          }
+        }
+      } else {
+        if (gb.vdContainer.find('.plyr--video').length) {
+          // 티젠 플레이어
+          gb.vdContainer.removeClass('fixed');
+          gb.vdContainer.css('height', 'auto');
+        }
+
+        if (gb.vdContainer.find('.ytp-container').length) {
+          // 유튜브 플레이어
+          gb.vdContainer.removeClass('fixed');
+          gb.vdContainer.css('height', 'auto');
+        }
+        gb.vdContainer.find('.button-vd-close').remove();
+        gb.vdMiniPlayer = false;
+      }
     }
   });
 })(jQuery);

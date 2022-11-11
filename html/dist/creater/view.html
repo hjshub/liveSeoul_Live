@@ -819,11 +819,12 @@
           <header class="page-header">
             <div class="inner">
               <div class="location">
-                <span
-                  ><a href=""
-                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
-                  ></span
-                >
+                <span>
+                  <a href="">
+                    <img src="../assets/images/icon-home-xs.png" alt="홈" />
+                    <em class="hidden-txt">홈으로 이동</em>
+                  </a>
+                </span>
                 <span><a href="">서울오리지널</a></span>
                 <span><a href="">방영프로그램</a></span>
               </div>
@@ -847,16 +848,36 @@
                 <div id="cr_vd"></div>
 
                 <!-- youtube 영상영역
-                <div class="ytp-wrap">
-                  <iframe
-                    src="https://www.youtube.com/embed/XsXV6XBV_qQ"
-                    title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
+                <div class="ytp-container">
+                  <div class="ytp-wrap">
+                    <div id="player"></div>
+                  </div>
                 </div>
-                -->
+                 -->
+              </div>
+              <div class="vd-script">
+                <!-- 음성ㆍ문자 지원 -->
+                <div class="modal right purple textSupport" id="modal-text-support">
+                  <header class="modal-header">
+                    <h5 class="hidden-txt">음성ㆍ문자 지원</h5>
+                    <button type="button" class="button-close modal-off">
+                      <em class="hidden-txt">레이어 팝업 닫기</em>
+                    </button>
+                  </header>
+                  <div class="modal-body">
+                    <div class="modal-contents customedScroll lightPurple">
+                      <p>서울시장 출근 환영행사가 시작되었습니다.</p>
+                      <p>서울시장 출근 환영행사가 시작되었습니다.</p>
+                      <p>이 행사가 어느 행사보다 값지고 뜻깊은 날이 되어 앞으로도 빛이 날 수 있도록 최선을 다하여보겠습니다.</p>
+                      <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
+                      <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
+                      <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
+                      <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
+                      <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
+                      <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="vd-info">
                 <div class="contents">
@@ -869,8 +890,8 @@
                     <strong class="title">졸업하면 무조건 취업! 기적의 사관학교가 있다?! (f.청년취업사관학교)</strong><br />
                     <span class="etc"><em>2022-06-02</em><em>서울시청 1층</em></span>
                   </h4>
-                  <div class="contents-mid">
-                    <div class="text-support modal-wrap">
+                  <div class="contents-mid clear">
+                    <div class="text-support">
                       <button
                         type="button"
                         class="btn-has-icon rounded voice type-02 button-active-modal"
@@ -878,27 +899,6 @@
                       >
                         <em>음성&middot;문자 지원</em>
                       </button>
-                      <div class="modal-wrap">
-                        <!-- 음성ㆍ문자 지원 -->
-                        <div class="modal left purple textSupport is_animated animate__fade_In_Up" id="modal-text-support">
-                          <div class="modal-body">
-                            <div class="modal-contents customedScroll lightPurple">
-                              <p>서울시장 출근 환영행사가 시작되었습니다.</p>
-                              <p>서울시장 출근 환영행사가 시작되었습니다.</p>
-                              <p>
-                                이 행사가 어느 행사보다 값지고 뜻깊은 날이 되어 앞으로도 빛이 날 수 있도록 최선을
-                                다하여보겠습니다.
-                              </p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                              <p>마지막으로 많고 값진 지지를 해주신 서울시민여러분께 감사 인사 드립니다.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                     <div class="utility">
                       <div class="add-curation">
@@ -1020,12 +1020,12 @@
                       </div>
                       <ul>
                         <li>
-                          <a href="" class="icon-download button-active-modal" data-modal-name="applyDownload"
+                          <a href="" class="icon-download button-active-modal fixed" data-modal-name="applyDownload"
                             ><em>다운로드</em></a
                           >
                           <div class="modal-wrap">
                             <!-- 다운로드 신청 -->
-                            <div class="modal right ivory applyDownload is_animated animate__fade_In_Up" id="modal-applyDownload">
+                            <div class="modal fixed purple applyDownload" id="modal-applyDownload">
                               <!-- 다운로드 구간 설정 -->
                               <header class="modal-header">
                                 <h5>영상 다운로드 신청</h5>
@@ -1034,67 +1034,159 @@
                                 </button>
                               </header>
                               <div class="modal-body">
-                                <div class="modal-contents" id="downloadArea"></div>
-                              </div>
+                                <div class="modal-contents customedScroll lightPurple" id="downloadArea">
+                                  <!-- 영상 유형 선택 -->
+<h6>영상 유형 선택</h6>
+<div class="radio-wrap">
+  <span>
+    <input type="radio" checked name="video_type" id="original" />
+    <label for="original"><em>원본 영상</em></label>
+  </span>
+  <span>
+    <input type="radio" name="video_type" id="clean" />
+    <label for="clean"><em>클린 영상</em></label>
+  </span>
+</div>
 
-                              <!-- 다운로드 사유 입력  -->
-                              <header class="modal-header">
-                                <h5>
-                                  다운로드 사유 입력 후 신청해 주세요.<br />
-                                  <em>* 관리자 승인 후 다운로드가 가능합니다. 승인 기간 평일기준 1~2일 소요</em>
-                                </h5>
-                              </header>
-                              <div class="modal-body">
-                                <div class="modal-contents">
-                                  <textarea
-                                    cols="30"
-                                    rows="10"
-                                    title="다운로드 사유 입력 - 사유입력 100자 이내"
-                                    placeholder="사유입력 100자 이내"
-                                  ></textarea>
-                                </div>
-                                <div class="btn-wrap align-c">
-                                  <button
-                                    class="btn-default rounded orange"
-                                    data-modal-name="download-finish"
-                                    type="submit"
-                                    onclick="applyDownload();"
-                                  >
-                                    <em>다운로드 신청</em>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
+<!-- 영상 다운로드 신청 -->
+<h6>영상 다운로드 신청</h6>
+<div class="radio-wrap">
+  <span>
+    <input type="radio" checked name="download" id="dw_all" />
+    <label for="dw_all"><em>전체영상 다운</em></label>
+  </span>
+  <span>
+    <input type="radio" name="download" id="dw_piece" />
+    <label for="dw_piece"><em>부분영상 다운</em></label>
+  </span>
+</div>
 
-                            <!-- 다운로드 완료 -->
-                            <div
-                              class="modal right ivory applyDownload is_animated animate__fade_In_Up"
-                              id="modal-download-finish"
-                            >
-                              <header class="modal-header">
-                                <h5 class="finish align-c">신청이 완료되었습니다.</h5>
-                                <button type="button" class="button-close modal-off">
-                                  <em class="hidden-txt">레이어 팝업 닫기</em>
-                                </button>
-                              </header>
-                              <div class="modal-body finish">
-                                <div class="modal-contents align-c">
-                                  <p>
-                                    마이페이지로 이동하여 영상다운이 가능합니다.<br />
-                                    이동하시겠습니까?
-                                  </p>
-                                </div>
-                                <div class="btn-wrap align-c">
-                                  <button
-                                    class="btn-default xs rounded orange"
-                                    type="button"
-                                    onclick="location.href='../mypage/download_list.html'"
-                                  >
-                                    <em>확인</em>
-                                  </button>
-                                  <button class="btn-default xs rounded darkGray modal-off" type="button">
-                                    <em>취소</em>
-                                  </button>
+<div class="dw-section">
+  <!-- 부분영상 구간설정 -->
+  <div class="set-dw-section">
+    <!-- tgplayer 영상영역 -->
+    <div id="clipVd"></div>
+    <dl>
+      <dt><strong>구간 설정</strong></dt>
+      <dd>
+        <div class="both">
+          <span class="text-wrap">
+            <input type="text" title="부분 영상 시작 구간" id="clipStart" />
+          </span>
+          <span class="text-wrap">
+            <input type="text" title="부분 영상 종료 구간" id="clipEnd" />
+          </span>
+        </div>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<!-- 영상 활용 신청 양식 -->
+<h6>영상 활용 신청 양식</h6>
+<div class="terms-of-use-01">
+  <ul>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">
+            개인정보<br class="pc-only" />
+            활용 동의
+          </span>
+        </dt>
+        <dd>
+          <div>
+            보안 관리, 유의사항 전달 등을 위해 개인정보(성명, 이메일, 핸드폰번호) 를 수집하며, 다른 목적으로 활용하지 않습니다.
+            이에 동의합니다.
+          </div>
+          <div class="chk-wrap align-r">
+            <span>
+              <input type="checkbox" checked id="chk1" />
+              <label for="chk1"><em>동의합니다.</em></label>
+            </span>
+          </div>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">활용 목적</span>
+        </dt>
+        <dd>
+          <div class="text-wrap"><input type="text" class="wide" /></div>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">활용 기간</span>
+        </dt>
+        <dd>
+          <div class="both">
+            <span class="text-wrap">
+              <input class="calendar" title="기간 선택 - 기간을 선택하세요" placeholder="기간을 선택하세요" type="text" />
+            </span>
+            <span class="text-wrap">
+              <input class="calendar" title="기간 선택 - 기간을 선택하세요" placeholder="기간을 선택하세요" type="text" />
+            </span>
+          </div>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">활용 매체</span>
+        </dt>
+        <dd>
+          <div class="text-wrap"><input type="text" class="wide" /></div>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>
+          <span class="est">
+            다운로드<br class="pc-only" />
+            사유
+          </span>
+        </dt>
+        <dd>
+          <div class="text-wrap"><input type="text" class="wide" /></div>
+        </dd>
+      </dl>
+    </li>
+  </ul>
+</div>
+
+<!-- 영상 다운로드 보안서약 -->
+<h6 class="has-icon">영상 다운로드 시 보안서약 동의가 필요합니다.</h6>
+<div class="terms-of-use-02">
+  <ul>
+    <li>
+      다운로드 받은 ‘라이브서울의 영상’은 반드시 다운로드 사유에 기재한 사용목적으로만 사용하고, 그 외 다른 용도에는 사용하지
+      않는다.
+    </li>
+    <li>제공받은 영상을 임의로 수정·편집 또는 복제·복사하여 사용하거나 제3자에게 배포하지 않는다.</li>
+    <li>제공받은 영상은 자유롭게 사용하되, 사회적 통념을 준수하고 품위를 유지하는 범위 내에서 사용해야한다.</li>
+    <li>제공받은 영상 사용 시 영상 출처를 반드시 표기해야 한다.</li>
+  </ul>
+</div>
+<div class="chk-wrap align-r">
+  <span>
+    <input type="checkbox" checked id="chk2" />
+    <label for="chk2"><em>동의합니다.</em></label>
+  </span>
+</div>
+
+<div class="btn-wrap align-c">
+  <button class="btn-default rounded orange" data-modal-name="download-finish" type="submit" onclick="applyDownload();">
+    <em>다운로드 신청</em>
+  </button>
+</div>
+
                                 </div>
                               </div>
                             </div>
@@ -1541,8 +1633,10 @@
     <script>
       function applyDownload() {
         // 다운로드 신청
-        commonFunction().modalOff();
-        $('#modal-download-finish').css('display', 'block');
+        if (confirm('다운로드 신청 하시겠습니까?')) {
+          alert('다운로드 신청이 완료되었습니다.\n 신청내역은 마이페이지 영상다운로드 내역에서 확인 가능합니다.');
+          commonFunction().modalOff();
+        }
       }
 
       function addCuration(t) {
@@ -1563,6 +1657,44 @@
 
         $(t).closest('.modal').find('.modal-contents').scrollTop(0);
         $(t).closest('.modal-body').find('.my-curation').prepend(newList);
+      }
+
+      //유튜브 플레이어 iframe 호출
+      if ($('.ytp-container').length) {
+        var tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady(fileName) {
+          gb.YTplayer = new YT.Player('player', {
+            height: '100%',
+            width: '100%',
+            videoId: 'XsXV6XBV_qQ', // 영상 id
+            rel: 0, // 0으로 해놓아야 재생 후 관련 영상이 안뜸
+            events: {
+              onStateChange: onPlayerStateChange,
+            },
+          });
+        }
+
+        function onPlayerStateChange(e) {
+          //-1 (시작되지 않음)
+          //0 (종료)
+          //1 (재생 중)
+          //2 (정지)
+          //3 (버퍼링 중)
+          //5 (스킵 된)
+
+          if (e.data === 1) {
+            // 재생 중
+            gb.ytpStatus = 'play';
+          } else if (e.data === -1 || e.data === 2) {
+            // 시작하지 않거나 정지 됨
+            gb.ytpStatus = 'stop';
+          }
+        }
       }
 
       //티젠 플레이어 설정
@@ -1641,6 +1773,37 @@
           blankVideo: '../tgplayer/plugin/js/blank.mp4',
         });
       }
+
+      // 다운로드 구간설정용 영상 호출
+      if ($('#clipVd').length) {
+        $('#clipVd').createVideo({
+          // 플레이어 생성 영역 DIV의 아이디
+          id: 'video_sm', // 생성될 비디오 태그 아이디 *필수값
+          src: setVideoSrc,
+          speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+          autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+          startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+          seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+          progress: true, // false : 프로그레스바 컨트롤 되지 않도록
+          preview: [{ enabled: false, src: '' }],
+          quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+          qualitySize: qualitySize,
+          isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+          clip: [{ enable: true, loop: false }],
+          iconUrl: '../tgplayer/plugin/js/plyr.svg',
+          blankVideo: '../tgplayer/plugin/js/blank.mp4',
+        });
+      }
+
+      function vodDuration() {
+        var time = $('#video_sm').vodDuration();
+        $('#clipStart').val('00:00:00');
+        $('#clipEnd').val(getTimeString(time));
+      }
+
+      setTimeout(function () {
+        vodDuration();
+      }, 300);
     </script>
   </body>
 </html>
