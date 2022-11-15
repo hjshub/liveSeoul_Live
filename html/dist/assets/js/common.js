@@ -64,10 +64,10 @@ function commonFunction() {
           gsap.to('#gnb', { y: 0, opacity: 1, duration: 0.5, delay: 0.4 });
         }
 
-        if (document.documentElement.scrollTop >= 50) {
-          gb.header.addClass('fixed');
+        if (document.documentElement.scrollTop >= 60) {
+          gb.html.addClass('fixed');
         } else {
-          gb.header.removeClass('fixed');
+          gb.html.removeClass('fixed');
         }
 
         $('.button-open-schLayer').on('click', function () {
@@ -151,6 +151,14 @@ function commonFunction() {
             trg.removeClass('on');
             trg.find('.depth2').stop().fadeOut(300);
           },
+        });
+
+        $('.sideMenu .cate-wrap').on('mouseenter', function () {
+          gb.body.css('overflow-y', 'hidden');
+        });
+
+        $('.sideMenu .cate-wrap').on('mouseleave', function () {
+          gb.body.css('overflow-y', 'scroll');
         });
       },
       modal = function () {
@@ -578,23 +586,30 @@ function commonFunction() {
             type: 'get',
             dataType: 'html',
             success: function (result) {
-              $(el).append(result);
+              $(el).html(result);
+              $(document).find('.vd-preview video').first().trigger('click');
             },
           });
         };
 
-        $(document).on('mouseenter touchstart', '.previewOn', function (e) {
-          var trg = $(this);
-          $('.vd-preview').remove();
-          videoPreviewAjax(trg);
+        $(document).on('mouseenter touchstart', '.previewOn > .pv-list .img-thumb', function (e) {
+          var trg = $(this),
+            el = trg.closest('.pv-list').find('.vd-preview');
+
+          $('.img-thumb').find('.toolTip').remove();
+          $('.vd-preview').html('');
+          clearTimeout(gb.videoPreviewAjax);
+
+          trg.append('<span class="toolTip">계속마우스 오버하여 재생하기</span>');
+          gb.videoPreviewAjax = setTimeout(function () {
+            videoPreviewAjax(el);
+          }, 2000);
         });
 
-        $(document).on('mouseleave', '.previewOn', function () {
-          $('.vd-preview').remove();
-        });
-
-        document.addEventListener('touchstart', function () {
-          $('.vd-preview').remove();
+        $(document).on('mouseleave', '.previewOn > .pv-list', function () {
+          $('.vd-preview').html('');
+          $('.img-thumb').find('.toolTip').remove();
+          clearTimeout(gb.videoPreviewAjax);
         });
       },
       FilterSwiper = function () {
@@ -1142,10 +1157,16 @@ function commonFunction() {
   });
 
   window.addEventListener('scroll', function () {
-    if (document.documentElement.scrollTop >= 50) {
-      gb.header.addClass('fixed');
+    if (document.documentElement.scrollTop >= 60) {
+      gb.html.addClass('fixed');
     } else {
-      gb.header.removeClass('fixed');
+      gb.html.removeClass('fixed');
+    }
+
+    if (document.documentElement.scrollTop + document.documentElement.clientHeight >= gb.footer.offset().top) {
+      $('.sideMenu .cate-wrap').addClass('limitHeight');
+    } else {
+      $('.sideMenu .cate-wrap').removeClass('limitHeight');
     }
 
     if (gb.vdContainer.length) {

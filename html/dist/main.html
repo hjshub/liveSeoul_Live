@@ -16,6 +16,8 @@
 <script src="assets/js/gsap.min.js"></script>
 <script src="assets/js/swiper.min.js"></script>
 <script defer src="assets/js/common.js"></script>
+<script src="tgplayer/conponentRoot.js"></script>
+<script src="tgplayer/player_init.js"></script>
 
 <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
 <link rel="stylesheet" href="assets/css/swiper.min.css" />
@@ -100,9 +102,9 @@
       <a href="main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
     </div>
     <div>
-      <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
+      <!-- <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
         <em class="hidden-txt">내 손안에 서울 바로가기</em>
-      </a>
+      </a> -->
       <ul>
         <li>
           <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome" target="_blank" title="새 창 열림">뉴스</a>
@@ -780,11 +782,21 @@
       </li>
     </ul>
 
-    <div class="dropDown">
-      <!-- 로그인 전 -->
-      <a href="javascript:void(0);" class="sign-in">로그인</a>
+    <div class="text-wrap search">
+      <form>
+        <fieldset>
+          <legend>검색</legend>
+          <input class="txt-ellipsis" type="text" title="검색어 입력" />
+          <button type="submit"><em class="hidden-txt">검색</em></button>
+        </fieldset>
+      </form>
+    </div>
 
-      <!-- 로그인 후
+    <div class="dropDown">
+      <!-- 로그인 전
+      <a href="javascript:void(0);" class="sign-in">로그인</a>
+      -->
+      <!-- 로그인 후 -->
       <a href="javascript:void(0)" class="sign-out">로그아웃</a>
       <div class="item">
         <a href="javascript:void(0);" class="mypage">마이페이지</a>
@@ -797,16 +809,6 @@
             <li><a href="mypage/wish_list.html">나의 관심분야</a></li>
           </ul>
         </div>
-      </div>
-      -->
-      <div class="text-wrap search">
-        <form>
-          <fieldset>
-            <legend>검색</legend>
-            <input class="txt-ellipsis" type="text" title="검색어 입력" />
-            <button type="submit"><em class="hidden-txt">검색</em></button>
-          </fieldset>
-        </form>
       </div>
     </div>
   </div>
@@ -1107,11 +1109,11 @@
               <strong><a href="">추천영상</a></strong>
             </h3>
             <div class="vd-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
+              <div class="swiper-wrapper previewOn">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-01-01.jpg" alt="추천영상 썸네일 01" />
                       </a>
                     </div>
@@ -1123,11 +1125,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-01-02.jpg" alt="추천영상 썸네일 02" />
                       </a>
                     </div>
@@ -1139,11 +1142,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-01-03.jpg" alt="추천영상 썸네일 03" />
                       </a>
                     </div>
@@ -1155,11 +1159,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-01-04.jpg" alt="추천영상 썸네일 04" />
                       </a>
                     </div>
@@ -1171,11 +1176,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-01-05.jpg" alt="추천영상 썸네일 05" />
                       </a>
                     </div>
@@ -1187,11 +1193,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-01-06.jpg" alt="추천영상 썸네일 06" />
                       </a>
                     </div>
@@ -1203,11 +1210,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-01-07.jpg" alt="추천영상 썸네일 07" />
                       </a>
                     </div>
@@ -1219,6 +1227,7 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
               </div>
               <div class="swiper-scrollbar-customed"></div>
@@ -1247,11 +1256,11 @@
               </button>
             </h3>
             <div class="vd-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
+              <div class="swiper-wrapper previewOn">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-02-01.jpg" alt="최신영상 썸네일 01" />
                       </a>
                     </div>
@@ -1263,11 +1272,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-02-02.jpg" alt="최신영상 썸네일 02" />
                       </a>
                     </div>
@@ -1279,11 +1289,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-02-03.jpg" alt="최신영상 썸네일 03" />
                       </a>
                     </div>
@@ -1295,11 +1306,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-02-04.jpg" alt="최신영상 썸네일 04" />
                       </a>
                     </div>
@@ -1311,11 +1323,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-02-05.jpg" alt="최신영상 썸네일 05" />
                       </a>
                     </div>
@@ -1327,11 +1340,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-02-06.jpg" alt="최신영상 썸네일 06" />
                       </a>
                     </div>
@@ -1343,11 +1357,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="assets/images/thumbnail/main-sample-thumb-02-07.jpg" alt="최신영상 썸네일 07" />
                       </a>
                     </div>
@@ -1359,6 +1374,7 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
               </div>
               <div class="swiper-scrollbar-customed"></div>
@@ -1408,12 +1424,12 @@
             <div class="tab-contents">
               <div id="list-seoul-all" class="active">
                 <div class="vd-swiper">
-                  <div class="swiper-wrapper">
+                  <div class="swiper-wrapper previewOn">
                     <!-- Slides -->
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img src="assets/images/thumbnail/main-sample-thumb-03-01.jpg" alt="#서울 전체 썸네일 01" />
                           </a>
                         </div>
@@ -1425,11 +1441,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img src="assets/images/thumbnail/main-sample-thumb-03-02.jpg" alt="#서울 전체 썸네일 02" />
                           </a>
                         </div>
@@ -1441,11 +1458,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img src="assets/images/thumbnail/main-sample-thumb-03-03.jpg" alt="#서울 전체 썸네일 03" />
                           </a>
                         </div>
@@ -1457,11 +1475,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img src="assets/images/thumbnail/main-sample-thumb-03-04.jpg" alt="#서울 전체 썸네일 04" />
                           </a>
                         </div>
@@ -1473,11 +1492,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img src="assets/images/thumbnail/main-sample-thumb-03-05.jpg" alt="#서울 전체 썸네일 05" />
                           </a>
                         </div>
@@ -1489,11 +1509,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img src="assets/images/thumbnail/main-sample-thumb-03-06.jpg" alt="#서울 전체 썸네일 06" />
                           </a>
                         </div>
@@ -1505,11 +1526,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img src="assets/images/thumbnail/main-sample-thumb-03-07.jpg" alt="#서울 전체 썸네일 07" />
                           </a>
                         </div>
@@ -1521,6 +1543,7 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
                   </div>
                   <div class="swiper-scrollbar-customed"></div>
@@ -1580,12 +1603,12 @@
             <div class="tab-contents">
               <div id="list-region-all" class="active">
                 <div class="vd-swiper">
-                  <div class="swiper-wrapper">
+                  <div class="swiper-wrapper previewOn">
                     <!-- Slides -->
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img
                               src="assets/images/thumbnail/main-sample-thumb-04-01.jpg"
                               alt="자치구 방송국 영상 전체 썸네일 01"
@@ -1600,11 +1623,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img
                               src="assets/images/thumbnail/main-sample-thumb-04-02.jpg"
                               alt="자치구 방송국 영상 전체 썸네일 02"
@@ -1619,11 +1643,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img
                               src="assets/images/thumbnail/main-sample-thumb-04-03.jpg"
                               alt="자치구 방송국 영상 전체 썸네일 03"
@@ -1638,11 +1663,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img
                               src="assets/images/thumbnail/main-sample-thumb-04-04.jpg"
                               alt="자치구 방송국 영상 전체 썸네일 04"
@@ -1657,11 +1683,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img
                               src="assets/images/thumbnail/main-sample-thumb-04-05.jpg"
                               alt="자치구 방송국 영상 전체 썸네일 05"
@@ -1676,11 +1703,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img
                               src="assets/images/thumbnail/main-sample-thumb-04-06.jpg"
                               alt="자치구 방송국 영상 전체 썸네일 06"
@@ -1695,11 +1723,12 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide pv-list">
                       <div class="article">
                         <div class="img-thumb">
-                          <a href="#" class="previewOn">
+                          <a href="#">
                             <img
                               src="assets/images/thumbnail/main-sample-thumb-04-07.jpg"
                               alt="자치구 방송국 영상 전체 썸네일 07"
@@ -1714,6 +1743,7 @@
                         </div>
                         <div class="date">2021.11.02</div>
                       </div>
+                      <div class="vd-preview"></div>
                     </div>
                   </div>
                   <div class="swiper-scrollbar-customed"></div>

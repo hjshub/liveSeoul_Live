@@ -16,6 +16,8 @@
 <script src="../assets/js/gsap.min.js"></script>
 <script src="../assets/js/swiper.min.js"></script>
 <script defer src="../assets/js/common.js"></script>
+<script src="../tgplayer/conponentRoot.js"></script>
+<script src="../tgplayer/player_init.js"></script>
 
 <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
 <link rel="stylesheet" href="../assets/css/swiper.min.css" />
@@ -104,9 +106,9 @@
       <a href="../main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
     </div>
     <div>
-      <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
+      <!-- <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
         <em class="hidden-txt">내 손안에 서울 바로가기</em>
-      </a>
+      </a> -->
       <ul>
         <li>
           <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome" target="_blank" title="새 창 열림">뉴스</a>
@@ -783,6 +785,15 @@
         </div>
       </li>
     </ul>
+    <div class="text-wrap search">
+      <form>
+        <fieldset>
+          <legend>검색</legend>
+          <input class="txt-ellipsis" type="text" title="검색어 입력" />
+          <button type="submit"><em class="hidden-txt">검색</em></button>
+        </fieldset>
+      </form>
+    </div>
     <div class="dropDown">
       <!-- 로그인 전 -->
       <a href="javascript:void(0);" class="sign-in">로그인</a>
@@ -801,15 +812,6 @@
         </div>
       </div>
       -->
-      <div class="text-wrap search">
-        <form>
-          <fieldset>
-            <legend>검색</legend>
-            <input class="txt-ellipsis" type="text" title="검색어 입력" />
-            <button type="submit"><em class="hidden-txt">검색</em></button>
-          </fieldset>
-        </form>
-      </div>
     </div>
   </div>
 </div>

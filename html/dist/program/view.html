@@ -16,6 +16,8 @@
 <script src="../assets/js/gsap.min.js"></script>
 <script src="../assets/js/swiper.min.js"></script>
 <script defer src="../assets/js/common.js"></script>
+<script src="../tgplayer/conponentRoot.js"></script>
+<script src="../tgplayer/player_init.js"></script>
 
 <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
 <link rel="stylesheet" href="../assets/css/swiper.min.css" />
@@ -100,9 +102,9 @@
       <a href="../main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
     </div>
     <div>
-      <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
+      <!-- <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
         <em class="hidden-txt">내 손안에 서울 바로가기</em>
-      </a>
+      </a> -->
       <ul>
         <li>
           <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome" target="_blank" title="새 창 열림">뉴스</a>
@@ -779,6 +781,15 @@
         </div>
       </li>
     </ul>
+    <div class="text-wrap search">
+      <form>
+        <fieldset>
+          <legend>검색</legend>
+          <input class="txt-ellipsis" type="text" title="검색어 입력" />
+          <button type="submit"><em class="hidden-txt">검색</em></button>
+        </fieldset>
+      </form>
+    </div>
     <div class="dropDown">
       <!-- 로그인 전 -->
       <a href="javascript:void(0);" class="sign-in">로그인</a>
@@ -797,15 +808,6 @@
         </div>
       </div>
       -->
-      <div class="text-wrap search">
-        <form>
-          <fieldset>
-            <legend>검색</legend>
-            <input class="txt-ellipsis" type="text" title="검색어 입력" />
-            <button type="submit"><em class="hidden-txt">검색</em></button>
-          </fieldset>
-        </form>
-      </div>
     </div>
   </div>
 </div>
@@ -1502,11 +1504,11 @@
               <strong><a href="">다시보기 회차별 영상</a></strong>
             </h3>
             <div class="vd-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
+              <div class="swiper-wrapper previewOn">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-01.jpg" alt="다시보기 회차별 영상 썸네일 01" />
                       </a>
                     </div>
@@ -1518,11 +1520,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-02.jpg" alt="다시보기 회차별 영상 썸네일 02" />
                       </a>
                     </div>
@@ -1534,11 +1537,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-03.jpg" alt="다시보기 회차별 영상 썸네일 03" />
                       </a>
                     </div>
@@ -1550,11 +1554,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-04.jpg" alt="다시보기 회차별 영상 썸네일 04" />
                       </a>
                     </div>
@@ -1566,11 +1571,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-05.jpg" alt="다시보기 회차별 영상 썸네일 05" />
                       </a>
                     </div>
@@ -1582,11 +1588,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-06.jpg" alt="다시보기 회차별 영상 썸네일 06" />
                       </a>
                     </div>
@@ -1598,11 +1605,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-01.jpg" alt="다시보기 회차별 영상 썸네일 01" />
                       </a>
                     </div>
@@ -1614,11 +1622,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-02.jpg" alt="다시보기 회차별 영상 썸네일 02" />
                       </a>
                     </div>
@@ -1630,11 +1639,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-03.jpg" alt="다시보기 회차별 영상 썸네일 03" />
                       </a>
                     </div>
@@ -1646,11 +1656,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-04.jpg" alt="다시보기 회차별 영상 썸네일 04" />
                       </a>
                     </div>
@@ -1662,11 +1673,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-05.jpg" alt="다시보기 회차별 영상 썸네일 05" />
                       </a>
                     </div>
@@ -1678,11 +1690,12 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide pv-list">
                   <div class="article">
                     <div class="img-thumb">
-                      <a href="#" class="previewOn">
+                      <a href="#">
                         <img src="../assets/images/thumbnail/sub-sample-thumb-01-06.jpg" alt="다시보기 회차별 영상 썸네일 06" />
                       </a>
                     </div>
@@ -1694,6 +1707,7 @@
                     </div>
                     <div class="date">2021.11.02</div>
                   </div>
+                  <div class="vd-preview"></div>
                 </div>
               </div>
               <div class="swiper-scrollbar-customed"></div>
@@ -1730,11 +1744,11 @@
             <h3 class="heading-wrap-03">
               <strong><a href="">관련 영상</a></strong>
             </h3>
-            <div class="vd-list"><ul>
-  <li>
+            <div class="vd-list"><ul class="previewOn">
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 01" />
         </a>
       </div>
@@ -1746,11 +1760,12 @@
       </div>
       <div class="date">2021-01-11</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 02" />
         </a>
       </div>
@@ -1767,11 +1782,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 03" />
         </a>
       </div>
@@ -1788,11 +1804,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 04" />
         </a>
       </div>
@@ -1809,11 +1826,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 05" />
         </a>
       </div>
@@ -1830,11 +1848,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 06" />
         </a>
       </div>
@@ -1851,11 +1870,12 @@
       </div>
       <div class="date">2021-11-22</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 07" />
         </a>
       </div>
@@ -1867,11 +1887,12 @@
       </div>
       <div class="date">2021-01-11</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 08" />
         </a>
       </div>
@@ -1888,11 +1909,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 09" />
         </a>
       </div>
@@ -1909,11 +1931,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 10" />
         </a>
       </div>
@@ -1930,11 +1953,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 11" />
         </a>
       </div>
@@ -1951,11 +1975,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 12" />
         </a>
       </div>
@@ -1972,11 +1997,12 @@
       </div>
       <div class="date">2021-11-22</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 13" />
         </a>
       </div>
@@ -1988,11 +2014,12 @@
       </div>
       <div class="date">2021-01-11</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 14" />
         </a>
       </div>
@@ -2009,11 +2036,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 15" />
         </a>
       </div>
@@ -2030,11 +2058,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 16" />
         </a>
       </div>
@@ -2051,11 +2080,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 17" />
         </a>
       </div>
@@ -2072,11 +2102,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 18" />
         </a>
       </div>
@@ -2093,6 +2124,7 @@
       </div>
       <div class="date">2021-11-22</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
 </ul>
 </div>
@@ -2163,10 +2195,6 @@
 </footer>
       <!-- // #footer -->
     </div>
-
-    <script src="../tgplayer/conponentRoot.js"></script>
-    <script src="../tgplayer/player_init.js"></script>
-
     <script>
       function applyDownload() {
         // 다운로드 신청

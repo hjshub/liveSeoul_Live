@@ -16,6 +16,8 @@
 <script src="../assets/js/gsap.min.js"></script>
 <script src="../assets/js/swiper.min.js"></script>
 <script defer src="../assets/js/common.js"></script>
+<script src="../tgplayer/conponentRoot.js"></script>
+<script src="../tgplayer/player_init.js"></script>
 
 <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
 <link rel="stylesheet" href="../assets/css/swiper.min.css" />
@@ -100,9 +102,9 @@
       <a href="../main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
     </div>
     <div>
-      <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
+      <!-- <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
         <em class="hidden-txt">내 손안에 서울 바로가기</em>
-      </a>
+      </a> -->
       <ul>
         <li>
           <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome" target="_blank" title="새 창 열림">뉴스</a>
@@ -779,6 +781,15 @@
         </div>
       </li>
     </ul>
+    <div class="text-wrap search">
+      <form>
+        <fieldset>
+          <legend>검색</legend>
+          <input class="txt-ellipsis" type="text" title="검색어 입력" />
+          <button type="submit"><em class="hidden-txt">검색</em></button>
+        </fieldset>
+      </form>
+    </div>
     <div class="dropDown">
       <!-- 로그인 전 -->
       <a href="javascript:void(0);" class="sign-in">로그인</a>
@@ -797,15 +808,6 @@
         </div>
       </div>
       -->
-      <div class="text-wrap search">
-        <form>
-          <fieldset>
-            <legend>검색</legend>
-            <input class="txt-ellipsis" type="text" title="검색어 입력" />
-            <button type="submit"><em class="hidden-txt">검색</em></button>
-          </fieldset>
-        </form>
-      </div>
     </div>
   </div>
 </div>
@@ -953,55 +955,57 @@
               <button type="button" class="button-open-pgAll" onclick="commonFunction().menuAll(this, '#pg-all');">
                 <em>전체프로그램</em>
               </button>
-              <div class="subCate">
-                <ul>
-                  <li>
-                    <a href="#" class="active"><em>최신영상</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>서울온에어</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>홍보영상</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>방영프로그램</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>영상크리에이터</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>소통방통</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>자치구방송국</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>종영프로그램</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>마을미디어</em></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="mypage">
-                <ul>
-                  <li>
-                    <a href="#"><em>내가 좋아요한 영상</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>내가 시청한 영상</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>큐레이션</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>영상다운로드 내역</em></a>
-                  </li>
-                  <li>
-                    <a href="#"><em>나의 관심분야</em></a>
-                  </li>
-                </ul>
+              <div class="cate-wrap">
+                <div class="subCate">
+                  <ul>
+                    <li>
+                      <a href="#" class="active"><em>최신영상</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>서울온에어</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>홍보영상</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>방영프로그램</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>영상크리에이터</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>소통방통</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>자치구방송국</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>종영프로그램</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>마을미디어</em></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mypage">
+                  <ul>
+                    <li>
+                      <a href="#"><em>내가 좋아요한 영상</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>내가 시청한 영상</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>큐레이션</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>영상다운로드 내역</em></a>
+                    </li>
+                    <li>
+                      <a href="#"><em>나의 관심분야</em></a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </aside>
             <div class="contents">
@@ -1277,11 +1281,11 @@
                       <a href="javascript:;">가나다순</a>
                     </div>
                   </div>
-                  <div class="vd-list program"><ul>
-  <li>
+                  <div class="vd-list program"><ul class="previewOn">
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 01" />
         </a>
       </div>
@@ -1293,11 +1297,12 @@
       </div>
       <div class="date">2021-01-11</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 02" />
         </a>
       </div>
@@ -1314,11 +1319,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 03" />
         </a>
       </div>
@@ -1335,11 +1341,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 04" />
         </a>
       </div>
@@ -1356,11 +1363,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 05" />
         </a>
       </div>
@@ -1377,11 +1385,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 06" />
         </a>
       </div>
@@ -1398,11 +1407,12 @@
       </div>
       <div class="date">2021-11-22</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 07" />
         </a>
       </div>
@@ -1414,11 +1424,12 @@
       </div>
       <div class="date">2021-01-11</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 08" />
         </a>
       </div>
@@ -1435,11 +1446,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 09" />
         </a>
       </div>
@@ -1456,11 +1468,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 10" />
         </a>
       </div>
@@ -1477,11 +1490,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 11" />
         </a>
       </div>
@@ -1498,11 +1512,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 12" />
         </a>
       </div>
@@ -1519,11 +1534,12 @@
       </div>
       <div class="date">2021-11-22</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 13" />
         </a>
       </div>
@@ -1535,11 +1551,12 @@
       </div>
       <div class="date">2021-01-11</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 14" />
         </a>
       </div>
@@ -1556,11 +1573,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 15" />
         </a>
       </div>
@@ -1577,11 +1595,12 @@
       </div>
       <div class="date">2019-12-30</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 16" />
         </a>
       </div>
@@ -1598,11 +1617,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 17" />
         </a>
       </div>
@@ -1619,11 +1639,12 @@
       </div>
       <div class="date">2020-06-16</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
-  <li>
+  <li class="pv-list">
     <div class="article">
       <div class="img-thumb">
-        <a href="../program/view.html" class="previewOn">
+        <a href="../program/view.html">
           <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 18" />
         </a>
       </div>
@@ -1640,6 +1661,7 @@
       </div>
       <div class="date">2021-11-22</div>
     </div>
+    <div class="vd-preview"></div>
   </li>
 </ul>
 </div>
