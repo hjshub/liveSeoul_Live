@@ -1,24 +1,103 @@
-<div class="cur-vd-preview">
-  <!-- 영상 준비 전 로딩 바
-  <div class="loading-wrap">
-    <div class="loadingSpinner">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span
-      ><span></span><span></span><span></span>
-    </div>
-  </div> 
-  -->
-
-  <video muted playsinline autoplay>
-    <source type="video/mp4" src="../assets/images/video/sample-video01.mp4" />
-  </video>
-
-  <!-- youtube 영상영역
-  <div class="ytp-wrap" style="pointer-events: none; user-select: none">
-    <iframe
-      src="https://www.youtube.com/embed/XsXV6XBV_qQ?autoplay=1&fs=0&playsinline=1&controls=0"
-      title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
-      allow="accelerometer; autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    ></iframe>
-  </div>
-  -->
+<!-- <div id="cur-vd-wrap"></div> -->
+<!-- youtube 영상영역 -->
+<div class="ytp-wrap">
+  <iframe
+    src="https://www.youtube.com/embed/XsXV6XBV_qQ?autoplay=0&fs=0&playsinline=1&controls=0;"
+    title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
+    allow="accelerometer; autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  ></iframe>
 </div>
+
+<div class="cur-vd-info">
+  <div class="cur-vd-title">나만 알고 싶은 한강 한적한 공원</div>
+  <div class="date">
+    <span>2022-06-02</span>
+    <span>09:50 ~ 11:00</span>
+    <span>서울시청 1층</span>
+  </div>
+</div>
+<div class="btn-wrap col-2 align-c">
+  <button class="btn-default md rounded darkGray" type="button" onclick="commonFunction().curPreviewOff();">
+    <em>팝업 닫기</em>
+  </button>
+  <button class="btn-default md rounded red2" type="submit"><em>영상 상세 페이지 이동</em></button>
+</div>
+
+<script>
+  //티젠 플레이어 설정
+  //화질 Object 리스트
+  var setVideoSrc = new Array();
+  var sizeList = new Array();
+
+  //모바일 확인
+  var isMob = window.innerWidth <= 768 ? true : false;
+
+  // video src 설정
+  // MP4 파일 테스트용
+  // 공통 영상 상세
+  var videoObj1 = new Object();
+  videoObj1.size = '1';
+  videoObj1.src = '../assets/images/video/sample-video01.mp4';
+  videoObj1.type = 'video/mp4';
+  setVideoSrc.push(videoObj1);
+  sizeList.push(1);
+
+  var videoObj2 = new Object();
+  videoObj2.size = '720';
+  videoObj2.src = '../assets/images/video/sample-video01.mp4';
+  videoObj2.type = 'video/mp4';
+  setVideoSrc.push(videoObj2);
+  sizeList.push(720);
+
+  var videoObj3 = new Object();
+  videoObj3.size = '272';
+  videoObj3.src = '../assets/images/video/sample-video01.mp4';
+  videoObj3.type = 'video/mp4';
+  setVideoSrc.push(videoObj3);
+  sizeList.push(272);
+
+  //처음 영상 재생 화질 default값 설정
+  if (sizeList.length == 1) {
+    qualitySize = 0;
+  } else {
+    //자동화질 설정
+    if (sizeList[0] == '1') {
+      if (!isMob || sizeList.length == 2) {
+        //웹 브라우저 화질 default 1280 x 720
+        qualitySize = 1;
+      } else {
+        //모바일 화질 default    484 x 272
+        qualitySize = 2;
+      }
+    }
+    //자동화질 미설정
+    else {
+      if (!isMob) {
+        //웹 브라우저 화질 default 1280 x 720
+        qualitySize = 0;
+      } else {
+        //모바일 화질 default    484 x 272
+        qualitySize = 1;
+      }
+    }
+  }
+
+  if ($('#cur-vd-wrap').length) {
+    $('#cur-vd-wrap').createVideo({
+      // 플레이어 생성 영역 DIV의 아이디
+      id: 'cur_preVd', // 생성될 비디오 태그 아이디 *필수값
+      src: setVideoSrc,
+      speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+      autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+      startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+      seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+      progress: false, // false : 프로그레스바 컨트롤 되지 않도록
+      preview: [{ enabled: false, src: '' }],
+      quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+      qualitySize: qualitySize,
+      isBanner: true, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+      iconUrl: '../tgplayer/plugin/js/plyr.svg',
+      blankVideo: '../tgplayer/plugin/js/blank.mp4',
+    });
+  }
+</script>

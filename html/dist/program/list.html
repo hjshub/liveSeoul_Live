@@ -15,9 +15,9 @@
 <script src="../assets/js/jquery-ui.min.js"></script>
 <script src="../assets/js/gsap.min.js"></script>
 <script src="../assets/js/swiper.min.js"></script>
-<script defer src="../assets/js/common.js"></script>
 <script src="../tgplayer/conponentRoot.js"></script>
 <script src="../tgplayer/player_init.js"></script>
+<script defer src="../assets/js/common.js"></script>
 
 <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
 <link rel="stylesheet" href="../assets/css/swiper.min.css" />
@@ -1142,84 +1142,115 @@
                 </div>
               </div>
               <div class="contents-header">
-                <div class="list-filter-swiper">
-                  <ul class="swiper-wrapper">
-                    <li class="swiper-slide">
-                      <div class="radio-wrap-type02">
-                        <span>
-                          <input type="radio" checked="" name="chk_filter" id="chk_all" />
-                          <label for="chk_all"><em>전체</em></label>
-                        </span>
-                      </div>
-                    </li>
-                    <li class="swiper-slide">
-                      <div class="radio-wrap-type02">
-                        <span>
-                          <input type="radio" name="chk_filter" id="chk_1" />
-                          <label for="chk_1"><em>백설기</em></label>
-                        </span>
-                      </div>
-                    </li>
-                    <li class="swiper-slide">
-                      <div class="radio-wrap-type02">
-                        <span>
-                          <input type="radio" name="chk_filter" id="chk_2" />
-                          <label for="chk_2"><em>해치TV</em></label>
-                        </span>
-                      </div>
-                    </li>
-                    <li class="swiper-slide">
-                      <div class="radio-wrap-type02">
-                        <span>
-                          <input type="radio" name="chk_filter" id="chk_3" />
-                          <label for="chk_3"><em>집콕360°VR</em></label>
-                        </span>
-                      </div>
-                    </li>
-                    <li class="swiper-slide">
-                      <div class="radio-wrap-type02">
-                        <span>
-                          <input type="radio" name="chk_filter" id="chk_4" />
-                          <label for="chk_4"><em>세대공감썰</em></label>
-                        </span>
-                      </div>
-                    </li>
-                    <li class="swiper-slide">
-                      <div class="radio-wrap-type02">
-                        <span>
-                          <input type="radio" name="chk_filter" id="chk_5" />
-                          <label for="chk_5"><em>알려ZOOM 서울</em></label>
-                        </span>
-                      </div>
-                    </li>
-                  </ul>
+                <div class="filter-type-01">
+                  <div class="list-filter-swiper">
+                    <ul class="swiper-wrapper">
+                      <li class="swiper-slide">
+                        <div class="radio-wrap-type02">
+                          <span>
+                            <input type="radio" checked="" name="chk_filter" id="chk_all" />
+                            <label for="chk_all"><em>전체</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="radio-wrap-type02">
+                          <span>
+                            <input type="radio" name="chk_filter" id="chk_1" />
+                            <label for="chk_1"><em>백설기</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="radio-wrap-type02">
+                          <span>
+                            <input type="radio" name="chk_filter" id="chk_2" />
+                            <label for="chk_2"><em>해치TV</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="radio-wrap-type02">
+                          <span>
+                            <input type="radio" name="chk_filter" id="chk_3" />
+                            <label for="chk_3"><em>집콕360°VR</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="radio-wrap-type02">
+                          <span>
+                            <input type="radio" name="chk_filter" id="chk_4" />
+                            <label for="chk_4"><em>세대공감썰</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="radio-wrap-type02">
+                          <span>
+                            <input type="radio" name="chk_filter" id="chk_5" />
+                            <label for="chk_5"><em>알려ZOOM 서울</em></label>
+                          </span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="swiper-controller">
+                    <button class="button-swiper-prev"><em class="hidden-txt">이전</em></button>
+                    <button class="button-swiper-nxt"><em class="hidden-txt">다음</em></button>
+                  </div>
                 </div>
-                <div class="swiper-controller">
-                  <button class="button-swiper-prev"><em class="hidden-txt">이전</em></button>
-                  <button class="button-swiper-nxt"><em class="hidden-txt">다음</em></button>
-                </div>
+                <div class="filter-type-02"></div>
               </div>
               <div class="contents-body">
                 <!-- 검색 -->
-                <div class="search-area">
+                <div class="date-search-area type-02">
                   <form>
                     <fieldset>
-                      <legend>검색</legend>
-                      <span class="select-wrap" style="background-color: #f9f9f9">
-                        <label for="b-search-select">
-                          <em class="hidden-txt">검색 옵션 선택</em>
-                        </label>
-                        <select id="b-search-select">
-                          <option value="">전체</option>
-                          <option value="">전체</option>
-                          <option value="">전체</option>
-                          <option value="">전체</option>
-                        </select>
-                      </span>
-                      <div class="text-wrap has-button">
-                        <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-                        <button class="btn-has-icon rounded search orange" type="submit"><em>검색하기</em></button>
-                      </div>
+                      <ul>
+                        <li>
+                          <dl>
+                            <dt>기간선택</dt>
+                            <dd>
+                              <div class="datePick-bt">
+                                <button type="button"><em>오늘</em></button>
+                                <button type="button"><em>최근 일주일</em></button>
+                                <button type="button"><em>최근한달</em></button>
+                              </div>
+                              <div class="both">
+                                <span class="text-wrap">
+                                  <input
+                                    class="calendar"
+                                    title="기간 선택 - 기간을 선택하세요"
+                                    placeholder="기간을 선택하세요"
+                                    type="text"
+                                  />
+                                </span>
+                                <span class="text-wrap">
+                                  <input
+                                    class="calendar"
+                                    title="기간 선택 - 기간을 선택하세요"
+                                    placeholder="기간을 선택하세요"
+                                    type="text"
+                                  />
+                                </span>
+                              </div>
+                            </dd>
+                          </dl>
+                        </li>
+                        <li>
+                          <dl>
+                            <dt>검색어</dt>
+                            <dd>
+                              <div class="text-wrap has-button">
+                                <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
+                                <button class="btn-has-icon rounded search orange" type="submit"><em>검색하기</em></button>
+                                <button class="btn-has-icon rounded refresh burgundy" type="submit"><em>새로고침</em></button>
+                              </div>
+                            </dd>
+                          </dl>
+                        </li>
+                      </ul>
                     </fieldset>
                   </form>
                 </div>
