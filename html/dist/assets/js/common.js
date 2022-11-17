@@ -480,7 +480,7 @@ function commonFunction() {
             success: function (result) {
               $(el).html(result);
               $(el).find('.preview-wrap').css('display', 'block');
-              $(el).find('video').first().trigger('click');
+              // $(el).find('video').first().trigger('click');
             },
           });
         };
@@ -505,34 +505,34 @@ function commonFunction() {
           clearTimeout(gb.videoPreviewAjax);
         });
       },
-      curPreviewOn = function () {
-        // 큐레이션 상세 영상 미리보기
-        $.ajax({
-          url: '../video/curation_preview.html',
-          type: 'get',
-          dataType: 'html',
-          success: function (result) {
-            $('.cur-pv-cts').html(result);
-            $('.cur-pv').stop().fadeIn(300);
-            $('.cur-pv').find('video').first().trigger('click');
-            gb.body.append('<div class="dimmed fixed" onclick="commonFunction().curPreviewOff();"></div>');
-            gb.body.css({
-              height: '100vh',
-              'overflow-y': 'hidden',
-            });
-          },
-        });
-      },
-      curPreviewOff = function () {
-        // 큐레이션 상세 영상 미리보기 닫기
-        $('.cur-pv').css('display', 'none');
-        $('.cur-pv-cts').html('');
-        $('.dimmed').remove();
-        gb.body.css({
-          height: 'auto',
-          'overflow-y': 'visible',
-        });
-      },
+      // curPreviewOn = function () {
+      //   // 큐레이션 상세 영상 미리보기
+      //   $.ajax({
+      //     url: '../video/curation_preview.html',
+      //     type: 'get',
+      //     dataType: 'html',
+      //     success: function (result) {
+      //       $('.cur-pv-cts').html(result);
+      //       $('.cur-pv').stop().fadeIn(300);
+      //       $('.cur-pv').find('video').first().trigger('click');
+      //       gb.body.append('<div class="dimmed fixed" onclick="commonFunction().curPreviewOff();"></div>');
+      //       gb.body.css({
+      //         height: '100vh',
+      //         'overflow-y': 'hidden',
+      //       });
+      //     },
+      //   });
+      // },
+      // curPreviewOff = function () {
+      //   // 큐레이션 상세 영상 미리보기 닫기
+      //   $('.cur-pv').css('display', 'none');
+      //   $('.cur-pv-cts').html('');
+      //   $('.dimmed').remove();
+      //   gb.body.css({
+      //     height: 'auto',
+      //     'overflow-y': 'visible',
+      //   });
+      // },
       FilterSwiper = function () {
         // 서울오리지널 필터 스와이퍼
         if (typeof gb.filterSwiper !== 'undefined') {
@@ -1011,8 +1011,8 @@ function commonFunction() {
       LiveOnSwiper: LiveOnSwiper,
       TabSwiper: TabSwiper,
       PreviewOn: PreviewOn,
-      curPreviewOn: curPreviewOn,
-      curPreviewOff: curPreviewOff,
+      // curPreviewOn: curPreviewOn,
+      // curPreviewOff: curPreviewOff,
       FilterSwiper: FilterSwiper,
       KeywordSwiper: KeywordSwiper,
       CurationSwiper: CurationSwiper,
