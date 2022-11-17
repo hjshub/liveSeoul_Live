@@ -868,7 +868,7 @@
                       </li>
                       <li>
                         <a href="#">
-                          <em>방영프로그램</em>
+                          <em>프로그램</em>
                         </a>
                       </li>
                       <li>
@@ -883,12 +883,12 @@
                       </li>
                       <li>
                         <a href="#">
-                          <em>자치구방송국</em>
+                          <em>분야별 영상</em>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <em>종영프로그램</em>
+                          <em>자치구방송국</em>
                         </a>
                       </li>
                       <li>
@@ -984,7 +984,7 @@
                       <a href="#"><em>홍보영상</em></a>
                     </li>
                     <li>
-                      <a href="#"><em>방영프로그램</em></a>
+                      <a href="#"><em>프로그램</em></a>
                     </li>
                     <li>
                       <a href="#"><em>영상크리에이터</em></a>
@@ -993,10 +993,10 @@
                       <a href="#"><em>소통방통</em></a>
                     </li>
                     <li>
-                      <a href="#"><em>자치구방송국</em></a>
+                      <a href="#"><em>분야별 영상</em></a>
                     </li>
                     <li>
-                      <a href="#"><em>종영프로그램</em></a>
+                      <a href="#"><em>자치구방송국</em></a>
                     </li>
                     <li>
                       <a href="#"><em>마을미디어</em></a>
@@ -1158,7 +1158,8 @@
                 </div>
               </div>
               <div class="contents-header">
-                <div class="filter-type-01">
+                <!-- 프로그램 일반 -->
+                <div class="list-filter-wrap default">
                   <div class="list-filter-swiper">
                     <ul class="swiper-wrapper">
                       <li class="swiper-slide">
@@ -1216,9 +1217,68 @@
                     <button class="button-swiper-nxt"><em class="hidden-txt">다음</em></button>
                   </div>
                 </div>
-                <div class="filter-type-02"></div>
-              </div>
-              <div class="contents-body">
+
+                <!-- 분야별 영상 
+                <div class="list-filter-wrap topic">
+                  <div class="list-filter-swiper">
+                    <ul class="swiper-wrapper">
+                      <li class="swiper-slide">
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chkAll" checked="" id="chk_all" />
+                            <label for="chk_all"><em>전체</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_list" id="chk_1" />
+                            <label for="chk_1"><em>문화관광</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_list" id="chk_2" />
+                            <label for="chk_2"><em>축제공연</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_list" id="chk_3" />
+                            <label for="chk_3"><em>경제&middot;일자리</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_list" id="chk_4" />
+                            <label for="chk_4"><em>복지&middot;여성&middot;가족</em></label>
+                          </span>
+                        </div>
+                      </li>
+                      <li class="swiper-slide">
+                        <div class="chk-wrap-type02">
+                          <span>
+                            <input type="checkbox" name="chk_list" id="chk_5" />
+                            <label for="chk_5"><em>주택&middot;건설</em></label>
+                          </span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="swiper-controller">
+                    <button class="button-swiper-prev"><em class="hidden-txt">이전</em></button>
+                    <button class="button-swiper-nxt"><em class="hidden-txt">다음</em></button>
+                  </div>
+                </div>
+                -->
+
                 <!-- 검색 -->
                 <div class="date-search-area type-02">
                   <form>
@@ -1228,8 +1288,8 @@
                           <dl>
                             <dt>기간선택</dt>
                             <dd>
-                              <div class="datePick-bt">
-                                <button type="button"><em>오늘</em></button>
+                              <div class="datePick-bt yellow">
+                                <button type="button" class="on"><em>오늘</em></button>
                                 <button type="button"><em>최근 일주일</em></button>
                                 <button type="button"><em>최근한달</em></button>
                               </div>
@@ -1271,6 +1331,46 @@
                   </form>
                 </div>
 
+                <div class="keyword-search-area">
+                  <dl>
+                    <dt><strong>추천 키워드</strong></dt>
+                    <dd>
+                      <div class="keyword-swiper2">
+                        <ul class="swiper-wrapper">
+                          <li class="swiper-slide">
+                            <span>서울</span>
+                          </li>
+                          <li class="swiper-slide">
+                            <span>서울시</span>
+                          </li>
+                          <li class="swiper-slide">
+                            <span>라이브서울</span>
+                          </li>
+                          <li class="swiper-slide">
+                            <span>브리핑</span>
+                          </li>
+                          <li class="swiper-slide">
+                            <span>가족</span>
+                          </li>
+                          <li class="swiper-slide">
+                            <span>1인가구정책</span>
+                          </li>
+                          <li class="swiper-slide">
+                            <span>코로나19</span>
+                          </li>
+                          <li class="swiper-slide">
+                            <span>특집</span>
+                          </li>
+                          <li class="swiper-slide">
+                            <span>행사</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              <div class="contents-body">
                 <!-- 영상 목록 -->
                 <section>
                   <div class="list-header clear">

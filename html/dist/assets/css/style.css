@@ -1616,7 +1616,7 @@ button[class*=btn-] em {
 
 /*calendar custom*/
 .ui-datepicker {
-	min-width: 232px;
+	min-width: 230px;
 }
 
 #ui-datepicker-div {
@@ -1624,7 +1624,7 @@ button[class*=btn-] em {
 }
 
 .ui-widget.ui-widget-content {
-	border-color: #660d98;
+	border-color: #121735;
 }
 
 .ui-corner-all,
@@ -1657,7 +1657,7 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .ui-datepicker table tbody {
-	border-top: 1px solid #660d98;
+	border-top: 1px solid #121735;
 }
 
 .ui-datepicker td {
@@ -1685,15 +1685,15 @@ html .ui-button.ui-state-disabled:active {
 
 .ui-widget-header {
 	background-image: none;
-	background-color: #660d98;
-	border-color: #660d98;
+	background-color: #121735;
+	border-color: #121735;
 	color: #fff;
 }
 
 .ui-widget-content {
 	background-image: none;
 	background-color: #fff;
-	color: #660d98;
+	color: #121735;
 }
 
 .ui-state-default,
@@ -1702,18 +1702,18 @@ html .ui-button.ui-state-disabled:active {
 .ui-button,
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
-	border-color: #660d98;
+	border-color: #121735;
 	background-image: none;
 	background-color: #fff;
-	color: #660d98;
+	color: #121735;
 }
 
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-	border-color: #911bbd;
+	border-color: #111734;
 	background-image: none;
-	background-color: #911bbd;
+	background-color: #111734;
 	color: #fff;
 }
 
@@ -1724,7 +1724,7 @@ a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
 	background-image: none;
-	background-color: #660d98;
+	background-color: #121735;
 	color: #fff;
 }
 
@@ -1748,8 +1748,8 @@ a.ui-button:active,
 .ui-button:hover,
 .ui-button:focus {
 	background-image: none;
-	background-color: #660d98;
-	border-color: #660d98;
+	background-color: #121735;
+	border-color: #121735;
 	color: #fff;
 }
 
@@ -1792,9 +1792,9 @@ a.ui-button:active,
 }
 .dimmed.side {
 	top: 50px;
-	height: -webkit-calc(100vh - 197px);
-	height: -moz-calc(100vh - 197px);
-	height: calc(100vh - 197px);
+	height: -webkit-calc(100vh - 187px);
+	height: -moz-calc(100vh - 187px);
+	height: calc(100vh - 187px);
 	background: rgba(0, 0, 0, 0.8);
 }
 .dimmed.fixed {
@@ -3878,7 +3878,19 @@ footer .inner .button-scroll-top::before {
 	background-repeat: no-repeat;
 	content: "";
 }
+@media only screen and (max-width: 1400px) {
+	footer .inner .button-scroll-top {
+		right: 0;
+		top: 20px;
+		bottom: auto;
+	}
+}
 @media only screen and (max-width: 1280px) {
+	footer .inner .button-scroll-top {
+		right: 30px;
+	}
+}
+@media only screen and (max-width: 961px) {
 	footer .inner .button-scroll-top {
 		display: none;
 	}
@@ -5727,11 +5739,6 @@ main .no-files p * {
 	overflow: visible;
 	padding: 10px 0;
 }
-@media only screen and (max-width: 1024px) {
-	.wrap .contents-header .swiper-controller {
-		display: none;
-	}
-}
 @media only screen and (max-width: 1200px) {
 	.wrap {
 		padding-top: 97px;
@@ -6232,7 +6239,6 @@ main .no-files p * {
 	}
 }
 .wrap .vd-list ul li .vd-preview .preview-wrap {
-	display: none;
 	padding: 30px 20px;
 	background-color: #fff;
 	overflow: hidden;
@@ -6519,7 +6525,6 @@ main .no-files p * {
 	}
 }
 [class*=vd-swiper] .swiper-slide .vd-preview .preview-wrap {
-	display: none;
 	padding: 30px 20px;
 	background-color: #fff;
 	overflow: hidden;
@@ -7036,12 +7041,14 @@ list filter swiper
 keyword swiper
 */
 .list-filter-swiper,
-.keyword-swiper {
+.keyword-swiper,
+.keyword-swiper2 {
 	position: relative;
 	overflow: hidden;
 }
 .list-filter-swiper .swiper-slide,
-.keyword-swiper .swiper-slide {
+.keyword-swiper .swiper-slide,
+.keyword-swiper2 .swiper-slide {
 	width: auto !important;
 }
 
@@ -7698,6 +7705,11 @@ keyword swiper
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	content: "";
+}
+@media only screen and (max-width: 768px) {
+	.wrap .list-header .sort {
+		margin-top: 0;
+	}
 }
 .wrap .search-area {
 	margin-bottom: 40px;
@@ -8579,16 +8591,16 @@ keyword swiper
 	background-position: -184px -3px;
 }
 .wrap.program .list-view .sideMenu .cate-wrap > div.subCate ul li:nth-of-type(7) a em::before {
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	background-position: -211px -3px;
+}
+.wrap.program .list-view .sideMenu .cate-wrap > div.subCate ul li:nth-of-type(8) a em::before {
 	width: 23px;
 	height: 18px;
 	margin-top: -9px;
 	background-position: -135px -4px;
-}
-.wrap.program .list-view .sideMenu .cate-wrap > div.subCate ul li:nth-of-type(8) a em::before {
-	width: 22px;
-	height: 18px;
-	margin-top: -9px;
-	background-position: -56px -3px;
 }
 .wrap.program .list-view .sideMenu .cate-wrap > div.subCate ul li:nth-of-type(9) a em::before {
 	width: 20px;
@@ -8809,24 +8821,60 @@ keyword swiper
 .wrap.program .list-view .contents .contents-header {
 	margin-top: 55px;
 	margin-left: 50px;
-	padding: 20px;
-	background-color: #f9f9f9;
+}
+@media only screen and (max-width: 1680px) {
+	.wrap.program .list-view .contents .contents-header {
+		margin-left: 30px;
+	}
 }
 @media only screen and (max-width: 768px) {
 	.wrap.program .list-view .contents .contents-header {
-		padding-left: 0;
-		padding-top: 0;
+		margin-left: 0;
+		margin-top: 0;
 	}
 }
-.wrap.program .list-view .contents .contents-header > div {
-	padding-right: 90px;
+.wrap.program .list-view .contents .contents-header .list-filter-wrap {
+	padding: 20px 120px 20px 20px;
 	position: relative;
+	background-color: #f9f9f9;
 }
-.wrap.program .list-view .contents .contents-header > div .swiper-controller {
-	bottom: 0;
+@media only screen and (max-width: 1024px) {
+	.wrap.program .list-view .contents .contents-header .list-filter-wrap {
+		padding-right: 20px;
+	}
 }
-.wrap.program .list-view .contents .contents-header > div .swiper-controller .button-swiper-nxt,
-.wrap.program .list-view .contents .contents-header > div .swiper-controller .button-swiper-prev {
+@media only screen and (max-width: 768px) {
+	.wrap.program .list-view .contents .contents-header .list-filter-wrap {
+		width: -webkit-calc(100% + 60px);
+		width: -moz-calc(100% + 60px);
+		width: calc(100% + 60px);
+		padding-right: 25px;
+		padding-left: 25px;
+		position: relative;
+		left: -30px;
+	}
+}
+@media only screen and (max-width: 561px) {
+	.wrap.program .list-view .contents .contents-header .list-filter-wrap {
+		width: -webkit-calc(100% + 30px);
+		width: -moz-calc(100% + 30px);
+		width: calc(100% + 30px);
+		padding-right: 10px;
+		padding-left: 10px;
+		left: -15px;
+	}
+}
+.wrap.program .list-view .contents .contents-header .list-filter-wrap .swiper-controller {
+	bottom: 20px;
+	right: 20px;
+}
+@media only screen and (max-width: 1024px) {
+	.wrap.program .list-view .contents .contents-header .list-filter-wrap .swiper-controller {
+		display: none;
+	}
+}
+.wrap.program .list-view .contents .contents-header .list-filter-wrap .swiper-controller .button-swiper-nxt,
+.wrap.program .list-view .contents .contents-header .list-filter-wrap .swiper-controller .button-swiper-prev {
 	background-color: #fff;
 	border: 1px solid #ccc;
 	width: 40px;
@@ -8834,22 +8882,111 @@ keyword swiper
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-.wrap.program .list-view .contents .contents-header > div .swiper-controller .button-swiper-nxt::before,
-.wrap.program .list-view .contents .contents-header > div .swiper-controller .button-swiper-prev::before {
+.wrap.program .list-view .contents .contents-header .list-filter-wrap .swiper-controller .button-swiper-nxt::before,
+.wrap.program .list-view .contents .contents-header .list-filter-wrap .swiper-controller .button-swiper-prev::before {
 	width: 10px;
 	height: 18px;
 	background-size: 100% auto;
 	margin: -9px 0 0 -5px;
 }
-.wrap.program .list-view .contents .contents-header > div .swiper-controller .button-swiper-nxt {
+.wrap.program .list-view .contents .contents-header .list-filter-wrap .swiper-controller .button-swiper-nxt {
 	margin-left: 10px;
+}
+.wrap.program .list-view .contents .contents-header .date-search-area {
+	margin-top: 30px;
+}
+@media only screen and (max-width: 880px) {
+	.wrap.program .list-view .contents .contents-header .date-search-area ul {
+		border: none;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+}
+.wrap.program .list-view .contents .contents-header .date-search-area ul li dl dt {
+	width: 120px;
+}
+.wrap.program .list-view .contents .contents-header .date-search-area ul li dl dd {
+	padding: 10px 15px;
+}
+@media only screen and (max-width: 880px) {
+	.wrap.program .list-view .contents .contents-header .date-search-area ul li dl dd {
+		padding: 0;
+	}
+}
+.wrap.program .list-view .contents .contents-header .date-search-area ul li dl dd .datePick-bt {
+	width: auto;
+}
+.wrap.program .list-view .contents .contents-header .date-search-area ul li dl dd .both {
+	float: right;
+	width: -webkit-calc(100% - 350px);
+	width: -moz-calc(100% - 350px);
+	width: calc(100% - 350px);
+}
+@media only screen and (max-width: 1280px) {
+	.wrap.program .list-view .contents .contents-header .date-search-area ul li dl dd .both {
+		width: 100%;
+		margin-top: 15px;
+	}
+}
+.wrap.program .list-view .contents .contents-header .keyword-search-area {
+	margin-top: 20px;
+}
+.wrap.program .list-view .contents .contents-header .keyword-search-area dl {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+@media only screen and (max-width: 880px) {
+	.wrap.program .list-view .contents .contents-header .keyword-search-area dl {
+		display: inline-block;
+		font-size: 0;
+	}
+}
+.wrap.program .list-view .contents .contents-header .keyword-search-area dl dt,
+.wrap.program .list-view .contents .contents-header .keyword-search-area dl dd {
+	display: table-cell;
+}
+@media only screen and (max-width: 880px) {
+	.wrap.program .list-view .contents .contents-header .keyword-search-area dl dt,
+.wrap.program .list-view .contents .contents-header .keyword-search-area dl dd {
+		width: 100%;
+		display: inline-block;
+	}
+}
+.wrap.program .list-view .contents .contents-header .keyword-search-area dl dt {
+	width: 90px;
+	color: #cb2121;
+	font-size: 1.4rem;
+}
+@media only screen and (max-width: 880px) {
+	.wrap.program .list-view .contents .contents-header .keyword-search-area dl dt {
+		width: 100%;
+		font-size: 2rem;
+	}
+}
+.wrap.program .list-view .contents .contents-header .keyword-search-area dl dd {
+	margin-left: -15px;
+}
+@media only screen and (max-width: 880px) {
+	.wrap.program .list-view .contents .contents-header .keyword-search-area dl dd {
+		margin-top: 20px;
+		margin-left: 0;
+	}
+}
+.wrap.program .list-view .contents .contents-header .keyword-search-area dl dd .swiper-slide span {
+	font-size: 1.7rem;
+	color: #000;
+	margin: 0 15px;
+}
+.wrap.program .list-view .contents .contents-header .keyword-search-area dl dd .swiper-slide span::before {
+	content: "#";
 }
 .wrap.program .list-view .contents .contents-body {
 	padding: 0 0 0 50px;
 	margin-top: 30px;
 	margin-bottom: 140px;
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1680px) {
 	.wrap.program .list-view .contents .contents-body {
 		padding: 0 0 0 30px;
 	}
@@ -8918,9 +9055,9 @@ keyword swiper
 	color: #222;
 	background-color: #f2f2f2;
 	z-index: 20;
-	max-height: -webkit-calc(100vh - 197px);
-	max-height: -moz-calc(100vh - 197px);
-	max-height: calc(100vh - 197px);
+	max-height: -webkit-calc(100vh - 187px);
+	max-height: -moz-calc(100vh - 187px);
+	max-height: calc(100vh - 187px);
 	padding-bottom: 60px;
 	overflow: hidden;
 	overflow-y: auto;
@@ -9069,16 +9206,16 @@ keyword swiper
 	background-position: -184px -3px;
 }
 .wrap.program .mob-sideMenu > div.subCate ul li:nth-of-type(7) a em::before {
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	background-position: -211px -3px;
+}
+.wrap.program .mob-sideMenu > div.subCate ul li:nth-of-type(8) a em::before {
 	width: 23px;
 	height: 18px;
 	margin-top: -9px;
 	background-position: -135px -4px;
-}
-.wrap.program .mob-sideMenu > div.subCate ul li:nth-of-type(8) a em::before {
-	width: 22px;
-	height: 18px;
-	margin-top: -9px;
-	background-position: -56px -3px;
 }
 .wrap.program .mob-sideMenu > div.subCate ul li:nth-of-type(9) a em::before {
 	width: 20px;
@@ -12075,7 +12212,6 @@ keyword swiper
 	}
 }
 .box-style-list ul li .vd-preview .preview-wrap {
-	display: none;
 	padding: 30px 20px;
 	background-color: #fff;
 	overflow: hidden;
@@ -12225,7 +12361,7 @@ keyword swiper
 }
 @media only screen and (max-width: 880px) {
 	.date-search-area ul li + li {
-		margin-top: 40px;
+		margin-top: 35px;
 	}
 }
 @media only screen and (max-width: 640px) {
@@ -12272,7 +12408,7 @@ keyword swiper
 	.date-search-area ul li dl dt {
 		display: block;
 		width: auto;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 		text-indent: 0;
 		font-weight: 700;
 		color: #222;
@@ -12480,6 +12616,16 @@ keyword swiper
 .date-search-area.type-02 ul li dl dd .datePick-bt button.on, .date-search-area.type-02 ul li dl dd .datePick-bt button:hover, .date-search-area.type-02 ul li dl dd .datePick-bt button:active, .date-search-area.type-02 ul li dl dd .datePick-bt button:focus {
 	color: #fff;
 	background: #cb2121;
+}
+@media only screen and (max-width: 880px) {
+	.date-search-area.type-02 ul li dl dd .datePick-bt.yellow button {
+		color: #999;
+		background: #f9f9f9;
+	}
+}
+.date-search-area.type-02 ul li dl dd .datePick-bt.yellow button.on, .date-search-area.type-02 ul li dl dd .datePick-bt.yellow button:hover, .date-search-area.type-02 ul li dl dd .datePick-bt.yellow button:active, .date-search-area.type-02 ul li dl dd .datePick-bt.yellow button:focus {
+	color: #fff;
+	background: #f4b836;
 }
 .date-search-area.type-02 ul li dl dd ul {
 	border: none;

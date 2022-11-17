@@ -44,6 +44,7 @@ window.addEventListener('load', function () {
   if (gb.tabSwiper.length) commonFunction().TabSwiper();
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
   if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
+  if ($('.keyword-swiper2').length) commonFunction().KeywordSwiper2();
   if ($('.curation-swiper').length) commonFunction().CurationSwiper();
   if ($('.sort-inner').length) commonFunction().setCurList();
   if ($('.previewOn').length) commonFunction().PreviewOn();
@@ -479,7 +480,6 @@ function commonFunction() {
             dataType: 'html',
             success: function (result) {
               $(el).html(result);
-              $(el).find('.preview-wrap').css('display', 'block');
               // $(el).find('video').first().trigger('click');
             },
           });
@@ -505,34 +505,6 @@ function commonFunction() {
           clearTimeout(gb.videoPreviewAjax);
         });
       },
-      // curPreviewOn = function () {
-      //   // 큐레이션 상세 영상 미리보기
-      //   $.ajax({
-      //     url: '../video/curation_preview.html',
-      //     type: 'get',
-      //     dataType: 'html',
-      //     success: function (result) {
-      //       $('.cur-pv-cts').html(result);
-      //       $('.cur-pv').stop().fadeIn(300);
-      //       $('.cur-pv').find('video').first().trigger('click');
-      //       gb.body.append('<div class="dimmed fixed" onclick="commonFunction().curPreviewOff();"></div>');
-      //       gb.body.css({
-      //         height: '100vh',
-      //         'overflow-y': 'hidden',
-      //       });
-      //     },
-      //   });
-      // },
-      // curPreviewOff = function () {
-      //   // 큐레이션 상세 영상 미리보기 닫기
-      //   $('.cur-pv').css('display', 'none');
-      //   $('.cur-pv-cts').html('');
-      //   $('.dimmed').remove();
-      //   gb.body.css({
-      //     height: 'auto',
-      //     'overflow-y': 'visible',
-      //   });
-      // },
       FilterSwiper = function () {
         // 서울오리지널 필터 스와이퍼
         if (typeof gb.filterSwiper !== 'undefined') {
@@ -558,9 +530,9 @@ function commonFunction() {
         gb.filterSwiper = new Swiper('.list-filter-swiper', gb.filterSwiperOption);
 
         $('.list-filter-swiper')
-          .find('input[type=radio]')
+          .find('input')
           .on('change', function () {
-            var index = $('.list-filter-swiper').find('input[type=radio]').index(this);
+            var index = $('.list-filter-swiper').find('input').index(this);
 
             if ($(this).prop('checked')) {
               gb.filterSwiper.slideTo(index);
@@ -600,6 +572,30 @@ function commonFunction() {
               gb.keywordSwiper.slideTo(index);
             }
           });
+      },
+      KeywordSwiper2 = function () {
+        // 공통 목록 추천키워드 스와이퍼
+        if (typeof gb.keywordSwiper2 !== 'undefined') {
+          gb.keywordSwiper2.destroy();
+          gb.keywordSwiper2 = undefined;
+        }
+
+        gb.keywordSwiperOption_ = {
+          // Optional parameters
+          loop: false,
+          speed: 600,
+          direction: 'horizontal',
+          slidesPerView: 'auto',
+          spaceBetween: 0,
+          centeredSlides: false,
+          debugger: true, // Enable debugger,
+          navigation: {
+            nextEl: '.button-swiper-nxt',
+            prevEl: '.button-swiper-prev',
+          },
+        };
+
+        gb.keywordSwiper = new Swiper('.keyword-swiper2', gb.keywordSwiperOption_);
       },
       CurationSwiper = function () {
         // 큐레이션 스와이퍼
@@ -935,29 +931,6 @@ function commonFunction() {
           });
         });
       },
-      filterMoreView = function () {
-        // 주제별 영상 목록 필터 더보기
-        $('.button-more-list').each(function () {
-          var trg = $(this),
-            filterWrap = trg.siblings('.list-filter .filter-wrap'),
-            listWrap = filterWrap.find('ul'),
-            filterWrapHT = filterWrap.height();
-
-          trg.on('click', function () {
-            var listWrapHT = listWrap.height();
-
-            if (trg.hasClass('more')) {
-              filterWrap.css('height', filterWrapHT + 'px');
-              trg.removeClass('more');
-              trg.find('em').text('더 보기');
-            } else {
-              filterWrap.css('height', listWrapHT + 'px');
-              trg.addClass('more');
-              trg.find('em').text('접기');
-            }
-          });
-        });
-      },
       setCurList = function () {
         $('.sort-inner').sortable({
           placeholder: 'ui-shift',
@@ -999,7 +972,6 @@ function commonFunction() {
         allCheck();
         datePick();
         modal();
-        //filterMoreView();
         vdMiniPlayerOff();
         //blockContextMenu();
       };
@@ -1011,10 +983,9 @@ function commonFunction() {
       LiveOnSwiper: LiveOnSwiper,
       TabSwiper: TabSwiper,
       PreviewOn: PreviewOn,
-      // curPreviewOn: curPreviewOn,
-      // curPreviewOff: curPreviewOff,
       FilterSwiper: FilterSwiper,
       KeywordSwiper: KeywordSwiper,
+      KeywordSwiper2: KeywordSwiper2,
       CurationSwiper: CurationSwiper,
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
