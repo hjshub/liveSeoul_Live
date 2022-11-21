@@ -831,16 +831,13 @@
       <!-- // #gnb -->
 
       <!-- #contents -->
-      <div class="wrap curation" id="contents">
+      <div class="wrap curation pdb-none" id="contents">
         <h1 class="hidden-txt">큐레이션 상세</h1>
         <section class="detail-view">
           <header class="page-header">
             <div class="inner">
               <h2 class="no_st">
-                <strong class="txt-ellipsis">
-                  서울 나들이 영상 모음 서울 나들이 영상 모음 서울 나들이 영상 모음 서울 나들이 영상 모음 서울 나들이 영상 모음
-                  서울 나들이 영상 모음 서울 나들이 영상 모음
-                </strong>
+                <strong class="txt-ellipsis">서울 나들이 영상 모음</strong>
               </h2>
               <div class="btn-wrap inline">
                 <button class="btn-has-icon rounded sm like white active" type="submit">
@@ -868,7 +865,9 @@
                         <div class="modal-contents">
                           <ul class="sns-list">
                             <li>
-                              <a class="share-facebook" href="javascript:void(0);"><em class="hidden-txt">페이스북 공유하기</em></a>
+                              <a class="share-facebook" href="javascript:void(0);"
+                                ><em class="hidden-txt">페이스북 공유하기</em></a
+                              >
                             </li>
                             <li>
                               <a class="share-twitter" href="javascript:void(0);"><em class="hidden-txt">트위터 공유하기</em></a>
@@ -893,13 +892,12 @@
                       </div>
                     </div>
                   </div>
+                </div>
               </div>
               <div class="location">
-                <span
-                  ><a href=""
-                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
-                  ></span
-                >
+                <span>
+                  <a href=""> <img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a>
+                </span>
                 <span><a href="">#서울</a></span>
                 <span><a href="">큐레이션</a></span>
                 <span><a href="">상세</a></span>
@@ -907,660 +905,511 @@
             </div>
           </header>
           <div class="page-body inner">
-            <div class="curation-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <article>
-                    <div class="vd-container">
-                      <!-- tgplayer 영상영역 -->
-                      <div class="currentVd" id="currentVd_01"></div>
+            <article>
+              <h3 class="hidden-txt">영상 상세</h3>
+              <div class="cur-vd-container">
+                <!-- tgplayer 영상영역 -->
+                <div id="currentVd"></div>
 
-                      <!-- youtube 영상영역
-                      <div class="ytp-wrap">
-                        <iframe
-                          src="https://www.youtube.com/embed/XsXV6XBV_qQ"
-                          title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                       -->
-                    </div>
-                    <div class="vd-info animate fadeInLeft animate-delay-02">
-                      <h3 class="heading-wrap-03">
-                        <b class="author">훈타민 1</b><br />
-                        <strong class="title txt-line-clamp3">
-                          도심에서 식물 힐링하기, 멀리가지 말고 서울에서 다양한 테마 정원 산책하고 힐링 도심에서 식물 힐링하기,
-                          멀리가지 말고 서울에서 다양한 테마 정원 산책하고 힐링 </strong
-                        ><br />
-                        <span class="etc-info">
-                          <b class="date">2020-12-23</b>
-                          <b class="name">등록자 : 홍길동</b>
-                        </span>
-                      </h3>
-                      <div class="desc customedScroll red">
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.<br />
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.
-                      </div>
-                      <div class="hash-list txt-line-clamp2">
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article>
-                    <div class="vd-container">
-                      <!-- tgplayer 영상영역 -->
-                      <div class="currentVd" id="currentVd_02"></div>
-
-                      <!-- youtube 영상영역
-                      <div class="ytp-wrap">
-                        <iframe
-                          src="https://www.youtube.com/embed/XsXV6XBV_qQ"
-                          title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                      -->
-                    </div>
-                    <div class="vd-info animate fadeInLeft animate-delay-02">
-                      <h3 class="heading-wrap-03">
-                        <b class="author">훈타민 2</b><br />
-                        <strong class="title txt-line-clamp3">
-                          도심에서 식물 힐링하기, 멀리가지 말고 서울에서 다양한 테마 정원 산책하고 힐링 </strong
-                        ><br />
-                        <span class="etc-info">
-                          <b class="date">2020-12-23</b>
-                          <b class="name">등록자 : 홍길동</b>
-                        </span>
-                      </h3>
-                      <div class="desc customedScroll red">
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.<br />
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.
-                      </div>
-                      <div class="hash-list txt-line-clamp2">
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article>
-                    <div class="vd-container">
-                      <!-- tgplayer 영상영역 -->
-                      <div class="currentVd" id="currentVd_03"></div>
-
-                      <!-- youtube 영상영역
-                      <div class="ytp-wrap">
-                        <iframe
-                          src="https://www.youtube.com/embed/XsXV6XBV_qQ"
-                          title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                      -->
-                    </div>
-                    <div class="vd-info animate fadeInLeft animate-delay-02">
-                      <h3 class="heading-wrap-03">
-                        <b class="author">훈타민 3</b><br />
-                        <strong class="title txt-line-clamp3">
-                          도심에서 식물 힐링하기, 멀리가지 말고 서울에서 다양한 테마 정원 산책하고 힐링 </strong
-                        ><br />
-                        <span class="etc-info">
-                          <b class="date">2020-12-23</b>
-                          <b class="name">등록자 : 홍길동</b>
-                        </span>
-                      </h3>
-                      <div class="desc customedScroll red">
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.<br />
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.
-                      </div>
-                      <div class="hash-list txt-line-clamp2">
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article>
-                    <div class="vd-container">
-                      <!-- tgplayer 영상영역 -->
-                      <div class="currentVd" id="currentVd_04"></div>
-
-                      <!-- youtube 영상영역
-                      <div class="ytp-wrap">
-                        <iframe
-                          src="https://www.youtube.com/embed/XsXV6XBV_qQ"
-                          title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                      -->
-                    </div>
-                    <div class="vd-info animate fadeInLeft animate-delay-02">
-                      <h3 class="heading-wrap-03">
-                        <b class="author">훈타민 4</b><br />
-                        <strong class="title txt-line-clamp3">
-                          도심에서 식물 힐링하기, 멀리가지 말고 서울에서 다양한 테마 정원 산책하고 힐링 </strong
-                        ><br />
-                        <span class="etc-info">
-                          <b class="date">2020-12-23</b>
-                          <b class="name">등록자 : 홍길동</b>
-                        </span>
-                      </h3>
-                      <div class="desc customedScroll red">
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.<br />
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.
-                      </div>
-                      <div class="hash-list txt-line-clamp2">
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="swiper-slide">
-                  <article>
-                    <div class="vd-container">
-                      <!-- tgplayer 영상영역 -->
-                      <div class="currentVd" id="currentVd_05"></div>
-
-                      <!-- youtube 영상영역
-                      <div class="ytp-wrap">
-                        <iframe
-                          src="https://www.youtube.com/embed/XsXV6XBV_qQ"
-                          title="2022 서울도시농업국제컨퍼런스 : 녹색치유, 힐링도시농업"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                      -->
-                    </div>
-                    <div class="vd-info animate fadeInLeft animate-delay-02">
-                      <h3 class="heading-wrap-03">
-                        <b class="author">훈타민 5</b><br />
-                        <strong class="title txt-line-clamp3">
-                          도심에서 식물 힐링하기, 멀리가지 말고 서울에서 다양한 테마 정원 산책하고 힐링 </strong
-                        ><br />
-                        <span class="etc-info">
-                          <b class="date">2020-12-23</b>
-                          <b class="name">등록자 : 홍길동</b>
-                        </span>
-                      </h3>
-                      <div class="desc customedScroll red">
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.<br />
-                        초록초록한 식물 가득한 서울 식물원<br />
-                        도심에서 식물로 힐링하기<br />
-                        다양한 국가, 테마 정원으로 꾸며져 볼거리 가득!<br />
-                        3시간 꽉꽉 채워 즐기다 가세요.
-                      </div>
-                      <div class="hash-list txt-line-clamp2">
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                        <span>서울시</span>
-                        <span>아이서울유</span>
-                        <span>서울영상크리에이터</span>
-                        <span>서울식물원</span>
-                      </div>
-                    </div>
-                  </article>
+                <!-- youtube 영상영역 -->
+                <!-- <div class="ytp-container">
+                  <div class="ytp-wrap">
+                    <div id="player"></div>
+                  </div>
+                </div> -->
+              </div>
+              <div class="vd-info">
+                <div class="contents">
+                  <h4 class="contents-header">
+                    <strong class="title">서울시장 출근 환영행사 | 2022년 06월 02일(목) 오전 8시50분</strong><br />
+                    <span class="etc"><em>2022-06-02</em><em>서울시청 1층</em></span>
+                  </h4>
+                  <div class="contents-body">
+                    <p>일시 : 2022년 06월 02일(목) 오전 8시50분 / 장소 : 서울시청 1층 #서울시청 #서울시장 #출근환영행사</p>
+                    <p>&nbsp;</p>
+                    <p>라이브서울_ http://tv.seoul.go.kr</p>
+                    <p>서울시 팟캐스트_http://www.podbbang.com/ch/13364</p>
+                    <p>페이스북_ https://facebook.com/seoul.kr</p>
+                  </div>
                 </div>
               </div>
-              <div class="swiper-pagination transition-none"></div>
-            </div>
+              <aside id="reCommendList">
+                <button type="button" class="button-open-reCommendList">
+                  <em
+                    >추천<br />
+                    목록</em
+                  >
+                </button>
+                <h4>박*정님의 추천목록</h4>
+                <button type="button" onclick="closeRecommendList();" class="button-close-reCommendList">
+                  <em class="hidden-txt">추천 목록 닫기</em>
+                </button>
+                <div class="customedScroll pink">
+                  <ul>
+                    <li>
+                      <a href="javascript:void(0);" class="active" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-01.jpg" alt="추천영상 썸네일 01" />
+                        </div>
+                        <div>
+                          <b>아픈 역사를 기억하는 공간이자 신의 쉼터, 남산 예장공원</b><br />
+                          <em>2021.12.28</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-1" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-1" checked />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-02.jpg" alt="추천영상 썸네일 02" />
+                        </div>
+                        <div>
+                          <b>가을 품은 창경궁 ㅣ서울영상크리에이터</b><br />
+                          <em>2022.01.10</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-2" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-2" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-03.jpg" alt="추천영상 썸네일 03" />
+                        </div>
+                        <div>
+                          <b>서울미래유산을 곁들인 서울 뚜벅이 투어</b><br />
+                          <em>2022.01.10</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-3" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-3" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-04.jpg" alt="추천영상 썸네일 04" />
+                        </div>
+                        <div>
+                          <b>공예의 과거부터 미래까지 연결짓다! 서울공예박물관</b><br />
+                          <em>2022.01.10</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-4" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-4" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-05.jpg" alt="추천영상 썸네일 05" />
+                        </div>
+                        <div>
+                          <b>서울에서 놀면 어디가니????? 서울 골목 곳곳 카페, 맛집</b><br />
+                          <em>2022.01.10</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-5" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-5" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-06.jpg" alt="추천영상 썸네일 06" />
+                        </div>
+                        <div>
+                          <b>서울여행영상! 미니어처가 된 SEOUL (타임랩스 영상)</b><br />
+                          <em>2021.04.27</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-6" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-6" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-07.jpg" alt="추천영상 썸네일 07" />
+                        </div>
+                        <div>
+                          <b>[그렉 Vlog] 고즈넉한 핫플 돈의문박물관마을 | 한옥 여행</b><br />
+                          <em>2022.04.27</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-7" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-7" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-08.jpg" alt="추천영상 썸네일 08" />
+                        </div>
+                        <div>
+                          <b>나도 제로웨이스트에 한 걸음 더, 서울 제로숲 제로웨이스트 마켓</b><br />
+                          <em>2021.06.17</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-8" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-8" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-01.jpg" alt="추천영상 썸네일 09" />
+                        </div>
+                        <div>
+                          <b>아픈 역사를 기억하는 공간이자 신의 쉼터, 남산 예장공원</b><br />
+                          <em>2021.12.28</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-9" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-9" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-02.jpg" alt="추천영상 썸네일 10" />
+                        </div>
+                        <div>
+                          <b>가을 품은 창경궁 ㅣ서울영상크리에이터</b><br />
+                          <em>2022.01.10</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-10" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-10" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-03.jpg" alt="추천영상 썸네일 11" />
+                        </div>
+                        <div>
+                          <b>서울미래유산을 곁들인 서울 뚜벅이 투어</b><br />
+                          <em>2022.01.10</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-11" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-11" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-04.jpg" alt="추천영상 썸네일 12" />
+                        </div>
+                        <div>
+                          <b>공예의 과거부터 미래까지 연결짓다! 서울공예박물관</b><br />
+                          <em>2022.01.10</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-12" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-12" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-05.jpg" alt="추천영상 썸네일 13" />
+                        </div>
+                        <div>
+                          <b>서울에서 놀면 어디가니????? 서울 골목 곳곳 카페, 맛집</b><br />
+                          <em>2022.01.10</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-13" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-13" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-06.jpg" alt="추천영상 썸네일 14" />
+                        </div>
+                        <div>
+                          <b>서울여행영상! 미니어처가 된 SEOUL (타임랩스 영상)</b><br />
+                          <em>2021.04.27</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-14" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-14" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-07.jpg" alt="추천영상 썸네일 15" />
+                        </div>
+                        <div>
+                          <b>[그렉 Vlog] 고즈넉한 핫플 돈의문박물관마을 | 한옥 여행</b><br />
+                          <em>2022.04.27</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-15" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-15" />
+                      </label>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);" onclick="recommendItemView(this)">
+                        <div class="img">
+                          <img src="../assets/images/thumbnail/recommend-sample-thumb-01-08.jpg" alt="추천영상 썸네일 16" />
+                        </div>
+                        <div>
+                          <b>나도 제로웨이스트에 한 걸음 더, 서울 제로숲 제로웨이스트 마켓</b><br />
+                          <em>2021.06.17</em>
+                        </div>
+                      </a>
+                      <label for="chkItem-16" class="hidden-txt">
+                        <input type="radio" name="cur-chkItem" id="chkItem-16" />
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+            </article>
           </div>
         </section>
 
         <!-- 관련 큐레이션 목록 -->
-        <section>
+        <section class="bg-gray">
           <div class="inner">
-            <div class="vd-list"><ul>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 01" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">그냥마리엘</a></dt>
-          <dd><a href="../program/view.html">성북동 나들이!</a></dd>
-        </dl>
-      </div>
-      <div class="date">2021-01-11</div>
+            <h3 class="heading-wrap-03">
+              <strong><a href="">다른 제작자의 추천 목록 보기</a></strong>
+            </h3>
+            <div class="curation-list2"><ul>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-01.jpg" alt="큐레이션 목록 썸네일 01"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 02" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">로케트펀치</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              도심속 산책,<br />
-              청계천 나들이 어때요??
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2019-12-30</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-02.jpg" alt="큐레이션 목록 썸네일 02"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 03" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">팀치도(4기)</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              왕이 되었다.<br />
-              경복궁 나들이
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2019-12-30</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-03.jpg" alt="큐레이션 목록 썸네일 03"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 04" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">에이사이트</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              나만 알고 싶은 한강<br />
-              한적한 공원
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2020-06-16</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-04.jpg" alt="큐레이션 목록 썸네일 04"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 05" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">주혁TV</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              서울의 터줏대감들!<br />
-              노포 대신 오래가게
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2020-06-16</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-01.jpg" alt="큐레이션 목록 썸네일 05"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 06" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">Rachel Kim</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              서울의 가을을 만끽할 수 있는<br />
-              안산자락길
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2021-11-22</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-02.jpg" alt="큐레이션 목록 썸네일 06"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 07" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">그냥마리엘</a></dt>
-          <dd><a href="../program/view.html">성북동 나들이!</a></dd>
-        </dl>
-      </div>
-      <div class="date">2021-01-11</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-03.jpg" alt="큐레이션 목록 썸네일 07"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 08" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">로케트펀치</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              도심속 산책,<br />
-              청계천 나들이 어때요??
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2019-12-30</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-04.jpg" alt="큐레이션 목록 썸네일 08"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 09" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">팀치도(4기)</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              왕이 되었다.<br />
-              경복궁 나들이
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2019-12-30</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-01.jpg" alt="큐레이션 목록 썸네일 09"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 10" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">에이사이트</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              나만 알고 싶은 한강<br />
-              한적한 공원
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2020-06-16</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-02.jpg" alt="큐레이션 목록 썸네일 10"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 11" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">주혁TV</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              서울의 터줏대감들!<br />
-              노포 대신 오래가게
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2020-06-16</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-03.jpg" alt="큐레이션 목록 썸네일 11"
+      /></a>
+    </div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
+    </div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 12" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">Rachel Kim</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              서울의 가을을 만끽할 수 있는<br />
-              안산자락길
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2021-11-22</div>
+  <li tabindex="0">
+    <div class="img-thumb">
+      <a href="../program/view.html"
+        ><img src="../assets/images/thumbnail/curation-sample-thumbnail-04.jpg" alt="큐레이션 목록 썸네일 12"
+      /></a>
     </div>
-  </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-01.jpg" alt="관련 영상 썸네일 13" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">그냥마리엘</a></dt>
-          <dd><a href="../program/view.html">성북동 나들이!</a></dd>
-        </dl>
-      </div>
-      <div class="date">2021-01-11</div>
+    <div class="info">
+      <span class="title"
+        ><a href="#">
+          현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된 현재 가장 이슈가 되는 코로나19에 관련된
+        </a></span
+      >
+      <span class="name">이름<em>홍*동</em></span>
     </div>
-  </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-02.jpg" alt="관련 영상 썸네일 14" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">로케트펀치</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              도심속 산책,<br />
-              청계천 나들이 어때요??
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2019-12-30</div>
-    </div>
-  </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-03.jpg" alt="관련 영상 썸네일 15" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">팀치도(4기)</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              왕이 되었다.<br />
-              경복궁 나들이
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2019-12-30</div>
-    </div>
-  </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-04.jpg" alt="관련 영상 썸네일 16" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">에이사이트</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              나만 알고 싶은 한강<br />
-              한적한 공원
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2020-06-16</div>
-    </div>
-  </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-05.jpg" alt="관련 영상 썸네일 17" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">주혁TV</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              서울의 터줏대감들!<br />
-              노포 대신 오래가게
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2020-06-16</div>
-    </div>
-  </li>
-  <li>
-    <div class="article">
-      <div class="img-thumb">
-        <a href="javascript:void(0);" onclick="commonFunction().curPreviewOn();">
-          <img src="../assets/images/thumbnail/related_list-sample-thumb-01-06.jpg" alt="관련 영상 썸네일 18" />
-        </a>
-      </div>
-      <div class="info">
-        <dl>
-          <dt><a href="">Rachel Kim</a></dt>
-          <dd>
-            <a href="../program/view.html">
-              서울의 가을을 만끽할 수 있는<br />
-              안산자락길
-            </a>
-          </dd>
-        </dl>
-      </div>
-      <div class="date">2021-11-22</div>
+    <div class="etc">
+      <span class="hit"><em class="hidden-txt">조회수</em>300</span>
+      <span class="like"><em class="hidden-txt">조회수</em>300</span>
     </div>
   </li>
 </ul>
@@ -1596,21 +1445,6 @@
             </div>
           </div>
         </section>
-
-        <!-- 큐레이션 영상 미리보기 -->
-        <div class="cur-pv-wrap">
-            <div class="cur-pv">
-              <header class="cur-pv-header">
-                <h5>영상 미리보기</h5>
-                <button type="button" class="button-close" onclick="commonFunction().curPreviewOff();">
-                  <em class="hidden-txt">레이어 팝업 닫기</em>
-                </button>
-              </header>
-              <div class="cur-pv-body">
-                <div class="cur-pv-cts customedScroll pink"></div>
-              </div>
-            </div>
-        </div>
       </div>
       <!-- // #contents -->
 
@@ -1651,205 +1485,142 @@
     </div>
 
     <script>
-      //Object
-      var mvObj = new Object();
-      mvObj.setVideoSrc = new Array();
-      mvObj.sizeList = new Array();
+      $(function () {
+        openRecommendList();
+      });
+
+      function recommendItemView(trg) {
+        // 추천 목록 영상 보기
+        var idx = $(trg).closest('ul').find('a').index(trg);
+
+        $(trg).addClass('active');
+        $(trg).closest('ul').find('a').not(trg).removeClass('active');
+        $(trg).next('label').find('input[type=radio]').prop('checked', 'checked');
+
+        $(trg)
+          .closest('.customedScroll')
+          .stop()
+          .animate(
+            {
+              scrollTop: $('#reCommendList').find('li').outerHeight() * idx,
+            },
+            200
+          );
+      }
+
+      // mobile
+      function openRecommendList() {
+        // 추천 목록 열기
+        var list_ = $('#reCommendList');
+        $('.button-open-reCommendList').on('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var trg_ = $(this);
+
+          if (trg_.hasClass('on')) {
+            list_.removeClass('r-fixed');
+            $('#layout').css({
+              height: 'auto',
+              'overflow-y': 'visible',
+            });
+          } else {
+            list_.addClass('r-fixed');
+            $('#layout').css({
+              height: '100vh',
+              'overflow-y': 'hidden',
+            });
+          }
+          trg_.toggleClass('on');
+        });
+      }
+
+      function closeRecommendList() {
+        // 추천 목록 닫기
+        $('#reCommendList').removeClass('r-fixed');
+        $('.button-open-reCommendList').removeClass('on');
+        $('#layout').css({
+          height: 'auto',
+          'overflow-y': 'visible',
+        });
+      }
+
+      //유튜브 플레이어 iframe 호출
+      if ($('.ytp-container').length) {
+        var tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady(fileName) {
+          gb.YTplayer = new YT.Player('player', {
+            height: '100%',
+            width: '100%',
+            videoId: 'XsXV6XBV_qQ', // 영상 id
+            rel: 0, // 0으로 해놓아야 재생 후 관련 영상이 안뜸
+            events: {
+              onStateChange: onPlayerStateChange,
+            },
+          });
+        }
+
+        function onPlayerStateChange(e) {
+          //-1 (시작되지 않음)
+          //0 (종료)
+          //1 (재생 중)
+          //2 (정지)
+          //3 (버퍼링 중)
+          //5 (스킵 된)
+
+          if (e.data === 1) {
+            // 재생 중
+            gb.ytpStatus = 'play';
+          } else if (e.data === -1 || e.data === 2) {
+            // 시작하지 않거나 정지 됨
+            gb.ytpStatus = 'stop';
+          }
+        }
+      }
+
+      //티젠 플레이어 설정
+      //화질 Object 리스트
+      var setVideoSrc = new Array();
+      var sizeList = new Array();
 
       //모바일 확인
       var isMob = window.innerWidth <= 768 ? true : false;
 
       // video src 설정
       // MP4 파일 테스트용
-      // curation 영상 리스트
+      // 공통 영상 상세
+      var videoObj1 = new Object();
+      videoObj1.size = '1';
+      videoObj1.src = '../assets/images/video/sample-video02.mp4';
+      videoObj1.type = 'video/mp4';
+      setVideoSrc.push(videoObj1);
+      sizeList.push(1);
 
-      /********
-       ** 영상 1
-       ********/
-      mvObj.setVideoSrc1 = new Array();
-      mvObj.sizeList1 = new Array();
+      var videoObj2 = new Object();
+      videoObj2.size = '720';
+      videoObj2.src = '../assets/images/video/sample-video02.mp4';
+      videoObj2.type = 'video/mp4';
+      setVideoSrc.push(videoObj2);
+      sizeList.push(720);
 
-      // 자동해상도
-      mvObj.videoObj1_1 = new Object();
-      mvObj.videoObj1_1.size = '1';
-      mvObj.videoObj1_1.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj1_1.type = 'video/mp4';
-
-      mvObj.setVideoSrc1.push(mvObj.videoObj1_1);
-      mvObj.sizeList1.push(1);
-
-      // 1280 * 720
-      mvObj.videoObj1_2 = new Object();
-      mvObj.videoObj1_2.size = '720';
-      mvObj.videoObj1_2.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj1_2.type = 'video/mp4';
-
-      mvObj.setVideoSrc1.push(mvObj.videoObj1_2);
-      mvObj.sizeList1.push(720);
-
-      // 484 * 272
-      mvObj.videoObj1_3 = new Object();
-      mvObj.videoObj1_3.size = '272';
-      mvObj.videoObj1_3.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj1_3.type = 'video/mp4';
-
-      mvObj.setVideoSrc1.push(mvObj.videoObj1_3);
-      mvObj.sizeList1.push(272);
-
-      mvObj.setVideoSrc.push(mvObj.setVideoSrc1);
-      mvObj.sizeList.push(mvObj.sizeList1);
-
-      /********
-       ** 영상 2
-       ********/
-      mvObj.setVideoSrc2 = new Array();
-      mvObj.sizeList2 = new Array();
-
-      // 자동해상도
-      mvObj.videoObj2_1 = new Object();
-      mvObj.videoObj2_1.size = '1';
-      mvObj.videoObj2_1.src = '../assets/images/video/sample-video02.mp4';
-      mvObj.videoObj2_1.type = 'video/mp4';
-
-      mvObj.setVideoSrc2.push(mvObj.videoObj2_1);
-      mvObj.sizeList2.push(1);
-
-      // 1280 * 720
-      mvObj.videoObj2_2 = new Object();
-      mvObj.videoObj2_2.size = '720';
-      mvObj.videoObj2_2.src = '../assets/images/video/sample-video02.mp4';
-      mvObj.videoObj2_2.type = 'video/mp4';
-
-      mvObj.setVideoSrc2.push(mvObj.videoObj2_2);
-      mvObj.sizeList2.push(720);
-
-      // 484 * 272
-      mvObj.videoObj2_3 = new Object();
-      mvObj.videoObj2_3.size = '272';
-      mvObj.videoObj2_3.src = '../assets/images/video/sample-video02.mp4';
-      mvObj.videoObj2_3.type = 'video/mp4';
-
-      mvObj.setVideoSrc2.push(mvObj.videoObj2_3);
-      mvObj.sizeList2.push(272);
-
-      mvObj.setVideoSrc.push(mvObj.setVideoSrc2);
-      mvObj.sizeList.push(mvObj.sizeList2);
-
-      /********
-       ** 영상 3
-       ********/
-      mvObj.setVideoSrc3 = new Array();
-      mvObj.sizeList3 = new Array();
-
-      // 자동해상도
-      mvObj.videoObj3_1 = new Object();
-      mvObj.videoObj3_1.size = '1';
-      mvObj.videoObj3_1.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj3_1.type = 'video/mp4';
-
-      mvObj.setVideoSrc3.push(mvObj.videoObj3_1);
-      mvObj.sizeList3.push(1);
-
-      // 1280 * 720
-      mvObj.videoObj3_2 = new Object();
-      mvObj.videoObj3_2.size = '720';
-      mvObj.videoObj3_2.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj3_2.type = 'video/mp4';
-
-      mvObj.setVideoSrc3.push(mvObj.videoObj3_2);
-      mvObj.sizeList3.push(720);
-
-      // 484 * 272
-      mvObj.videoObj3_3 = new Object();
-      mvObj.videoObj3_3.size = '272';
-      mvObj.videoObj3_3.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj3_3.type = 'video/mp4';
-
-      mvObj.setVideoSrc3.push(mvObj.videoObj3_3);
-      mvObj.sizeList3.push(272);
-
-      mvObj.setVideoSrc.push(mvObj.setVideoSrc3);
-      mvObj.sizeList.push(mvObj.sizeList3);
-
-      /********
-       ** 영상 4
-       ********/
-      mvObj.setVideoSrc4 = new Array();
-      mvObj.sizeList4 = new Array();
-
-      // 자동해상도
-      mvObj.videoObj4_1 = new Object();
-      mvObj.videoObj4_1.size = '1';
-      mvObj.videoObj4_1.src = '../assets/images/video/sample-video02.mp4';
-      mvObj.videoObj4_1.type = 'video/mp4';
-
-      mvObj.setVideoSrc4.push(mvObj.videoObj4_1);
-      mvObj.sizeList4.push(1);
-
-      // 1280 * 720
-      mvObj.videoObj4_2 = new Object();
-      mvObj.videoObj4_2.size = '720';
-      mvObj.videoObj4_2.src = '../assets/images/video/sample-video02.mp4';
-      mvObj.videoObj4_2.type = 'video/mp4';
-
-      mvObj.setVideoSrc4.push(mvObj.videoObj4_2);
-      mvObj.sizeList4.push(720);
-
-      // 484 * 272
-      mvObj.videoObj4_3 = new Object();
-      mvObj.videoObj4_3.size = '272';
-      mvObj.videoObj4_3.src = '../assets/images/video/sample-video02.mp4';
-      mvObj.videoObj4_3.type = 'video/mp4';
-
-      mvObj.setVideoSrc4.push(mvObj.videoObj4_3);
-      mvObj.sizeList4.push(272);
-
-      mvObj.setVideoSrc.push(mvObj.setVideoSrc4);
-      mvObj.sizeList.push(mvObj.sizeList4);
-
-      /********
-       ** 영상 5
-       ********/
-      mvObj.setVideoSrc5 = new Array();
-      mvObj.sizeList5 = new Array();
-
-      // 자동해상도
-      mvObj.videoObj5_1 = new Object();
-      mvObj.videoObj5_1.size = '1';
-      mvObj.videoObj5_1.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj5_1.type = 'video/mp4';
-
-      mvObj.setVideoSrc5.push(mvObj.videoObj5_1);
-      mvObj.sizeList5.push(1);
-
-      // 1280 * 720
-      mvObj.videoObj5_2 = new Object();
-      mvObj.videoObj5_2.size = '720';
-      mvObj.videoObj5_2.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj5_2.type = 'video/mp4';
-
-      mvObj.setVideoSrc5.push(mvObj.videoObj5_2);
-      mvObj.sizeList5.push(720);
-
-      // 484 * 272
-      mvObj.videoObj5_3 = new Object();
-      mvObj.videoObj5_3.size = '272';
-      mvObj.videoObj5_3.src = '../assets/images/video/sample-video01.mp4';
-      mvObj.videoObj5_3.type = 'video/mp4';
-
-      mvObj.setVideoSrc5.push(mvObj.videoObj5_3);
-      mvObj.sizeList5.push(272);
-
-      mvObj.setVideoSrc.push(mvObj.setVideoSrc5);
-      mvObj.sizeList.push(mvObj.sizeList5);
+      var videoObj3 = new Object();
+      videoObj3.size = '272';
+      videoObj3.src = '../assets/images/video/sample-video02.mp4';
+      videoObj3.type = 'video/mp4';
+      setVideoSrc.push(videoObj3);
+      sizeList.push(272);
 
       //처음 영상 재생 화질 default값 설정
-      if (mvObj.sizeList[0][0].length == 1) {
+      if (sizeList.length == 1) {
         qualitySize = 0;
       } else {
         //자동화질 설정
-        if (mvObj.sizeList[0][0] == '1') {
-          if (!isMob || mvObj.sizeList[0][0].length == 2) {
+        if (sizeList[0] == '1') {
+          if (!isMob || sizeList.length == 2) {
             //웹 브라우저 화질 default 1280 x 720
             qualitySize = 1;
           } else {
@@ -1869,26 +1640,23 @@
         }
       }
 
-      var currentVd_ = $('.currentVd').get();
-
-      if (currentVd_.length) {
-        currentVd_.forEach(function (el, idx) {
-          $(el).createVideo({
-            // 플레이어 생성 영역 DIV의 아이디
-            id: 'video_' + (idx + 1), // 생성될 비디오 태그 아이디 *필수값
-            src: mvObj.setVideoSrc[idx],
-            speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
-            autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
-            startTime: 0, //영상 재생 시작 시간(이어보기 기능)
-            seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
-            progress: true, // false : 프로그레스바 컨트롤 되지 않도록
-            preview: [{ enabled: false, src: '' }],
-            quality: { default: mvObj.sizeList[idx][qualitySize], options: mvObj.sizeList[idx] }, // "default" : 0, options : [0]
-            qualitySize: qualitySize,
-            isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
-            iconUrl: '../tgplayer/plugin/js/plyr.svg',
-            blankVideo: '../tgplayer/plugin/js/blank.mp4',
-          });
+      // 영상 호출
+      if ($('#currentVd').length) {
+        $('#currentVd').createVideo({
+          // 플레이어 생성 영역 DIV의 아이디
+          id: 'video', // 생성될 비디오 태그 아이디 *필수값
+          src: setVideoSrc,
+          speed: [0.5, 0.75, 1, 1.25, 1.5], // 배속
+          autoPlay: false, // true일 경우 볼륨은 자동으로 음소거로 시작됨
+          startTime: 0, //영상 재생 시작 시간(이어보기 기능)
+          seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
+          progress: true, // false : 프로그레스바 컨트롤 되지 않도록
+          preview: [{ enabled: false, src: '' }],
+          quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+          qualitySize: qualitySize,
+          isBanner: false, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
+          iconUrl: '../tgplayer/plugin/js/plyr.svg',
+          blankVideo: '../tgplayer/plugin/js/blank.mp4',
         });
       }
     </script>

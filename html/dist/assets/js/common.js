@@ -45,7 +45,7 @@ window.addEventListener('load', function () {
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
   if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
   if ($('.keyword-swiper2').length) commonFunction().KeywordSwiper2();
-  if ($('.curation-swiper').length) commonFunction().CurationSwiper();
+  // if ($('.curation-swiper').length) commonFunction().CurationSwiper();
   if ($('.sort-inner').length) commonFunction().setCurList();
   if ($('.previewOn').length) commonFunction().PreviewOn();
 });
@@ -529,15 +529,29 @@ function commonFunction() {
 
         gb.filterSwiper = new Swiper('.list-filter-swiper', gb.filterSwiperOption);
 
-        $('.list-filter-swiper')
-          .find('input')
-          .on('change', function () {
-            var index = $('.list-filter-swiper').find('input').index(this);
+        if ($('.list-filter-swiper').closest('div').hasClass('topic')) {
+          // 분야별 영상
+          $('.list-filter-swiper')
+            .find('input[type=checkbox]')
+            .on('change', function () {
+              var index = $('.list-filter-swiper').find('input[type=checkbox]').index(this);
 
-            if ($(this).prop('checked')) {
-              gb.filterSwiper.slideTo(index);
-            }
-          });
+              if ($(this).prop('checked')) {
+                gb.filterSwiper.slideTo(index);
+              }
+            });
+        } else {
+          // 기타 프로그램
+          $('.list-filter-swiper')
+            .find('input[type=radio]')
+            .on('change', function () {
+              var index = $('.list-filter-swiper').find('input[type=radio]').index(this);
+
+              if ($(this).prop('checked')) {
+                gb.filterSwiper.slideTo(index);
+              }
+            });
+        }
       },
       KeywordSwiper = function () {
         // 통합검색 영상분류 필터 스와이퍼
@@ -554,11 +568,7 @@ function commonFunction() {
           slidesPerView: 'auto',
           spaceBetween: 0,
           centeredSlides: false,
-          debugger: true, // Enable debugger,
-          navigation: {
-            nextEl: '.button-swiper-nxt',
-            prevEl: '.button-swiper-prev',
-          },
+          debugger: true, // Enable debugger
         };
 
         gb.keywordSwiper = new Swiper('.keyword-swiper', gb.keywordSwiperOption);
@@ -588,11 +598,7 @@ function commonFunction() {
           slidesPerView: 'auto',
           spaceBetween: 0,
           centeredSlides: false,
-          debugger: true, // Enable debugger,
-          navigation: {
-            nextEl: '.button-swiper-nxt',
-            prevEl: '.button-swiper-prev',
-          },
+          debugger: true, // Enable debugger
         };
 
         gb.keywordSwiper = new Swiper('.keyword-swiper2', gb.keywordSwiperOption_);
@@ -858,7 +864,10 @@ function commonFunction() {
       setLnb = function () {
         // pc 사이드 메뉴
         if (document.documentElement.scrollTop + document.documentElement.clientHeight >= gb.footer.offset().top) {
-          $('.sideMenu').css('bottom', document.documentElement.scrollHeight - gb.footer.offset().top + 'px');
+          $('.sideMenu').css(
+            'bottom',
+            document.documentElement.scrollTop + document.documentElement.clientHeight - gb.footer.offset().top + 'px'
+          );
         } else {
           $('.sideMenu').css('bottom', 0);
         }
@@ -986,7 +995,7 @@ function commonFunction() {
       FilterSwiper: FilterSwiper,
       KeywordSwiper: KeywordSwiper,
       KeywordSwiper2: KeywordSwiper2,
-      CurationSwiper: CurationSwiper,
+      // CurationSwiper: CurationSwiper,
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
       fileUpload: fileUpload,
@@ -1057,7 +1066,7 @@ function commonFunction() {
     }
   });
 
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function (e) {
     if (document.documentElement.scrollTop >= 92) {
       gb.html.addClass('fixed');
     } else {
@@ -1065,7 +1074,10 @@ function commonFunction() {
     }
 
     if (document.documentElement.scrollTop + document.documentElement.clientHeight >= gb.footer.offset().top) {
-      $('.sideMenu').css('bottom', document.documentElement.scrollHeight - gb.footer.offset().top + 'px');
+      $('.sideMenu').css(
+        'bottom',
+        document.documentElement.scrollTop + document.documentElement.clientHeight - gb.footer.offset().top + 'px'
+      );
     } else {
       $('.sideMenu').css('bottom', 0);
     }
