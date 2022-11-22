@@ -862,16 +862,6 @@ function commonFunction() {
         }
       },
       setLnb = function () {
-        // pc 사이드 메뉴
-        if (document.documentElement.scrollTop + document.documentElement.clientHeight >= gb.footer.offset().top) {
-          $('.sideMenu').css(
-            'bottom',
-            document.documentElement.scrollTop + document.documentElement.clientHeight - gb.footer.offset().top + 'px'
-          );
-        } else {
-          $('.sideMenu').css('bottom', 0);
-        }
-
         // 모바일 사이드 메뉴 (공통 목록, 공통 상세)
         $('.button-open-sideMenu').on('click', function () {
           var trg = $(this);
@@ -940,6 +930,17 @@ function commonFunction() {
           });
         });
       },
+      setLnbFixed = function () {
+        // pc 사이드 메뉴
+        if (document.documentElement.scrollTop + document.documentElement.clientHeight >= gb.footer.offset().top) {
+          $('.sideMenu').css(
+            'bottom',
+            document.documentElement.scrollTop + document.documentElement.clientHeight - gb.footer.offset().top + 'px'
+          );
+        } else {
+          $('.sideMenu').css('bottom', 0);
+        }
+      },
       setCurList = function () {
         $('.sort-inner').sortable({
           placeholder: 'ui-shift',
@@ -1000,6 +1001,7 @@ function commonFunction() {
       goScrollTop: goScrollTop,
       fileUpload: fileUpload,
       setCurList: setCurList,
+      setLnbFixed: setLnbFixed,
       menuAll: menuAll,
       modalOff: modalOff,
       mobTabMenu: mobTabMenu,
