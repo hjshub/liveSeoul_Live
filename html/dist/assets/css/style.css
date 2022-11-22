@@ -8649,16 +8649,16 @@ keyword swiper
 	background-position: -56px -34px;
 }
 .wrap.program .list-view .sideMenu .cate-wrap > div.mypage ul li:nth-of-type(3) a em::before {
-	width: 20px;
-	height: 16px;
-	margin-top: -8px;
-	background-position: -78px -33px;
-}
-.wrap.program .list-view .sideMenu .cate-wrap > div.mypage ul li:nth-of-type(4) a em::before {
 	width: 18px;
 	height: 18px;
 	margin-top: -9px;
 	background-position: -103px -33px;
+}
+.wrap.program .list-view .sideMenu .cate-wrap > div.mypage ul li:nth-of-type(4) a em::before {
+	width: 20px;
+	height: 16px;
+	margin-top: -8px;
+	background-position: -78px -33px;
 }
 .wrap.program .list-view .sideMenu .cate-wrap > div.mypage ul li:nth-of-type(5) a em::before {
 	width: 20px;
@@ -9261,16 +9261,16 @@ keyword swiper
 	background-position: -56px -34px;
 }
 .wrap.program .mob-sideMenu > div.mypage ul li:nth-of-type(3) a em::before {
-	width: 20px;
-	height: 16px;
-	margin-top: -8px;
-	background-position: -78px -33px;
-}
-.wrap.program .mob-sideMenu > div.mypage ul li:nth-of-type(4) a em::before {
 	width: 18px;
 	height: 18px;
 	margin-top: -9px;
 	background-position: -103px -33px;
+}
+.wrap.program .mob-sideMenu > div.mypage ul li:nth-of-type(4) a em::before {
+	width: 20px;
+	height: 16px;
+	margin-top: -8px;
+	background-position: -78px -33px;
 }
 .wrap.program .mob-sideMenu > div.mypage ul li:nth-of-type(5) a em::before {
 	width: 20px;
