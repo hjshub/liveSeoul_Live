@@ -16,6 +16,8 @@ var _gb = function () {
     this.wrap = $('.wrap');
     this.header = $('#gnb');
     this.allMenu = $('#allMenu');
+    this.topBanner = $('#top-banner');
+    this.lpop = $('#lpop');
     this.footer = $('footer');
     this.tabMenu = $('.tab-menu');
     this.mobTabMenu = $('.mob-tabMenu');
@@ -38,6 +40,8 @@ window.addEventListener('load', function () {
       commonFunction().MainSwiper();
     }
     commonFunction().showOnLayer();
+    commonFunction().setTopbnr();
+    commonFunction().setPop();
   }
 
   if (gb.vdSwiper.length) commonFunction().VdSwiper();
@@ -160,6 +164,37 @@ function commonFunction() {
 
         $('.sideMenu .cate-wrap').on('mouseleave', function () {
           gb.body.css('overflow-y', 'scroll');
+        });
+      },
+      setTopbnr = function () {
+        // 메인 상단 공지 배너
+        if (!getCookie('topbnr')) {
+          gb.topBanner.css('display', 'block');
+        } else {
+          gb.topBanner.css('display', 'none');
+        }
+
+        gb.topBanner.find('.bnr-close > button').on('click', function () {
+          gb.topBanner.slideUp(300);
+          if ($('input[type=checkbox][name=topBnr_chk]').is(':checked')) {
+            setCookie('topbnr', 'done', 1);
+          }
+        });
+      },
+      setPop = function () {
+        // 메인 레이어 팝업
+        if (!getCookie('lpop')) {
+          gb.lpop.css('display', 'block');
+        } else {
+          gb.lpop.css('display', 'none');
+        }
+
+        gb.lpop.find('.pop-close > button').on('click', function () {
+          gb.lpop.css('display', 'none');
+
+          if ($('input[type=checkbox][name=lpop_chk]').is(':checked')) {
+            setCookie('lpop', 'done', 1);
+          }
         });
       },
       modal = function () {
@@ -988,6 +1023,10 @@ function commonFunction() {
 
     return {
       init: init,
+      setTopbnr: setTopbnr,
+      setPop: setPop,
+      menuAll: menuAll,
+      modalOff: modalOff,
       MainSwiper: MainSwiper,
       VdSwiper: VdSwiper,
       LiveOnSwiper: LiveOnSwiper,
@@ -1002,8 +1041,6 @@ function commonFunction() {
       fileUpload: fileUpload,
       setCurList: setCurList,
       setLnbFixed: setLnbFixed,
-      menuAll: menuAll,
-      modalOff: modalOff,
       mobTabMenu: mobTabMenu,
       copyUrl: copyUrl,
     };
@@ -1145,7 +1182,8 @@ function commonFunction() {
 
 // 쿠키설정
 function setCookie(cName, cValue, cDay) {
-  var expire = new Date();
+  var expire = new Date(),
+    cookies;
 
   expire.setDate(expire.getDate() + cDay);
   cookies = cName + '=' + escape(cValue) + '; path=/ '; // 한글 깨짐을 막기위해 escape(cValue)를 합니다.
