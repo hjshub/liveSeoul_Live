@@ -49,7 +49,7 @@ window.addEventListener('load', function () {
   if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
   if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
   if ($('.keyword-swiper2').length) commonFunction().KeywordSwiper2();
-  // if ($('.curation-swiper').length) commonFunction().CurationSwiper();
+  if ($('.weeklyLive-swiper').length) commonFunction().weeklyLiveSwiper();
   if ($('.sort-inner').length) commonFunction().setCurList();
   if ($('.previewOn').length) commonFunction().PreviewOn();
 });
@@ -100,6 +100,7 @@ function commonFunction() {
             height: '100vh',
             'overflow-y': 'hidden',
           });
+          $('#reCommendList').css('z-index', 1);
         });
 
         $('.button-close-allMenu').on('click', function () {
@@ -115,6 +116,7 @@ function commonFunction() {
               height: 'auto',
               'overflow-y': 'visible',
             });
+            $('#reCommendList').css('z-index', 1001);
           }
         });
 
@@ -638,6 +640,44 @@ function commonFunction() {
 
         gb.keywordSwiper = new Swiper('.keyword-swiper2', gb.keywordSwiperOption_);
       },
+      weeklyLiveSwiper = function () {
+        // 편성표 주간 생중계 예정방송
+        if (typeof gb.weeklyLiveSwiper !== 'undefined') {
+          gb.weeklyLiveSwiper.destroy();
+          gb.weeklyLiveSwiper = undefined;
+        }
+
+        gb.weeklyLiveSwiperOption = {
+          // Optional parameters
+          loop: false,
+          speed: 600,
+          direction: 'horizontal',
+          slidesPerView: 1,
+          spaceBetween: 0,
+          centeredSlides: false,
+          debugger: true, // Enable debugger
+          breakpoints: {
+            // when window width is >= 391px
+            391: {
+              slidesPerView: 2,
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 3,
+            },
+            // when window width is >= 1024px
+            1024: {
+              slidesPerView: 4,
+            },
+            // when window width is >= 1680px
+            1680: {
+              slidesPerView: 6,
+            },
+          },
+        };
+
+        gb.weeklyLiveSwiper = new Swiper('.weeklyLive-swiper', gb.weeklyLiveSwiperOption);
+      },
       CurationSwiper = function () {
         // 큐레이션 스와이퍼
         gb.curationSwiper = new Swiper('.curation-swiper', {
@@ -1035,7 +1075,7 @@ function commonFunction() {
       FilterSwiper: FilterSwiper,
       KeywordSwiper: KeywordSwiper,
       KeywordSwiper2: KeywordSwiper2,
-      // CurationSwiper: CurationSwiper,
+      weeklyLiveSwiper: weeklyLiveSwiper,
       showOnLayer: showOnLayer,
       goScrollTop: goScrollTop,
       fileUpload: fileUpload,
@@ -1059,6 +1099,8 @@ function commonFunction() {
     if (gb.tabSwiper.length) commonFunction().TabSwiper();
     if ($('.list-filter-swiper').length) commonFunction().FilterSwiper();
     if ($('.keyword-swiper').length) commonFunction().KeywordSwiper();
+    if ($('.keyword-swiper2').length) commonFunction().KeywordSwiper2();
+    if ($('.weeklyLive-swiper').length) commonFunction().weeklyLiveSwiper();
 
     if (!gb.isMob) {
       $('.mob-sideMenu')

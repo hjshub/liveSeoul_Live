@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta name="Author" content="" />
-<meta name="Keywords" content="" />
-<meta name="Description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="Author" content="" />
+  <meta name="Keywords" content="" />
+  <meta name="Description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 
 
-    <title>서울영상크리에이터 공지사항 목록 | 라이브 서울</title>
+  <title>서울영상크리에이터 공지사항 목록 | 라이브 서울</title>
 
-    <script src="../assets/js/jquery-3.6.0.min.js"></script>
-<script src="../assets/js/jquery-ui.min.js"></script>
-<script src="../assets/js/gsap.min.js"></script>
-<script src="../assets/js/swiper.min.js"></script>
-<script src="../tgplayer/conponentRoot.js"></script>
-<script src="../tgplayer/player_init.js"></script>
-<script defer src="../assets/js/common.js"></script>
+  <script src="../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/gsap.min.js"></script>
+  <script src="../assets/js/swiper.min.js"></script>
+  <script src="../tgplayer/conponentRoot.js"></script>
+  <script src="../tgplayer/player_init.js"></script>
+  <script defer src="../assets/js/common.js"></script>
 
-<link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
-<link rel="stylesheet" href="../assets/css/swiper.min.css" />
-<link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../assets/css/swiper.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 
-  </head>
-  <body>
-    <!--[if lt IE 10]>
+</head>
+
+<body>
+  <!--[if lt IE 10]>
   <div id="legacy-IE">
     <div class="info">
       본 사이트는 Internet Explorer 10 기준(웹표준)으로 제작 된 사이트 입니다. 현재 고객님이 이용중인 브라우저는 곧 지원이 중단
@@ -38,786 +40,640 @@
   </div>
 <![endif]-->
 
-<!-- 건너띄기 링크 -->
-<dl id="skipNavigation">
-  <dt class="hidden-txt">바로가기 및 건너띄기 링크</dt>
-  <dd>
-    <a href="#gnb"><em>주 메뉴 바로가기</em></a>
-  </dd>
-  <dd>
-    <a href="#contents"><em>본문으로 바로가기</em></a>
-  </dd>
-  <dd>
-    <a href="#footer"><em>하단으로 바로가기</em></a>
-  </dd>
-</dl>
-<!-- // 건너띄기 링크 -->
+  <!-- 건너띄기 링크 -->
+  <dl id="skipNavigation">
+    <dt class="hidden-txt">바로가기 및 건너띄기 링크</dt>
+    <dd>
+      <a href="#gnb"><em>주 메뉴 바로가기</em></a>
+    </dd>
+    <dd>
+      <a href="#contents"><em>본문으로 바로가기</em></a>
+    </dd>
+    <dd>
+      <a href="#footer"><em>하단으로 바로가기</em></a>
+    </dd>
+  </dl>
+  <!-- // 건너띄기 링크 -->
 
 
-    <div id="layout">
-      <!-- #gnb -->
-      <header class="active" id="gnb"><div class="h-wrap-01">
-  <div class="inner clear">
-    <div>
-      <a href="https://www.seoul.go.kr/main/index.jsp" target="_blank" title="새 창 열림" class="symbol-seoul"
-        ><em class="hidden-txt">서울특별시</em></a
-      >
-      <span>2022년 제7대 청소년의회 의원 2차 모집</span>
-    </div>
-    <ul>
-      <li>
-        <a
-          href="//www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G165&amp;kind=seoulnews&amp;link=https://www.seoul.go.kr/realmnews/in/list.do"
-          target="_blank"
-          title="새 창 열림"
-        >
-          서울소식
-        </a>
-      </li>
-      <li>
-        <a
-          href="//www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G165&amp;kind=eungdapso&amp;link=http://eungdapso.seoul.go.kr"
-          target="_blank"
-          title="새 창 열림"
-        >
-          응답소
-        </a>
-      </li>
-      <li>
-        <a
-          href="//www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G165&amp;kind=opengov&amp;link=http://opengov.seoul.go.kr"
-          target="_blank"
-          title="새 창 열림"
-        >
-          정보공개
-        </a>
-      </li>
-      <li><a href="javascript:void(0);">분야별정보</a></li>
-    </ul>
-  </div>
-</div>
-<div class="h-wrap-02">
-  <div class="inner clear">
-    <div>
-      <a href="../main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
-    </div>
-    <div>
-      <!-- <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
-        <em class="hidden-txt">내 손안에 서울 바로가기</em>
-      </a> -->
-      <ul>
-        <li>
-          <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome" target="_blank" title="새 창 열림">뉴스</a>
-        </li>
-        <li><a href="../main.html">영상</a></li>
-        <li><a href="https://love.seoul.go.kr/">매거진</a></li>
-        <li>
-          <a href="https://mediahub.seoul.go.kr/competition/competitionList.do" target="_blank" title="새 창 열림">공모전</a>
-        </li>
-        <li><a href="https://kids.seoul.go.kr/" target="_blank" title="새 창 열림">어린이신문</a></li>
-        <li><a href="https://mediahub.seoul.go.kr/citizen/citizenMain.do" target="_blank" title="새 창 열림">시민기자</a></li>
-      </ul>
-    </div>
-    <div class="mob-menu">
-      <div>
-        <button type="button" class="button-open-schLayer"><em class="hidden-txt">검색</em></button>
-        <!-- 모바일 검색 레이어 -->
-        <div class="search-pop">
-          <form>
-            <fieldset>
-              <legend>검색</legend>
-              <div class="search-wrap">
-                <input
-                  class="txt-ellipsis"
-                  type="text"
-                  title="검색어 입력 - 검색어를 입력해주세요."
-                  placeholder="검색어를 입력해주세요."
-                />
-                <button type="submit"><em class="hidden-txt">검색</em></button>
-              </div>
-            </fieldset>
-          </form>
+  <div id="layout">
+    <!-- #gnb -->
+    <header class="active" id="gnb">
+      <div class="h-wrap-01">
+        <div class="inner clear">
+          <div>
+            <a href="https://www.seoul.go.kr/main/index.jsp" target="_blank" title="새 창 열림" class="symbol-seoul"><em class="hidden-txt">서울특별시</em></a>
+            <span>2022년 제7대 청소년의회 의원 2차 모집</span>
+          </div>
+          <ul>
+            <li>
+              <a href="//www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G165&amp;kind=seoulnews&amp;link=https://www.seoul.go.kr/realmnews/in/list.do" target="_blank" title="새 창 열림">
+                서울소식
+              </a>
+            </li>
+            <li>
+              <a href="//www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G165&amp;kind=eungdapso&amp;link=http://eungdapso.seoul.go.kr" target="_blank" title="새 창 열림">
+                응답소
+              </a>
+            </li>
+            <li>
+              <a href="//www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G165&amp;kind=opengov&amp;link=http://opengov.seoul.go.kr" target="_blank" title="새 창 열림">
+                정보공개
+              </a>
+            </li>
+            <li><a href="javascript:void(0);">분야별정보</a></li>
+          </ul>
         </div>
       </div>
-
-      <div>
-        <button type="button" class="button-open-allMenu">
-          <span><em class="hidden-txt">전체메뉴</em></span>
-        </button>
-
-        <!-- 모바일 전체메뉴 -->
-        <nav class="all-menu" id="allMenu">
-          <div class="allMenu-header">
-            <div class="inner">
-              <span>
-                <a href="https://www.seoul.go.kr/main/index.jsp" target="_blank" title="새 창 열림" class="symbol-seoul">
-                  <em class="hidden-txt">서울특별시</em>
-                </a>
-              </span>
-              <span>
-                <a href="../main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
-              </span>
-            </div>
+      <div class="h-wrap-02">
+        <div class="inner clear">
+          <div>
+            <a href="../main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
           </div>
-          <div class="allMenu-container">
-            <div class="inner">
-              <h3 class="hidden-txt">전체 서비스 바로 가기</h3>
-              <ul class="depth1">
-                <li>
-                  <button type="button">뉴스</button>
-                  <div class="box">
-                    <ul class="depth2 clear">
-                      <li class="home">
-                        <a
-                          href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome"
-                          target="_blank"
-                          title="새 창 열림"
-                        >
-                          뉴스홈
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=hotNews"
-                          target="_blank"
-                          title="새 창 열림"
-                        >
-                          기획·이슈
-                        </a>
-                        <ul class="depth3">
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=hotNews"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              핫이슈
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=specialNews"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              특별기획
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=columnNews"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              전문칼럼
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=keywordNews"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              키워드 뉴스
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a
-                          href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews"
-                          target="_blank"
-                          title="새 창 열림"
-                        >
-                          분야별 뉴스
-                        </a>
-                        <ul class="depth3">
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=06&tr_code=gnb_menu_cate02"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              문화
-                            </a>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=04&tr_code=gnb_menu_cate03"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              경제
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=07&tr_code=gnb_menu_cate04"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              복지
-                            </a>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=01&tr_code=gnb_menu_cate05"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              교통
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=05&tr_code=gnb_menu_cate06"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              환경
-                            </a>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=03&tr_code=gnb_menu_cate07"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              주택
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=02&tr_code=gnb_menu_cate08"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              안전
-                            </a>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=08&tr_code=gnb_menu_cate09"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              행정
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a
-                          href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&tr_code=gnb_menu_visual01"
-                          target="_blank"
-                          title="새 창 열림"
-                        >
-                          비주얼 뉴스
-                        </a>
-                        <ul class="depth3">
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&vtype=20&tr_code=gnb_menu_visual02"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              사진 뉴스
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&vtype=30&tr_code=gnb_menu_visual03"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              영상 뉴스
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&vtype=40&tr_code=gnb_menu_visual04"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              카드 뉴스
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&vtype=50&tr_code=gnb_menu_visual05"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              그래픽 뉴스
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a
-                          href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=10&tr_code=gnb_menu_citizen02"
-                          target="_blank"
-                          title="새 창 열림"
-                        >
-                          시민기자 뉴스
-                        </a>
-                        <ul class="depth3">
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=10&tr_code=gnb_menu_citizen02"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              취재 뉴스
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=20&tr_code=gnb_menu_citizen03"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              사진 뉴스
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=30&tr_code=gnb_menu_citizen04"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              영상 뉴스
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=themeNews&tr_code=gnb_menu_citizen05"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              테마 뉴스
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a
-                          href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=homeTownNews&tr_code=gnb_menu_area"
-                          target="_blank"
-                          title="새 창 열림"
-                        >
-                          우리동네 뉴스
-                        </a>
-                      </li>
-                    </ul>
+          <div>
+            <!-- <a href="https://mediahub.seoul.go.kr/main.do" target="_blank" title="새 창 열림">
+        <em class="hidden-txt">내 손안에 서울 바로가기</em>
+      </a> -->
+            <ul>
+              <li>
+                <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome" target="_blank" title="새 창 열림">뉴스</a>
+              </li>
+              <li><a href="../main.html">영상</a></li>
+              <li><a href="https://love.seoul.go.kr/">매거진</a></li>
+              <li>
+                <a href="https://mediahub.seoul.go.kr/competition/competitionList.do" target="_blank" title="새 창 열림">공모전</a>
+              </li>
+              <li><a href="https://kids.seoul.go.kr/" target="_blank" title="새 창 열림">어린이신문</a></li>
+              <li><a href="https://mediahub.seoul.go.kr/citizen/citizenMain.do" target="_blank" title="새 창 열림">시민기자</a></li>
+            </ul>
+          </div>
+          <div class="mob-menu">
+            <div>
+              <button type="button" class="button-open-schLayer"><em class="hidden-txt">검색</em></button>
+              <!-- 모바일 검색 레이어 -->
+              <div class="search-pop">
+                <form>
+                  <fieldset>
+                    <legend>검색</legend>
+                    <div class="search-wrap">
+                      <input class="txt-ellipsis" type="text" title="검색어 입력 - 검색어를 입력해주세요." placeholder="검색어를 입력해주세요." />
+                      <button type="submit"><em class="hidden-txt">검색</em></button>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+
+            <div>
+              <button type="button" class="button-open-allMenu">
+                <span><em class="hidden-txt">전체메뉴</em></span>
+              </button>
+
+              <!-- 모바일 전체메뉴 -->
+              <nav class="all-menu" id="allMenu">
+                <div class="allMenu-header">
+                  <div class="inner">
+                    <span>
+                      <a href="https://www.seoul.go.kr/main/index.jsp" target="_blank" title="새 창 열림" class="symbol-seoul">
+                        <em class="hidden-txt">서울특별시</em>
+                      </a>
+                    </span>
+                    <span>
+                      <a href="../main.html" class="symbol-live-seoul"><em class="hidden-txt">라이브 서울</em></a>
+                    </span>
                   </div>
-                </li>
-                <li class="current">
-                  <button type="button" class="on">영상</button>
-                  <div class="box">
-                    <ul class="depth2 clear">
-                      <li><a href="../main.html">영상홈</a></li>
-                      <!-- 로그인 전 
+                </div>
+                <div class="allMenu-container">
+                  <div class="inner">
+                    <h3 class="hidden-txt">전체 서비스 바로 가기</h3>
+                    <ul class="depth1">
+                      <li>
+                        <button type="button">뉴스</button>
+                        <div class="box">
+                          <ul class="depth2 clear">
+                            <li class="home">
+                              <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=newsHome" target="_blank" title="새 창 열림">
+                                뉴스홈
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=hotNews" target="_blank" title="새 창 열림">
+                                기획·이슈
+                              </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=hotNews" target="_blank" title="새 창 열림">
+                                    핫이슈
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=specialNews" target="_blank" title="새 창 열림">
+                                    특별기획
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=columnNews" target="_blank" title="새 창 열림">
+                                    전문칼럼
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=issueNews&issueType=keywordNews" target="_blank" title="새 창 열림">
+                                    키워드 뉴스
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews" target="_blank" title="새 창 열림">
+                                분야별 뉴스
+                              </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=06&tr_code=gnb_menu_cate02" target="_blank" title="새 창 열림">
+                                    문화
+                                  </a>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=04&tr_code=gnb_menu_cate03" target="_blank" title="새 창 열림">
+                                    경제
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=07&tr_code=gnb_menu_cate04" target="_blank" title="새 창 열림">
+                                    복지
+                                  </a>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=01&tr_code=gnb_menu_cate05" target="_blank" title="새 창 열림">
+                                    교통
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=05&tr_code=gnb_menu_cate06" target="_blank" title="새 창 열림">
+                                    환경
+                                  </a>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=03&tr_code=gnb_menu_cate07" target="_blank" title="새 창 열림">
+                                    주택
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=02&tr_code=gnb_menu_cate08" target="_blank" title="새 창 열림">
+                                    안전
+                                  </a>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=categoryNews&category=08&tr_code=gnb_menu_cate09" target="_blank" title="새 창 열림">
+                                    행정
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&tr_code=gnb_menu_visual01" target="_blank" title="새 창 열림">
+                                비주얼 뉴스
+                              </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&vtype=20&tr_code=gnb_menu_visual02" target="_blank" title="새 창 열림">
+                                    사진 뉴스
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&vtype=30&tr_code=gnb_menu_visual03" target="_blank" title="새 창 열림">
+                                    영상 뉴스
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&vtype=40&tr_code=gnb_menu_visual04" target="_blank" title="새 창 열림">
+                                    카드 뉴스
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=visualNews&vtype=50&tr_code=gnb_menu_visual05" target="_blank" title="새 창 열림">
+                                    그래픽 뉴스
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=10&tr_code=gnb_menu_citizen02" target="_blank" title="새 창 열림">
+                                시민기자 뉴스
+                              </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=10&tr_code=gnb_menu_citizen02" target="_blank" title="새 창 열림">
+                                    취재 뉴스
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=20&tr_code=gnb_menu_citizen03" target="_blank" title="새 창 열림">
+                                    사진 뉴스
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=30&tr_code=gnb_menu_citizen04" target="_blank" title="새 창 열림">
+                                    영상 뉴스
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=citizenNews&ctype=themeNews&tr_code=gnb_menu_citizen05" target="_blank" title="새 창 열림">
+                                    테마 뉴스
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="https://mediahub.seoul.go.kr/news/newsMain.do?newsType=homeTownNews&tr_code=gnb_menu_area" target="_blank" title="새 창 열림">
+                                우리동네 뉴스
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="current">
+                        <button type="button" class="on">영상</button>
+                        <div class="box">
+                          <ul class="depth2 clear">
+                            <li><a href="../main.html">영상홈</a></li>
+                            <!-- 로그인 전 
                       <li class="mrt-none">
                         <a href="javascript:void(0)" class="sign-in">로그인</a>
                       </li>-->
-                      <!-- 로그인 후-->
-                      <li class="mrt-none">
-                        <a href="javascript:void(0)" class="sign-out">로그아웃</a>
+                            <!-- 로그인 후-->
+                            <li class="mrt-none">
+                              <a href="javascript:void(0)" class="sign-out">로그아웃</a>
+                            </li>
+                            <li>
+                              <a href="../main_live.html">생중계</a>
+                              <ul class="depth3">
+                                <li><a href="../main_live.html">생중계</a></li>
+                                <li><a href="../schedule/schedule_month.html">편성표</a></li>
+                                <li><a href="../seoul24/main.html">광장24시</a></li>
+                              </ul>
+                            </li>
+                            <!-- 로그인 후-->
+                            <li>
+                              <a href="../mypage/like_list.html">마이페이지</a>
+                              <ul class="depth3">
+                                <li><a href="../mypage/like_list.html">내가 좋아요한 영상</a></li>
+                                <li><a href="../mypage/watched_list.html">내가 시청한 영상</a></li>
+                                <li><a href="../mypage/download_list.html">영상다운로드 내역</a></li>
+                                <li><a href="../mypage/curation_list_01.html">추천목록 영상</a></li>
+                                <li><a href="../mypage/wish_list.html">나의 관심분야</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="../program/list.html">영상저장소</a>
+                              <ul class="depth3">
+                                <li><a href="../program/list.html">최신영상</a></li>
+                                <li><a href="../program/list.html">생중계다시보기</a></li>
+                                <li><a href="../program/list.html">서울홍보영상</a></li>
+                                <li><a href="../program/list.html">분야별영상</a></li>
+                                <li><a href="../program/list.html">프로그램</a></li>
+                                <li><a href="../program/list.html">소통방통</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="../curation/list.html">추천목록</a>
+                              <ul class="depth3">
+                                <li><a href="../curation/list.html">전문가 추천</a></li>
+                                <li><a href="../curation/list.html">사용자 추천</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="../creater/main.html">영상크리에이터</a>
+                              <ul class="depth3">
+                                <li><a href="../creater/main.html">크리에이터 영상</a></li>
+                                <li><a href="../creater/aboutus.html">크리에이터 만나기</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="../program/list.html">함께방송</a>
+                              <ul class="depth3">
+                                <li><a href="../program/list.html">자치구방송국</a></li>
+                                <li><a href="../program/list.html">마을미디어</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
                       </li>
                       <li>
-                        <a href="../main_live.html">생중계</a>
-                        <ul class="depth3">
-                          <li><a href="../main_live.html">생중계</a></li>
-                          <li><a href="../schedule/schedule_month.html">편성표</a></li>
-                          <li><a href="../seoul24/main.html">광장24시</a></li>
-                        </ul>
+                        <button type="button">매거진</button>
+                        <div class="box">
+                          <ul class="depth2 clear">
+                            <li class="home">
+                              <a href="//love.seoul.go.kr/" target="_blank" title="새 창 열림">매거진홈</a>
+                            </li>
+                            <li>
+                              <a href="//love.seoul.go.kr/asp/articleList.asp?intcategory=1" target="_blank" title="새 창 열림">
+                                특집
+                              </a>
+                            </li>
+                            <li>
+                              <a href="//love.seoul.go.kr/asp/articleList.asp?intcategory=2" target="_blank" title="새 창 열림">
+                                기획
+                              </a>
+                            </li>
+                            <li>
+                              <a href="//love.seoul.go.kr/asp/articleList.asp?intcategory=3" target="_blank" title="새 창 열림">
+                                인터뷰·탐방
+                              </a>
+                            </li>
+                            <li>
+                              <a href="//love.seoul.go.kr/asp/pubColumn.asp" target="_blank" title="새 창 열림"> 연재칼럼 </a>
+                            </li>
+                            <li>
+                              <a href="//love.seoul.go.kr/asp/movieList.asp" target="_blank" title="새 창 열림"> TV </a>
+                            </li>
+                            <li>
+                              <a href="//love.seoul.go.kr/asp/noticeList.asp" target="_blank" title="새 창 열림"> 이벤트·공지 </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="//love.seoul.go.kr/asp/noticeList.asp" target="_blank" title="새 창 열림"> 공지사항 </a>
+                                </li>
+                                <li>
+                                  <a href="//love.seoul.go.kr/asp/eventList.asp" target="_blank" title="새 창 열림"> 이벤트 </a>
+                                </li>
+                                <li>
+                                  <a href="//love.seoul.go.kr/asp/subscribe.asp" target="_blank" title="새 창 열림">
+                                    정기구독 신청·변경
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="//kids.seoul.go.kr/" target="_blank" title="새 창 열림"> 내친구서울 </a>
+                            </li>
+                          </ul>
+                        </div>
                       </li>
-                      <!-- 로그인 후-->
                       <li>
-                        <a href="../mypage/like_list.html">마이페이지</a>
-                        <ul class="depth3">
-                          <li><a href="../mypage/like_list.html">내가 좋아요한 영상</a></li>
-                          <li><a href="../mypage/watched_list.html">내가 시청한 영상</a></li>
-                          <li><a href="../mypage/download_list.html">영상다운로드 내역</a></li>
-                          <li><a href="../mypage/curation_list_01.html">추천목록 영상</a></li>
-                          <li><a href="../mypage/wish_list.html">나의 관심분야</a></li>
-                        </ul>
+                        <button type="button">시민기자</button>
+                        <div class="box">
+                          <ul class="depth2 clear">
+                            <li class="home">
+                              <a href="https://mediahub.seoul.go.kr/citizen/citizenMain.do" target="_blank" title="새 창 열림">
+                                시민기자홈
+                              </a>
+                            </li>
+                            <li>
+                              <a href="https://mediahub.seoul.go.kr/citizen/info/citizenInfo.do" target="_blank" title="새 창 열림">
+                                시민기자 안내
+                              </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/info/citizenInfo.do" target="_blank" title="새 창 열림">
+                                    시민기자 소개
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/info/activity.do" target="_blank" title="새 창 열림">
+                                    활동안내
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/info/ethics.do" target="_blank" title="새 창 열림">
+                                    윤리강령
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="https://mediahub.seoul.go.kr/citizen/notice/boardList.do">알림방</a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/notice/boardList.do"> 공지사항 </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/mission/boardList.do"> 취재미션 </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/press/boardList.do"> 보도자료 </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/participation/boardList.do"> 참여신청 </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/faq/boardList.do"> 자주하는질문 </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/education/boardList.do"> 시민기자 교육 </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="https://mediahub.seoul.go.kr/citizen/mypage/citizenMypageMain.do">마이페이지</a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/mypage/citizenMypageMain.do"> 나의 활동 현황 </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/qna/boardList.do"> 1:1 문의 </a>
+                                </li>
+                                <li>
+                                  <a href="https://mediahub.seoul.go.kr/citizen/member/citizenMemberUpdateForm.do"> 정보수정 </a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
                       </li>
                       <li>
-                        <a href="../program/list.html">영상저장소</a>
-                        <ul class="depth3">
-                          <li><a href="../program/list.html">최신영상</a></li>
-                          <li><a href="../program/list.html">생중계다시보기</a></li>
-                          <li><a href="../program/list.html">서울홍보영상</a></li>
-                          <li><a href="../program/list.html">분야별영상</a></li>
-                          <li><a href="../program/list.html">프로그램</a></li>
-                          <li><a href="../program/list.html">소통방통</a></li>
-                        </ul>
+                        <button type="button">어린이신문</button>
+                        <div class="box">
+                          <ul class="depth2 clear">
+                            <li class="home">
+                              <a href="//kids.seoul.go.kr/" target="_blank" title="새 창 열림"> 어린이신문홈 </a>
+                            </li>
+                            <li>
+                              <a href="//kids.seoul.go.kr/article/articleList.do" target="_blank" title="새 창 열림"> 꽁꽁 서울소식 </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="//kids.seoul.go.kr/article/articleList.do?p_searchMode=opt-title&amp;p_searchText=&amp;p_category=&amp;p_date=" target="_blank" title="새 창 열림">
+                                    기사 보기
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/article/ebookList.do" target="_blank" title="새 창 열림"> 지난호 보기 </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="//kids.seoul.go.kr/quiz/quizList.do" target="_blank" title="새 창 열림">팡팡 서울놀이</a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="//kids.seoul.go.kr/quiz/quizList.do" target="_blank" title="새 창 열림"> 방탈초등단 </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/fun/draquizList.do" target="_blank" title="새 창 열림"> 드라퀴즈 </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/puzzle/puzzleList.do" target="_blank" title="새 창 열림"> 낱말 맞히기 </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/paint/paintList.do#page1" target="_blank" title="새 창 열림">
+                                    서울을 색칠하자
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/fun/gameList.do?p_category=CTGRY_SPOTDIFF" target="_blank" title="새 창 열림">
+                                    게임
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/fun/webtoonList.do" target="_blank" title="새 창 열림"> 만화 </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=11482" target="_blank" title="새 창 열림">
+                                콩콩 어린이 기자
+                              </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=11482" target="_blank" title="새 창 열림">
+                                    기자 알림방
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=11490" target="_blank" title="새 창 열림">
+                                    자유주제 기사쓰기
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=19627" target="_blank" title="새 창 열림">
+                                    지정주제 기사쓰기
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/recruit/recruitList.do" target="_blank" title="새 창 열림">
+                                    신청합니다
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=30101" target="_blank" title="새 창 열림">
+                                    질문있어요
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/contents/activeGuide.do" target="_blank" title="새 창 열림">
+                                    어린이기자 활동 안내
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="//kids.seoul.go.kr/m00.do?returnUrl=%252Fmypage%252Fuser.do" target="_blank" title="새 창 열림">
+                                    나의 공간
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="https://kids.seoul.go.kr/board/boardList.do?p_bbsCode=30020" target="_blank" title="새 창 열림">
+                                이벤트·공지
+                              </a>
+                              <ul class="depth3">
+                                <li>
+                                  <a href="https://kids.seoul.go.kr/board/boardList.do?p_bbsCode=30020" target="_blank" title="새 창 열림">
+                                    공지사항
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://kids.seoul.go.kr/board/boardList.do?p_bbsCode=30081" target="_blank" title="새 창 열림">
+                                    도전!이벤트
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="https://kids.seoul.go.kr/" target="_blank" title="새 창 열림"> 뉴스레터 신청 </a>
+                                </li>
+                                <li>
+                                  <a href="http://www.seoul.go.kr/seoul/seoul.do" target="_blank" title="새 창 열림"> 서울시 소개 </a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
                       </li>
-                      <li>
-                        <a href="../curation/list.html">추천목록</a>
-                        <ul class="depth3">
-                          <li><a href="../curation/list.html">전문가 추천</a></li>
-                          <li><a href="../curation/list.html">사용자 추천</a></li>
-                        </ul>
+                      <li class="none">
+                        <a href="https://mediahub.seoul.go.kr/competition/competitionList.do" target="_blank" title="새 창 열림">공모전</a>
                       </li>
-                      <li>
-                        <a href="../creater/main.html">영상크리에이터</a>
-                        <ul class="depth3">
-                          <li><a href="../creater/main.html">크리에이터 영상</a></li>
-                          <li><a href="../creater/aboutus.html">크리에이터 만나기</a></li>
-                        </ul>
+                      <li class="none">
+                        <a href="https://mediahub.seoul.go.kr/event/eventList.do" target="_blank" title="새 창 열림">이벤트</a>
                       </li>
-                      <li>
-                        <a href="../program/list.html">함께방송</a>
-                        <ul class="depth3">
-                          <li><a href="../program/list.html">자치구방송국</a></li>
-                          <li><a href="../program/list.html">마을미디어</a></li>
-                        </ul>
+                      <li class="none">
+                        <a href="https://mediahub.seoul.go.kr/staticpage/introduce.do" target="_blank" title="새 창 열림">내 손안에 서울 소개</a>
                       </li>
                     </ul>
                   </div>
-                </li>
-                <li>
-                  <button type="button">매거진</button>
-                  <div class="box">
-                    <ul class="depth2 clear">
-                      <li class="home">
-                        <a href="//love.seoul.go.kr/" target="_blank" title="새 창 열림">매거진홈</a>
-                      </li>
-                      <li>
-                        <a href="//love.seoul.go.kr/asp/articleList.asp?intcategory=1" target="_blank" title="새 창 열림">
-                          특집
-                        </a>
-                      </li>
-                      <li>
-                        <a href="//love.seoul.go.kr/asp/articleList.asp?intcategory=2" target="_blank" title="새 창 열림">
-                          기획
-                        </a>
-                      </li>
-                      <li>
-                        <a href="//love.seoul.go.kr/asp/articleList.asp?intcategory=3" target="_blank" title="새 창 열림">
-                          인터뷰·탐방
-                        </a>
-                      </li>
-                      <li>
-                        <a href="//love.seoul.go.kr/asp/pubColumn.asp" target="_blank" title="새 창 열림"> 연재칼럼 </a>
-                      </li>
-                      <li>
-                        <a href="//love.seoul.go.kr/asp/movieList.asp" target="_blank" title="새 창 열림"> TV </a>
-                      </li>
-                      <li>
-                        <a href="//love.seoul.go.kr/asp/noticeList.asp" target="_blank" title="새 창 열림"> 이벤트·공지 </a>
-                        <ul class="depth3">
-                          <li>
-                            <a href="//love.seoul.go.kr/asp/noticeList.asp" target="_blank" title="새 창 열림"> 공지사항 </a>
-                          </li>
-                          <li>
-                            <a href="//love.seoul.go.kr/asp/eventList.asp" target="_blank" title="새 창 열림"> 이벤트 </a>
-                          </li>
-                          <li>
-                            <a href="//love.seoul.go.kr/asp/subscribe.asp" target="_blank" title="새 창 열림">
-                              정기구독 신청·변경
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="//kids.seoul.go.kr/" target="_blank" title="새 창 열림"> 내친구서울 </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <button type="button">시민기자</button>
-                  <div class="box">
-                    <ul class="depth2 clear">
-                      <li class="home">
-                        <a href="https://mediahub.seoul.go.kr/citizen/citizenMain.do" target="_blank" title="새 창 열림">
-                          시민기자홈
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://mediahub.seoul.go.kr/citizen/info/citizenInfo.do" target="_blank" title="새 창 열림">
-                          시민기자 안내
-                        </a>
-                        <ul class="depth3">
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/info/citizenInfo.do" target="_blank" title="새 창 열림">
-                              시민기자 소개
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/info/activity.do" target="_blank" title="새 창 열림">
-                              활동안내
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/info/ethics.do" target="_blank" title="새 창 열림">
-                              윤리강령
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="https://mediahub.seoul.go.kr/citizen/notice/boardList.do">알림방</a>
-                        <ul class="depth3">
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/notice/boardList.do"> 공지사항 </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/mission/boardList.do"> 취재미션 </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/press/boardList.do"> 보도자료 </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/participation/boardList.do"> 참여신청 </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/faq/boardList.do"> 자주하는질문 </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/education/boardList.do"> 시민기자 교육 </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="https://mediahub.seoul.go.kr/citizen/mypage/citizenMypageMain.do">마이페이지</a>
-                        <ul class="depth3">
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/mypage/citizenMypageMain.do"> 나의 활동 현황 </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/qna/boardList.do"> 1:1 문의 </a>
-                          </li>
-                          <li>
-                            <a href="https://mediahub.seoul.go.kr/citizen/member/citizenMemberUpdateForm.do"> 정보수정 </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <button type="button">어린이신문</button>
-                  <div class="box">
-                    <ul class="depth2 clear">
-                      <li class="home">
-                        <a href="//kids.seoul.go.kr/" target="_blank" title="새 창 열림"> 어린이신문홈 </a>
-                      </li>
-                      <li>
-                        <a href="//kids.seoul.go.kr/article/articleList.do" target="_blank" title="새 창 열림"> 꽁꽁 서울소식 </a>
-                        <ul class="depth3">
-                          <li>
-                            <a
-                              href="//kids.seoul.go.kr/article/articleList.do?p_searchMode=opt-title&amp;p_searchText=&amp;p_category=&amp;p_date="
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              기사 보기
-                            </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/article/ebookList.do" target="_blank" title="새 창 열림"> 지난호 보기 </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="//kids.seoul.go.kr/quiz/quizList.do" target="_blank" title="새 창 열림">팡팡 서울놀이</a>
-                        <ul class="depth3">
-                          <li>
-                            <a href="//kids.seoul.go.kr/quiz/quizList.do" target="_blank" title="새 창 열림"> 방탈초등단 </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/fun/draquizList.do" target="_blank" title="새 창 열림"> 드라퀴즈 </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/puzzle/puzzleList.do" target="_blank" title="새 창 열림"> 낱말 맞히기 </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/paint/paintList.do#page1" target="_blank" title="새 창 열림">
-                              서울을 색칠하자
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="//kids.seoul.go.kr/fun/gameList.do?p_category=CTGRY_SPOTDIFF"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              게임
-                            </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/fun/webtoonList.do" target="_blank" title="새 창 열림"> 만화 </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=11482" target="_blank" title="새 창 열림">
-                          콩콩 어린이 기자
-                        </a>
-                        <ul class="depth3">
-                          <li>
-                            <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=11482" target="_blank" title="새 창 열림">
-                              기자 알림방
-                            </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=11490" target="_blank" title="새 창 열림">
-                              자유주제 기사쓰기
-                            </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=19627" target="_blank" title="새 창 열림">
-                              지정주제 기사쓰기
-                            </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/recruit/recruitList.do" target="_blank" title="새 창 열림">
-                              신청합니다
-                            </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/board/boardList.do?p_bbsCode=30101" target="_blank" title="새 창 열림">
-                              질문있어요
-                            </a>
-                          </li>
-                          <li>
-                            <a href="//kids.seoul.go.kr/contents/activeGuide.do" target="_blank" title="새 창 열림">
-                              어린이기자 활동 안내
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="//kids.seoul.go.kr/m00.do?returnUrl=%252Fmypage%252Fuser.do"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              나의 공간
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="https://kids.seoul.go.kr/board/boardList.do?p_bbsCode=30020" target="_blank" title="새 창 열림">
-                          이벤트·공지
-                        </a>
-                        <ul class="depth3">
-                          <li>
-                            <a
-                              href="https://kids.seoul.go.kr/board/boardList.do?p_bbsCode=30020"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              공지사항
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="https://kids.seoul.go.kr/board/boardList.do?p_bbsCode=30081"
-                              target="_blank"
-                              title="새 창 열림"
-                            >
-                              도전!이벤트
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://kids.seoul.go.kr/" target="_blank" title="새 창 열림"> 뉴스레터 신청 </a>
-                          </li>
-                          <li>
-                            <a href="http://www.seoul.go.kr/seoul/seoul.do" target="_blank" title="새 창 열림"> 서울시 소개 </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="none">
-                  <a href="https://mediahub.seoul.go.kr/competition/competitionList.do" target="_blank" title="새 창 열림"
-                    >공모전</a
-                  >
-                </li>
-                <li class="none">
-                  <a href="https://mediahub.seoul.go.kr/event/eventList.do" target="_blank" title="새 창 열림">이벤트</a>
-                </li>
-                <li class="none">
-                  <a href="https://mediahub.seoul.go.kr/staticpage/introduce.do" target="_blank" title="새 창 열림"
-                    >내 손안에 서울 소개</a
-                  >
-                </li>
-              </ul>
+                  <button type="button" class="button-close-allMenu">
+                    <span><em class="hidden-txt">전체메뉴</em></span>
+                  </button>
+                </div>
+              </nav>
             </div>
-            <button type="button" class="button-close-allMenu">
-              <span><em class="hidden-txt">전체메뉴</em></span>
-            </button>
           </div>
-        </nav>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="h-wrap-03">
-  <div class="inner clear">
-    <ul class="gnb dropDown">
-      <li class="item">
-        <a href="">생중계</a>
-        <div class="depth2">
-          <ul>
-            <li><a href="">생중계</a></li>
-            <li><a href="../schedule/schedule_month.html">편성표</a></li>
-            <li><a href="../seoul24/main.html">광장24시</a></li>
+      <div class="h-wrap-03">
+        <div class="inner clear">
+          <ul class="gnb dropDown">
+            <li class="item">
+              <a href="">생중계</a>
+              <div class="depth2">
+                <ul>
+                  <li><a href="">생중계</a></li>
+                  <li><a href="../schedule/schedule_month.html">편성표</a></li>
+                  <li><a href="../seoul24/main.html">광장24시</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="item">
+              <a href="../program/list.html">영상저장소</a>
+              <div class="depth2">
+                <ul>
+                  <li><a href="../program/list.html">최신영상</a></li>
+                  <li><a href="../program/list.html">생중계다시보기</a></li>
+                  <li><a href="../program/list.html">서울홍보영상</a></li>
+                  <li><a href="../program/list.html">분야별영상</a></li>
+                  <li><a href="../program/list.html">프로그램</a></li>
+                  <li><a href="../program/list.html">소통방통</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="item">
+              <a href="../creater/main.html">영상크리에이터</a>
+              <div class="depth2">
+                <ul>
+                  <li><a href="../creater/main.html">크리에이터영상</a></li>
+                  <li><a href="../creater/aboutus.html">크리에이터 만나기</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="item">
+              <a href="../curation/list.html">추천목록</a>
+              <div class="depth2">
+                <ul>
+                  <li><a href="../curation/list.html">전문가추천</a></li>
+                  <li><a href="../curation/list.html">사용자추천</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="item">
+              <a href="../program/list.html">함께방송</a>
+              <div class="depth2">
+                <ul>
+                  <li><a href="../program/list.html">자치구방송국</a></li>
+                  <li><a href="../program/list.html">마을미디어</a></li>
+                </ul>
+              </div>
+            </li>
           </ul>
-        </div>
-      </li>
-      <li class="item">
-        <a href="../program/list.html">영상저장소</a>
-        <div class="depth2">
-          <ul>
-            <li><a href="../program/list.html">최신영상</a></li>
-            <li><a href="../program/list.html">생중계다시보기</a></li>
-            <li><a href="../program/list.html">서울홍보영상</a></li>
-            <li><a href="../program/list.html">분야별영상</a></li>
-            <li><a href="../program/list.html">프로그램</a></li>
-            <li><a href="../program/list.html">소통방통</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="item">
-        <a href="../creater/main.html">영상크리에이터</a>
-        <div class="depth2">
-          <ul>
-            <li><a href="../creater/main.html">크리에이터영상</a></li>
-            <li><a href="../creater/aboutus.html">크리에이터 만나기</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="item">
-        <a href="../curation/list.html">추천목록</a>
-        <div class="depth2">
-          <ul>
-            <li><a href="../curation/list.html">전문가추천</a></li>
-            <li><a href="../curation/list.html">사용자추천</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="item">
-        <a href="../program/list.html">함께방송</a>
-        <div class="depth2">
-          <ul>
-            <li><a href="../program/list.html">자치구방송국</a></li>
-            <li><a href="../program/list.html">마을미디어</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-    <div class="text-wrap search">
-      <form>
-        <fieldset>
-          <legend>검색</legend>
-          <input class="txt-ellipsis" type="text" title="검색어 입력" />
-          <button type="submit"><em class="hidden-txt">검색</em></button>
-        </fieldset>
-      </form>
-    </div>
-    <div class="dropDown">
-      <!-- 로그인 전 -->
-      <a href="javascript:void(0);" class="sign-in">로그인</a>
-      <!-- 로그인 후
+          <div class="text-wrap search">
+            <form>
+              <fieldset>
+                <legend>검색</legend>
+                <input class="txt-ellipsis" type="text" title="검색어 입력" />
+                <button type="submit"><em class="hidden-txt">검색</em></button>
+              </fieldset>
+            </form>
+          </div>
+          <div class="dropDown">
+            <!-- 로그인 전 -->
+            <a href="javascript:void(0);" class="sign-in">로그인</a>
+            <!-- 로그인 후
       <a href="javascript:void(0)" class="sign-out">로그아웃</a>
       <div class="item">
         <a href="javascript:void(0);" class="mypage">마이페이지</a>
@@ -832,259 +688,243 @@
         </div>
       </div>
       -->
-    </div>
-  </div>
-</div>
-</header>
-      <!-- // #gnb -->
-
-      <!-- #contents -->
-      <div class="wrap creater board list" id="contents">
-        <h1 class="hidden-txt">서울영상크리에이터 공지사항 목록</h1>
-        <section class="board_top">
-          <header class="page-header">
-            <div class="inner">
-              <div class="location">
-                <span
-                  ><a href=""
-                    ><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a
-                  ></span
-                >
-                <span><a href="">영상크리에이터</a></span>
-                <span><a href="">커뮤니티채널</a></span>
-                <span><a href="">공지사항</a></span>
-              </div>
-
-              <h2 class="no_st">영상크리에이터 전용 커뮤니티 채널 입니다.</h2>
-
-              <nav class="tabStyle-nav">
-                <ul>
-                  <li class="on">
-                    <a href=""><span>공지사항</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>자료실</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>협업신청</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>우리들공간</span></a>
-                  </li>
-                  <li>
-                    <a href=""><span>영상제작소</span></a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </header>
-        </section>
-
-        <!-- 공지사항 목록 -->
-        <section>
-          <div class="inner">
-            <div class="b-search-area">
-              <form>
-                <fieldset>
-                  <span class="select-wrap" style="background-color: #f9f9f9">
-                    <label for="b-search-select">
-                      <em class="hidden-txt">검색 옵션 선택</em>
-                    </label>
-                    <select id="b-search-select">
-                      <option>전체</option>
-                      <option>전체</option>
-                      <option>전체</option>
-                      <option>전체</option>
-                    </select>
-                  </span>
-                  <div class="text-wrap has-button">
-                    <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
-                    <button class="btn-has-icon rounded search purple" type="submit"><em>검색하기</em></button>
-                    <button class="btn-has-icon rounded refresh lightPurple" type="button"><em>새로고침</em></button>
-                  </div>
-                </fieldset>
-              </form>
-            </div>
           </div>
+        </div>
+      </div>
+    </header>
+    <!-- // #gnb -->
 
-          <div class="tblStyle-list">
-            <div class="inner">
-              <ul class="list-th">
-                <li class="td-num">번호</li>
-                <li class="td-ntType"></li>
-                <li class="td-subject">제목</li>
-                <li class="td-period">협업신청기간</li>
-                <li class="td-date">날짜</li>
-                <li class="td-file">파일</li>
-              </ul>
-              <ul class="list-td">
-                <li>
-                  <a href="">
-                    <div class="td-num"><span>06</span></div>
-                    <div class="td-ntType yellow"><span>협업신청</span></div>
-                    <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
-                    </div>
-                    <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>3</span></div>
-                  </a>
+    <!-- #contents -->
+    <div class="wrap creater board list" id="contents">
+      <h1 class="hidden-txt">서울영상크리에이터 공지사항 목록</h1>
+      <section class="board_top">
+        <header class="page-header">
+          <div class="inner">
+            <div class="location">
+              <span><a href=""><img src="../assets/images/icon-home-xs.png" alt="홈" /><em class="hidden-txt">홈으로 이동</em></a></span>
+              <span><a href="">영상크리에이터</a></span>
+              <span><a href="">커뮤니티채널</a></span>
+              <span><a href="">공지사항</a></span>
+            </div>
+
+            <h2 class="no_st">영상크리에이터 전용 커뮤니티 채널 입니다.</h2>
+
+            <nav class="tabStyle-nav">
+              <ul>
+                <li class="on">
+                  <a href=""><span>공지사항</span></a>
                 </li>
                 <li>
-                  <a href="">
-                    <div class="td-num"><span>05</span></div>
-                    <div class="td-ntType navy"><span>필독</span></div>
-                    <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
-                    </div>
-                    <div class="td-period"><span>-</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>3</span></div>
-                  </a>
+                  <a href=""><span>자료실</span></a>
                 </li>
                 <li>
-                  <a href="">
-                    <div class="td-num"><span>04</span></div>
-                    <div class="td-ntType"></div>
-                    <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
-                    </div>
-                    <div class="td-period"><span>-</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>-</span></div>
-                  </a>
+                  <a href=""><span>협업신청</span></a>
                 </li>
                 <li>
-                  <a href="">
-                    <div class="td-num"><span>03</span></div>
-                    <div class="td-ntType yellow"><span>협업신청</span></div>
-                    <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
-                    </div>
-                    <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>3</span></div>
-                  </a>
+                  <a href=""><span>우리들공간</span></a>
                 </li>
                 <li>
-                  <a href="">
-                    <div class="td-num"><span>02</span></div>
-                    <div class="td-ntType navy"><span>필독</span></div>
-                    <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
-                    </div>
-                    <div class="td-period"><span>-</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>3</span></div>
-                  </a>
-                </li>
-                <li>
-                  <a href="">
-                    <div class="td-num"><span>01</span></div>
-                    <div class="td-ntType"></div>
-                    <div class="td-subject">
-                      <span
-                        >서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
-                        협업서울서울</span
-                      >
-                    </div>
-                    <div class="td-period"><span>-</span></div>
-                    <div class="td-date"><span>2022-07-14</span></div>
-                    <div class="td-file"><span>-</span></div>
-                  </a>
+                  <a href=""><span>영상제작소</span></a>
                 </li>
               </ul>
+            </nav>
+          </div>
+        </header>
+      </section>
 
-              <!-- 검색결과가 없을 시 
+      <!-- 공지사항 목록 -->
+      <section>
+        <div class="inner">
+          <div class="b-search-area">
+            <form>
+              <fieldset>
+                <span class="select-wrap" style="background-color: #f9f9f9">
+                  <label for="b-search-select">
+                    <em class="hidden-txt">검색 옵션 선택</em>
+                  </label>
+                  <select id="b-search-select">
+                    <option>전체</option>
+                    <option>전체</option>
+                    <option>전체</option>
+                    <option>전체</option>
+                  </select>
+                </span>
+                <div class="text-wrap has-button">
+                  <input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
+                  <button class="btn-has-icon rounded search purple" type="submit"><em>검색하기</em></button>
+                  <button class="btn-has-icon rounded refresh lightPurple" type="button"><em>새로고침</em></button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <div class="tblStyle-list">
+          <div class="inner">
+            <ul class="list-th">
+              <li class="td-num">번호</li>
+              <li class="td-ntType"></li>
+              <li class="td-subject">제목</li>
+              <li class="td-period">협업신청기간</li>
+              <li class="td-date">날짜</li>
+              <li class="td-file">파일</li>
+            </ul>
+            <ul class="list-td">
+              <li>
+                <a href="">
+                  <div class="td-num"><span>06</span></div>
+                  <div class="td-ntType yellow"><span>협업신청</span></div>
+                  <div class="td-subject">
+                    <span>서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                      협업서울서울</span>
+                  </div>
+                  <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
+                  <div class="td-date"><span>2022-07-14</span></div>
+                  <div class="td-file"><span>3</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <div class="td-num"><span>05</span></div>
+                  <div class="td-ntType navy"><span>필독</span></div>
+                  <div class="td-subject">
+                    <span>서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                      협업서울서울</span>
+                  </div>
+                  <div class="td-period"><span>-</span></div>
+                  <div class="td-date"><span>2022-07-14</span></div>
+                  <div class="td-file"><span>3</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <div class="td-num"><span>04</span></div>
+                  <div class="td-ntType"></div>
+                  <div class="td-subject">
+                    <span>서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                      협업서울서울</span>
+                  </div>
+                  <div class="td-period"><span>-</span></div>
+                  <div class="td-date"><span>2022-07-14</span></div>
+                  <div class="td-file"><span>-</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <div class="td-num"><span>03</span></div>
+                  <div class="td-ntType yellow"><span>협업신청</span></div>
+                  <div class="td-subject">
+                    <span>서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                      협업서울서울</span>
+                  </div>
+                  <div class="td-period"><span>2022.06.01~ 2022.08.30</span></div>
+                  <div class="td-date"><span>2022-07-14</span></div>
+                  <div class="td-file"><span>3</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <div class="td-num"><span>02</span></div>
+                  <div class="td-ntType navy"><span>필독</span></div>
+                  <div class="td-subject">
+                    <span>서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                      협업서울서울</span>
+                  </div>
+                  <div class="td-period"><span>-</span></div>
+                  <div class="td-date"><span>2022-07-14</span></div>
+                  <div class="td-file"><span>3</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <div class="td-num"><span>01</span></div>
+                  <div class="td-ntType"></div>
+                  <div class="td-subject">
+                    <span>서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작 협업서울 역사관 체험 영상 제작
+                      협업서울서울</span>
+                  </div>
+                  <div class="td-period"><span>-</span></div>
+                  <div class="td-date"><span>2022-07-14</span></div>
+                  <div class="td-file"><span>-</span></div>
+                </a>
+              </li>
+            </ul>
+
+            <!-- 검색결과가 없을 시 
               <div class="no-files">
                 <p><img src="../assets/images/img-notice.png" alt="알림 이미지" /></p>
                 <p>' '에 대한 검색결과가 없습니다.</p>
               </div>
               -->
 
-              <!-- 등록된 게시물이 없을 시
+            <!-- 등록된 게시물이 없을 시
               <div class="no-files">
                 <p><img src="../assets/images/img-notice.png" alt="알림 이미지" /></p>
                 <p>등록된 게시물이 없습니다.</p>
               </div>
               -->
 
-              <div class="paging pc-only purple">
-                <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
-                <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
-                <strong>1</strong>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">7</a>
-                <a href="#">8</a>
-                <a href="#">9</a>
-                <a href="#">10</a>
-                <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
-                <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
-              </div>
-              <div class="btn-wrap align-c mob-only">
-                <button type="button" class="btn-prev"><em>이전</em></button>
-                <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
-                <button type="button" class="btn-next"><em>다음</em></button>
-              </div>
+            <div class="paging pc-only purple">
+              <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+              <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+              <strong>1</strong>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">7</a>
+              <a href="#">8</a>
+              <a href="#">9</a>
+              <a href="#">10</a>
+              <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+              <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+            </div>
+            <div class="btn-wrap align-c mob-only">
+              <button type="button" class="btn-prev"><em>이전</em></button>
+              <span><b>3</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+              <button type="button" class="btn-next"><em>다음</em></button>
             </div>
           </div>
-        </section>
-      </div>
-      <!-- // #contents -->
+        </div>
+      </section>
+    </div>
+    <!-- // #contents -->
 
-      <!-- #footer -->
-      <footer id="footer"><div class="inner clear">
-  <div class="l-box">
-    <ul>
-      <li>
-        <a href="https://www.seoul.go.kr/helper/privacy.do?type=www" class="privacy-policy" target="_blank" title="새 창 열림"
-          >개인정보처리방침</a
-        >
-      </li>
-      <li><a href="https://www.seoul.go.kr/helper/email.do" target="_blank" title="새 창 열림">이메일 무단수집 거부</a></li>
-      <li>
-        <a href="https://www.seoul.go.kr/helper/media.do" target="_blank" title="새 창 열림">영상정보처리기기 운영관리 방침</a>
-      </li>
-      <li>
-        <a href="https://www.seoul.go.kr/homepageCorrect/user/hpCorrect.do" target="_blank" title="새 창 열림">누리집 바로잡기</a>
-      </li>
-    </ul>
-    <address>
-      서울특별시청 04524 서울특별시 중구 세종대로 110
-      뉴미디어담당관&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>대표전화</b>&nbsp;다산콜센터&nbsp;T. 02-120
-    </address>
-    <p class="copyright">&copy; 2022. Seoul Metropolitan Government all rights reserved.</p>
+    <!-- #footer -->
+    <footer id="footer">
+      <div class="inner clear">
+        <div class="l-box">
+          <ul>
+            <li>
+              <a href="https://www.seoul.go.kr/helper/privacy.do?type=www" class="privacy-policy" target="_blank" title="새 창 열림">개인정보처리방침</a>
+            </li>
+            <li><a href="https://www.seoul.go.kr/helper/email.do" target="_blank" title="새 창 열림">이메일 무단수집 거부</a></li>
+            <li>
+              <a href="https://www.seoul.go.kr/helper/media.do" target="_blank" title="새 창 열림">영상정보처리기기 운영관리 방침</a>
+            </li>
+            <li>
+              <a href="https://www.seoul.go.kr/homepageCorrect/user/hpCorrect.do" target="_blank" title="새 창 열림">누리집 바로잡기</a>
+            </li>
+          </ul>
+          <address>
+            서울특별시청 04524 서울특별시 중구 세종대로 110
+            뉴미디어담당관&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>대표전화</b>&nbsp;다산콜센터&nbsp;T. 02-120
+          </address>
+          <p class="copyright">&copy; 2022. Seoul Metropolitan Government all rights reserved.</p>
+        </div>
+        <div class="l-box">
+          <div class="foot_bnr">
+            <!-- 하단 배너 영역 -->
+          </div>
+        </div>
+        <button type="button" class="button-scroll-top" onclick="commonFunction().goScrollTop();">
+          <em class="hidden-txt">상단으로 이동</em>
+        </button>
+      </div>
+    </footer>
+    <!-- // #footer -->
   </div>
-  <div class="l-box">
-    <div class="foot_bnr">
-      <!-- 하단 배너 영역 -->
-    </div>
-  </div>
-  <button type="button" class="button-scroll-top" onclick="commonFunction().goScrollTop();">
-    <em class="hidden-txt">상단으로 이동</em>
-  </button>
-</div>
-</footer>
-      <!-- // #footer -->
-    </div>
-  </body>
+</body>
+
 </html>

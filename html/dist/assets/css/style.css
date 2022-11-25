@@ -1807,8 +1807,7 @@ a.ui-button:active,
 
 .modal {
 	display: none;
-	width: auto;
-	min-width: 300px;
+	width: 300px;
 	position: absolute;
 	padding: 25px 30px;
 	top: 60px;
@@ -1988,7 +1987,7 @@ a.ui-button:active,
 	margin-right: -80px;
 }
 .modal.right::before {
-	right: 49px;
+	right: 50px;
 }
 .modal::before {
 	position: absolute;
@@ -2399,8 +2398,8 @@ a.ui-button:active,
 .modal.applyDownload .btn-wrap {
 	margin-top: 20px;
 }
-.modal.share {
-	width: 282px;
+.modal.share.type02 {
+	width: 330px;
 }
 @media only screen and (max-width: 1280px) {
 	.modal.share {
@@ -2440,6 +2439,9 @@ a.ui-button:active,
 }
 .modal.share .sns-list li a.share-URL::before {
 	background-position: -187px -54px;
+}
+.modal.share .sns-list li a.share-vdURL::before {
+	background-position: -231px -55px;
 }
 .modal.share .sns-list li + li {
 	margin-left: 13px;
@@ -4662,8 +4664,15 @@ textarea {
 	width: 100%;
 	overflow: hidden;
 }
-.wrap:not(.curation) *:not(.animate, .transition-none, .transition-none > *, .depth2, .sort-inner > *, button > *,
-.paging, .handle, .slider-fill) {
+.wrap:not(.curation) *:not(.animate,
+.transition-none,
+.transition-none > *,
+.depth2,
+.sort-inner > *,
+button > *,
+.paging,
+.handle,
+.slider-fill) {
 	transition: all 0.4s ease-in-out;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -4715,6 +4724,9 @@ section {
 }
 section[class*=bg-] {
 	padding: 60px 0;
+}
+section[class*=bg-].type02 {
+	padding: 30px 0;
 }
 @media only screen and (max-width: 768px) {
 	section[class*=bg-] {
@@ -11750,6 +11762,9 @@ keyword swiper
 		padding-bottom: 0;
 	}
 }
+.wrap.sched.list section {
+	margin-top: 0;
+}
 .wrap.sched.list .list_top {
 	min-height: 0;
 }
@@ -11814,12 +11829,62 @@ keyword swiper
 		margin-top: -7px;
 	}
 }
-.wrap.sched.list .list_top + section {
-	margin-top: 0;
+.wrap.sched.list .weeklyLive-header h3 {
+	font-size: 2rem;
+}
+.wrap.sched.list .weeklyLive-swiper {
+	margin-top: 20px;
+	padding-bottom: 10px;
+	overflow: hidden;
+}
+.wrap.sched.list .weeklyLive-swiper .cts {
+	margin: 0 10px;
+	background-color: #fff;
+	border-top: 2px solid #40445d;
+	border-radius: 0 0 20px 20px;
+	-webkit-box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.08);
+	box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.08);
+}
+.wrap.sched.list .weeklyLive-swiper .cts a {
+	display: block;
+	padding: 20px;
+}
+.wrap.sched.list .weeklyLive-swiper .cts span {
+	display: block;
+	font-size: 1.6rem;
+	line-height: 1;
+}
+.wrap.sched.list .weeklyLive-swiper .cts span.date {
+	position: relative;
+	padding-left: 30px;
+	font-size: 1.8rem;
+}
+.wrap.sched.list .weeklyLive-swiper .cts span.date::before {
+	width: 19px;
+	height: 18px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	background-image: url("../images/icon-calendar.png");
+	content: "";
+}
+.wrap.sched.list .weeklyLive-swiper .cts span.info {
+	margin-top: 20px;
+	font-size: 1.6rem;
+	line-height: 1.4;
+}
+.wrap.sched.list .weeklyLive-swiper .cts span.time {
+	margin-top: 15px;
+	color: #999;
 }
 .wrap.sched.list .sched-header {
 	border-top: 2px solid #cb2121;
 	padding: 30px 0 25px;
+	margin-top: 40px;
 	position: relative;
 }
 @media only screen and (max-width: 1024px) {

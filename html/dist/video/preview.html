@@ -98,8 +98,14 @@
       startTime: 0, //영상 재생 시작 시간(이어보기 기능)
       seeking: true, // false : 현재 재생시간 이후는 seeking 되지 않도록
       progress: false, // false : 프로그레스바 컨트롤 되지 않도록
-      preview: [{ enabled: false, src: '' }],
-      quality: { default: sizeList[qualitySize], options: sizeList }, // "default" : 0, options : [0]
+      preview: [{
+        enabled: false,
+        src: ''
+      }],
+      quality: {
+        default: sizeList[qualitySize],
+        options: sizeList
+      }, // "default" : 0, options : [0]
       qualitySize: qualitySize,
       isBanner: true, //true : 컨트롤바 숨김, false : 컨트롤바 출력, default = false
       iconUrl: '../tgplayer/plugin/js/plyr.svg',
