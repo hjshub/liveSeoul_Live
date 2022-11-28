@@ -188,8 +188,8 @@ h1 {
   margin-top: 0;
 }
 
-button[class*='btn-']:not(.btn-has-icon, .btn-prev, .btn-next) {
-  margin: 10px !important;
+button[class*='btn-']/*:not(.btn-has-icon, .btn-prev, .btn-next)*/ {
+  margin: 5px !important;
 }
 
 .ft-Thin {
