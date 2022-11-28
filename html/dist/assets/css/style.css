@@ -4876,6 +4876,9 @@ main .main-section-01 .main-swiper article .heading-wrap-02 {
 		bottom: 100px;
 	}
 }
+main .main-section-01 .main-swiper article .heading-wrap-02 strong {
+	text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.45);
+}
 main .main-section-01 .main-swiper article .btn-playSwiper {
 	display: inline-block;
 	position: absolute;
