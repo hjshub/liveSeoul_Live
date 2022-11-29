@@ -61,6 +61,15 @@
                   <td><em class="finish">완료</em></td>
                 </tr>
 
+                <!-- 생중계 -->
+                <tr>
+                  <td class="count"></td>
+                  <td>생중계</td>
+                  <td>생중계</td>
+                  <td><a href="../html/dist/live.html" target="_blank">/html/dist/live.html</a></td>
+                  <td><em class="finish">완료</em></td>
+                </tr>
+
                 <!-- 프로그램 -->
                 <tr>
                   <td class="count"></td>
@@ -82,28 +91,17 @@
                   <td><em class="finish">완료</em></td>
                 </tr>
 
-                <!-- 주제별 영상 -->
+                <!-- 추천목록 -->
                 <tr>
                   <td class="count"></td>
-                  <td>주제별 영상</td>
-                  <td>주제별 영상 목록</td>
-                  <td><a href="../html/dist/by_topic/list.html" target="_blank">/html/dist/by_topic/list.html</a></td>
-                  <td>
-                    <em class="finish">완료</em>
-                  </td>
-                </tr>
-
-                <!-- 큐레이션 -->
-                <tr>
-                  <td class="count"></td>
-                  <td rowspan="4">큐레이션</td>
-                  <td>큐레이션 목록</td>
+                  <td rowspan="3">추천목록</td>
+                  <td>추천목록</td>
                   <td><a href="../html/dist/curation/list.html" target="_blank">/html/dist/curation/list.html</a></td>
                   <td><em class="finish">완료</em></td>
                 </tr>
                 <tr>
                   <td class="count"></td>
-                  <td>큐레이션 상세</td>
+                  <td>추천목록 상세</td>
                   <td><a href="../html/dist/curation/view.html" target="_blank">/html/dist/curation/view.html</a></td>
                   <td>
                     <em class="finish">완료</em>
@@ -111,15 +109,7 @@
                 </tr>
                 <tr>
                   <td class="count"></td>
-                  <td>큐레이션 등록</td>
-                  <td><a href="../html/dist/curation/write.html" target="_blank">/html/dist/curation/write.html</a></td>
-                  <td>
-                    <em class="finish">완료</em>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="count"></td>
-                  <td>큐레이션 수정</td>
+                  <td>추천목록 수정</td>
                   <td><a href="../html/dist/curation/modify.html" target="_blank">/html/dist/curation/modify.html</a></td>
                   <td>
                     <em class="finish">완료</em>
@@ -417,7 +407,7 @@
 
         $('.progress')
           .find('.perc')
-          .append(progress.toFixed(2) + '%');
+          .append(progress.toFixed() + '%');
       });
     </script>
   </body>

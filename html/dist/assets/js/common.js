@@ -286,6 +286,13 @@ function commonFunction() {
           height: 'auto',
           'overflow-y': 'visible',
         });
+
+        // 가이드 영상 리셋
+        if ($('#guideVd').length) {
+          var videoGuide = document.getElementById('video_guide');
+          videoGuide.pause();
+          $(videoGuide).prop('currentTime', 0);
+        }
       },
       MainSwiper = function () {
         // 메인 스와이퍼

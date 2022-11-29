@@ -270,7 +270,7 @@ button {
 	cursor: pointer;
 }
 
-button:active:enabled {
+button:not(.plyr__control):active:enabled {
 	transform: scale(0.97);
 	-webkit-transform: scale(0.97);
 	-moz-transform: scale(0.97);
@@ -1975,6 +1975,18 @@ a.ui-button:active,
 		margin-top: 10px;
 	}
 }
+.modal.fixed.guide {
+	max-width: 961px;
+	width: 65%;
+}
+@media only screen and (orientation: landscape) and (max-width: 821px) {
+	.modal.fixed.guide {
+		width: 70% !important;
+	}
+}
+.modal.fixed.guide .modal-body .modal-contents {
+	padding: 0;
+}
 .modal.fixed.wish .modal-body .modal-contents {
 	background-color: #f9f9f9;
 }
@@ -3490,6 +3502,11 @@ a.ui-button:active,
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
+}
+@media only screen and (max-width: 480px) {
+	#gnb .h-wrap-03 .inner {
+		padding: 0;
+	}
 }
 #gnb .h-wrap-03 .inner > * {
 	-webkit-box-flex: 1;
@@ -5978,6 +5995,36 @@ main .no-files p + p {
 }
 main .no-files p * {
 	vertical-align: top;
+}
+main .no-files.live {
+	min-height: -webkit-calc(100vh - 285px);
+	min-height: -moz-calc(100vh - 285px);
+	min-height: calc(100vh - 285px);
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+@media only screen and (max-width: 1200px) {
+	main .no-files.live {
+		min-height: -webkit-calc(100vh - 229px);
+		min-height: -moz-calc(100vh - 229px);
+		min-height: calc(100vh - 229px);
+	}
+}
+@media only screen and (orientation: landscape) and (max-width: 821px) {
+	main .no-files.live {
+		min-height: 350px;
+	}
+}
+main .no-files.live p {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
 }
 
 /*sub*/
@@ -8651,6 +8698,11 @@ keyword swiper
 @media only screen and (max-width: 1485px) {
 	.wrap.program .detail-view article .vd-info .contents .contents-mid .utility > ul > li + li {
 		margin-left: 15px;
+	}
+}
+@media only screen and (max-width: 391px) {
+	.wrap.program .detail-view article .vd-info .contents .contents-mid .utility > ul > li + li {
+		margin-left: 10px;
 	}
 }
 .wrap.program .detail-view article .vd-info .contents .contents-body {
