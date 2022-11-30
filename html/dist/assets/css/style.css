@@ -7211,9 +7211,11 @@ main .no-files.live p {
 .liveOnAir .liveOn-swiper .swiper-slide .article .preview {
 	display: none;
 	width: 250px;
-	padding: 20px 4px 4px 4px;
+	border-width: 20px 4px 4px 4px;
+	border-style: solid;
+	border-color: #f4b506;
+	padding: 0;
 	max-height: 190px;
-	background-color: #f4b506;
 	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	position: absolute;
