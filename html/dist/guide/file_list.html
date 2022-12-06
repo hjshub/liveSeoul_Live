@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="Author" content="" />
+  <meta name="Keywords" content="" />
+  <meta name="Description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+  <title>라이브서울 | 파일리스트</title>
+
+  <script src="../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="../assets/css/file_list.css" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="container">
+      <section class="front">
+        <h2>
+          라이브서울<br />
+          사용자 작업리스트
+        </h2>
+        <div class="table-style">
+          <div class="progress">진척률 : <b class="perc"></b></div>
+          <h3>파일 경로</h3>
+          <table>
+            <caption>
+              위플즈 (날짜, 구분, 내용)
+            </caption>
+            <colgroup>
+              <col style="width: 5%" />
+              <col style="width: 20%" />
+              <col style="width: auto" />
+              <col style="width: 25%" />
+              <col style="width: 15%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">NO.</th>
+                <th scope="col">구분</th>
+                <th scope="col">페이지명</th>
+                <th scope="col">파일경로</th>
+                <th scope="col">작업상태</th>
+              </tr>
+            </thead>
+            <tfoot></tfoot>
+            <tbody>
+              <!-- main -->
+              <tr>
+                <td class="count"></td>
+                <td rowspan="2">메인</td>
+                <td>메인</td>
+                <td><a href="../main.html" target="_blank">main.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+
+              <tr>
+                <td class="count"></td>
+                <td>메인 라이브</td>
+                <td><a href="../main_live.html" target="_blank">main_live.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+
+              <!-- 생중계 -->
+              <tr>
+                <td class="count"></td>
+                <td>생중계</td>
+                <td>생중계</td>
+                <td><a href="../live.html" target="_blank">live.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+
+              <!-- 프로그램 -->
+              <tr>
+                <td class="count"></td>
+                <td rowspan="3">프로그램</td>
+                <td>프로그램 목록(공통)</td>
+                <td><a href="../program/list.html" target="_blank">program/list.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>프로그램 목록 - 서울온에어</td>
+                <td><a href="../program/list_type2.html" target="_blank">program/list_type2.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>프로그램 상세</td>
+                <td><a href="../program/view.html" target="_blank">program/view.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+
+              <!-- 추천목록 -->
+              <tr>
+                <td class="count"></td>
+                <td rowspan="3">추천목록</td>
+                <td>추천목록</td>
+                <td><a href="../curation/list.html" target="_blank">curation/list.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>추천목록 상세</td>
+                <td><a href="../curation/view.html" target="_blank">curation/view.html</a></td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>추천목록 수정</td>
+                <td><a href="../curation/modify.html" target="_blank">curation/modify.html</a></td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+
+              <!-- 영상크리에이터 -->
+              <tr>
+                <td class="count"></td>
+                <td rowspan="20">영상크리에이터</td>
+                <td>메인</td>
+                <td><a href="../creater/main.html" target="_blank">creater/main.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>aboutus</td>
+                <td><a href="../creater/aboutus.html" target="_blank">creater/aboutus.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>상세</td>
+                <td><a href="../creater/view.html" target="_blank">creater/view.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>공지사항 목록</td>
+                <td><a href="../creater/notice_list.html" target="_blank">creater/notice_list.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>공지사항 상세</td>
+                <td><a href="../creater/notice_view.html" target="_blank">creater/notice_view.html</a></td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>자료실 목록</td>
+                <td>
+                  <a href="../creater/download_list.html" target="_blank">creater/download_list.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>자료실 등록</td>
+                <td>
+                  <a href="../creater/download_write.html" target="_blank">creater/download_write.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>자료실 수정</td>
+                <td>
+                  <a href="../creater/download_modify.html" target="_blank">creater/download_modify.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>자료실 상세</td>
+                <td>
+                  <a href="../creater/download_view.html" target="_blank">creater/download_view.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>협업신청 목록</td>
+                <td>
+                  <a href="../creater/collabo_list.html" target="_blank">creater/collabo_list.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>협업신청 상세</td>
+                <td>
+                  <a href="../creater/collabo_view.html" target="_blank">creater/collabo_view.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>협업신청 등록</td>
+                <td>
+                  <a href="../creater/collabo_write.html" target="_blank">creater/collabo_write.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>우리들공간 목록</td>
+                <td>
+                  <a href="../creater/notice2_list.html" target="_blank">creater/notice2_list.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>우리들공간 등록</td>
+                <td>
+                  <a href="../creater/notice2_write.html" target="_blank">creater/notice2_write.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>우리들공간 수정</td>
+                <td>
+                  <a href="../creater/notice2_modify.html" target="_blank">creater/notice2_modify.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>우리들공간 상세</td>
+                <td>
+                  <a href="../creater/notice2_view.html" target="_blank">creater/notice2_view.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>영상제작소 목록</td>
+                <td>
+                  <a href="../creater/collabo_area_list.html" target="_blank">creater/collabo_area_list.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>영상제작소 등록</td>
+                <td>
+                  <a href="../creater/collabo_area_write.html" target="_blank">creater/collabo_area_write.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>영상제작소 수정</td>
+                <td>
+                  <a href="../creater/collabo_area_modify.html" target="_blank"> creater/collabo_area_modify.html </a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>영상제작소 상세</td>
+                <td>
+                  <a href="../creater/collabo_area_view.html" target="_blank">creater/collabo_area_view.html</a>
+                </td>
+                <td><em class="finish">완료</em></td>
+              </tr>
+
+              <!-- 마이페이지 -->
+              <tr>
+                <td class="count"></td>
+                <td rowspan="6">마이페이지</td>
+                <td>내가 좋아요한 영상</td>
+                <td><a href="../mypage/like_list.html" target="_blank">mypage/like_list.html</a></td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>내가 시청한 영상</td>
+                <td><a href="../mypage/watched_list.html" target="_blank">mypage/watched_list.html</a></td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>영상 다운로드 내역</td>
+                <td>
+                  <a href="../mypage/download_list.html" target="_blank">mypage/download_list.html</a>
+                </td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>내가 찜한 큐레이션</td>
+                <td>
+                  <a href="../mypage/curation_list_01.html" target="_blank">mypage/curation_list_01.html</a>
+                </td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>내가 만든 큐레이션</td>
+                <td>
+                  <a href="../mypage/curation_list_02.html" target="_blank">mypage/curation_list_02.html</a>
+                </td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+              <tr>
+                <td class="count"></td>
+                <td>나의 관심분야</td>
+                <td><a href="../mypage/wish_list.html" target="_blank">mypage/wish_list.html</a></td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+
+              <!-- 통합검색 -->
+              <tr>
+                <td class="count"></td>
+                <td>통합검색</td>
+                <td>통합검색</td>
+                <td><a href="../search/search.html" target="_blank">search/search.html</a></td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+
+              <!-- 광장 24 -->
+              <tr>
+                <td class="count"></td>
+                <td>광장 24</td>
+                <td>광장 24</td>
+                <td><a href="../seoul24/main.html" target="_blank">seoul24/main.html</a></td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+
+              <!-- 편성표 -->
+              <tr>
+                <td class="count"></td>
+                <td>편성표</td>
+                <td>편성표</td>
+                <td>
+                  <a href="../schedule/schedule_month.html" target="_blank">schedule/schedule_month.html</a>
+                </td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+
+              <!-- 통합영상관리 -->
+              <tr>
+                <td class="count"></td>
+                <td>통합영상관리</td>
+                <td>샘플</td>
+                <td>
+                  <a href="../video/sample.html" target="_blank">video/sample.html</a>
+                </td>
+                <td>
+                  <em class="finish">완료</em>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('load', function() {
+      var count = document.querySelectorAll('.count'),
+        finish = document.querySelectorAll('.finish'),
+        progress = (finish.length / count.length) * 100;
+
+      count.forEach(function(elem, idx) {
+        elem.innerHTML = idx + 1;
+      });
+
+      $('.progress')
+        .find('.perc')
+        .append(progress.toFixed() + '%');
+    });
+  </script>
+</body>
+
+</html>

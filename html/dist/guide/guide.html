@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="Author" content="" />
+  <meta name="Keywords" content="" />
+  <meta name="Description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+  <title>라이브서울 퍼블리싱 가이드</title>
+
+  <script src="../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script defer src="../assets/js/common.js"></script>
+
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/guide.css" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <h1>라이브서울 퍼블리싱 가이드</h1>
+    <div class="guide_box" id="guide_box01">
+      <h2>css &amp; js</h2>
+      <div>
+        <ul class="clear">
+          <li>
+            <dl class="col-02">
+              <dt>CSS</dt>
+              <dd>
+                <strong>공통</strong><br />
+                <em>jquery-ui.min.css</em><br />
+                <em>swiper.min.css</em><br />
+                <em>style.css</em><br />
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl class="col-03">
+              <dt>JS</dt>
+              <dd>
+                <strong>라이브러리</strong><br />
+                <em>jquery-3.6.0.min.js</em><br />
+                <em>jquery-ui.min.js</em><br />
+                <em>swiper.min.js</em><br />
+                <em>gsap.min.js</em>
+              </dd>
+              <dd>
+                <strong>공통</strong><br />
+                <em>common.js</em>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide_box" id="guide_box02">
+      <h2>font</h2>
+      <div>
+        <div class="title">font-family : &lsquo;Noto Sans CJK KR&rsquo;</div>
+        <ul class="wide clear">
+          <li>
+            <dl>
+              <dt>font-weight : 100 [Thin]</dt>
+              <dd class="ft-Thin">가나다라마바사아자차카타파하 1234567890</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>font-weight : 300 [Light]</dt>
+              <dd class="ft-Light">가나다라마바사아자차카타파하 1234567890</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>font-weight : 400 [DemiLight]</dt>
+              <dd class="ft-DemiLight">가나다라마바사아자차카타파하 1234567890</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>font-weight : 500 [Regular]</dt>
+              <dd class="ft-Regular">가나다라마바사아자차카타파하 1234567890</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>font-weight : 600 [Medium]</dt>
+              <dd class="ft-Medium">가나다라마바사아자차카타파하 1234567890</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>font-weight : 700 [Bold]</dt>
+              <dd class="ft-Bold">가나다라마바사아자차카타파하 1234567890</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>font-weight : 900 [Black]</dt>
+              <dd class="ft-Black">가나다라마바사아자차카타파하 1234567890</dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide_box" id="guide_box03">
+      <h2>paging</h2>
+      <div>
+        <ul class="clear">
+          <li>
+            <dl>
+              <dt>Paging - purple</dt>
+              <dd>
+                <div class="paging pc-only purple">
+                  <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+                  <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+                  <strong>1</strong>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+                  <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+                </div>
+                <div class="btn-wrap align-c mob-only">
+                  <button type="button" class="btn-prev"><em>이전</em></button>
+                  <span><b>1</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+                  <button type="button" class="btn-next"><em>다음</em></button>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>Paging - orange</dt>
+              <dd>
+                <div class="paging pc-only orange">
+                  <a href="#" class="first"><span class="hidden-txt">첫 페이지</span></a>
+                  <a href="#" class="prev"><span class="hidden-txt">이전 페이지</span></a>
+                  <strong>1</strong>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">7</a>
+                  <a href="#">8</a>
+                  <a href="#">9</a>
+                  <a href="#">10</a>
+                  <a href="#" class="next"><span class="hidden-txt">다음 페이지</span></a>
+                  <a href="#" class="last"><span class="hidden-txt">마지막 페이지</span></a>
+                </div>
+                <div class="btn-wrap align-c mob-only">
+                  <button type="button" class="btn-prev"><em>이전</em></button>
+                  <span><b>1</b>&nbsp;&nbsp;of&nbsp;&nbsp;<em>75</em></span>
+                  <button type="button" class="btn-next"><em>다음</em></button>
+                </div>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide_box" id="guide_box04">
+      <h2>button</h2>
+      <div>
+        <ul class="clear">
+          <li>
+            <dl>
+              <dt>Shape</dt>
+              <dd>
+                <div class="btn-wrap-left">
+                  <button class="btn-default darkGray" type="submit"><em>default</em></button>
+                  <button class="btn-default rounded darkGray" type="submit"><em>rounded</em></button>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>Size</dt>
+              <dd>
+                <div class="btn-wrap">
+                  <button class="btn-default xs3 rounded darkGray" type="submit"><em>xs3</em></button>
+                  <button class="btn-default xs2 rounded darkGray" type="submit"><em>xs2</em></button>
+                  <button class="btn-default xs rounded darkGray" type="submit"><em>xs</em></button>
+                  <button class="btn-default sm rounded darkGray" type="submit"><em>sm</em></button>
+                  <button class="btn-default rounded darkGray" type="submit"><em>default</em></button>
+                  <button class="btn-default md rounded darkGray" type="submit"><em>md</em></button>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>Color</dt>
+              <dd>
+                <div class="btn-wrap">
+                  <button class="btn-default rounded yellow" type="submit"><em>yellow</em></button>
+                  <button class="btn-default rounded orange" type="submit"><em>orange</em></button>
+                  <button class="btn-default rounded orange2" type="submit"><em>orange2</em></button>
+                  <button class="btn-default rounded red" type="submit"><em>red</em></button>
+                  <button class="btn-default rounded red2" type="submit"><em>red2</em></button>
+                  <button class="btn-default rounded burgundy" type="submit"><em>burgundy</em></button>
+                  <button class="btn-default rounded lightPurple" type="submit"><em>lightPurple</em></button>
+                  <button class="btn-default rounded purple" type="submit"><em>purple</em></button>
+                  <button class="btn-default rounded blue" type="submit"><em>blue</em></button>
+                  <button class="btn-default rounded navy" type="submit"><em>navy</em></button>
+                  <button class="btn-default rounded mint" type="submit"><em>mint</em></button>
+                  <button class="btn-default rounded gray" type="submit"><em>gray</em></button>
+                  <button class="btn-default rounded darkGray" type="submit"><em>darkGray</em></button>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>border</dt>
+              <dd>
+                <div class="btn-wrap">
+                  <button class="btn-default rounded white txt-color black" type="submit"><em>black</em></button>
+                  <button class="btn-default rounded white txt-color darkGray" type="submit"><em>darkGray</em></button>
+                  <button class="btn-default rounded white txt-color lightGray" type="submit"><em>lightGray</em></button>
+                  <button class="btn-default rounded white txt-color org" type="submit"><em>org</em></button>
+                  <button class="btn-default rounded white txt-color lgtRed" type="submit"><em>lgtRed</em></button>
+                  <button class="btn-default rounded white txt-color navy" type="submit"><em>navy</em></button>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>Icon</dt>
+              <dd>
+                <div class="btn-wrap">
+                  <button class="btn-has-icon rounded search purple" type="submit"><em>검색하기</em></button>
+                  <button class="btn-has-icon rounded refresh lightPurple" type="submit"><em>새로고침</em></button>
+                  <button class="btn-has-icon rounded voice type-01" type="submit"><em>음성&middot;문자 지원</em></button>
+                  <button class="btn-has-icon rounded voice type-02" type="submit"><em>음성&middot;문자 지원</em></button>
+                  <button class="btn-has-icon rounded add navy" type="submit"><em>추천목록 담기</em></button>
+                  <button class="btn-has-icon rounded sm white like" type="submit"><em>좋아요</em></button>
+                  <button class="btn-has-icon rounded sm white flag" type="submit"><em>찜하기</em></button>
+                </div>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide_box" id="guide_box06">
+      <h2>input</h2>
+      <div>
+        <ul class="clear">
+          <li>
+            <dl>
+              <dt>Type = Checkbox</dt>
+              <dd>
+                <div class="chk-wrap">
+                  <span>
+                    <input type="checkbox" checked name="" id="chk1" />
+                    <label for="chk1"><em class="hidden-txt">checked</em></label>
+                  </span>
+                  <span>
+                    <input type="checkbox" name="" id="chk2" />
+                    <label for="chk2"><em class="hidden-txt">unchecked</em></label>
+                  </span>
+                </div>
+                <hr />
+                <div class="chk-wrap">
+                  <span>
+                    <input type="checkbox" checked name="" id="chk3" />
+                    <label for="chk3"><em>checked</em></label>
+                  </span>
+                  <span>
+                    <input type="checkbox" name="" id="chk4" />
+                    <label for="chk4"><em>unchecked</em></label>
+                  </span>
+                </div>
+                <hr />
+                <div>
+                  <ul class="list">
+                    <li>
+                      <div class="chk-wrap list-type">
+                        <span>
+                          <input type="checkbox" checked name="" id="list01" />
+                          <label for="list01"><em>list-01</em></label>
+                        </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="chk-wrap list-type">
+                        <span>
+                          <input type="checkbox" name="" id="list02" />
+                          <label for="list02"><em>list-02</em></label>
+                        </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="chk-wrap list-type">
+                        <span>
+                          <input type="checkbox" name="" id="list03" />
+                          <label for="list03"><em>list-03</em></label>
+                        </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="chk-wrap list-type">
+                        <span>
+                          <input type="checkbox" name="" id="list04" />
+                          <label for="list04"><em>list-04</em></label>
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>Type = Radio</dt>
+              <dd>
+                <div class="radio-wrap">
+                  <span>
+                    <input type="radio" checked name="r" id="r1" />
+                    <label for="r1"><em>checked</em></label>
+                  </span>
+                  <span>
+                    <input type="radio" name="r" id="r2" />
+                    <label for="r2"><em>unchecked</em></label>
+                  </span>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>Type = Text</dt>
+              <dd>
+                <div>
+                  <span class="text-wrap">
+                    <input placeholder="" type="text" name="" id="" />
+                  </span>
+                </div>
+                <hr />
+                <div class="both">
+                  <span class="text-wrap">
+                    <input class="calendar" title="기간 선택 - 기간을 선택하세요" placeholder="기간을 선택하세요" type="text" name="" id="" />
+                  </span>
+                  <span class="text-wrap">
+                    <input class="calendar" title="기간 선택 - 기간을 선택하세요" placeholder="기간을 선택하세요" type="text" name="" id="" />
+                  </span>
+                </div>
+                <hr />
+                <div>
+                  <div class="text-wrap has-button">
+                    <input type="text" name="" id="" title="검색어를 입력하세요." placeholder="검색어를 입력하세요." />
+                    <button class="btn-has-icon rounded search purple" type="submit"><em>검색하기</em></button>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>Type = file</dt>
+              <dd>
+                <div>
+                  <div class="file-attach">
+                    <span class="text-wrap">
+                      <input type="text" name="" id="" class="fileName" disabled />
+                    </span>
+                    <span class="file-wrap">
+                      <label for="file_01"><em>파일선택</em></label>
+                      <input class="hidden-txt" type="file" id="file_01" value="" title="파일 첨부" onchange="commonFunction().fileUpload(this);" />
+                    </span>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guide_box" id="guide_box08">
+      <h2>select</h2>
+      <div>
+        <ul class="clear">
+          <li>
+            <dl>
+              <dt>Select</dt>
+              <dd>
+                <div>
+                  <span class="select-wrap" style="background-color: #f9f9f9">
+                    <label for="creator">
+                      <em class="hidden-txt">영상크리에이터 기수 선택</em>
+                    </label>
+                    <select name="" id="creator">
+                      <option value="">전체</option>
+                      <option value="">1기</option>
+                      <option value="">2기</option>
+                      <option value="">3기</option>
+                      <option value="">4기</option>
+                      <option value="">5기</option>
+                      <option value="">6기</option>
+                      <option value="">7기</option>
+                    </select>
+                  </span>
+                </div>
+                <hr />
+                <div>
+                  <span class="select-wrap type-02">
+                    <label for="creator">
+                      <em class="hidden-txt">영상크리에이터 기수 선택</em>
+                    </label>
+                    <select name="" id="creator">
+                      <option value="">전체</option>
+                      <option value="">1기</option>
+                      <option value="">2기</option>
+                      <option value="">3기</option>
+                      <option value="">4기</option>
+                      <option value="">5기</option>
+                      <option value="">6기</option>
+                      <option value="">7기</option>
+                    </select>
+                  </span>
+                </div>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</body>
+
+</html>
